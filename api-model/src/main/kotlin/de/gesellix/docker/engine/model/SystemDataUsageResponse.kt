@@ -29,7 +29,7 @@ data class SystemDataUsageResponse(
   @Json(name = "Images")
   val images: kotlin.collections.List<ImageSummary>? = null,
   @Json(name = "Containers")
-  val containers: kotlin.collections.List<kotlin.collections.List<kotlin.Any>>? = null,
+  val containers: kotlin.collections.List<ContainerSummary>? = null,
   @Json(name = "Volumes")
   val volumes: kotlin.collections.List<Volume>? = null,
   @Json(name = "BuildCache")

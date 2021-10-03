@@ -26,7 +26,7 @@ Initialize a new swarm
 //import de.gesellix.docker.engine.model.*
 
 val apiInstance = SwarmApi()
-val body : InlineObject5 =  // InlineObject5 | 
+val body : SwarmInitRequest =  // SwarmInitRequest | 
 try {
     val result : kotlin.String = apiInstance.swarmInit(body)
     println(result)
@@ -43,7 +43,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InlineObject5**](InlineObject5.md)|  |
+ **body** | [**SwarmInitRequest**](SwarmInitRequest.md)|  |
 
 ### Return type
 
@@ -112,7 +112,7 @@ Join an existing swarm
 //import de.gesellix.docker.engine.model.*
 
 val apiInstance = SwarmApi()
-val body : InlineObject6 =  // InlineObject6 | 
+val body : SwarmJoinRequest =  // SwarmJoinRequest | 
 try {
     apiInstance.swarmJoin(body)
 } catch (e: ClientException) {
@@ -128,7 +128,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InlineObject6**](InlineObject6.md)|  |
+ **body** | [**SwarmJoinRequest**](SwarmJoinRequest.md)|  |
 
 ### Return type
 
@@ -200,7 +200,7 @@ Unlock a locked manager
 //import de.gesellix.docker.engine.model.*
 
 val apiInstance = SwarmApi()
-val body : InlineObject7 =  // InlineObject7 | 
+val body : SwarmUnlockRequest =  // SwarmUnlockRequest | 
 try {
     apiInstance.swarmUnlock(body)
 } catch (e: ClientException) {
@@ -216,7 +216,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InlineObject7**](InlineObject7.md)|  |
+ **body** | [**SwarmUnlockRequest**](SwarmUnlockRequest.md)|  |
 
 ### Return type
 

@@ -76,7 +76,7 @@ No authorization required
 
 Build an image
 
-Build an image from a tar archive with a &#x60;Dockerfile&#x60; in it.  The &#x60;Dockerfile&#x60; specifies how the image is built from the tar archive. It is typically in the archive&#39;s root, but can be at a different path or have a different name by specifying the &#x60;dockerfile&#x60; parameter. [See the &#x60;Dockerfile&#x60; reference for more information](/engine/reference/builder/).  The Docker daemon performs a preliminary validation of the &#x60;Dockerfile&#x60; before starting the build, and returns an error if the syntax is incorrect. After that, each instruction is run one-by-one until the ID of the new image is output.  The build is canceled if the client drops the connection by quitting or being killed. 
+Build an image from a tar archive with a &#x60;Dockerfile&#x60; in it.  The &#x60;Dockerfile&#x60; specifies how the image is built from the tar archive. It is typically in the archive&#39;s root, but can be at a different path or have a different name by specifying the &#x60;dockerfile&#x60; parameter. [See the &#x60;Dockerfile&#x60; reference for more information](https://docs.docker.com/engine/reference/builder/).  The Docker daemon performs a preliminary validation of the &#x60;Dockerfile&#x60; before starting the build, and returns an error if the syntax is incorrect. After that, each instruction is run one-by-one until the ID of the new image is output.  The build is canceled if the client drops the connection by quitting or being killed. 
 
 ### Example
 ```kotlin
@@ -101,7 +101,7 @@ val cpushares : kotlin.Int = 56 // kotlin.Int | CPU shares (relative weight).
 val cpusetcpus : kotlin.String = cpusetcpus_example // kotlin.String | CPUs in which to allow execution (e.g., `0-3`, `0,1`).
 val cpuperiod : kotlin.Int = 56 // kotlin.Int | The length of a CPU period in microseconds.
 val cpuquota : kotlin.Int = 56 // kotlin.Int | Microseconds of CPU time that the container can get in a CPU period.
-val buildargs : kotlin.String = buildargs_example // kotlin.String | JSON map of string pairs for build-time variables. Users pass these values at build-time. Docker uses the buildargs as the environment context for commands run via the `Dockerfile` RUN instruction, or for variable expansion in other `Dockerfile` instructions. This is not meant for passing secret values.  For example, the build arg `FOO=bar` would become `{\"FOO\":\"bar\"}` in JSON. This would result in the query parameter `buildargs={\"FOO\":\"bar\"}`. Note that `{\"FOO\":\"bar\"}` should be URI component encoded.  [Read more about the buildargs instruction.](/engine/reference/builder/#arg) 
+val buildargs : kotlin.String = buildargs_example // kotlin.String | JSON map of string pairs for build-time variables. Users pass these values at build-time. Docker uses the buildargs as the environment context for commands run via the `Dockerfile` RUN instruction, or for variable expansion in other `Dockerfile` instructions. This is not meant for passing secret values.  For example, the build arg `FOO=bar` would become `{\"FOO\":\"bar\"}` in JSON. This would result in the query parameter `buildargs={\"FOO\":\"bar\"}`. Note that `{\"FOO\":\"bar\"}` should be URI component encoded.  [Read more about the buildargs instruction.](https://docs.docker.com/engine/reference/builder/#arg) 
 val shmsize : kotlin.Int = 56 // kotlin.Int | Size of `/dev/shm` in bytes. The size must be greater than 0. If omitted the system uses 64MB.
 val squash : kotlin.Boolean = true // kotlin.Boolean | Squash the resulting images layers into a single layer. *(Experimental release only.)*
 val labels : kotlin.String = labels_example // kotlin.String | Arbitrary key/value labels to set on the image, as a JSON map of string pairs.
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
  **cpusetcpus** | **kotlin.String**| CPUs in which to allow execution (e.g., &#x60;0-3&#x60;, &#x60;0,1&#x60;). | [optional]
  **cpuperiod** | **kotlin.Int**| The length of a CPU period in microseconds. | [optional]
  **cpuquota** | **kotlin.Int**| Microseconds of CPU time that the container can get in a CPU period. | [optional]
- **buildargs** | **kotlin.String**| JSON map of string pairs for build-time variables. Users pass these values at build-time. Docker uses the buildargs as the environment context for commands run via the &#x60;Dockerfile&#x60; RUN instruction, or for variable expansion in other &#x60;Dockerfile&#x60; instructions. This is not meant for passing secret values.  For example, the build arg &#x60;FOO&#x3D;bar&#x60; would become &#x60;{\&quot;FOO\&quot;:\&quot;bar\&quot;}&#x60; in JSON. This would result in the query parameter &#x60;buildargs&#x3D;{\&quot;FOO\&quot;:\&quot;bar\&quot;}&#x60;. Note that &#x60;{\&quot;FOO\&quot;:\&quot;bar\&quot;}&#x60; should be URI component encoded.  [Read more about the buildargs instruction.](/engine/reference/builder/#arg)  | [optional]
+ **buildargs** | **kotlin.String**| JSON map of string pairs for build-time variables. Users pass these values at build-time. Docker uses the buildargs as the environment context for commands run via the &#x60;Dockerfile&#x60; RUN instruction, or for variable expansion in other &#x60;Dockerfile&#x60; instructions. This is not meant for passing secret values.  For example, the build arg &#x60;FOO&#x3D;bar&#x60; would become &#x60;{\&quot;FOO\&quot;:\&quot;bar\&quot;}&#x60; in JSON. This would result in the query parameter &#x60;buildargs&#x3D;{\&quot;FOO\&quot;:\&quot;bar\&quot;}&#x60;. Note that &#x60;{\&quot;FOO\&quot;:\&quot;bar\&quot;}&#x60; should be URI component encoded.  [Read more about the buildargs instruction.](https://docs.docker.com/engine/reference/builder/#arg)  | [optional]
  **shmsize** | **kotlin.Int**| Size of &#x60;/dev/shm&#x60; in bytes. The size must be greater than 0. If omitted the system uses 64MB. | [optional]
  **squash** | **kotlin.Boolean**| Squash the resulting images layers into a single layer. *(Experimental release only.)* | [optional]
  **labels** | **kotlin.String**| Arbitrary key/value labels to set on the image, as a JSON map of string pairs. | [optional]
@@ -229,7 +229,7 @@ No authorization required
 
 <a name="imageCreate"></a>
 # **imageCreate**
-> imageCreate(fromImage, fromSrc, repo, tag, message, xRegistryAuth, platform, inputImage)
+> imageCreate(fromImage, fromSrc, repo, tag, message, xRegistryAuth, changes, platform, inputImage)
 
 Create an image
 
@@ -248,10 +248,11 @@ val repo : kotlin.String = repo_example // kotlin.String | Repository name given
 val tag : kotlin.String = tag_example // kotlin.String | Tag or digest. If empty when pulling an image, this causes all tags for the given image to be pulled.
 val message : kotlin.String = message_example // kotlin.String | Set commit message for imported image.
 val xRegistryAuth : kotlin.String = xRegistryAuth_example // kotlin.String | A base64url-encoded auth configuration.  Refer to the [authentication section](#section/Authentication) for details. 
+val changes : kotlin.collections.List<kotlin.String> =  // kotlin.collections.List<kotlin.String> | Apply `Dockerfile` instructions to the image that is created, for example: `changes=ENV DEBUG=true`. Note that `ENV DEBUG=true` should be URI component encoded.  Supported `Dockerfile` instructions: `CMD`|`ENTRYPOINT`|`ENV`|`EXPOSE`|`ONBUILD`|`USER`|`VOLUME`|`WORKDIR` 
 val platform : kotlin.String = platform_example // kotlin.String | Platform in the format os[/arch[/variant]]
 val inputImage : kotlin.String = inputImage_example // kotlin.String | Image content if the value `-` has been specified in fromSrc query parameter
 try {
-    apiInstance.imageCreate(fromImage, fromSrc, repo, tag, message, xRegistryAuth, platform, inputImage)
+    apiInstance.imageCreate(fromImage, fromSrc, repo, tag, message, xRegistryAuth, changes, platform, inputImage)
 } catch (e: ClientException) {
     println("4xx response calling ImageApi#imageCreate")
     e.printStackTrace()
@@ -271,6 +272,7 @@ Name | Type | Description  | Notes
  **tag** | **kotlin.String**| Tag or digest. If empty when pulling an image, this causes all tags for the given image to be pulled. | [optional]
  **message** | **kotlin.String**| Set commit message for imported image. | [optional]
  **xRegistryAuth** | **kotlin.String**| A base64url-encoded auth configuration.  Refer to the [authentication section](#section/Authentication) for details.  | [optional]
+ **changes** | [**kotlin.collections.List&lt;kotlin.String&gt;**](kotlin.String.md)| Apply &#x60;Dockerfile&#x60; instructions to the image that is created, for example: &#x60;changes&#x3D;ENV DEBUG&#x3D;true&#x60;. Note that &#x60;ENV DEBUG&#x3D;true&#x60; should be URI component encoded.  Supported &#x60;Dockerfile&#x60; instructions: &#x60;CMD&#x60;|&#x60;ENTRYPOINT&#x60;|&#x60;ENV&#x60;|&#x60;EXPOSE&#x60;|&#x60;ONBUILD&#x60;|&#x60;USER&#x60;|&#x60;VOLUME&#x60;|&#x60;WORKDIR&#x60;  | [optional]
  **platform** | **kotlin.String**| Platform in the format os[/arch[/variant]] | [optional]
  **inputImage** | **kotlin.String**| Image content if the value &#x60;-&#x60; has been specified in fromSrc query parameter | [optional]
 

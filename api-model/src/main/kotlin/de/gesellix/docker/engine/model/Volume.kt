@@ -39,13 +39,13 @@ data class Volume(
   val mountpoint: kotlin.String,
   /* User-defined key/value metadata. */
   @Json(name = "Labels")
-  val labels: kotlin.collections.Map<kotlin.String, kotlin.String>,
+  val labels: kotlin.collections.Map<kotlin.String, kotlin.String>?,
   /* The level at which the volume exists. Either `global` for cluster-wide, or `local` for machine level.  */
   @Json(name = "Scope")
-  val scope: Volume.Scope,
+  val scope: Volume.Scope?,
   /* The driver specific options used when creating the volume.  */
   @Json(name = "Options")
-  val options: kotlin.collections.Map<kotlin.String, kotlin.String>,
+  val options: kotlin.collections.Map<kotlin.String, kotlin.String>?,
   /* Date/Time the volume was created. */
   @Json(name = "CreatedAt")
   val createdAt: kotlin.String? = null,

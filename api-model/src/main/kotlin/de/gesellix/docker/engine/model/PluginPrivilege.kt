@@ -15,16 +15,17 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 /**
- *
- * @param detach Detach from the command.
- * @param tty Allocate a pseudo-TTY.
+ * Describes a permission the user has to accept upon installing the plugin.
+ * @param name
+ * @param description
+ * @param value
  */
 @JsonClass(generateAdapter = true)
-data class InlineObject1(
-  /* Detach from the command. */
-  @Json(name = "Detach")
-  val detach: kotlin.Boolean? = null,
-  /* Allocate a pseudo-TTY. */
-  @Json(name = "Tty")
-  val tty: kotlin.Boolean? = null
+data class PluginPrivilege(
+  @Json(name = "Name")
+  val name: kotlin.String? = null,
+  @Json(name = "Description")
+  val description: kotlin.String? = null,
+  @Json(name = "Value")
+  val value: kotlin.collections.List<kotlin.String>? = null
 )

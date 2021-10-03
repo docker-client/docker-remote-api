@@ -15,17 +15,15 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 /**
- * Describes a permission the user has to accept upon installing the plugin.
- * @param name
- * @param description
- * @param value
+ *
+ * @param container The ID or name of the container to connect to the network.
+ * @param endpointConfig
  */
 @JsonClass(generateAdapter = true)
-data class PluginPrivilegeItem(
-  @Json(name = "Name")
-  val name: kotlin.String? = null,
-  @Json(name = "Description")
-  val description: kotlin.String? = null,
-  @Json(name = "Value")
-  val value: kotlin.collections.List<kotlin.String>? = null
+data class NetworkConnectRequest(
+  /* The ID or name of the container to connect to the network. */
+  @Json(name = "Container")
+  val container: kotlin.String? = null,
+  @Json(name = "EndpointConfig")
+  val endpointConfig: EndpointSettings? = null
 )

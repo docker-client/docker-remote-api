@@ -34,9 +34,9 @@ data class ImageSummary(
   @Json(name = "ParentId")
   val parentId: kotlin.String,
   @Json(name = "RepoTags")
-  val repoTags: kotlin.collections.List<kotlin.String>,
+  val repoTags: kotlin.collections.List<kotlin.String>?,
   @Json(name = "RepoDigests")
-  val repoDigests: kotlin.collections.List<kotlin.String>,
+  val repoDigests: kotlin.collections.List<kotlin.String>?,
   @Json(name = "Created")
   val created: kotlin.Int,
   @Json(name = "Size")
@@ -46,7 +46,7 @@ data class ImageSummary(
   @Json(name = "VirtualSize")
   val virtualSize: kotlin.Int,
   @Json(name = "Labels")
-  val labels: kotlin.collections.Map<kotlin.String, kotlin.String>,
+  val labels: kotlin.collections.Map<kotlin.String, kotlin.String>?,
   @Json(name = "Containers")
   val containers: kotlin.Int
 )
