@@ -15,20 +15,15 @@ plugins {
   id("org.jlleitschuh.gradle.ktlint") version "10.2.0" apply false
 }
 
-val dependencyVersions = listOf<String>(
-//  "com.squareup.okio:okio:2.10.0",
-//  "org.jetbrains:annotations:22.0.0",
-//  "org.jetbrains.kotlin:kotlin-reflect:1.5.31",
-//  "org.jetbrains.kotlin:kotlin-stdlib:1.5.31",
-//  "org.jetbrains.kotlin:kotlin-stdlib-common:1.5.31",
-//  "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.31",
-//  "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31"
+val dependencyVersions = listOf(
+  "org.jetbrains.kotlin:kotlin-reflect:1.5.31",
+  "org.jetbrains.kotlin:kotlin-stdlib:1.5.31",
+  "org.jetbrains.kotlin:kotlin-stdlib-common:1.5.31",
+  "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.31",
+  "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.31"
 )
 
 val dependencyGroupVersions = mapOf<String, String>(
-//  "org.junit" to "5.8.0",
-//  "org.junit.jupiter" to "5.8.0",
-//  "org.junit.platform" to "1.8.0"
 )
 
 subprojects {
