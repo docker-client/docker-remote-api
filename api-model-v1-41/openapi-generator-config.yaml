@@ -10,6 +10,6 @@ enumPropertyNaming: PascalCase
 groupId: de.gesellix
 artifactId: docker-remote-api-model
 artifactVersion: 1.41
-outputDir: api-model
+outputDir: api-model-v1-41
 dateLibrary: java8
 moshiCodeGen: true
