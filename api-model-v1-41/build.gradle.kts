@@ -115,7 +115,7 @@ publishing {
     register(publicationName, MavenPublication::class) {
       pom {
         name.set("docker-remote-api-model")
-        description.set("API model for the Docker remote api v${remoteApiVersion}")
+        description.set("API model for the Docker remote api v$remoteApiVersion")
         url.set("https://github.com/docker-client/docker-remote-api")
         licenses {
           license {
