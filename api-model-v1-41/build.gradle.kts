@@ -115,7 +115,7 @@ publishing {
     register(publicationName, MavenPublication::class) {
       pom {
         name.set("docker-remote-api-model")
-        description.set("API model for the Docker remote api")
+        description.set("API model for the Docker remote api v${remoteApiVersion}")
         url.set("https://github.com/docker-client/docker-remote-api")
         licenses {
           license {
@@ -136,7 +136,7 @@ publishing {
           url.set("https://github.com/docker-client/docker-remote-api")
         }
       }
-      artifactId = "docker-remote-api-model"
+      artifactId = "docker-remote-api-model-${remoteApiVersion.replace(Regex("\\."), "-")}"
       version = artifactVersion
       from(components["java"])
       artifact(sourcesJar.get())
