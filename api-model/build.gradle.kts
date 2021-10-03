@@ -14,8 +14,10 @@ plugins {
   id("org.jlleitschuh.gradle.ktlint")
 }
 
+val remoteApiVersion = "1.41"
+
 openApiGenerate {
-  inputSpec.set(file("./docker-engine-api-v1.41.yaml").absolutePath)
+  inputSpec.set(file("./docker-engine-api-v$remoteApiVersion.yaml").absolutePath)
   configFile.set(file("./openapi-generator-config.yaml").absolutePath)
   outputDir.set(file(".").absolutePath)
 }
@@ -43,8 +45,8 @@ val openApiGenerateCleanupGeneratedCode by tasks.register("openApiGenerateCleanu
   dependsOn(tasks.openApiGenerate)
   doLast {
     listOf(
-      "src/main/kotlin/de/gesellix/docker/engine/api",
-      "src/main/kotlin/de/gesellix/docker/engine/client"
+      "src/main/kotlin/de/gesellix/docker/remote/api/infrastructure",
+      "src/main/kotlin/de/gesellix/docker/remote/client"
     ).onEach {
       file(it).deleteRecursively()
     }
@@ -92,8 +94,6 @@ artifacts {
   add("archives", sourcesJar.get())
   add("archives", javadocJar.get())
 }
-
-val remoteApiVersion = "1.41"
 
 fun findProperty(s: String) = project.findProperty(s) as String?
 
