@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 <a name="getPluginPrivileges"></a>
 # **getPluginPrivileges**
-> kotlin.collections.List&lt;PluginPrivilegeItem&gt; getPluginPrivileges(remote)
+> kotlin.collections.List&lt;PluginPrivilege&gt; getPluginPrivileges(remote)
 
 Get plugin privileges
 
@@ -32,7 +32,7 @@ Get plugin privileges
 val apiInstance = PluginApi()
 val remote : kotlin.String = remote_example // kotlin.String | The name of the plugin. The `:latest` tag is optional, and is the default if omitted. 
 try {
-    val result : kotlin.collections.List<PluginPrivilegeItem> = apiInstance.getPluginPrivileges(remote)
+    val result : kotlin.collections.List<PluginPrivilege> = apiInstance.getPluginPrivileges(remote)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling PluginApi#getPluginPrivileges")
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**kotlin.collections.List&lt;PluginPrivilegeItem&gt;**](PluginPrivilegeItem.md)
+[**kotlin.collections.List&lt;PluginPrivilege&gt;**](PluginPrivilege.md)
 
 ### Authorization
 
@@ -355,7 +355,7 @@ val apiInstance = PluginApi()
 val remote : kotlin.String = remote_example // kotlin.String | Remote reference for plugin to install.  The `:latest` tag is optional, and is used as the default if omitted. 
 val name : kotlin.String = name_example // kotlin.String | Local name for the pulled plugin.  The `:latest` tag is optional, and is used as the default if omitted. 
 val xRegistryAuth : kotlin.String = xRegistryAuth_example // kotlin.String | A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details. 
-val body : kotlin.collections.List<InlineObject> =  // kotlin.collections.List<InlineObject> | 
+val body : kotlin.collections.List<PluginPrivilege> =  // kotlin.collections.List<PluginPrivilege> | 
 try {
     apiInstance.pluginPull(remote, name, xRegistryAuth, body)
 } catch (e: ClientException) {
@@ -374,7 +374,7 @@ Name | Type | Description  | Notes
  **remote** | **kotlin.String**| Remote reference for plugin to install.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted.  |
  **name** | **kotlin.String**| Local name for the pulled plugin.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted.  | [optional]
  **xRegistryAuth** | **kotlin.String**| A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details.  | [optional]
- **body** | [**kotlin.collections.List&lt;InlineObject&gt;**](InlineObject.md)|  | [optional]
+ **body** | [**kotlin.collections.List&lt;PluginPrivilege&gt;**](PluginPrivilege.md)|  | [optional]
 
 ### Return type
 
@@ -497,7 +497,7 @@ val apiInstance = PluginApi()
 val name : kotlin.String = name_example // kotlin.String | The name of the plugin. The `:latest` tag is optional, and is the default if omitted. 
 val remote : kotlin.String = remote_example // kotlin.String | Remote reference to upgrade to.  The `:latest` tag is optional, and is used as the default if omitted. 
 val xRegistryAuth : kotlin.String = xRegistryAuth_example // kotlin.String | A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details. 
-val body : kotlin.collections.List<InlineObject> =  // kotlin.collections.List<InlineObject> | 
+val body : kotlin.collections.List<PluginPrivilege> =  // kotlin.collections.List<PluginPrivilege> | 
 try {
     apiInstance.pluginUpgrade(name, remote, xRegistryAuth, body)
 } catch (e: ClientException) {
@@ -516,7 +516,7 @@ Name | Type | Description  | Notes
  **name** | **kotlin.String**| The name of the plugin. The &#x60;:latest&#x60; tag is optional, and is the default if omitted.  |
  **remote** | **kotlin.String**| Remote reference to upgrade to.  The &#x60;:latest&#x60; tag is optional, and is used as the default if omitted.  |
  **xRegistryAuth** | **kotlin.String**| A base64url-encoded auth configuration to use when pulling a plugin from a registry.  Refer to the [authentication section](#section/Authentication) for details.  | [optional]
- **body** | [**kotlin.collections.List&lt;InlineObject&gt;**](InlineObject.md)|  | [optional]
+ **body** | [**kotlin.collections.List&lt;PluginPrivilege&gt;**](PluginPrivilege.md)|  | [optional]
 
 ### Return type
 

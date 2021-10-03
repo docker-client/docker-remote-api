@@ -15,26 +15,48 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 /**
- * individual image layer information in response to ImageHistory operation
- * @param id
- * @param created
- * @param createdBy
- * @param tags
- * @param size
- * @param comment
+ *
+ * @param attachStdin Attach to `stdin` of the exec command.
+ * @param attachStdout Attach to `stdout` of the exec command.
+ * @param attachStderr Attach to `stderr` of the exec command.
+ * @param detachKeys Override the key sequence for detaching a container. Format is a single character `[a-Z]` or `ctrl-<value>` where `<value>` is one of: `a-z`, `@`, `^`, `[`, `,` or `_`.
+ * @param tty Allocate a pseudo-TTY.
+ * @param env A list of environment variables in the form `[\"VAR=value\", ...]`.
+ * @param cmd Command to run, as a string or array of strings.
+ * @param privileged Runs the exec process with extended privileges.
+ * @param user The user, and optionally, group to run the exec process inside the container. Format is one of: `user`, `user:group`, `uid`, or `uid:gid`.
+ * @param workingDir The working directory for the exec process inside the container.
  */
 @JsonClass(generateAdapter = true)
-data class HistoryResponseItem(
-  @Json(name = "Id")
-  val id: kotlin.String,
-  @Json(name = "Created")
-  val created: kotlin.Long,
-  @Json(name = "CreatedBy")
-  val createdBy: kotlin.String,
-  @Json(name = "Tags")
-  val tags: kotlin.collections.List<kotlin.String>?,
-  @Json(name = "Size")
-  val size: kotlin.Long,
-  @Json(name = "Comment")
-  val comment: kotlin.String
+data class ExecConfig(
+  /* Attach to `stdin` of the exec command. */
+  @Json(name = "AttachStdin")
+  val attachStdin: kotlin.Boolean? = null,
+  /* Attach to `stdout` of the exec command. */
+  @Json(name = "AttachStdout")
+  val attachStdout: kotlin.Boolean? = null,
+  /* Attach to `stderr` of the exec command. */
+  @Json(name = "AttachStderr")
+  val attachStderr: kotlin.Boolean? = null,
+  /* Override the key sequence for detaching a container. Format is a single character `[a-Z]` or `ctrl-<value>` where `<value>` is one of: `a-z`, `@`, `^`, `[`, `,` or `_`.  */
+  @Json(name = "DetachKeys")
+  val detachKeys: kotlin.String? = null,
+  /* Allocate a pseudo-TTY. */
+  @Json(name = "Tty")
+  val tty: kotlin.Boolean? = null,
+  /* A list of environment variables in the form `[\"VAR=value\", ...]`.  */
+  @Json(name = "Env")
+  val env: kotlin.collections.List<kotlin.String>? = null,
+  /* Command to run, as a string or array of strings. */
+  @Json(name = "Cmd")
+  val cmd: kotlin.collections.List<kotlin.String>? = null,
+  /* Runs the exec process with extended privileges. */
+  @Json(name = "Privileged")
+  val privileged: kotlin.Boolean? = null,
+  /* The user, and optionally, group to run the exec process inside the container. Format is one of: `user`, `user:group`, `uid`, or `uid:gid`.  */
+  @Json(name = "User")
+  val user: kotlin.String? = null,
+  /* The working directory for the exec process inside the container.  */
+  @Json(name = "WorkingDir")
+  val workingDir: kotlin.String? = null
 )

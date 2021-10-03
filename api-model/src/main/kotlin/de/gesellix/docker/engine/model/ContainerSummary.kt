@@ -16,14 +16,64 @@ import com.squareup.moshi.JsonClass
 
 /**
  *
- * @param container The ID or name of the container to connect to the network.
- * @param endpointConfig
+ * @param id The ID of this container
+ * @param names The names that this container has been given
+ * @param image The name of the image used when creating this container
+ * @param imageID The ID of the image that this container was created from
+ * @param command Command to run when starting the container
+ * @param created When the container was created
+ * @param ports The ports exposed by this container
+ * @param sizeRw The size of files that have been created or changed by this container
+ * @param sizeRootFs The total size of all the files in this container
+ * @param labels User-defined key/value metadata.
+ * @param state The state of this container (e.g. `Exited`)
+ * @param status Additional human-readable status of this container (e.g. `Exit 0`)
+ * @param hostConfig
+ * @param networkSettings
+ * @param mounts
  */
 @JsonClass(generateAdapter = true)
-data class InlineObject3(
-  /* The ID or name of the container to connect to the network. */
-  @Json(name = "Container")
-  val container: kotlin.String? = null,
-  @Json(name = "EndpointConfig")
-  val endpointConfig: EndpointSettings? = null
+data class ContainerSummary(
+  /* The ID of this container */
+  @Json(name = "Id")
+  val id: kotlin.String? = null,
+  /* The names that this container has been given */
+  @Json(name = "Names")
+  val names: kotlin.collections.List<kotlin.String>? = null,
+  /* The name of the image used when creating this container */
+  @Json(name = "Image")
+  val image: kotlin.String? = null,
+  /* The ID of the image that this container was created from */
+  @Json(name = "ImageID")
+  val imageID: kotlin.String? = null,
+  /* Command to run when starting the container */
+  @Json(name = "Command")
+  val command: kotlin.String? = null,
+  /* When the container was created */
+  @Json(name = "Created")
+  val created: kotlin.Long? = null,
+  /* The ports exposed by this container */
+  @Json(name = "Ports")
+  val ports: kotlin.collections.List<Port>? = null,
+  /* The size of files that have been created or changed by this container */
+  @Json(name = "SizeRw")
+  val sizeRw: kotlin.Long? = null,
+  /* The total size of all the files in this container */
+  @Json(name = "SizeRootFs")
+  val sizeRootFs: kotlin.Long? = null,
+  /* User-defined key/value metadata. */
+  @Json(name = "Labels")
+  val labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
+  /* The state of this container (e.g. `Exited`) */
+  @Json(name = "State")
+  val state: kotlin.String? = null,
+  /* Additional human-readable status of this container (e.g. `Exit 0`) */
+  @Json(name = "Status")
+  val status: kotlin.String? = null,
+  @Json(name = "HostConfig")
+  val hostConfig: ContainerSummaryHostConfig? = null,
+  @Json(name = "NetworkSettings")
+  val networkSettings: ContainerSummaryNetworkSettings? = null,
+  @Json(name = "Mounts")
+  val mounts: kotlin.collections.List<Mount>? = null
 )

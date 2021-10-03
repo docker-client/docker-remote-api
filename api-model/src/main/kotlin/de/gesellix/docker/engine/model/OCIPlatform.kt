@@ -15,26 +15,28 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 /**
- * individual image layer information in response to ImageHistory operation
- * @param id
- * @param created
- * @param createdBy
- * @param tags
- * @param size
- * @param comment
+ * Describes the platform which the image in the manifest runs on, as defined in the [OCI Image Index Specification](https://github.com/opencontainers/image-spec/blob/v1.0.1/image-index.md).
+ * @param architecture The CPU architecture, for example `amd64` or `ppc64`.
+ * @param os The operating system, for example `linux` or `windows`.
+ * @param osVersion Optional field specifying the operating system version, for example on Windows `10.0.19041.1165`.
+ * @param osFeatures Optional field specifying an array of strings, each listing a required OS feature (for example on Windows `win32k`).
+ * @param variant Optional field specifying a variant of the CPU, for example `v7` to specify ARMv7 when architecture is `arm`.
  */
 @JsonClass(generateAdapter = true)
-data class HistoryResponseItem(
-  @Json(name = "Id")
-  val id: kotlin.String,
-  @Json(name = "Created")
-  val created: kotlin.Long,
-  @Json(name = "CreatedBy")
-  val createdBy: kotlin.String,
-  @Json(name = "Tags")
-  val tags: kotlin.collections.List<kotlin.String>?,
-  @Json(name = "Size")
-  val size: kotlin.Long,
-  @Json(name = "Comment")
-  val comment: kotlin.String
+data class OCIPlatform(
+  /* The CPU architecture, for example `amd64` or `ppc64`.  */
+  @Json(name = "architecture")
+  val architecture: kotlin.String? = null,
+  /* The operating system, for example `linux` or `windows`.  */
+  @Json(name = "os")
+  val os: kotlin.String? = null,
+  /* Optional field specifying the operating system version, for example on Windows `10.0.19041.1165`.  */
+  @Json(name = "os.version")
+  val osVersion: kotlin.String? = null,
+  /* Optional field specifying an array of strings, each listing a required OS feature (for example on Windows `win32k`).  */
+  @Json(name = "os.features")
+  val osFeatures: kotlin.collections.List<kotlin.String>? = null,
+  /* Optional field specifying a variant of the CPU, for example `v7` to specify ARMv7 when architecture is `arm`.  */
+  @Json(name = "variant")
+  val variant: kotlin.String? = null
 )

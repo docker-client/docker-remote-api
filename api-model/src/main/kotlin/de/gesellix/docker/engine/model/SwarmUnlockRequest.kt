@@ -16,14 +16,11 @@ import com.squareup.moshi.JsonClass
 
 /**
  *
- * @param descriptor
- * @param platforms An array containing all platforms supported by the image.
+ * @param unlockKey The swarm's unlock key.
  */
 @JsonClass(generateAdapter = true)
-data class DistributionInspectResponse(
-  @Json(name = "Descriptor")
-  val descriptor: DistributionInspectResponseDescriptor,
-  /* An array containing all platforms supported by the image.  */
-  @Json(name = "Platforms")
-  val platforms: kotlin.collections.List<DistributionInspectResponsePlatforms>
+data class SwarmUnlockRequest(
+  /* The swarm's unlock key. */
+  @Json(name = "UnlockKey")
+  val unlockKey: kotlin.String? = null
 )

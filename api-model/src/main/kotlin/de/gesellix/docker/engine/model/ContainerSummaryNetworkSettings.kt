@@ -15,16 +15,11 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 /**
- *
- * @param container The ID or name of the container to disconnect from the network.
- * @param force Force the container to disconnect from the network.
+ * A summary of the container's network settings
+ * @param networks
  */
 @JsonClass(generateAdapter = true)
-data class InlineObject4(
-  /* The ID or name of the container to disconnect from the network.  */
-  @Json(name = "Container")
-  val container: kotlin.String? = null,
-  /* Force the container to disconnect from the network.  */
-  @Json(name = "Force")
-  val force: kotlin.Boolean? = null
+data class ContainerSummaryNetworkSettings(
+  @Json(name = "Networks")
+  val networks: kotlin.collections.Map<kotlin.String, EndpointSettings>? = null
 )

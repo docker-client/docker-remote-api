@@ -15,17 +15,15 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 /**
- * Describes a permission accepted by the user upon installing the plugin.
- * @param name
- * @param description
- * @param value
+ * Describes the result obtained from contacting the registry to retrieve image metadata.
+ * @param descriptor
+ * @param platforms An array containing all platforms supported by the image.
  */
 @JsonClass(generateAdapter = true)
-data class InlineObject(
-  @Json(name = "Name")
-  val name: kotlin.String? = null,
-  @Json(name = "Description")
-  val description: kotlin.String? = null,
-  @Json(name = "Value")
-  val value: kotlin.collections.List<kotlin.String>? = null
+data class DistributionInspect(
+  @Json(name = "Descriptor")
+  val descriptor: OCIDescriptor,
+  /* An array containing all platforms supported by the image.  */
+  @Json(name = "Platforms")
+  val platforms: kotlin.collections.List<OCIPlatform>
 )

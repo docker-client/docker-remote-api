@@ -26,7 +26,7 @@ Run a command inside a running container.
 
 val apiInstance = ExecApi()
 val id : kotlin.String = id_example // kotlin.String | ID or name of container
-val execConfig : InlineObject =  // InlineObject | 
+val execConfig : ExecConfig =  // ExecConfig | 
 try {
     val result : IdResponse = apiInstance.containerExec(id, execConfig)
     println(result)
@@ -44,7 +44,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **kotlin.String**| ID or name of container |
- **execConfig** | [**InlineObject**](InlineObject.md)|  |
+ **execConfig** | [**ExecConfig**](ExecConfig.md)|  |
 
 ### Return type
 
@@ -172,7 +172,7 @@ Starts a previously set up exec instance. If detach is true, this endpoint retur
 
 val apiInstance = ExecApi()
 val id : kotlin.String = id_example // kotlin.String | Exec instance ID
-val execStartConfig : InlineObject1 =  // InlineObject1 | 
+val execStartConfig : ExecStartConfig =  // ExecStartConfig | 
 try {
     apiInstance.execStart(id, execStartConfig)
 } catch (e: ClientException) {
@@ -189,7 +189,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **kotlin.String**| Exec instance ID |
- **execStartConfig** | [**InlineObject1**](InlineObject1.md)|  | [optional]
+ **execStartConfig** | [**ExecStartConfig**](ExecStartConfig.md)|  | [optional]
 
 ### Return type
 

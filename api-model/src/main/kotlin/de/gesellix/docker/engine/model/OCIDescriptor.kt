@@ -15,26 +15,20 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 /**
- *
- * @param architecture
- * @param OS
- * @param osVersion
- * @param osFeatures
- * @param variant
- * @param features
+ * A descriptor struct containing digest, media type, and size, as defined in the [OCI Content Descriptors Specification](https://github.com/opencontainers/image-spec/blob/v1.0.1/descriptor.md).
+ * @param mediaType The media type of the object this schema refers to.
+ * @param digest The digest of the targeted content.
+ * @param size The size in bytes of the blob.
  */
 @JsonClass(generateAdapter = true)
-data class DistributionInspectResponsePlatforms(
-  @Json(name = "Architecture")
-  val architecture: kotlin.String? = null,
-  @Json(name = "OS")
-  val OS: kotlin.String? = null,
-  @Json(name = "OSVersion")
-  val osVersion: kotlin.String? = null,
-  @Json(name = "OSFeatures")
-  val osFeatures: kotlin.collections.List<kotlin.String>? = null,
-  @Json(name = "Variant")
-  val variant: kotlin.String? = null,
-  @Json(name = "Features")
-  val features: kotlin.collections.List<kotlin.String>? = null
+data class OCIDescriptor(
+  /* The media type of the object this schema refers to.  */
+  @Json(name = "mediaType")
+  val mediaType: kotlin.String? = null,
+  /* The digest of the targeted content.  */
+  @Json(name = "digest")
+  val digest: kotlin.String? = null,
+  /* The size in bytes of the blob.  */
+  @Json(name = "size")
+  val size: kotlin.Long? = null
 )

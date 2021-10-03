@@ -15,26 +15,16 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 /**
- * individual image layer information in response to ImageHistory operation
- * @param id
- * @param created
- * @param createdBy
- * @param tags
- * @param size
- * @param comment
+ *
+ * @param container The ID or name of the container to disconnect from the network.
+ * @param force Force the container to disconnect from the network.
  */
 @JsonClass(generateAdapter = true)
-data class HistoryResponseItem(
-  @Json(name = "Id")
-  val id: kotlin.String,
-  @Json(name = "Created")
-  val created: kotlin.Long,
-  @Json(name = "CreatedBy")
-  val createdBy: kotlin.String,
-  @Json(name = "Tags")
-  val tags: kotlin.collections.List<kotlin.String>?,
-  @Json(name = "Size")
-  val size: kotlin.Long,
-  @Json(name = "Comment")
-  val comment: kotlin.String
+data class NetworkDisconnectRequest(
+  /* The ID or name of the container to disconnect from the network.  */
+  @Json(name = "Container")
+  val container: kotlin.String? = null,
+  /* Force the container to disconnect from the network.  */
+  @Json(name = "Force")
+  val force: kotlin.Boolean? = null
 )

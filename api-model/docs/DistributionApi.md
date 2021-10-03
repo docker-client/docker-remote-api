@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="distributionInspect"></a>
 # **distributionInspect**
-> DistributionInspectResponse distributionInspect(name)
+> DistributionInspect distributionInspect(name)
 
 Get image information from the registry
 
@@ -24,7 +24,7 @@ Return image digest and platform information by contacting the registry.
 val apiInstance = DistributionApi()
 val name : kotlin.String = name_example // kotlin.String | Image name or id
 try {
-    val result : DistributionInspectResponse = apiInstance.distributionInspect(name)
+    val result : DistributionInspect = apiInstance.distributionInspect(name)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling DistributionApi#distributionInspect")
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DistributionInspectResponse**](DistributionInspectResponse.md)
+[**DistributionInspect**](DistributionInspect.md)
 
 ### Authorization
 

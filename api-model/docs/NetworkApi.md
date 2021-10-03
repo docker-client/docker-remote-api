@@ -27,7 +27,7 @@ Connect a container to a network
 
 val apiInstance = NetworkApi()
 val id : kotlin.String = id_example // kotlin.String | Network ID or name
-val container : InlineObject3 =  // InlineObject3 | 
+val container : NetworkConnectRequest =  // NetworkConnectRequest | 
 try {
     apiInstance.networkConnect(id, container)
 } catch (e: ClientException) {
@@ -44,7 +44,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **kotlin.String**| Network ID or name |
- **container** | [**InlineObject3**](InlineObject3.md)|  |
+ **container** | [**NetworkConnectRequest**](NetworkConnectRequest.md)|  |
 
 ### Return type
 
@@ -72,7 +72,7 @@ Create a network
 //import de.gesellix.docker.engine.model.*
 
 val apiInstance = NetworkApi()
-val networkConfig : InlineObject2 =  // InlineObject2 | 
+val networkConfig : NetworkCreateRequest =  // NetworkCreateRequest | 
 try {
     val result : NetworkCreateResponse = apiInstance.networkCreate(networkConfig)
     println(result)
@@ -89,7 +89,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **networkConfig** | [**InlineObject2**](InlineObject2.md)|  |
+ **networkConfig** | [**NetworkCreateRequest**](NetworkCreateRequest.md)|  |
 
 ### Return type
 
@@ -162,7 +162,7 @@ Disconnect a container from a network
 
 val apiInstance = NetworkApi()
 val id : kotlin.String = id_example // kotlin.String | Network ID or name
-val container : InlineObject4 =  // InlineObject4 | 
+val container : NetworkDisconnectRequest =  // NetworkDisconnectRequest | 
 try {
     apiInstance.networkDisconnect(id, container)
 } catch (e: ClientException) {
@@ -179,7 +179,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **kotlin.String**| Network ID or name |
- **container** | [**InlineObject4**](InlineObject4.md)|  |
+ **container** | [**NetworkDisconnectRequest**](NetworkDisconnectRequest.md)|  |
 
 ### Return type
 

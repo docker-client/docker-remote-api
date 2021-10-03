@@ -103,7 +103,7 @@ No authorization required
 
 <a name="systemEvents"></a>
 # **systemEvents**
-> SystemEventsResponse systemEvents(since, until, filters)
+> EventMessage systemEvents(since, until, filters)
 
 Monitor events
 
@@ -120,7 +120,7 @@ val since : kotlin.String = since_example // kotlin.String | Show events created
 val until : kotlin.String = until_example // kotlin.String | Show events created until this timestamp then stop streaming.
 val filters : kotlin.String = filters_example // kotlin.String | A JSON encoded value of filters (a `map[string][]string`) to process on the event list. Available filters:  - `config=<string>` config name or ID - `container=<string>` container name or ID - `daemon=<string>` daemon name or ID - `event=<string>` event type - `image=<string>` image name or ID - `label=<string>` image or container label - `network=<string>` network name or ID - `node=<string>` node ID - `plugin`=<string> plugin name or ID - `scope`=<string> local or swarm - `secret=<string>` secret name or ID - `service=<string>` service name or ID - `type=<string>` object to filter by, one of `container`, `image`, `volume`, `network`, `daemon`, `plugin`, `node`, `service`, `secret` or `config` - `volume=<string>` volume name 
 try {
-    val result : SystemEventsResponse = apiInstance.systemEvents(since, until, filters)
+    val result : EventMessage = apiInstance.systemEvents(since, until, filters)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling SystemApi#systemEvents")
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SystemEventsResponse**](SystemEventsResponse.md)
+[**EventMessage**](EventMessage.md)
 
 ### Authorization
 
