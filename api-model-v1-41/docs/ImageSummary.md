@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **created** | **kotlin.Int** |  | 
 **size** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  | 
 **sharedSize** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  | 
-**virtualSize** | **kotlin.Int** |  | 
+**virtualSize** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  | 
 **labels** | **kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt;** |  | 
 **containers** | **kotlin.Int** |  | 
 

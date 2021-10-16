@@ -44,7 +44,7 @@ data class ImageSummary(
   @Json(name = "SharedSize")
   val sharedSize: java.math.BigDecimal,
   @Json(name = "VirtualSize")
-  val virtualSize: kotlin.Int,
+  val virtualSize: java.math.BigDecimal,
   @Json(name = "Labels")
   val labels: kotlin.collections.Map<kotlin.String, kotlin.String>?,
   @Json(name = "Containers")

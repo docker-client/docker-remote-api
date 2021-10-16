@@ -1631,7 +1631,7 @@ definitions:
         type: "number"
         x-nullable: false
       VirtualSize:
-        type: "integer"
+        type: "number"
         x-nullable: false
       Labels:
         type: "object"
