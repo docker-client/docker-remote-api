@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **repoTags** | **kotlin.collections.List&lt;kotlin.String&gt;** |  | 
 **repoDigests** | **kotlin.collections.List&lt;kotlin.String&gt;** |  | 
 **created** | **kotlin.Int** |  | 
-**size** | **kotlin.Int** |  | 
-**sharedSize** | **kotlin.Int** |  | 
+**size** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  | 
+**sharedSize** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  | 
 **virtualSize** | **kotlin.Int** |  | 
 **labels** | **kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt;** |  | 
 **containers** | **kotlin.Int** |  | 

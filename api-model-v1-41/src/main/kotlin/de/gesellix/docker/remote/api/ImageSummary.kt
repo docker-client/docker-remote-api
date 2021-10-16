@@ -40,9 +40,9 @@ data class ImageSummary(
   @Json(name = "Created")
   val created: kotlin.Int,
   @Json(name = "Size")
-  val size: kotlin.Int,
+  val size: java.math.BigDecimal,
   @Json(name = "SharedSize")
-  val sharedSize: kotlin.Int,
+  val sharedSize: java.math.BigDecimal,
   @Json(name = "VirtualSize")
   val virtualSize: kotlin.Int,
   @Json(name = "Labels")

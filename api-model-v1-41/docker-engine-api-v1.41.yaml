@@ -1625,10 +1625,10 @@ definitions:
         type: "integer"
         x-nullable: false
       Size:
-        type: "integer"
+        type: "number"
         x-nullable: false
       SharedSize:
-        type: "integer"
+        type: "number"
         x-nullable: false
       VirtualSize:
         type: "integer"
