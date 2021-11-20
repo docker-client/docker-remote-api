@@ -1499,7 +1499,7 @@ definitions:
         x-nullable: false
       Data:
         type: "object"
-        x-nullable: false
+        x-nullable: true
         additionalProperties:
           type: "string"
 
