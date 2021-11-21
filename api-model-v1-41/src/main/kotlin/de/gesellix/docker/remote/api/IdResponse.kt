@@ -22,5 +22,5 @@ import com.squareup.moshi.JsonClass
 data class IdResponse(
   /* The id of the newly created object. */
   @Json(name = "Id")
-  val id: kotlin.String
+  var id: kotlin.String
 )

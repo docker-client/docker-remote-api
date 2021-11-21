@@ -22,5 +22,5 @@ import com.squareup.moshi.JsonClass
 data class SwarmUnlockRequest(
   /* The swarm's unlock key. */
   @Json(name = "UnlockKey")
-  val unlockKey: kotlin.String? = null
+  var unlockKey: kotlin.String? = null
 )

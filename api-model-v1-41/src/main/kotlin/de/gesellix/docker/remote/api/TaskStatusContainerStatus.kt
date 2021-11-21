@@ -23,9 +23,9 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class TaskStatusContainerStatus(
   @Json(name = "ContainerID")
-  val containerID: kotlin.String? = null,
+  var containerID: kotlin.String? = null,
   @Json(name = "PID")
-  val PID: kotlin.Int? = null,
+  var PID: kotlin.Int? = null,
   @Json(name = "ExitCode")
-  val exitCode: kotlin.Int? = null
+  var exitCode: kotlin.Int? = null
 )

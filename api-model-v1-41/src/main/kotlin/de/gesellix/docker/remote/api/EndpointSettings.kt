@@ -33,39 +33,39 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class EndpointSettings(
   @Json(name = "IPAMConfig")
-  val ipAMConfig: EndpointIPAMConfig? = null,
+  var ipAMConfig: EndpointIPAMConfig? = null,
   @Json(name = "Links")
-  val links: kotlin.collections.List<kotlin.String>? = null,
+  var links: kotlin.collections.List<kotlin.String>? = null,
   @Json(name = "Aliases")
-  val aliases: kotlin.collections.List<kotlin.String>? = null,
+  var aliases: kotlin.collections.List<kotlin.String>? = null,
   /* Unique ID of the network.  */
   @Json(name = "NetworkID")
-  val networkID: kotlin.String? = null,
+  var networkID: kotlin.String? = null,
   /* Unique ID for the service endpoint in a Sandbox.  */
   @Json(name = "EndpointID")
-  val endpointID: kotlin.String? = null,
+  var endpointID: kotlin.String? = null,
   /* Gateway address for this network.  */
   @Json(name = "Gateway")
-  val gateway: kotlin.String? = null,
+  var gateway: kotlin.String? = null,
   /* IPv4 address.  */
   @Json(name = "IPAddress")
-  val ipAddress: kotlin.String? = null,
+  var ipAddress: kotlin.String? = null,
   /* Mask length of the IPv4 address.  */
   @Json(name = "IPPrefixLen")
-  val ipPrefixLen: kotlin.Int? = null,
+  var ipPrefixLen: kotlin.Int? = null,
   /* IPv6 gateway address.  */
   @Json(name = "IPv6Gateway")
-  val ipv6Gateway: kotlin.String? = null,
+  var ipv6Gateway: kotlin.String? = null,
   /* Global IPv6 address.  */
   @Json(name = "GlobalIPv6Address")
-  val globalIPv6Address: kotlin.String? = null,
+  var globalIPv6Address: kotlin.String? = null,
   /* Mask length of the global IPv6 address.  */
   @Json(name = "GlobalIPv6PrefixLen")
-  val globalIPv6PrefixLen: kotlin.Long? = null,
+  var globalIPv6PrefixLen: kotlin.Long? = null,
   /* MAC address for the endpoint on this network.  */
   @Json(name = "MacAddress")
-  val macAddress: kotlin.String? = null,
+  var macAddress: kotlin.String? = null,
   /* DriverOpts is a mapping of driver options and values. These options are passed directly to the driver and are driver specific.  */
   @Json(name = "DriverOpts")
-  val driverOpts: kotlin.collections.Map<kotlin.String, kotlin.String>? = null
+  var driverOpts: kotlin.collections.Map<kotlin.String, kotlin.String>? = null
 )

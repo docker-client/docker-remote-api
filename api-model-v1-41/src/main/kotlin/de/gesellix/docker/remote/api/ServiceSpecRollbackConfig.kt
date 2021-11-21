@@ -27,22 +27,22 @@ import com.squareup.moshi.JsonClass
 data class ServiceSpecRollbackConfig(
   /* Maximum number of tasks to be rolled back in one iteration (0 means unlimited parallelism).  */
   @Json(name = "Parallelism")
-  val parallelism: kotlin.Long? = null,
+  var parallelism: kotlin.Long? = null,
   /* Amount of time between rollback iterations, in nanoseconds.  */
   @Json(name = "Delay")
-  val delay: kotlin.Long? = null,
+  var delay: kotlin.Long? = null,
   /* Action to take if an rolled back task fails to run, or stops running during the rollback.  */
   @Json(name = "FailureAction")
-  val failureAction: ServiceSpecRollbackConfig.FailureAction? = null,
+  var failureAction: ServiceSpecRollbackConfig.FailureAction? = null,
   /* Amount of time to monitor each rolled back task for failures, in nanoseconds.  */
   @Json(name = "Monitor")
-  val monitor: kotlin.Long? = null,
+  var monitor: kotlin.Long? = null,
   /* The fraction of tasks that may fail during a rollback before the failure action is invoked, specified as a floating point number between 0 and 1.  */
   @Json(name = "MaxFailureRatio")
-  val maxFailureRatio: java.math.BigDecimal? = null,
+  var maxFailureRatio: java.math.BigDecimal? = null,
   /* The order of operations when rolling back a task. Either the old task is shut down before the new task is started, or the new task is started before the old task is shut down.  */
   @Json(name = "Order")
-  val order: ServiceSpecRollbackConfig.Order? = null
+  var order: ServiceSpecRollbackConfig.Order? = null
 ) {
 
   /**

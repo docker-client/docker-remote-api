@@ -22,5 +22,5 @@ import com.squareup.moshi.JsonClass
 data class TaskSpecPlacementSpread(
   /* label descriptor, such as `engine.labels.az`.  */
   @Json(name = "SpreadDescriptor")
-  val spreadDescriptor: kotlin.String? = null
+  var spreadDescriptor: kotlin.String? = null
 )

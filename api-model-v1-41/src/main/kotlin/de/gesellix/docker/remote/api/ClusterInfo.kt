@@ -31,29 +31,29 @@ import com.squareup.moshi.JsonClass
 data class ClusterInfo(
   /* The ID of the swarm. */
   @Json(name = "ID")
-  val ID: kotlin.String? = null,
+  var ID: kotlin.String? = null,
   @Json(name = "Version")
-  val version: ObjectVersion? = null,
+  var version: ObjectVersion? = null,
   /* Date and time at which the swarm was initialised in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.  */
   @Json(name = "CreatedAt")
-  val createdAt: kotlin.String? = null,
+  var createdAt: kotlin.String? = null,
   /* Date and time at which the swarm was last updated in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.  */
   @Json(name = "UpdatedAt")
-  val updatedAt: kotlin.String? = null,
+  var updatedAt: kotlin.String? = null,
   @Json(name = "Spec")
-  val spec: SwarmSpec? = null,
+  var spec: SwarmSpec? = null,
   @Json(name = "TLSInfo")
-  val tlSInfo: TLSInfo? = null,
+  var tlSInfo: TLSInfo? = null,
   /* Whether there is currently a root CA rotation in progress for the swarm  */
   @Json(name = "RootRotationInProgress")
-  val rootRotationInProgress: kotlin.Boolean? = null,
+  var rootRotationInProgress: kotlin.Boolean? = null,
   /* DataPathPort specifies the data path port number for data traffic. Acceptable port range is 1024 to 49151. If no port is set or is set to 0, the default port (4789) is used.  */
   @Json(name = "DataPathPort")
-  val dataPathPort: kotlin.Int? = null,
+  var dataPathPort: kotlin.Int? = null,
   /* Default Address Pool specifies default subnet pools for global scope networks.  */
   @Json(name = "DefaultAddrPool")
-  val defaultAddrPool: kotlin.collections.List<kotlin.String>? = null,
+  var defaultAddrPool: kotlin.collections.List<kotlin.String>? = null,
   /* SubnetSize specifies the subnet size of the networks created from the default subnet pool.  */
   @Json(name = "SubnetSize")
-  val subnetSize: kotlin.Int? = null
+  var subnetSize: kotlin.Int? = null
 )

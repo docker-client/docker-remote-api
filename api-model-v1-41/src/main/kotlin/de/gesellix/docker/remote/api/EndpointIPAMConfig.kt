@@ -23,9 +23,9 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class EndpointIPAMConfig(
   @Json(name = "IPv4Address")
-  val ipv4Address: kotlin.String? = null,
+  var ipv4Address: kotlin.String? = null,
   @Json(name = "IPv6Address")
-  val ipv6Address: kotlin.String? = null,
+  var ipv6Address: kotlin.String? = null,
   @Json(name = "LinkLocalIPs")
-  val linkLocalIPs: kotlin.collections.List<kotlin.String>? = null
+  var linkLocalIPs: kotlin.collections.List<kotlin.String>? = null
 )

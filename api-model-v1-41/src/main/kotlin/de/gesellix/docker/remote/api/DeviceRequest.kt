@@ -25,15 +25,15 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class DeviceRequest(
   @Json(name = "Driver")
-  val driver: kotlin.String? = null,
+  var driver: kotlin.String? = null,
   @Json(name = "Count")
-  val count: kotlin.Int? = null,
+  var count: kotlin.Int? = null,
   @Json(name = "DeviceIDs")
-  val deviceIDs: kotlin.collections.List<kotlin.String>? = null,
+  var deviceIDs: kotlin.collections.List<kotlin.String>? = null,
   /* A list of capabilities; an OR list of AND lists of capabilities.  */
   @Json(name = "Capabilities")
-  val capabilities: kotlin.collections.List<kotlin.collections.List<kotlin.String>>? = null,
+  var capabilities: kotlin.collections.List<kotlin.collections.List<kotlin.String>>? = null,
   /* Driver-specific options, specified as a key/value pairs. These options are passed directly to the driver.  */
   @Json(name = "Options")
-  val options: kotlin.collections.Map<kotlin.String, kotlin.String>? = null
+  var options: kotlin.collections.Map<kotlin.String, kotlin.String>? = null
 )

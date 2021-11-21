@@ -33,37 +33,37 @@ import com.squareup.moshi.JsonClass
 data class ContainerState(
   /* String representation of the container state. Can be one of \"created\", \"running\", \"paused\", \"restarting\", \"removing\", \"exited\", or \"dead\".  */
   @Json(name = "Status")
-  val status: ContainerState.Status? = null,
+  var status: ContainerState.Status? = null,
   /* Whether this container is running.  Note that a running container can be _paused_. The `Running` and `Paused` booleans are not mutually exclusive:  When pausing a container (on Linux), the freezer cgroup is used to suspend all processes in the container. Freezing the process requires the process to be running. As a result, paused containers are both `Running` _and_ `Paused`.  Use the `Status` field instead to determine if a container's state is \"running\".  */
   @Json(name = "Running")
-  val running: kotlin.Boolean? = null,
+  var running: kotlin.Boolean? = null,
   /* Whether this container is paused. */
   @Json(name = "Paused")
-  val paused: kotlin.Boolean? = null,
+  var paused: kotlin.Boolean? = null,
   /* Whether this container is restarting. */
   @Json(name = "Restarting")
-  val restarting: kotlin.Boolean? = null,
+  var restarting: kotlin.Boolean? = null,
   /* Whether this container has been killed because it ran out of memory.  */
   @Json(name = "OOMKilled")
-  val ooMKilled: kotlin.Boolean? = null,
+  var ooMKilled: kotlin.Boolean? = null,
   @Json(name = "Dead")
-  val dead: kotlin.Boolean? = null,
+  var dead: kotlin.Boolean? = null,
   /* The process ID of this container */
   @Json(name = "Pid")
-  val pid: kotlin.Int? = null,
+  var pid: kotlin.Int? = null,
   /* The last exit code of this container */
   @Json(name = "ExitCode")
-  val exitCode: kotlin.Int? = null,
+  var exitCode: kotlin.Int? = null,
   @Json(name = "Error")
-  val error: kotlin.String? = null,
+  var error: kotlin.String? = null,
   /* The time when this container was last started. */
   @Json(name = "StartedAt")
-  val startedAt: kotlin.String? = null,
+  var startedAt: kotlin.String? = null,
   /* The time when this container last exited. */
   @Json(name = "FinishedAt")
-  val finishedAt: kotlin.String? = null,
+  var finishedAt: kotlin.String? = null,
   @Json(name = "Health")
-  val health: Health? = null
+  var health: Health? = null
 ) {
 
   /**

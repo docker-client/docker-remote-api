@@ -26,17 +26,17 @@ import com.squareup.moshi.JsonClass
 data class SwarmSpecCAConfig(
   /* The duration node certificates are issued for. */
   @Json(name = "NodeCertExpiry")
-  val nodeCertExpiry: kotlin.Long? = null,
+  var nodeCertExpiry: kotlin.Long? = null,
   /* Configuration for forwarding signing requests to an external certificate authority.  */
   @Json(name = "ExternalCAs")
-  val externalCAs: kotlin.collections.List<SwarmSpecCAConfigExternalCAs>? = null,
+  var externalCAs: kotlin.collections.List<SwarmSpecCAConfigExternalCAs>? = null,
   /* The desired signing CA certificate for all swarm node TLS leaf certificates, in PEM format.  */
   @Json(name = "SigningCACert")
-  val signingCACert: kotlin.String? = null,
+  var signingCACert: kotlin.String? = null,
   /* The desired signing CA key for all swarm node TLS leaf certificates, in PEM format.  */
   @Json(name = "SigningCAKey")
-  val signingCAKey: kotlin.String? = null,
+  var signingCAKey: kotlin.String? = null,
   /* An integer whose purpose is to force swarm to generate a new signing CA certificate and key, if none have been specified in `SigningCACert` and `SigningCAKey`  */
   @Json(name = "ForceRotate")
-  val forceRotate: kotlin.Int? = null
+  var forceRotate: kotlin.Int? = null
 )

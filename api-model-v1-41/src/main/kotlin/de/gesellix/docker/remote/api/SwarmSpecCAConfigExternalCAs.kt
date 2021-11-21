@@ -25,16 +25,16 @@ import com.squareup.moshi.JsonClass
 data class SwarmSpecCAConfigExternalCAs(
   /* Protocol for communication with the external CA (currently only `cfssl` is supported).  */
   @Json(name = "Protocol")
-  val protocol: SwarmSpecCAConfigExternalCAs.Protocol? = null,
+  var protocol: SwarmSpecCAConfigExternalCAs.Protocol? = null,
   /* URL where certificate signing requests should be sent.  */
   @Json(name = "URL")
-  val URL: kotlin.String? = null,
+  var URL: kotlin.String? = null,
   /* An object with key/value pairs that are interpreted as protocol-specific options for the external CA driver.  */
   @Json(name = "Options")
-  val options: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
+  var options: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
   /* The root CA certificate (in PEM format) this external CA uses to issue TLS certificates (assumed to be to the current swarm root CA certificate if not provided).  */
   @Json(name = "CACert")
-  val caCert: kotlin.String? = null
+  var caCert: kotlin.String? = null
 ) {
 
   /**

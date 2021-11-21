@@ -22,9 +22,9 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class HostConfigAllOfLogConfig(
   @Json(name = "Type")
-  val type: HostConfigAllOfLogConfig.Type? = null,
+  var type: HostConfigAllOfLogConfig.Type? = null,
   @Json(name = "Config")
-  val config: kotlin.collections.Map<kotlin.String, kotlin.String>? = null
+  var config: kotlin.collections.Map<kotlin.String, kotlin.String>? = null
 ) {
 
   /**

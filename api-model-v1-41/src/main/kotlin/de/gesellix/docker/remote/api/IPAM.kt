@@ -24,11 +24,11 @@ import com.squareup.moshi.JsonClass
 data class IPAM(
   /* Name of the IPAM driver to use. */
   @Json(name = "Driver")
-  val driver: kotlin.String? = null,
+  var driver: kotlin.String? = null,
   /* List of IPAM configuration options, specified as a map:  ``` {\"Subnet\": <CIDR>, \"IPRange\": <CIDR>, \"Gateway\": <IP address>, \"AuxAddress\": <device_name:IP address>} ```  */
   @Json(name = "Config")
-  val config: kotlin.collections.List<kotlin.collections.Map<kotlin.String, kotlin.String>>? = null,
+  var config: kotlin.collections.List<kotlin.collections.Map<kotlin.String, kotlin.String>>? = null,
   /* Driver-specific options, specified as a map. */
   @Json(name = "Options")
-  val options: kotlin.collections.Map<kotlin.String, kotlin.String>? = null
+  var options: kotlin.collections.Map<kotlin.String, kotlin.String>? = null
 )

@@ -28,21 +28,21 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class Node(
   @Json(name = "ID")
-  val ID: kotlin.String? = null,
+  var ID: kotlin.String? = null,
   @Json(name = "Version")
-  val version: ObjectVersion? = null,
+  var version: ObjectVersion? = null,
   /* Date and time at which the node was added to the swarm in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.  */
   @Json(name = "CreatedAt")
-  val createdAt: kotlin.String? = null,
+  var createdAt: kotlin.String? = null,
   /* Date and time at which the node was last updated in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.  */
   @Json(name = "UpdatedAt")
-  val updatedAt: kotlin.String? = null,
+  var updatedAt: kotlin.String? = null,
   @Json(name = "Spec")
-  val spec: NodeSpec? = null,
+  var spec: NodeSpec? = null,
   @Json(name = "Description")
-  val description: NodeDescription? = null,
+  var description: NodeDescription? = null,
   @Json(name = "Status")
-  val status: NodeStatus? = null,
+  var status: NodeStatus? = null,
   @Json(name = "ManagerStatus")
-  val managerStatus: ManagerStatus? = null
+  var managerStatus: ManagerStatus? = null
 )

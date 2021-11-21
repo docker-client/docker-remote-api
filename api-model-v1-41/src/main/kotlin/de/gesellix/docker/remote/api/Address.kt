@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
 data class Address(
   /* IP address. */
   @Json(name = "Addr")
-  val addr: kotlin.String? = null,
+  var addr: kotlin.String? = null,
   /* Mask length of the IP address. */
   @Json(name = "PrefixLen")
-  val prefixLen: kotlin.Int? = null
+  var prefixLen: kotlin.Int? = null
 )

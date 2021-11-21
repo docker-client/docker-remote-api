@@ -26,17 +26,17 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class Plugin(
   @Json(name = "Name")
-  val name: kotlin.String,
+  var name: kotlin.String,
   /* True if the plugin is running. False if the plugin is not running, only installed. */
   @Json(name = "Enabled")
-  val enabled: kotlin.Boolean,
+  var enabled: kotlin.Boolean,
   @Json(name = "Settings")
-  val settings: PluginSettings,
+  var settings: PluginSettings,
   @Json(name = "Config")
-  val config: PluginConfig,
+  var config: PluginConfig,
   @Json(name = "Id")
-  val id: kotlin.String? = null,
+  var id: kotlin.String? = null,
   /* plugin remote reference used to push/pull the plugin */
   @Json(name = "PluginReference")
-  val pluginReference: kotlin.String? = null
+  var pluginReference: kotlin.String? = null
 )

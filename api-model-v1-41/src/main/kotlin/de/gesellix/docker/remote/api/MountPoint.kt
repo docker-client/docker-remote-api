@@ -28,19 +28,19 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class MountPoint(
   @Json(name = "Type")
-  val type: kotlin.String? = null,
+  var type: kotlin.String? = null,
   @Json(name = "Name")
-  val name: kotlin.String? = null,
+  var name: kotlin.String? = null,
   @Json(name = "Source")
-  val source: kotlin.String? = null,
+  var source: kotlin.String? = null,
   @Json(name = "Destination")
-  val destination: kotlin.String? = null,
+  var destination: kotlin.String? = null,
   @Json(name = "Driver")
-  val driver: kotlin.String? = null,
+  var driver: kotlin.String? = null,
   @Json(name = "Mode")
-  val mode: kotlin.String? = null,
+  var mode: kotlin.String? = null,
   @Json(name = "RW")
-  val RW: kotlin.Boolean? = null,
+  var RW: kotlin.Boolean? = null,
   @Json(name = "Propagation")
-  val propagation: kotlin.String? = null
+  var propagation: kotlin.String? = null
 )

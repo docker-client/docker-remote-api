@@ -24,11 +24,11 @@ import com.squareup.moshi.JsonClass
 data class TaskSpecContainerSpecDNSConfig(
   /* The IP addresses of the name servers. */
   @Json(name = "Nameservers")
-  val nameservers: kotlin.collections.List<kotlin.String>? = null,
+  var nameservers: kotlin.collections.List<kotlin.String>? = null,
   /* A search list for host-name lookup. */
   @Json(name = "Search")
-  val search: kotlin.collections.List<kotlin.String>? = null,
+  var search: kotlin.collections.List<kotlin.String>? = null,
   /* A list of internal resolver variables to be modified (e.g., `debug`, `ndots:3`, etc.).  */
   @Json(name = "Options")
-  val options: kotlin.collections.List<kotlin.String>? = null
+  var options: kotlin.collections.List<kotlin.String>? = null
 )

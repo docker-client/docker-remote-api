@@ -22,5 +22,5 @@ import com.squareup.moshi.JsonClass
 data class ServiceUpdateResponse(
   /* Optional warning messages */
   @Json(name = "Warnings")
-  val warnings: kotlin.collections.List<kotlin.String>? = null
+  var warnings: kotlin.collections.List<kotlin.String>? = null
 )

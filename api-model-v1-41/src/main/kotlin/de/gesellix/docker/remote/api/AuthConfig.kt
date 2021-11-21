@@ -24,11 +24,11 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class AuthConfig(
   @Json(name = "username")
-  val username: kotlin.String? = null,
+  var username: kotlin.String? = null,
   @Json(name = "password")
-  val password: kotlin.String? = null,
+  var password: kotlin.String? = null,
   @Json(name = "email")
-  val email: kotlin.String? = null,
+  var email: kotlin.String? = null,
   @Json(name = "serveraddress")
-  val serveraddress: kotlin.String? = null
+  var serveraddress: kotlin.String? = null
 )

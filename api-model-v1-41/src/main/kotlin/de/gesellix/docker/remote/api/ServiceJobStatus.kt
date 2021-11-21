@@ -22,8 +22,8 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ServiceJobStatus(
   @Json(name = "JobIteration")
-  val jobIteration: ObjectVersion? = null,
+  var jobIteration: ObjectVersion? = null,
   /* The last time, as observed by the server, that this job was started.  */
   @Json(name = "LastExecution")
-  val lastExecution: kotlin.String? = null
+  var lastExecution: kotlin.String? = null
 )

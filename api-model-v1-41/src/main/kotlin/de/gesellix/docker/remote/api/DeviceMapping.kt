@@ -23,9 +23,9 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class DeviceMapping(
   @Json(name = "PathOnHost")
-  val pathOnHost: kotlin.String? = null,
+  var pathOnHost: kotlin.String? = null,
   @Json(name = "PathInContainer")
-  val pathInContainer: kotlin.String? = null,
+  var pathInContainer: kotlin.String? = null,
   @Json(name = "CgroupPermissions")
-  val cgroupPermissions: kotlin.String? = null
+  var cgroupPermissions: kotlin.String? = null
 )

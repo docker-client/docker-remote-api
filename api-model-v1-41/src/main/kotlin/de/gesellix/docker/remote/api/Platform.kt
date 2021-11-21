@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
 data class Platform(
   /* Architecture represents the hardware architecture (for example, `x86_64`).  */
   @Json(name = "Architecture")
-  val architecture: kotlin.String? = null,
+  var architecture: kotlin.String? = null,
   /* OS represents the Operating System (for example, `linux` or `windows`).  */
   @Json(name = "OS")
-  val OS: kotlin.String? = null
+  var OS: kotlin.String? = null
 )

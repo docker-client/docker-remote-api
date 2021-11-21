@@ -25,16 +25,16 @@ import com.squareup.moshi.JsonClass
 data class TaskSpecRestartPolicy(
   /* Condition for restart. */
   @Json(name = "Condition")
-  val condition: TaskSpecRestartPolicy.Condition? = null,
+  var condition: TaskSpecRestartPolicy.Condition? = null,
   /* Delay between restart attempts. */
   @Json(name = "Delay")
-  val delay: kotlin.Long? = null,
+  var delay: kotlin.Long? = null,
   /* Maximum attempts to restart a given container before giving up (default value is 0, which is ignored).  */
   @Json(name = "MaxAttempts")
-  val maxAttempts: kotlin.Long? = null,
+  var maxAttempts: kotlin.Long? = null,
   /* Windows is the time window used to evaluate the restart policy (default value is 0, which is unbounded).  */
   @Json(name = "Window")
-  val window: kotlin.Long? = null
+  var window: kotlin.Long? = null
 ) {
 
   /**

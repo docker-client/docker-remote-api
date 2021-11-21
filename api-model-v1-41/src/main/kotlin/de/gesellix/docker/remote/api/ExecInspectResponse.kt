@@ -31,26 +31,26 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ExecInspectResponse(
   @Json(name = "CanRemove")
-  val canRemove: kotlin.Boolean? = null,
+  var canRemove: kotlin.Boolean? = null,
   @Json(name = "DetachKeys")
-  val detachKeys: kotlin.String? = null,
+  var detachKeys: kotlin.String? = null,
   @Json(name = "ID")
-  val ID: kotlin.String? = null,
+  var ID: kotlin.String? = null,
   @Json(name = "Running")
-  val running: kotlin.Boolean? = null,
+  var running: kotlin.Boolean? = null,
   @Json(name = "ExitCode")
-  val exitCode: kotlin.Int? = null,
+  var exitCode: kotlin.Int? = null,
   @Json(name = "ProcessConfig")
-  val processConfig: ProcessConfig? = null,
+  var processConfig: ProcessConfig? = null,
   @Json(name = "OpenStdin")
-  val openStdin: kotlin.Boolean? = null,
+  var openStdin: kotlin.Boolean? = null,
   @Json(name = "OpenStderr")
-  val openStderr: kotlin.Boolean? = null,
+  var openStderr: kotlin.Boolean? = null,
   @Json(name = "OpenStdout")
-  val openStdout: kotlin.Boolean? = null,
+  var openStdout: kotlin.Boolean? = null,
   @Json(name = "ContainerID")
-  val containerID: kotlin.String? = null,
+  var containerID: kotlin.String? = null,
   /* The system process ID for the exec process. */
   @Json(name = "Pid")
-  val pid: kotlin.Int? = null
+  var pid: kotlin.Int? = null
 )

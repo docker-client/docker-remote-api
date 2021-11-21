@@ -48,82 +48,82 @@ import com.squareup.moshi.JsonClass
 data class TaskSpecContainerSpec(
   /* The image name to use for the container */
   @Json(name = "Image")
-  val image: kotlin.String? = null,
+  var image: kotlin.String? = null,
   /* User-defined key/value data. */
   @Json(name = "Labels")
-  val labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
+  var labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
   /* The command to be run in the image. */
   @Json(name = "Command")
-  val command: kotlin.collections.List<kotlin.String>? = null,
+  var command: kotlin.collections.List<kotlin.String>? = null,
   /* Arguments to the command. */
   @Json(name = "Args")
-  val args: kotlin.collections.List<kotlin.String>? = null,
+  var args: kotlin.collections.List<kotlin.String>? = null,
   /* The hostname to use for the container, as a valid [RFC 1123](https://tools.ietf.org/html/rfc1123) hostname.  */
   @Json(name = "Hostname")
-  val hostname: kotlin.String? = null,
+  var hostname: kotlin.String? = null,
   /* A list of environment variables in the form `VAR=value`.  */
   @Json(name = "Env")
-  val env: kotlin.collections.List<kotlin.String>? = null,
+  var env: kotlin.collections.List<kotlin.String>? = null,
   /* The working directory for commands to run in. */
   @Json(name = "Dir")
-  val dir: kotlin.String? = null,
+  var dir: kotlin.String? = null,
   /* The user inside the container. */
   @Json(name = "User")
-  val user: kotlin.String? = null,
+  var user: kotlin.String? = null,
   /* A list of additional groups that the container process will run as.  */
   @Json(name = "Groups")
-  val groups: kotlin.collections.List<kotlin.String>? = null,
+  var groups: kotlin.collections.List<kotlin.String>? = null,
   @Json(name = "Privileges")
-  val privileges: TaskSpecContainerSpecPrivileges? = null,
+  var privileges: TaskSpecContainerSpecPrivileges? = null,
   /* Whether a pseudo-TTY should be allocated. */
   @Json(name = "TTY")
-  val TTY: kotlin.Boolean? = null,
+  var TTY: kotlin.Boolean? = null,
   /* Open `stdin` */
   @Json(name = "OpenStdin")
-  val openStdin: kotlin.Boolean? = null,
+  var openStdin: kotlin.Boolean? = null,
   /* Mount the container's root filesystem as read only. */
   @Json(name = "ReadOnly")
-  val readOnly: kotlin.Boolean? = null,
+  var readOnly: kotlin.Boolean? = null,
   /* Specification for mounts to be added to containers created as part of the service.  */
   @Json(name = "Mounts")
-  val mounts: kotlin.collections.List<Mount>? = null,
+  var mounts: kotlin.collections.List<Mount>? = null,
   /* Signal to stop the container. */
   @Json(name = "StopSignal")
-  val stopSignal: kotlin.String? = null,
+  var stopSignal: kotlin.String? = null,
   /* Amount of time to wait for the container to terminate before forcefully killing it.  */
   @Json(name = "StopGracePeriod")
-  val stopGracePeriod: kotlin.Long? = null,
+  var stopGracePeriod: kotlin.Long? = null,
   @Json(name = "HealthCheck")
-  val healthCheck: HealthConfig? = null,
+  var healthCheck: HealthConfig? = null,
   /* A list of hostname/IP mappings to add to the container's `hosts` file. The format of extra hosts is specified in the [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html) man page:      IP_address canonical_hostname [aliases]  */
   @Json(name = "Hosts")
-  val hosts: kotlin.collections.List<kotlin.String>? = null,
+  var hosts: kotlin.collections.List<kotlin.String>? = null,
   @Json(name = "DNSConfig")
-  val dnSConfig: TaskSpecContainerSpecDNSConfig? = null,
+  var dnSConfig: TaskSpecContainerSpecDNSConfig? = null,
   /* Secrets contains references to zero or more secrets that will be exposed to the service.  */
   @Json(name = "Secrets")
-  val secrets: kotlin.collections.List<TaskSpecContainerSpecSecrets>? = null,
+  var secrets: kotlin.collections.List<TaskSpecContainerSpecSecrets>? = null,
   /* Configs contains references to zero or more configs that will be exposed to the service.  */
   @Json(name = "Configs")
-  val configs: kotlin.collections.List<TaskSpecContainerSpecConfigs>? = null,
+  var configs: kotlin.collections.List<TaskSpecContainerSpecConfigs>? = null,
   /* Isolation technology of the containers running the service. (Windows only)  */
   @Json(name = "Isolation")
-  val isolation: TaskSpecContainerSpec.Isolation? = null,
+  var isolation: TaskSpecContainerSpec.Isolation? = null,
   /* Run an init inside the container that forwards signals and reaps processes. This field is omitted if empty, and the default (as configured on the daemon) is used.  */
   @Json(name = "Init")
-  val init: kotlin.Boolean? = null,
+  var init: kotlin.Boolean? = null,
   /* Set kernel namedspaced parameters (sysctls) in the container. The Sysctls option on services accepts the same sysctls as the are supported on containers. Note that while the same sysctls are supported, no guarantees or checks are made about their suitability for a clustered environment, and it's up to the user to determine whether a given sysctl will work properly in a Service.  */
   @Json(name = "Sysctls")
-  val sysctls: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
+  var sysctls: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
   /* A list of kernel capabilities to add to the default set for the container.  */
   @Json(name = "CapabilityAdd")
-  val capabilityAdd: kotlin.collections.List<kotlin.String>? = null,
+  var capabilityAdd: kotlin.collections.List<kotlin.String>? = null,
   /* A list of kernel capabilities to drop from the default set for the container.  */
   @Json(name = "CapabilityDrop")
-  val capabilityDrop: kotlin.collections.List<kotlin.String>? = null,
+  var capabilityDrop: kotlin.collections.List<kotlin.String>? = null,
   /* A list of resource limits to set in the container. For example: `{\"Name\": \"nofile\", \"Soft\": 1024, \"Hard\": 2048}`\"  */
   @Json(name = "Ulimits")
-  val ulimits: kotlin.collections.List<ResourcesUlimits>? = null
+  var ulimits: kotlin.collections.List<ResourcesUlimits>? = null
 ) {
 
   /**

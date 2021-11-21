@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
 data class MountVolumeOptionsDriverConfig(
   /* Name of the driver to use to create the volume. */
   @Json(name = "Name")
-  val name: kotlin.String? = null,
+  var name: kotlin.String? = null,
   /* key/value map of driver specific options. */
   @Json(name = "Options")
-  val options: kotlin.collections.Map<kotlin.String, kotlin.String>? = null
+  var options: kotlin.collections.Map<kotlin.String, kotlin.String>? = null
 )

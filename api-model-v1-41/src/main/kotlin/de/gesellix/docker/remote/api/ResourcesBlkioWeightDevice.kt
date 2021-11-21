@@ -22,7 +22,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ResourcesBlkioWeightDevice(
   @Json(name = "Path")
-  val path: kotlin.String? = null,
+  var path: kotlin.String? = null,
   @Json(name = "Weight")
-  val weight: kotlin.Int? = null
+  var weight: kotlin.Int? = null
 )

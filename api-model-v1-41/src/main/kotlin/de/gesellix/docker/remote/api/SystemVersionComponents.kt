@@ -24,11 +24,11 @@ import com.squareup.moshi.JsonClass
 data class SystemVersionComponents(
   /* Name of the component  */
   @Json(name = "Name")
-  val name: kotlin.String,
+  var name: kotlin.String,
   /* Version of the component  */
   @Json(name = "Version")
-  val version: kotlin.String,
+  var version: kotlin.String,
   /* Key/value pairs of strings with additional information about the component. These values are intended for informational purposes only, and their content is not defined, and not part of the API specification.  These messages can be printed by the client as information to the user.  */
   @Json(name = "Details")
-  val details: kotlin.Any? = null
+  var details: kotlin.Any? = null
 )

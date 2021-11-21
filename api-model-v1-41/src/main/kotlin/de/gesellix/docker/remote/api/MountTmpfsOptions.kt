@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
 data class MountTmpfsOptions(
   /* The size for the tmpfs mount in bytes. */
   @Json(name = "SizeBytes")
-  val sizeBytes: kotlin.Long? = null,
+  var sizeBytes: kotlin.Long? = null,
   /* The permission mode for the tmpfs mount in an integer. */
   @Json(name = "Mode")
-  val mode: kotlin.Int? = null
+  var mode: kotlin.Int? = null
 )

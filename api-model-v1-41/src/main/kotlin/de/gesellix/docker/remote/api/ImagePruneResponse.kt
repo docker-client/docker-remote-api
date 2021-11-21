@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
 data class ImagePruneResponse(
   /* Images that were deleted */
   @Json(name = "ImagesDeleted")
-  val imagesDeleted: kotlin.collections.List<ImageDeleteResponseItem>? = null,
+  var imagesDeleted: kotlin.collections.List<ImageDeleteResponseItem>? = null,
   /* Disk space reclaimed in bytes */
   @Json(name = "SpaceReclaimed")
-  val spaceReclaimed: kotlin.Long? = null
+  var spaceReclaimed: kotlin.Long? = null
 )

@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
 data class NetworkDisconnectRequest(
   /* The ID or name of the container to disconnect from the network.  */
   @Json(name = "Container")
-  val container: kotlin.String? = null,
+  var container: kotlin.String? = null,
   /* Force the container to disconnect from the network.  */
   @Json(name = "Force")
-  val force: kotlin.Boolean? = null
+  var force: kotlin.Boolean? = null
 )

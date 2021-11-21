@@ -25,18 +25,18 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class EndpointPortConfig(
   @Json(name = "Name")
-  val name: kotlin.String? = null,
+  var name: kotlin.String? = null,
   @Json(name = "Protocol")
-  val protocol: EndpointPortConfig.Protocol? = null,
+  var protocol: EndpointPortConfig.Protocol? = null,
   /* The port inside the container. */
   @Json(name = "TargetPort")
-  val targetPort: kotlin.Int? = null,
+  var targetPort: kotlin.Int? = null,
   /* The port on the swarm hosts. */
   @Json(name = "PublishedPort")
-  val publishedPort: kotlin.Int? = null,
+  var publishedPort: kotlin.Int? = null,
   /* The mode in which port is published.  <p><br /></p>  - \"ingress\" makes the target port accessible on every node,   regardless of whether there is a task for the service running on   that node or not. - \"host\" bypasses the routing mesh and publish the port directly on   the swarm node where that service is running.  */
   @Json(name = "PublishMode")
-  val publishMode: EndpointPortConfig.PublishMode? = null
+  var publishMode: EndpointPortConfig.PublishMode? = null
 ) {
 
   /**

@@ -21,5 +21,5 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ContainerSummaryHostConfig(
   @Json(name = "NetworkMode")
-  val networkMode: kotlin.String? = null
+  var networkMode: kotlin.String? = null
 )

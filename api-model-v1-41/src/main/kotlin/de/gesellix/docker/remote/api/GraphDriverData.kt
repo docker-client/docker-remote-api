@@ -22,7 +22,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class GraphDriverData(
   @Json(name = "Name")
-  val name: kotlin.String,
+  var name: kotlin.String,
   @Json(name = "Data")
-  val data: kotlin.collections.Map<kotlin.String, kotlin.String>?
+  var data: kotlin.collections.Map<kotlin.String, kotlin.String>?
 )

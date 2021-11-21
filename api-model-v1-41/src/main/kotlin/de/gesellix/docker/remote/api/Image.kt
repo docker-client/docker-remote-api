@@ -39,41 +39,41 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class Image(
   @Json(name = "Id")
-  val id: kotlin.String,
+  var id: kotlin.String,
   @Json(name = "Parent")
-  val parent: kotlin.String,
+  var parent: kotlin.String,
   @Json(name = "Comment")
-  val comment: kotlin.String,
+  var comment: kotlin.String,
   @Json(name = "Created")
-  val created: kotlin.String,
+  var created: kotlin.String,
   @Json(name = "Container")
-  val container: kotlin.String,
+  var container: kotlin.String,
   @Json(name = "DockerVersion")
-  val dockerVersion: kotlin.String,
+  var dockerVersion: kotlin.String,
   @Json(name = "Author")
-  val author: kotlin.String,
+  var author: kotlin.String,
   @Json(name = "Architecture")
-  val architecture: kotlin.String,
+  var architecture: kotlin.String,
   @Json(name = "Os")
-  val os: kotlin.String,
+  var os: kotlin.String,
   @Json(name = "Size")
-  val size: kotlin.Long,
+  var size: kotlin.Long,
   @Json(name = "VirtualSize")
-  val virtualSize: kotlin.Long,
+  var virtualSize: kotlin.Long,
   @Json(name = "GraphDriver")
-  val graphDriver: GraphDriverData,
+  var graphDriver: GraphDriverData,
   @Json(name = "RootFS")
-  val rootFS: ImageRootFS,
+  var rootFS: ImageRootFS,
   @Json(name = "RepoTags")
-  val repoTags: kotlin.collections.List<kotlin.String>? = null,
+  var repoTags: kotlin.collections.List<kotlin.String>? = null,
   @Json(name = "RepoDigests")
-  val repoDigests: kotlin.collections.List<kotlin.String>? = null,
+  var repoDigests: kotlin.collections.List<kotlin.String>? = null,
   @Json(name = "ContainerConfig")
-  val containerConfig: ContainerConfig? = null,
+  var containerConfig: ContainerConfig? = null,
   @Json(name = "Config")
-  val config: ContainerConfig? = null,
+  var config: ContainerConfig? = null,
   @Json(name = "OsVersion")
-  val osVersion: kotlin.String? = null,
+  var osVersion: kotlin.String? = null,
   @Json(name = "Metadata")
-  val metadata: ImageMetadata? = null
+  var metadata: ImageMetadata? = null
 )

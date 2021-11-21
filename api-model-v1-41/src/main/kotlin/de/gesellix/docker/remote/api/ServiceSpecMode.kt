@@ -24,12 +24,12 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ServiceSpecMode(
   @Json(name = "Replicated")
-  val replicated: ServiceSpecModeReplicated? = null,
+  var replicated: ServiceSpecModeReplicated? = null,
   @Json(name = "Global")
-  val global: kotlin.Any? = null,
+  var global: kotlin.Any? = null,
   @Json(name = "ReplicatedJob")
-  val replicatedJob: ServiceSpecModeReplicatedJob? = null,
+  var replicatedJob: ServiceSpecModeReplicatedJob? = null,
   /* The mode used for services which run a task to the completed state on each valid node.  */
   @Json(name = "GlobalJob")
-  val globalJob: kotlin.Any? = null
+  var globalJob: kotlin.Any? = null
 )

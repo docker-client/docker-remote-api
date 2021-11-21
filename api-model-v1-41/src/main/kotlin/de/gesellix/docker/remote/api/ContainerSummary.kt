@@ -36,44 +36,44 @@ import com.squareup.moshi.JsonClass
 data class ContainerSummary(
   /* The ID of this container */
   @Json(name = "Id")
-  val id: kotlin.String? = null,
+  var id: kotlin.String? = null,
   /* The names that this container has been given */
   @Json(name = "Names")
-  val names: kotlin.collections.List<kotlin.String>? = null,
+  var names: kotlin.collections.List<kotlin.String>? = null,
   /* The name of the image used when creating this container */
   @Json(name = "Image")
-  val image: kotlin.String? = null,
+  var image: kotlin.String? = null,
   /* The ID of the image that this container was created from */
   @Json(name = "ImageID")
-  val imageID: kotlin.String? = null,
+  var imageID: kotlin.String? = null,
   /* Command to run when starting the container */
   @Json(name = "Command")
-  val command: kotlin.String? = null,
+  var command: kotlin.String? = null,
   /* When the container was created */
   @Json(name = "Created")
-  val created: kotlin.Long? = null,
+  var created: kotlin.Long? = null,
   /* The ports exposed by this container */
   @Json(name = "Ports")
-  val ports: kotlin.collections.List<Port>? = null,
+  var ports: kotlin.collections.List<Port>? = null,
   /* The size of files that have been created or changed by this container */
   @Json(name = "SizeRw")
-  val sizeRw: kotlin.Long? = null,
+  var sizeRw: kotlin.Long? = null,
   /* The total size of all the files in this container */
   @Json(name = "SizeRootFs")
-  val sizeRootFs: kotlin.Long? = null,
+  var sizeRootFs: kotlin.Long? = null,
   /* User-defined key/value metadata. */
   @Json(name = "Labels")
-  val labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
+  var labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
   /* The state of this container (e.g. `Exited`) */
   @Json(name = "State")
-  val state: kotlin.String? = null,
+  var state: kotlin.String? = null,
   /* Additional human-readable status of this container (e.g. `Exit 0`) */
   @Json(name = "Status")
-  val status: kotlin.String? = null,
+  var status: kotlin.String? = null,
   @Json(name = "HostConfig")
-  val hostConfig: ContainerSummaryHostConfig? = null,
+  var hostConfig: ContainerSummaryHostConfig? = null,
   @Json(name = "NetworkSettings")
-  val networkSettings: ContainerSummaryNetworkSettings? = null,
+  var networkSettings: ContainerSummaryNetworkSettings? = null,
   @Json(name = "Mounts")
-  val mounts: kotlin.collections.List<Mount>? = null
+  var mounts: kotlin.collections.List<Mount>? = null
 )

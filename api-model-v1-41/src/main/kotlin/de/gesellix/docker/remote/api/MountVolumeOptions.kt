@@ -24,10 +24,10 @@ import com.squareup.moshi.JsonClass
 data class MountVolumeOptions(
   /* Populate volume with data from the target. */
   @Json(name = "NoCopy")
-  val noCopy: kotlin.Boolean? = null,
+  var noCopy: kotlin.Boolean? = null,
   /* User-defined key/value metadata. */
   @Json(name = "Labels")
-  val labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
+  var labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
   @Json(name = "DriverConfig")
-  val driverConfig: MountVolumeOptionsDriverConfig? = null
+  var driverConfig: MountVolumeOptionsDriverConfig? = null
 )

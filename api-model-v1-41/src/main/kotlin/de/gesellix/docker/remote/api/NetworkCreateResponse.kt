@@ -23,7 +23,7 @@ import com.squareup.moshi.JsonClass
 data class NetworkCreateResponse(
   /* The ID of the created network. */
   @Json(name = "Id")
-  val id: kotlin.String? = null,
+  var id: kotlin.String? = null,
   @Json(name = "Warning")
-  val warning: kotlin.String? = null
+  var warning: kotlin.String? = null
 )

@@ -21,5 +21,5 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ContainerSummaryNetworkSettings(
   @Json(name = "Networks")
-  val networks: kotlin.collections.Map<kotlin.String, EndpointSettings>? = null
+  var networks: kotlin.collections.Map<kotlin.String, EndpointSettings>? = null
 )

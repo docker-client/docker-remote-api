@@ -22,7 +22,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class TaskSpecResources(
   @Json(name = "Limits")
-  val limits: Limit? = null,
+  var limits: Limit? = null,
   @Json(name = "Reservation")
-  val reservation: ResourceObject? = null
+  var reservation: ResourceObject? = null
 )

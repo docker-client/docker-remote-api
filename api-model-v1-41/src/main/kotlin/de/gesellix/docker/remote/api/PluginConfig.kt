@@ -36,36 +36,36 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class PluginConfig(
   @Json(name = "Description")
-  val description: kotlin.String,
+  var description: kotlin.String,
   @Json(name = "Documentation")
-  val documentation: kotlin.String,
+  var documentation: kotlin.String,
   @Json(name = "Interface")
-  val `interface`: PluginConfigInterface,
+  var `interface`: PluginConfigInterface,
   @Json(name = "Entrypoint")
-  val entrypoint: kotlin.collections.List<kotlin.String>,
+  var entrypoint: kotlin.collections.List<kotlin.String>,
   @Json(name = "WorkDir")
-  val workDir: kotlin.String,
+  var workDir: kotlin.String,
   @Json(name = "Network")
-  val network: PluginConfigNetwork,
+  var network: PluginConfigNetwork,
   @Json(name = "Linux")
-  val linux: PluginConfigLinux,
+  var linux: PluginConfigLinux,
   @Json(name = "PropagatedMount")
-  val propagatedMount: kotlin.String,
+  var propagatedMount: kotlin.String,
   @Json(name = "IpcHost")
-  val ipcHost: kotlin.Boolean,
+  var ipcHost: kotlin.Boolean,
   @Json(name = "PidHost")
-  val pidHost: kotlin.Boolean,
+  var pidHost: kotlin.Boolean,
   @Json(name = "Mounts")
-  val mounts: kotlin.collections.List<PluginMount>,
+  var mounts: kotlin.collections.List<PluginMount>,
   @Json(name = "Env")
-  val env: kotlin.collections.List<PluginEnv>,
+  var env: kotlin.collections.List<PluginEnv>,
   @Json(name = "Args")
-  val args: PluginConfigArgs,
+  var args: PluginConfigArgs,
   /* Docker Version used to create the plugin */
   @Json(name = "DockerVersion")
-  val dockerVersion: kotlin.String? = null,
+  var dockerVersion: kotlin.String? = null,
   @Json(name = "User")
-  val user: PluginConfigUser? = null,
+  var user: PluginConfigUser? = null,
   @Json(name = "rootfs")
-  val rootfs: PluginConfigRootfs? = null
+  var rootfs: PluginConfigRootfs? = null
 )

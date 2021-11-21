@@ -25,15 +25,15 @@ import com.squareup.moshi.JsonClass
 data class Port(
   /* Port on the container */
   @Json(name = "PrivatePort")
-  val privatePort: kotlin.Int,
+  var privatePort: kotlin.Int,
   @Json(name = "Type")
-  val type: Port.Type,
+  var type: Port.Type,
   /* Host IP address that the container's port is mapped to */
   @Json(name = "IP")
-  val IP: kotlin.String? = null,
+  var IP: kotlin.String? = null,
   /* Port exposed on the host */
   @Json(name = "PublicPort")
-  val publicPort: kotlin.Int? = null
+  var publicPort: kotlin.Int? = null
 ) {
 
   /**

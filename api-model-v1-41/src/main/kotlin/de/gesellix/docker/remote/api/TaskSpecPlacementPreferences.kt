@@ -21,5 +21,5 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class TaskSpecPlacementPreferences(
   @Json(name = "Spread")
-  val spread: TaskSpecPlacementSpread? = null
+  var spread: TaskSpecPlacementSpread? = null
 )

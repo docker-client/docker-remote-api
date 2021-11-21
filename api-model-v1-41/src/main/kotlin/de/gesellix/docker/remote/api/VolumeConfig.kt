@@ -25,14 +25,14 @@ import com.squareup.moshi.JsonClass
 data class VolumeConfig(
   /* The new volume's name. If not specified, Docker generates a name.  */
   @Json(name = "Name")
-  val name: kotlin.String? = null,
+  var name: kotlin.String? = null,
   /* Name of the volume driver to use. */
   @Json(name = "Driver")
-  val driver: kotlin.String? = null,
+  var driver: kotlin.String? = null,
   /* A mapping of driver options and values. These options are passed directly to the driver and are driver specific.  */
   @Json(name = "DriverOpts")
-  val driverOpts: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
+  var driverOpts: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
   /* User-defined key/value metadata. */
   @Json(name = "Labels")
-  val labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null
+  var labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null
 )

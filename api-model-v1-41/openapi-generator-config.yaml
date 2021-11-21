@@ -13,3 +13,4 @@ artifactVersion: 1.41
 outputDir: api-model-v1-41
 dateLibrary: java8
 moshiCodeGen: true
+modelMutable: true

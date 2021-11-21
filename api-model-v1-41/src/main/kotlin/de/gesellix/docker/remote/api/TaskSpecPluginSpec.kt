@@ -25,13 +25,13 @@ import com.squareup.moshi.JsonClass
 data class TaskSpecPluginSpec(
   /* The name or 'alias' to use for the plugin. */
   @Json(name = "Name")
-  val name: kotlin.String? = null,
+  var name: kotlin.String? = null,
   /* The plugin image reference to use. */
   @Json(name = "Remote")
-  val remote: kotlin.String? = null,
+  var remote: kotlin.String? = null,
   /* Disable the plugin once scheduled. */
   @Json(name = "Disabled")
-  val disabled: kotlin.Boolean? = null,
+  var disabled: kotlin.Boolean? = null,
   @Json(name = "PluginPrivilege")
-  val pluginPrivilege: kotlin.collections.List<PluginPrivilege>? = null
+  var pluginPrivilege: kotlin.collections.List<PluginPrivilege>? = null
 )

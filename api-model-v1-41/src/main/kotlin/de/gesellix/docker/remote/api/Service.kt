@@ -29,21 +29,21 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class Service(
   @Json(name = "ID")
-  val ID: kotlin.String? = null,
+  var ID: kotlin.String? = null,
   @Json(name = "Version")
-  val version: ObjectVersion? = null,
+  var version: ObjectVersion? = null,
   @Json(name = "CreatedAt")
-  val createdAt: kotlin.String? = null,
+  var createdAt: kotlin.String? = null,
   @Json(name = "UpdatedAt")
-  val updatedAt: kotlin.String? = null,
+  var updatedAt: kotlin.String? = null,
   @Json(name = "Spec")
-  val spec: ServiceSpec? = null,
+  var spec: ServiceSpec? = null,
   @Json(name = "Endpoint")
-  val endpoint: ServiceEndpoint? = null,
+  var endpoint: ServiceEndpoint? = null,
   @Json(name = "UpdateStatus")
-  val updateStatus: ServiceUpdateStatus? = null,
+  var updateStatus: ServiceUpdateStatus? = null,
   @Json(name = "ServiceStatus")
-  val serviceStatus: ServiceServiceStatus? = null,
+  var serviceStatus: ServiceServiceStatus? = null,
   @Json(name = "JobStatus")
-  val jobStatus: ServiceJobStatus? = null
+  var jobStatus: ServiceJobStatus? = null
 )

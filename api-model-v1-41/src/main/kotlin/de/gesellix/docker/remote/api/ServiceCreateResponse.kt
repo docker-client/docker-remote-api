@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
 data class ServiceCreateResponse(
   /* The ID of the created service. */
   @Json(name = "ID")
-  val ID: kotlin.String? = null,
+  var ID: kotlin.String? = null,
   /* Optional warning message */
   @Json(name = "Warning")
-  val warning: kotlin.String? = null
+  var warning: kotlin.String? = null
 )

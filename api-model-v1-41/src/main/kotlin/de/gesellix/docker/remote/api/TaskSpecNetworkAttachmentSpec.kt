@@ -22,5 +22,5 @@ import com.squareup.moshi.JsonClass
 data class TaskSpecNetworkAttachmentSpec(
   /* ID of the container represented by this task */
   @Json(name = "ContainerID")
-  val containerID: kotlin.String? = null
+  var containerID: kotlin.String? = null
 )

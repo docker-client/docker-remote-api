@@ -23,9 +23,9 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ImageRootFS(
   @Json(name = "Type")
-  val type: kotlin.String,
+  var type: kotlin.String,
   @Json(name = "Layers")
-  val layers: kotlin.collections.List<kotlin.String>? = null,
+  var layers: kotlin.collections.List<kotlin.String>? = null,
   @Json(name = "BaseLayer")
-  val baseLayer: kotlin.String? = null
+  var baseLayer: kotlin.String? = null
 )

@@ -30,25 +30,25 @@ import com.squareup.moshi.JsonClass
 data class SwarmInfo(
   /* Unique identifier of for this node in the swarm. */
   @Json(name = "NodeID")
-  val nodeID: kotlin.String? = null,
+  var nodeID: kotlin.String? = null,
   /* IP address at which this node can be reached by other nodes in the swarm.  */
   @Json(name = "NodeAddr")
-  val nodeAddr: kotlin.String? = null,
+  var nodeAddr: kotlin.String? = null,
   @Json(name = "LocalNodeState")
-  val localNodeState: LocalNodeState? = null,
+  var localNodeState: LocalNodeState? = null,
   @Json(name = "ControlAvailable")
-  val controlAvailable: kotlin.Boolean? = null,
+  var controlAvailable: kotlin.Boolean? = null,
   @Json(name = "Error")
-  val error: kotlin.String? = null,
+  var error: kotlin.String? = null,
   /* List of ID's and addresses of other managers in the swarm.  */
   @Json(name = "RemoteManagers")
-  val remoteManagers: kotlin.collections.List<PeerNode>? = null,
+  var remoteManagers: kotlin.collections.List<PeerNode>? = null,
   /* Total number of nodes in the swarm. */
   @Json(name = "Nodes")
-  val nodes: kotlin.Int? = null,
+  var nodes: kotlin.Int? = null,
   /* Total number of managers in the swarm. */
   @Json(name = "Managers")
-  val managers: kotlin.Int? = null,
+  var managers: kotlin.Int? = null,
   @Json(name = "Cluster")
-  val cluster: ClusterInfo? = null
+  var cluster: ClusterInfo? = null
 )

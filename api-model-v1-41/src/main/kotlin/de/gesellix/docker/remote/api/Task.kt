@@ -35,36 +35,36 @@ import com.squareup.moshi.JsonClass
 data class Task(
   /* The ID of the task. */
   @Json(name = "ID")
-  val ID: kotlin.String? = null,
+  var ID: kotlin.String? = null,
   @Json(name = "Version")
-  val version: ObjectVersion? = null,
+  var version: ObjectVersion? = null,
   @Json(name = "CreatedAt")
-  val createdAt: kotlin.String? = null,
+  var createdAt: kotlin.String? = null,
   @Json(name = "UpdatedAt")
-  val updatedAt: kotlin.String? = null,
+  var updatedAt: kotlin.String? = null,
   /* Name of the task. */
   @Json(name = "Name")
-  val name: kotlin.String? = null,
+  var name: kotlin.String? = null,
   /* User-defined key/value metadata. */
   @Json(name = "Labels")
-  val labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
+  var labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
   @Json(name = "Spec")
-  val spec: TaskSpec? = null,
+  var spec: TaskSpec? = null,
   /* The ID of the service this task is part of. */
   @Json(name = "ServiceID")
-  val serviceID: kotlin.String? = null,
+  var serviceID: kotlin.String? = null,
   @Json(name = "Slot")
-  val slot: kotlin.Int? = null,
+  var slot: kotlin.Int? = null,
   /* The ID of the node that this task is on. */
   @Json(name = "NodeID")
-  val nodeID: kotlin.String? = null,
+  var nodeID: kotlin.String? = null,
   /* User-defined resources can be either Integer resources (e.g, `SSD=3`) or String resources (e.g, `GPU=UUID1`).  */
   @Json(name = "AssignedGenericResources")
-  val assignedGenericResources: kotlin.collections.List<kotlin.Any>? = null,
+  var assignedGenericResources: kotlin.collections.List<kotlin.Any>? = null,
   @Json(name = "Status")
-  val status: TaskStatus? = null,
+  var status: TaskStatus? = null,
   @Json(name = "DesiredState")
-  val desiredState: TaskState? = null,
+  var desiredState: TaskState? = null,
   @Json(name = "JobIteration")
-  val jobIteration: ObjectVersion? = null
+  var jobIteration: ObjectVersion? = null
 )

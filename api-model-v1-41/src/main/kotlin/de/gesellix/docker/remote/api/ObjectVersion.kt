@@ -21,5 +21,5 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ObjectVersion(
   @Json(name = "Index")
-  val index: kotlin.Int? = null
+  var index: kotlin.Int? = null
 )

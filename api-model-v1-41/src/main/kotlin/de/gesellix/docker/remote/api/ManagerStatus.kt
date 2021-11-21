@@ -23,10 +23,10 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ManagerStatus(
   @Json(name = "Leader")
-  val leader: kotlin.Boolean? = null,
+  var leader: kotlin.Boolean? = null,
   @Json(name = "Reachability")
-  val reachability: Reachability? = null,
+  var reachability: Reachability? = null,
   /* The IP address and port at which the manager is reachable.  */
   @Json(name = "Addr")
-  val addr: kotlin.String? = null
+  var addr: kotlin.String? = null
 )

@@ -23,10 +23,10 @@ import com.squareup.moshi.JsonClass
 data class EndpointSpec(
   /* The mode of resolution to use for internal load balancing between tasks.  */
   @Json(name = "Mode")
-  val mode: EndpointSpec.Mode? = null,
+  var mode: EndpointSpec.Mode? = null,
   /* List of exposed ports that this service is accessible on from the outside. Ports can only be provided if `vip` resolution mode is used.  */
   @Json(name = "Ports")
-  val ports: kotlin.collections.List<EndpointPortConfig>? = null
+  var ports: kotlin.collections.List<EndpointPortConfig>? = null
 ) {
 
   /**

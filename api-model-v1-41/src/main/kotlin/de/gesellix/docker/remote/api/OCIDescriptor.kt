@@ -24,11 +24,11 @@ import com.squareup.moshi.JsonClass
 data class OCIDescriptor(
   /* The media type of the object this schema refers to.  */
   @Json(name = "mediaType")
-  val mediaType: kotlin.String? = null,
+  var mediaType: kotlin.String? = null,
   /* The digest of the targeted content.  */
   @Json(name = "digest")
-  val digest: kotlin.String? = null,
+  var digest: kotlin.String? = null,
   /* The size in bytes of the blob.  */
   @Json(name = "size")
-  val size: kotlin.Long? = null
+  var size: kotlin.Long? = null
 )

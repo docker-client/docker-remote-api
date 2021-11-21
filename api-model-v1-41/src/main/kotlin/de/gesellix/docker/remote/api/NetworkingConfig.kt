@@ -22,5 +22,5 @@ import com.squareup.moshi.JsonClass
 data class NetworkingConfig(
   /* A mapping of network name to endpoint configuration for that network.  */
   @Json(name = "EndpointsConfig")
-  val endpointsConfig: kotlin.collections.Map<kotlin.String, EndpointSettings>? = null
+  var endpointsConfig: kotlin.collections.Map<kotlin.String, EndpointSettings>? = null
 )

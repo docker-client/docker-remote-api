@@ -22,7 +22,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ProgressDetail(
   @Json(name = "current")
-  val current: kotlin.Int? = null,
+  var current: kotlin.Int? = null,
   @Json(name = "total")
-  val total: kotlin.Int? = null
+  var total: kotlin.Int? = null
 )

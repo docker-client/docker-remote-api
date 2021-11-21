@@ -24,11 +24,11 @@ import com.squareup.moshi.JsonClass
 data class ResourcesUlimits(
   /* Name of ulimit */
   @Json(name = "Name")
-  val name: kotlin.String? = null,
+  var name: kotlin.String? = null,
   /* Soft limit */
   @Json(name = "Soft")
-  val soft: kotlin.Int? = null,
+  var soft: kotlin.Int? = null,
   /* Hard limit */
   @Json(name = "Hard")
-  val hard: kotlin.Int? = null
+  var hard: kotlin.Int? = null
 )

@@ -46,76 +46,76 @@ import com.squareup.moshi.JsonClass
 data class ContainerConfig(
   /* The hostname to use for the container, as a valid RFC 1123 hostname. */
   @Json(name = "Hostname")
-  val hostname: kotlin.String? = null,
+  var hostname: kotlin.String? = null,
   /* The domain name to use for the container. */
   @Json(name = "Domainname")
-  val domainname: kotlin.String? = null,
+  var domainname: kotlin.String? = null,
   /* The user that commands are run as inside the container. */
   @Json(name = "User")
-  val user: kotlin.String? = null,
+  var user: kotlin.String? = null,
   /* Whether to attach to `stdin`. */
   @Json(name = "AttachStdin")
-  val attachStdin: kotlin.Boolean? = null,
+  var attachStdin: kotlin.Boolean? = null,
   /* Whether to attach to `stdout`. */
   @Json(name = "AttachStdout")
-  val attachStdout: kotlin.Boolean? = null,
+  var attachStdout: kotlin.Boolean? = null,
   /* Whether to attach to `stderr`. */
   @Json(name = "AttachStderr")
-  val attachStderr: kotlin.Boolean? = null,
+  var attachStderr: kotlin.Boolean? = null,
   /* An object mapping ports to an empty object in the form:  `{\"<port>/<tcp|udp|sctp>\": {}}`  */
   @Json(name = "ExposedPorts")
-  val exposedPorts: kotlin.collections.Map<kotlin.String, kotlin.Any>? = null,
+  var exposedPorts: kotlin.collections.Map<kotlin.String, kotlin.Any>? = null,
   /* Attach standard streams to a TTY, including `stdin` if it is not closed.  */
   @Json(name = "Tty")
-  val tty: kotlin.Boolean? = null,
+  var tty: kotlin.Boolean? = null,
   /* Open `stdin` */
   @Json(name = "OpenStdin")
-  val openStdin: kotlin.Boolean? = null,
+  var openStdin: kotlin.Boolean? = null,
   /* Close `stdin` after one attached client disconnects */
   @Json(name = "StdinOnce")
-  val stdinOnce: kotlin.Boolean? = null,
+  var stdinOnce: kotlin.Boolean? = null,
   /* A list of environment variables to set inside the container in the form `[\"VAR=value\", ...]`. A variable without `=` is removed from the environment, rather than to have an empty value.  */
   @Json(name = "Env")
-  val env: kotlin.collections.List<kotlin.String>? = null,
+  var env: kotlin.collections.List<kotlin.String>? = null,
   /* Command to run specified as a string or an array of strings.  */
   @Json(name = "Cmd")
-  val cmd: kotlin.collections.List<kotlin.String>? = null,
+  var cmd: kotlin.collections.List<kotlin.String>? = null,
   @Json(name = "Healthcheck")
-  val healthcheck: HealthConfig? = null,
+  var healthcheck: HealthConfig? = null,
   /* Command is already escaped (Windows only) */
   @Json(name = "ArgsEscaped")
-  val argsEscaped: kotlin.Boolean? = null,
+  var argsEscaped: kotlin.Boolean? = null,
   /* The name of the image to use when creating the container/  */
   @Json(name = "Image")
-  val image: kotlin.String? = null,
+  var image: kotlin.String? = null,
   /* An object mapping mount point paths inside the container to empty objects.  */
   @Json(name = "Volumes")
-  val volumes: kotlin.collections.Map<kotlin.String, kotlin.Any>? = null,
+  var volumes: kotlin.collections.Map<kotlin.String, kotlin.Any>? = null,
   /* The working directory for commands to run in. */
   @Json(name = "WorkingDir")
-  val workingDir: kotlin.String? = null,
+  var workingDir: kotlin.String? = null,
   /* The entry point for the container as a string or an array of strings.  If the array consists of exactly one empty string (`[\"\"]`) then the entry point is reset to system default (i.e., the entry point used by docker when there is no `ENTRYPOINT` instruction in the `Dockerfile`).  */
   @Json(name = "Entrypoint")
-  val entrypoint: kotlin.collections.List<kotlin.String>? = null,
+  var entrypoint: kotlin.collections.List<kotlin.String>? = null,
   /* Disable networking for the container. */
   @Json(name = "NetworkDisabled")
-  val networkDisabled: kotlin.Boolean? = null,
+  var networkDisabled: kotlin.Boolean? = null,
   /* MAC address of the container. */
   @Json(name = "MacAddress")
-  val macAddress: kotlin.String? = null,
+  var macAddress: kotlin.String? = null,
   /* `ONBUILD` metadata that were defined in the image's `Dockerfile`.  */
   @Json(name = "OnBuild")
-  val onBuild: kotlin.collections.List<kotlin.String>? = null,
+  var onBuild: kotlin.collections.List<kotlin.String>? = null,
   /* User-defined key/value metadata. */
   @Json(name = "Labels")
-  val labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
+  var labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
   /* Signal to stop a container as a string or unsigned integer.  */
   @Json(name = "StopSignal")
-  val stopSignal: kotlin.String? = null,
+  var stopSignal: kotlin.String? = null,
   /* Timeout to stop a container in seconds. */
   @Json(name = "StopTimeout")
-  val stopTimeout: kotlin.Int? = null,
+  var stopTimeout: kotlin.Int? = null,
   /* Shell for when `RUN`, `CMD`, and `ENTRYPOINT` uses a shell.  */
   @Json(name = "Shell")
-  val shell: kotlin.collections.List<kotlin.String>? = null
+  var shell: kotlin.collections.List<kotlin.String>? = null
 )

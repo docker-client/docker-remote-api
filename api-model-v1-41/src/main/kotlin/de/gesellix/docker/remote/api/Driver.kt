@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
 data class Driver(
   /* Name of the driver. */
   @Json(name = "Name")
-  val name: kotlin.String,
+  var name: kotlin.String,
   /* Key/value map of driver-specific options. */
   @Json(name = "Options")
-  val options: kotlin.collections.Map<kotlin.String, kotlin.String>? = null
+  var options: kotlin.collections.Map<kotlin.String, kotlin.String>? = null
 )

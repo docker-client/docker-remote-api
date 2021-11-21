@@ -21,5 +21,5 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class SwarmAllOf(
   @Json(name = "JoinTokens")
-  val joinTokens: JoinTokens? = null
+  var joinTokens: JoinTokens? = null
 )

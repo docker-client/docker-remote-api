@@ -30,26 +30,26 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class BuildCache(
   @Json(name = "ID")
-  val ID: kotlin.String? = null,
+  var ID: kotlin.String? = null,
   @Json(name = "Parent")
-  val parent: kotlin.String? = null,
+  var parent: kotlin.String? = null,
   @Json(name = "Type")
-  val type: kotlin.String? = null,
+  var type: kotlin.String? = null,
   @Json(name = "Description")
-  val description: kotlin.String? = null,
+  var description: kotlin.String? = null,
   @Json(name = "InUse")
-  val inUse: kotlin.Boolean? = null,
+  var inUse: kotlin.Boolean? = null,
   @Json(name = "Shared")
-  val shared: kotlin.Boolean? = null,
+  var shared: kotlin.Boolean? = null,
   /* Amount of disk space used by the build cache (in bytes).  */
   @Json(name = "Size")
-  val size: kotlin.Int? = null,
+  var size: kotlin.Int? = null,
   /* Date and time at which the build cache was created in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.  */
   @Json(name = "CreatedAt")
-  val createdAt: kotlin.String? = null,
+  var createdAt: kotlin.String? = null,
   /* Date and time at which the build cache was last used in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.  */
   @Json(name = "LastUsedAt")
-  val lastUsedAt: kotlin.String? = null,
+  var lastUsedAt: kotlin.String? = null,
   @Json(name = "UsageCount")
-  val usageCount: kotlin.Int? = null
+  var usageCount: kotlin.Int? = null
 )

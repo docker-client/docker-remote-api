@@ -25,13 +25,13 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class TaskStatus(
   @Json(name = "Timestamp")
-  val timestamp: kotlin.String? = null,
+  var timestamp: kotlin.String? = null,
   @Json(name = "State")
-  val state: TaskState? = null,
+  var state: TaskState? = null,
   @Json(name = "Message")
-  val message: kotlin.String? = null,
+  var message: kotlin.String? = null,
   @Json(name = "Err")
-  val err: kotlin.String? = null,
+  var err: kotlin.String? = null,
   @Json(name = "ContainerStatus")
-  val containerStatus: TaskStatusContainerStatus? = null
+  var containerStatus: TaskStatusContainerStatus? = null
 )

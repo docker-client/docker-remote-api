@@ -23,10 +23,10 @@ import com.squareup.moshi.JsonClass
 data class RestartPolicy(
   /* - Empty string means not to restart - `no` Do not automatically restart - `always` Always restart - `unless-stopped` Restart always except when the user has manually stopped the container - `on-failure` Restart only when the container exit code is non-zero  */
   @Json(name = "Name")
-  val name: RestartPolicy.Name? = null,
+  var name: RestartPolicy.Name? = null,
   /* If `on-failure` is used, the number of times to retry before giving up.  */
   @Json(name = "MaximumRetryCount")
-  val maximumRetryCount: kotlin.Int? = null
+  var maximumRetryCount: kotlin.Int? = null
 ) {
 
   /**

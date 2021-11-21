@@ -22,7 +22,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class PluginConfigUser(
   @Json(name = "UID")
-  val UID: kotlin.Int? = null,
+  var UID: kotlin.Int? = null,
   @Json(name = "GID")
-  val GID: kotlin.Int? = null
+  var GID: kotlin.Int? = null
 )
