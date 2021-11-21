@@ -25,13 +25,13 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class NetworkContainer(
   @Json(name = "Name")
-  val name: kotlin.String? = null,
+  var name: kotlin.String? = null,
   @Json(name = "EndpointID")
-  val endpointID: kotlin.String? = null,
+  var endpointID: kotlin.String? = null,
   @Json(name = "MacAddress")
-  val macAddress: kotlin.String? = null,
+  var macAddress: kotlin.String? = null,
   @Json(name = "IPv4Address")
-  val ipv4Address: kotlin.String? = null,
+  var ipv4Address: kotlin.String? = null,
   @Json(name = "IPv6Address")
-  val ipv6Address: kotlin.String? = null
+  var ipv6Address: kotlin.String? = null
 )

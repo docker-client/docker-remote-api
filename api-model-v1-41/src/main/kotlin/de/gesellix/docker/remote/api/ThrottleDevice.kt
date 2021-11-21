@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
 data class ThrottleDevice(
   /* Device path */
   @Json(name = "Path")
-  val path: kotlin.String? = null,
+  var path: kotlin.String? = null,
   /* Rate */
   @Json(name = "Rate")
-  val rate: kotlin.Long? = null
+  var rate: kotlin.Long? = null
 )

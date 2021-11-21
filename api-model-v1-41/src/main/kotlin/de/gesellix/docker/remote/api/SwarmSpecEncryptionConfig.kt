@@ -22,5 +22,5 @@ import com.squareup.moshi.JsonClass
 data class SwarmSpecEncryptionConfig(
   /* If set, generate a key and use it to lock data stored on the managers.  */
   @Json(name = "AutoLockManagers")
-  val autoLockManagers: kotlin.Boolean? = null
+  var autoLockManagers: kotlin.Boolean? = null
 )

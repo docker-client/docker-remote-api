@@ -23,12 +23,12 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class PluginConfigInterface(
   @Json(name = "Types")
-  val types: kotlin.collections.List<PluginInterfaceType>,
+  var types: kotlin.collections.List<PluginInterfaceType>,
   @Json(name = "Socket")
-  val socket: kotlin.String,
+  var socket: kotlin.String,
   /* Protocol to use for clients connecting to the plugin. */
   @Json(name = "ProtocolScheme")
-  val protocolScheme: PluginConfigInterface.ProtocolScheme? = null
+  var protocolScheme: PluginConfigInterface.ProtocolScheme? = null
 ) {
 
   /**

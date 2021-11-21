@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
 data class ContainerCreateResponse(
   /* The ID of the created container */
   @Json(name = "Id")
-  val id: kotlin.String,
+  var id: kotlin.String,
   /* Warnings encountered when creating the container */
   @Json(name = "Warnings")
-  val warnings: kotlin.collections.List<kotlin.String>
+  var warnings: kotlin.collections.List<kotlin.String>
 )

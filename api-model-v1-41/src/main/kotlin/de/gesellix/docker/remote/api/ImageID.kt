@@ -21,5 +21,5 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ImageID(
   @Json(name = "ID")
-  val ID: kotlin.String? = null
+  var ID: kotlin.String? = null
 )

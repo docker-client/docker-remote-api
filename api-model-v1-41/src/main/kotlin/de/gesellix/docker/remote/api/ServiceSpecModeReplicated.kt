@@ -21,5 +21,5 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ServiceSpecModeReplicated(
   @Json(name = "Replicas")
-  val replicas: kotlin.Long? = null
+  var replicas: kotlin.Long? = null
 )

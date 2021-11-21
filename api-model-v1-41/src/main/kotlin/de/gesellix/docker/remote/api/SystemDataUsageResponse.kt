@@ -25,13 +25,13 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class SystemDataUsageResponse(
   @Json(name = "LayersSize")
-  val layersSize: kotlin.Long? = null,
+  var layersSize: kotlin.Long? = null,
   @Json(name = "Images")
-  val images: kotlin.collections.List<ImageSummary>? = null,
+  var images: kotlin.collections.List<ImageSummary>? = null,
   @Json(name = "Containers")
-  val containers: kotlin.collections.List<ContainerSummary>? = null,
+  var containers: kotlin.collections.List<ContainerSummary>? = null,
   @Json(name = "Volumes")
-  val volumes: kotlin.collections.List<Volume>? = null,
+  var volumes: kotlin.collections.List<Volume>? = null,
   @Json(name = "BuildCache")
-  val buildCache: kotlin.collections.List<BuildCache>? = null
+  var buildCache: kotlin.collections.List<BuildCache>? = null
 )

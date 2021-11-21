@@ -24,11 +24,11 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class PluginConfigArgs(
   @Json(name = "Name")
-  val name: kotlin.String,
+  var name: kotlin.String,
   @Json(name = "Description")
-  val description: kotlin.String,
+  var description: kotlin.String,
   @Json(name = "Settable")
-  val settable: kotlin.collections.List<kotlin.String>,
+  var settable: kotlin.collections.List<kotlin.String>,
   @Json(name = "Value")
-  val value: kotlin.collections.List<kotlin.String>
+  var value: kotlin.collections.List<kotlin.String>
 )

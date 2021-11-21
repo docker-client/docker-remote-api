@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
 data class ServiceSpecModeReplicatedJob(
   /* The maximum number of replicas to run simultaneously.  */
   @Json(name = "MaxConcurrent")
-  val maxConcurrent: kotlin.Long? = null,
+  var maxConcurrent: kotlin.Long? = null,
   /* The total number of replicas desired to reach the Completed state. If unset, will default to the value of `MaxConcurrent`  */
   @Json(name = "TotalCompletions")
-  val totalCompletions: kotlin.Long? = null
+  var totalCompletions: kotlin.Long? = null
 )

@@ -23,7 +23,7 @@ import com.squareup.moshi.JsonClass
 data class ContainerWaitResponse(
   /* Exit code of the container */
   @Json(name = "StatusCode")
-  val statusCode: java.math.BigDecimal,
+  var statusCode: java.math.BigDecimal,
   @Json(name = "Error")
-  val error: ContainerWaitResponseError? = null
+  var error: ContainerWaitResponseError? = null
 )

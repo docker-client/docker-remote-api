@@ -29,20 +29,20 @@ import com.squareup.moshi.JsonClass
 data class SwarmSpec(
   /* Name of the swarm. */
   @Json(name = "Name")
-  val name: kotlin.String? = null,
+  var name: kotlin.String? = null,
   /* User-defined key/value metadata. */
   @Json(name = "Labels")
-  val labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
+  var labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
   @Json(name = "Orchestration")
-  val orchestration: SwarmSpecOrchestration? = null,
+  var orchestration: SwarmSpecOrchestration? = null,
   @Json(name = "Raft")
-  val raft: SwarmSpecRaft? = null,
+  var raft: SwarmSpecRaft? = null,
   @Json(name = "Dispatcher")
-  val dispatcher: SwarmSpecDispatcher? = null,
+  var dispatcher: SwarmSpecDispatcher? = null,
   @Json(name = "CAConfig")
-  val caConfig: SwarmSpecCAConfig? = null,
+  var caConfig: SwarmSpecCAConfig? = null,
   @Json(name = "EncryptionConfig")
-  val encryptionConfig: SwarmSpecEncryptionConfig? = null,
+  var encryptionConfig: SwarmSpecEncryptionConfig? = null,
   @Json(name = "TaskDefaults")
-  val taskDefaults: SwarmSpecTaskDefaults? = null
+  var taskDefaults: SwarmSpecTaskDefaults? = null
 )

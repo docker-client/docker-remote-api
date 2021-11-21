@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
 data class SystemAuthResponse(
   /* The status of the authentication */
   @Json(name = "Status")
-  val status: kotlin.String,
+  var status: kotlin.String,
   /* An opaque token used to authenticate a user after a successful login */
   @Json(name = "IdentityToken")
-  val identityToken: kotlin.String? = null
+  var identityToken: kotlin.String? = null
 )

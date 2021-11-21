@@ -25,14 +25,14 @@ import com.squareup.moshi.JsonClass
 data class PluginsInfo(
   /* Names of available volume-drivers, and network-driver plugins. */
   @Json(name = "Volume")
-  val volume: kotlin.collections.List<kotlin.String>? = null,
+  var volume: kotlin.collections.List<kotlin.String>? = null,
   /* Names of available network-drivers, and network-driver plugins. */
   @Json(name = "Network")
-  val network: kotlin.collections.List<kotlin.String>? = null,
+  var network: kotlin.collections.List<kotlin.String>? = null,
   /* Names of available authorization plugins. */
   @Json(name = "Authorization")
-  val authorization: kotlin.collections.List<kotlin.String>? = null,
+  var authorization: kotlin.collections.List<kotlin.String>? = null,
   /* Names of available logging-drivers, and logging-driver plugins. */
   @Json(name = "Log")
-  val log: kotlin.collections.List<kotlin.String>? = null
+  var log: kotlin.collections.List<kotlin.String>? = null
 )

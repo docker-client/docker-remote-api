@@ -24,13 +24,13 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ServiceUpdateStatus(
   @Json(name = "State")
-  val state: ServiceUpdateStatus.State? = null,
+  var state: ServiceUpdateStatus.State? = null,
   @Json(name = "StartedAt")
-  val startedAt: kotlin.String? = null,
+  var startedAt: kotlin.String? = null,
   @Json(name = "CompletedAt")
-  val completedAt: kotlin.String? = null,
+  var completedAt: kotlin.String? = null,
   @Json(name = "Message")
-  val message: kotlin.String? = null
+  var message: kotlin.String? = null
 ) {
 
   /**

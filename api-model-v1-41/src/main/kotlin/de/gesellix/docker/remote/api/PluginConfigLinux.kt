@@ -23,9 +23,9 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class PluginConfigLinux(
   @Json(name = "Capabilities")
-  val capabilities: kotlin.collections.List<kotlin.String>,
+  var capabilities: kotlin.collections.List<kotlin.String>,
   @Json(name = "AllowAllDevices")
-  val allowAllDevices: kotlin.Boolean,
+  var allowAllDevices: kotlin.Boolean,
   @Json(name = "Devices")
-  val devices: kotlin.collections.List<PluginDevice>
+  var devices: kotlin.collections.List<PluginDevice>
 )

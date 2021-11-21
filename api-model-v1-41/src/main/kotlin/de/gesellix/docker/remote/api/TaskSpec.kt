@@ -30,26 +30,26 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class TaskSpec(
   @Json(name = "PluginSpec")
-  val pluginSpec: TaskSpecPluginSpec? = null,
+  var pluginSpec: TaskSpecPluginSpec? = null,
   @Json(name = "ContainerSpec")
-  val containerSpec: TaskSpecContainerSpec? = null,
+  var containerSpec: TaskSpecContainerSpec? = null,
   @Json(name = "NetworkAttachmentSpec")
-  val networkAttachmentSpec: TaskSpecNetworkAttachmentSpec? = null,
+  var networkAttachmentSpec: TaskSpecNetworkAttachmentSpec? = null,
   @Json(name = "Resources")
-  val resources: TaskSpecResources? = null,
+  var resources: TaskSpecResources? = null,
   @Json(name = "RestartPolicy")
-  val restartPolicy: TaskSpecRestartPolicy? = null,
+  var restartPolicy: TaskSpecRestartPolicy? = null,
   @Json(name = "Placement")
-  val placement: TaskSpecPlacement? = null,
+  var placement: TaskSpecPlacement? = null,
   /* A counter that triggers an update even if no relevant parameters have been changed.  */
   @Json(name = "ForceUpdate")
-  val forceUpdate: kotlin.Int? = null,
+  var forceUpdate: kotlin.Int? = null,
   /* Runtime is the type of runtime specified for the task executor.  */
   @Json(name = "Runtime")
-  val runtime: kotlin.String? = null,
+  var runtime: kotlin.String? = null,
   /* Specifies which networks the service should attach to. */
   @Json(name = "Networks")
-  val networks: kotlin.collections.List<NetworkAttachmentConfig>? = null,
+  var networks: kotlin.collections.List<NetworkAttachmentConfig>? = null,
   @Json(name = "LogDriver")
-  val logDriver: TaskSpecLogDriver? = null
+  var logDriver: TaskSpecLogDriver? = null
 )

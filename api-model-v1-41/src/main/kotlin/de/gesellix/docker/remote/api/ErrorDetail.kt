@@ -22,7 +22,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ErrorDetail(
   @Json(name = "code")
-  val code: kotlin.Int? = null,
+  var code: kotlin.Int? = null,
   @Json(name = "message")
-  val message: kotlin.String? = null
+  var message: kotlin.String? = null
 )

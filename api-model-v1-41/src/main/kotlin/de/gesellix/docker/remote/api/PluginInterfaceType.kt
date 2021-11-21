@@ -23,9 +23,9 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class PluginInterfaceType(
   @Json(name = "Prefix")
-  val prefix: kotlin.String,
+  var prefix: kotlin.String,
   @Json(name = "Capability")
-  val capability: kotlin.String,
+  var capability: kotlin.String,
   @Json(name = "Version")
-  val version: kotlin.String
+  var version: kotlin.String
 )

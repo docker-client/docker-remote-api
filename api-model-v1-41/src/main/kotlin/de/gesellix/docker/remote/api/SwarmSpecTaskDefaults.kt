@@ -21,5 +21,5 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class SwarmSpecTaskDefaults(
   @Json(name = "LogDriver")
-  val logDriver: SwarmSpecTaskDefaultsLogDriver? = null
+  var logDriver: SwarmSpecTaskDefaultsLogDriver? = null
 )

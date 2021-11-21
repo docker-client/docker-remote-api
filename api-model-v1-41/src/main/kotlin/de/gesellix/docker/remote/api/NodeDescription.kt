@@ -25,13 +25,13 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class NodeDescription(
   @Json(name = "Hostname")
-  val hostname: kotlin.String? = null,
+  var hostname: kotlin.String? = null,
   @Json(name = "Platform")
-  val platform: Platform? = null,
+  var platform: Platform? = null,
   @Json(name = "Resources")
-  val resources: ResourceObject? = null,
+  var resources: ResourceObject? = null,
   @Json(name = "Engine")
-  val engine: EngineDescription? = null,
+  var engine: EngineDescription? = null,
   @Json(name = "TLSInfo")
-  val tlSInfo: TLSInfo? = null
+  var tlSInfo: TLSInfo? = null
 )

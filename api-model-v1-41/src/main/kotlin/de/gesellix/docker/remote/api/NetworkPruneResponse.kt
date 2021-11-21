@@ -22,5 +22,5 @@ import com.squareup.moshi.JsonClass
 data class NetworkPruneResponse(
   /* Networks that were deleted */
   @Json(name = "NetworksDeleted")
-  val networksDeleted: kotlin.collections.List<kotlin.String>? = null
+  var networksDeleted: kotlin.collections.List<kotlin.String>? = null
 )

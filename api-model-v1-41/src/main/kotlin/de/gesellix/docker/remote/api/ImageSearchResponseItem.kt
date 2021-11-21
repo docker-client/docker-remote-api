@@ -25,13 +25,13 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ImageSearchResponseItem(
   @Json(name = "description")
-  val description: kotlin.String? = null,
+  var description: kotlin.String? = null,
   @Json(name = "is_official")
-  val isOfficial: kotlin.Boolean? = null,
+  var isOfficial: kotlin.Boolean? = null,
   @Json(name = "is_automated")
-  val isAutomated: kotlin.Boolean? = null,
+  var isAutomated: kotlin.Boolean? = null,
   @Json(name = "name")
-  val name: kotlin.String? = null,
+  var name: kotlin.String? = null,
   @Json(name = "star_count")
-  val starCount: kotlin.Int? = null
+  var starCount: kotlin.Int? = null
 )

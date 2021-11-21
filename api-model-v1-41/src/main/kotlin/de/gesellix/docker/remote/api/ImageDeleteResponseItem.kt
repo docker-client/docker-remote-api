@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
 data class ImageDeleteResponseItem(
   /* The image ID of an image that was untagged */
   @Json(name = "Untagged")
-  val untagged: kotlin.String? = null,
+  var untagged: kotlin.String? = null,
   /* The image ID of an image that was deleted */
   @Json(name = "Deleted")
-  val deleted: kotlin.String? = null
+  var deleted: kotlin.String? = null
 )

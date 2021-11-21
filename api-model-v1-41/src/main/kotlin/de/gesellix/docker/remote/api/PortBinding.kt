@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
 data class PortBinding(
   /* Host IP address that the container's port is mapped to. */
   @Json(name = "HostIp")
-  val hostIp: kotlin.String? = null,
+  var hostIp: kotlin.String? = null,
   /* Host port number that the container's port is mapped to. */
   @Json(name = "HostPort")
-  val hostPort: kotlin.String? = null
+  var hostPort: kotlin.String? = null
 )

@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
 data class EventActor(
   /* The ID of the object emitting the event */
   @Json(name = "ID")
-  val ID: kotlin.String? = null,
+  var ID: kotlin.String? = null,
   /* Various key/value attributes of the object, depending on its type.  */
   @Json(name = "Attributes")
-  val attributes: kotlin.collections.Map<kotlin.String, kotlin.String>? = null
+  var attributes: kotlin.collections.Map<kotlin.String, kotlin.String>? = null
 )

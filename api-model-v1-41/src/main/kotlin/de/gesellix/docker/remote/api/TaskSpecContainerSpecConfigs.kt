@@ -24,14 +24,14 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class TaskSpecContainerSpecConfigs(
   @Json(name = "File")
-  val file: TaskSpecContainerSpecFile1? = null,
+  var file: TaskSpecContainerSpecFile1? = null,
   /* Runtime represents a target that is not mounted into the container but is used by the task  <p><br /><p>  > **Note**: `Configs.File` and `Configs.Runtime` are mutually > exclusive  */
   @Json(name = "Runtime")
-  val runtime: kotlin.Any? = null,
+  var runtime: kotlin.Any? = null,
   /* ConfigID represents the ID of the specific config that we're referencing.  */
   @Json(name = "ConfigID")
-  val configID: kotlin.String? = null,
+  var configID: kotlin.String? = null,
   /* ConfigName is the name of the config that this references, but this is just provided for lookup/display purposes. The config in the reference will be identified by its ID.  */
   @Json(name = "ConfigName")
-  val configName: kotlin.String? = null
+  var configName: kotlin.String? = null
 )

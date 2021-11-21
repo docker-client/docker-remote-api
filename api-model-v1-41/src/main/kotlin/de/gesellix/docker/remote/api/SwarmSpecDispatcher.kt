@@ -22,5 +22,5 @@ import com.squareup.moshi.JsonClass
 data class SwarmSpecDispatcher(
   /* The delay for an agent to send a heartbeat to the dispatcher.  */
   @Json(name = "HeartbeatPeriod")
-  val heartbeatPeriod: kotlin.Long? = null
+  var heartbeatPeriod: kotlin.Long? = null
 )

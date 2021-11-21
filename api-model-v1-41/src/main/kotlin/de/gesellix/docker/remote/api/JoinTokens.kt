@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
 data class JoinTokens(
   /* The token workers can use to join the swarm.  */
   @Json(name = "Worker")
-  val worker: kotlin.String? = null,
+  var worker: kotlin.String? = null,
   /* The token managers can use to join the swarm.  */
   @Json(name = "Manager")
-  val manager: kotlin.String? = null
+  var manager: kotlin.String? = null
 )

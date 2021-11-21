@@ -23,10 +23,10 @@ import com.squareup.moshi.JsonClass
 data class MountBindOptions(
   /* A propagation mode with the value `[r]private`, `[r]shared`, or `[r]slave`. */
   @Json(name = "Propagation")
-  val propagation: MountBindOptions.Propagation? = null,
+  var propagation: MountBindOptions.Propagation? = null,
   /* Disable recursive bind mount. */
   @Json(name = "NonRecursive")
-  val nonRecursive: kotlin.Boolean? = null
+  var nonRecursive: kotlin.Boolean? = null
 ) {
 
   /**

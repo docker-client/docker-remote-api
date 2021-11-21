@@ -27,17 +27,17 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class PluginMount(
   @Json(name = "Name")
-  val name: kotlin.String,
+  var name: kotlin.String,
   @Json(name = "Description")
-  val description: kotlin.String,
+  var description: kotlin.String,
   @Json(name = "Settable")
-  val settable: kotlin.collections.List<kotlin.String>,
+  var settable: kotlin.collections.List<kotlin.String>,
   @Json(name = "Source")
-  val source: kotlin.String,
+  var source: kotlin.String,
   @Json(name = "Destination")
-  val destination: kotlin.String,
+  var destination: kotlin.String,
   @Json(name = "Type")
-  val type: kotlin.String,
+  var type: kotlin.String,
   @Json(name = "Options")
-  val options: kotlin.collections.List<kotlin.String>
+  var options: kotlin.collections.List<kotlin.String>
 )

@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
 data class SystemInfoDefaultAddressPools(
   /* The network address in CIDR format */
   @Json(name = "Base")
-  val base: kotlin.String? = null,
+  var base: kotlin.String? = null,
   /* The network pool size */
   @Json(name = "Size")
-  val size: kotlin.Int? = null
+  var size: kotlin.Int? = null
 )

@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
 data class SwarmSpecTaskDefaultsLogDriver(
   /* The log driver to use as a default for new tasks.  */
   @Json(name = "Name")
-  val name: kotlin.String? = null,
+  var name: kotlin.String? = null,
   /* Driver-specific options for the selectd log driver, specified as key/value pairs.  */
   @Json(name = "Options")
-  val options: kotlin.collections.Map<kotlin.String, kotlin.String>? = null
+  var options: kotlin.collections.Map<kotlin.String, kotlin.String>? = null
 )

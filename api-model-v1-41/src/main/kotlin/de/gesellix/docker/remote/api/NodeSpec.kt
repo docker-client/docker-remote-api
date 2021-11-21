@@ -25,16 +25,16 @@ import com.squareup.moshi.JsonClass
 data class NodeSpec(
   /* Name for the node. */
   @Json(name = "Name")
-  val name: kotlin.String? = null,
+  var name: kotlin.String? = null,
   /* User-defined key/value metadata. */
   @Json(name = "Labels")
-  val labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
+  var labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
   /* Role of the node. */
   @Json(name = "Role")
-  val role: NodeSpec.Role? = null,
+  var role: NodeSpec.Role? = null,
   /* Availability of the node. */
   @Json(name = "Availability")
-  val availability: NodeSpec.Availability? = null
+  var availability: NodeSpec.Availability? = null
 ) {
 
   /**

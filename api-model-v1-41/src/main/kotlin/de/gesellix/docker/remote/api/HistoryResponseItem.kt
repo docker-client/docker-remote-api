@@ -26,15 +26,15 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class HistoryResponseItem(
   @Json(name = "Id")
-  val id: kotlin.String,
+  var id: kotlin.String,
   @Json(name = "Created")
-  val created: kotlin.Long,
+  var created: kotlin.Long,
   @Json(name = "CreatedBy")
-  val createdBy: kotlin.String,
+  var createdBy: kotlin.String,
   @Json(name = "Tags")
-  val tags: kotlin.collections.List<kotlin.String>?,
+  var tags: kotlin.collections.List<kotlin.String>?,
   @Json(name = "Size")
-  val size: kotlin.Long,
+  var size: kotlin.Long,
   @Json(name = "Comment")
-  val comment: kotlin.String
+  var comment: kotlin.String
 )

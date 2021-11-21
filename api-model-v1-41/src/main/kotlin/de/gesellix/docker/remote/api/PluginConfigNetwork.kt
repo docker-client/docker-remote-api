@@ -21,5 +21,5 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class PluginConfigNetwork(
   @Json(name = "Type")
-  val type: kotlin.String
+  var type: kotlin.String
 )

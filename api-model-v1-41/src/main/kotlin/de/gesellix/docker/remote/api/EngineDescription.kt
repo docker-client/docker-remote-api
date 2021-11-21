@@ -23,9 +23,9 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class EngineDescription(
   @Json(name = "EngineVersion")
-  val engineVersion: kotlin.String? = null,
+  var engineVersion: kotlin.String? = null,
   @Json(name = "Labels")
-  val labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
+  var labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
   @Json(name = "Plugins")
-  val plugins: kotlin.collections.List<EngineDescriptionPlugins>? = null
+  var plugins: kotlin.collections.List<EngineDescriptionPlugins>? = null
 )

@@ -21,5 +21,5 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class SystemVersionPlatform(
   @Json(name = "Name")
-  val name: kotlin.String
+  var name: kotlin.String
 )

@@ -24,11 +24,11 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class PluginSettings(
   @Json(name = "Mounts")
-  val mounts: kotlin.collections.List<PluginMount>,
+  var mounts: kotlin.collections.List<PluginMount>,
   @Json(name = "Env")
-  val env: kotlin.collections.List<kotlin.String>,
+  var env: kotlin.collections.List<kotlin.String>,
   @Json(name = "Args")
-  val args: kotlin.collections.List<kotlin.String>,
+  var args: kotlin.collections.List<kotlin.String>,
   @Json(name = "Devices")
-  val devices: kotlin.collections.List<PluginDevice>
+  var devices: kotlin.collections.List<PluginDevice>
 )

@@ -22,8 +22,8 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class BuildPruneResponse(
   @Json(name = "CachesDeleted")
-  val cachesDeleted: kotlin.collections.List<kotlin.String>? = null,
+  var cachesDeleted: kotlin.collections.List<kotlin.String>? = null,
   /* Disk space reclaimed in bytes */
   @Json(name = "SpaceReclaimed")
-  val spaceReclaimed: kotlin.Long? = null
+  var spaceReclaimed: kotlin.Long? = null
 )

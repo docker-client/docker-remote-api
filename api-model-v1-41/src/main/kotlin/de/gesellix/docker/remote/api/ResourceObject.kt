@@ -23,10 +23,10 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ResourceObject(
   @Json(name = "NanoCPUs")
-  val nanoCPUs: kotlin.Long? = null,
+  var nanoCPUs: kotlin.Long? = null,
   @Json(name = "MemoryBytes")
-  val memoryBytes: kotlin.Long? = null,
+  var memoryBytes: kotlin.Long? = null,
   /* User-defined resources can be either Integer resources (e.g, `SSD=3`) or String resources (e.g, `GPU=UUID1`).  */
   @Json(name = "GenericResources")
-  val genericResources: kotlin.collections.List<kotlin.Any>? = null
+  var genericResources: kotlin.collections.List<kotlin.Any>? = null
 )

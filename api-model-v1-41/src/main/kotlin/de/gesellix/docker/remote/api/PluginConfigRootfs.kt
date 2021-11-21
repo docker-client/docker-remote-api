@@ -22,7 +22,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class PluginConfigRootfs(
   @Json(name = "type")
-  val type: kotlin.String? = null,
+  var type: kotlin.String? = null,
   @Json(name = "diff_ids")
-  val diffIds: kotlin.collections.List<kotlin.String>? = null
+  var diffIds: kotlin.collections.List<kotlin.String>? = null
 )

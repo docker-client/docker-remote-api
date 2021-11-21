@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
 data class ContainerPruneResponse(
   /* Container IDs that were deleted */
   @Json(name = "ContainersDeleted")
-  val containersDeleted: kotlin.collections.List<kotlin.String>? = null,
+  var containersDeleted: kotlin.collections.List<kotlin.String>? = null,
   /* Disk space reclaimed in bytes */
   @Json(name = "SpaceReclaimed")
-  val spaceReclaimed: kotlin.Long? = null
+  var spaceReclaimed: kotlin.Long? = null
 )

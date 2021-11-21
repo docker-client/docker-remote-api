@@ -22,5 +22,5 @@ import com.squareup.moshi.JsonClass
 data class SwarmSpecOrchestration(
   /* The number of historic tasks to keep per instance or node. If negative, never remove completed or failed tasks.  */
   @Json(name = "TaskHistoryRetentionLimit")
-  val taskHistoryRetentionLimit: kotlin.Long? = null
+  var taskHistoryRetentionLimit: kotlin.Long? = null
 )

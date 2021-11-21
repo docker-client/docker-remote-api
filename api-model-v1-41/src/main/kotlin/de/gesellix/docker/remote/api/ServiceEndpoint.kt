@@ -23,9 +23,9 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ServiceEndpoint(
   @Json(name = "Spec")
-  val spec: EndpointSpec? = null,
+  var spec: EndpointSpec? = null,
   @Json(name = "Ports")
-  val ports: kotlin.collections.List<EndpointPortConfig>? = null,
+  var ports: kotlin.collections.List<EndpointPortConfig>? = null,
   @Json(name = "VirtualIPs")
-  val virtualIPs: kotlin.collections.List<ServiceEndpointVirtualIPs>? = null
+  var virtualIPs: kotlin.collections.List<ServiceEndpointVirtualIPs>? = null
 )

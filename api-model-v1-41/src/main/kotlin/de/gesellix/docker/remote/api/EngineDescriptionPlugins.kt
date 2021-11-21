@@ -22,7 +22,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class EngineDescriptionPlugins(
   @Json(name = "Type")
-  val type: kotlin.String? = null,
+  var type: kotlin.String? = null,
   @Json(name = "Name")
-  val name: kotlin.String? = null
+  var name: kotlin.String? = null
 )

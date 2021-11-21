@@ -21,5 +21,5 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ContainerUpdateResponse(
   @Json(name = "Warnings")
-  val warnings: kotlin.collections.List<kotlin.String>? = null
+  var warnings: kotlin.collections.List<kotlin.String>? = null
 )

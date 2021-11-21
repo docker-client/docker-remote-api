@@ -24,11 +24,11 @@ import com.squareup.moshi.JsonClass
 data class TLSInfo(
   /* The root CA certificate(s) that are used to validate leaf TLS certificates.  */
   @Json(name = "TrustRoot")
-  val trustRoot: kotlin.String? = null,
+  var trustRoot: kotlin.String? = null,
   /* The base64-url-safe-encoded raw subject bytes of the issuer. */
   @Json(name = "CertIssuerSubject")
-  val certIssuerSubject: kotlin.String? = null,
+  var certIssuerSubject: kotlin.String? = null,
   /* The base64-url-safe-encoded raw public key bytes of the issuer.  */
   @Json(name = "CertIssuerPublicKey")
-  val certIssuerPublicKey: kotlin.String? = null
+  var certIssuerPublicKey: kotlin.String? = null
 )

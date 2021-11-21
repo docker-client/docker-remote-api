@@ -30,30 +30,30 @@ import com.squareup.moshi.JsonClass
 data class Volume(
   /* Name of the volume. */
   @Json(name = "Name")
-  val name: kotlin.String,
+  var name: kotlin.String,
   /* Name of the volume driver used by the volume. */
   @Json(name = "Driver")
-  val driver: kotlin.String,
+  var driver: kotlin.String,
   /* Mount path of the volume on the host. */
   @Json(name = "Mountpoint")
-  val mountpoint: kotlin.String,
+  var mountpoint: kotlin.String,
   /* User-defined key/value metadata. */
   @Json(name = "Labels")
-  val labels: kotlin.collections.Map<kotlin.String, kotlin.String>?,
+  var labels: kotlin.collections.Map<kotlin.String, kotlin.String>?,
   /* The level at which the volume exists. Either `global` for cluster-wide, or `local` for machine level.  */
   @Json(name = "Scope")
-  val scope: Volume.Scope?,
+  var scope: Volume.Scope?,
   /* The driver specific options used when creating the volume.  */
   @Json(name = "Options")
-  val options: kotlin.collections.Map<kotlin.String, kotlin.String>?,
+  var options: kotlin.collections.Map<kotlin.String, kotlin.String>?,
   /* Date/Time the volume was created. */
   @Json(name = "CreatedAt")
-  val createdAt: kotlin.String? = null,
+  var createdAt: kotlin.String? = null,
   /* Low-level details about the volume, provided by the volume driver. Details are returned as a map with key/value pairs: `{\"key\":\"value\",\"key2\":\"value2\"}`.  The `Status` field is optional, and is omitted if the volume driver does not support this feature.  */
   @Json(name = "Status")
-  val status: kotlin.collections.Map<kotlin.String, kotlin.Any>? = null,
+  var status: kotlin.collections.Map<kotlin.String, kotlin.Any>? = null,
   @Json(name = "UsageData")
-  val usageData: VolumeUsageData? = null
+  var usageData: VolumeUsageData? = null
 ) {
 
   /**

@@ -30,23 +30,23 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ImageSummary(
   @Json(name = "Id")
-  val id: kotlin.String,
+  var id: kotlin.String,
   @Json(name = "ParentId")
-  val parentId: kotlin.String,
+  var parentId: kotlin.String,
   @Json(name = "RepoTags")
-  val repoTags: kotlin.collections.List<kotlin.String>?,
+  var repoTags: kotlin.collections.List<kotlin.String>?,
   @Json(name = "RepoDigests")
-  val repoDigests: kotlin.collections.List<kotlin.String>?,
+  var repoDigests: kotlin.collections.List<kotlin.String>?,
   @Json(name = "Created")
-  val created: kotlin.Int,
+  var created: kotlin.Int,
   @Json(name = "Size")
-  val size: java.math.BigDecimal,
+  var size: java.math.BigDecimal,
   @Json(name = "SharedSize")
-  val sharedSize: java.math.BigDecimal,
+  var sharedSize: java.math.BigDecimal,
   @Json(name = "VirtualSize")
-  val virtualSize: java.math.BigDecimal,
+  var virtualSize: java.math.BigDecimal,
   @Json(name = "Labels")
-  val labels: kotlin.collections.Map<kotlin.String, kotlin.String>?,
+  var labels: kotlin.collections.Map<kotlin.String, kotlin.String>?,
   @Json(name = "Containers")
-  val containers: kotlin.Int
+  var containers: kotlin.Int
 )

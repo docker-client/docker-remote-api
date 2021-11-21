@@ -27,21 +27,21 @@ import com.squareup.moshi.JsonClass
 data class EventMessage(
   /* The type of object emitting the event */
   @Json(name = "Type")
-  val type: EventMessage.Type? = null,
+  var type: EventMessage.Type? = null,
   /* The type of event */
   @Json(name = "Action")
-  val action: kotlin.String? = null,
+  var action: kotlin.String? = null,
   @Json(name = "Actor")
-  val actor: EventActor? = null,
+  var actor: EventActor? = null,
   /* Scope of the event. Engine events are `local` scope. Cluster (Swarm) events are `swarm` scope.  */
   @Json(name = "scope")
-  val scope: EventMessage.Scope? = null,
+  var scope: EventMessage.Scope? = null,
   /* Timestamp of event */
   @Json(name = "time")
-  val time: kotlin.Long? = null,
+  var time: kotlin.Long? = null,
   /* Timestamp of event, with nanosecond accuracy */
   @Json(name = "timeNano")
-  val timeNano: kotlin.Long? = null
+  var timeNano: kotlin.Long? = null
 ) {
 
   /**

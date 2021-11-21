@@ -22,8 +22,8 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class InlineResponse400(
   @Json(name = "ErrorResponse")
-  val errorResponse: ErrorResponse? = null,
+  var errorResponse: ErrorResponse? = null,
   /* The error message. Either \"must specify path parameter\" (path cannot be empty) or \"not a directory\" (path was asserted to be a directory but exists as a file).  */
   @Json(name = "message")
-  val message: kotlin.String? = null
+  var message: kotlin.String? = null
 )

@@ -23,11 +23,11 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class TaskSpecContainerSpecSecrets(
   @Json(name = "File")
-  val file: TaskSpecContainerSpecFile? = null,
+  var file: TaskSpecContainerSpecFile? = null,
   /* SecretID represents the ID of the specific secret that we're referencing.  */
   @Json(name = "SecretID")
-  val secretID: kotlin.String? = null,
+  var secretID: kotlin.String? = null,
   /* SecretName is the name of the secret that this references, but this is just provided for lookup/display purposes. The secret in the reference will be identified by its ID.  */
   @Json(name = "SecretName")
-  val secretName: kotlin.String? = null
+  var secretName: kotlin.String? = null
 )

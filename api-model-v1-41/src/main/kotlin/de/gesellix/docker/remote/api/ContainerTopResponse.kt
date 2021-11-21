@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
 data class ContainerTopResponse(
   /* The ps column titles */
   @Json(name = "Titles")
-  val titles: kotlin.collections.List<kotlin.String>? = null,
+  var titles: kotlin.collections.List<kotlin.String>? = null,
   /* Each process running in the container, where each is process is an array of values corresponding to the titles.  */
   @Json(name = "Processes")
-  val processes: kotlin.collections.List<kotlin.collections.List<kotlin.String>>? = null
+  var processes: kotlin.collections.List<kotlin.collections.List<kotlin.String>>? = null
 )

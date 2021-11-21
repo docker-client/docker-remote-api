@@ -22,7 +22,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ServiceEndpointVirtualIPs(
   @Json(name = "NetworkID")
-  val networkID: kotlin.String? = null,
+  var networkID: kotlin.String? = null,
   @Json(name = "Addr")
-  val addr: kotlin.String? = null
+  var addr: kotlin.String? = null
 )

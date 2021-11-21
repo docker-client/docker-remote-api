@@ -25,13 +25,13 @@ import com.squareup.moshi.JsonClass
 data class ConfigSpec(
   /* User-defined name of the config. */
   @Json(name = "Name")
-  val name: kotlin.String? = null,
+  var name: kotlin.String? = null,
   /* User-defined key/value metadata. */
   @Json(name = "Labels")
-  val labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
+  var labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
   /* Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-5)) config data.  */
   @Json(name = "Data")
-  val data: kotlin.String? = null,
+  var data: kotlin.String? = null,
   @Json(name = "Templating")
-  val templating: Driver? = null
+  var templating: Driver? = null
 )

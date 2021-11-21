@@ -31,31 +31,31 @@ import com.squareup.moshi.JsonClass
 data class NetworkCreateRequest(
   /* The network's name. */
   @Json(name = "Name")
-  val name: kotlin.String,
+  var name: kotlin.String,
   /* Check for networks with duplicate names. Since Network is primarily keyed based on a random ID and not on the name, and network name is strictly a user-friendly alias to the network which is uniquely identified using ID, there is no guaranteed way to check for duplicates. CheckDuplicate is there to provide a best effort checking of any networks which has the same name but it is not guaranteed to catch all name collisions.  */
   @Json(name = "CheckDuplicate")
-  val checkDuplicate: kotlin.Boolean? = null,
+  var checkDuplicate: kotlin.Boolean? = null,
   /* Name of the network driver plugin to use. */
   @Json(name = "Driver")
-  val driver: kotlin.String? = null,
+  var driver: kotlin.String? = null,
   /* Restrict external access to the network. */
   @Json(name = "Internal")
-  val `internal`: kotlin.Boolean? = null,
+  var `internal`: kotlin.Boolean? = null,
   /* Globally scoped network is manually attachable by regular containers from workers in swarm mode.  */
   @Json(name = "Attachable")
-  val attachable: kotlin.Boolean? = null,
+  var attachable: kotlin.Boolean? = null,
   /* Ingress network is the network which provides the routing-mesh in swarm mode.  */
   @Json(name = "Ingress")
-  val ingress: kotlin.Boolean? = null,
+  var ingress: kotlin.Boolean? = null,
   @Json(name = "IPAM")
-  val IPAM: IPAM? = null,
+  var IPAM: IPAM? = null,
   /* Enable IPv6 on the network. */
   @Json(name = "EnableIPv6")
-  val enableIPv6: kotlin.Boolean? = null,
+  var enableIPv6: kotlin.Boolean? = null,
   /* Network specific options to be used by the drivers. */
   @Json(name = "Options")
-  val options: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
+  var options: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
   /* User-defined key/value metadata. */
   @Json(name = "Labels")
-  val labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null
+  var labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null
 )

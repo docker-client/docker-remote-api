@@ -26,17 +26,17 @@ import com.squareup.moshi.JsonClass
 data class OCIPlatform(
   /* The CPU architecture, for example `amd64` or `ppc64`.  */
   @Json(name = "architecture")
-  val architecture: kotlin.String? = null,
+  var architecture: kotlin.String? = null,
   /* The operating system, for example `linux` or `windows`.  */
   @Json(name = "os")
-  val os: kotlin.String? = null,
+  var os: kotlin.String? = null,
   /* Optional field specifying the operating system version, for example on Windows `10.0.19041.1165`.  */
   @Json(name = "os.version")
-  val osVersion: kotlin.String? = null,
+  var osVersion: kotlin.String? = null,
   /* Optional field specifying an array of strings, each listing a required OS feature (for example on Windows `win32k`).  */
   @Json(name = "os.features")
-  val osFeatures: kotlin.collections.List<kotlin.String>? = null,
+  var osFeatures: kotlin.collections.List<kotlin.String>? = null,
   /* Optional field specifying a variant of the CPU, for example `v7` to specify ARMv7 when architecture is `arm`.  */
   @Json(name = "variant")
-  val variant: kotlin.String? = null
+  var variant: kotlin.String? = null
 )

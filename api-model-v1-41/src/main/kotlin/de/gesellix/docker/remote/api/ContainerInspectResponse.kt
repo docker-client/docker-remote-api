@@ -46,60 +46,60 @@ import com.squareup.moshi.JsonClass
 data class ContainerInspectResponse(
   /* The ID of the container */
   @Json(name = "Id")
-  val id: kotlin.String? = null,
+  var id: kotlin.String? = null,
   /* The time the container was created */
   @Json(name = "Created")
-  val created: kotlin.String? = null,
+  var created: kotlin.String? = null,
   /* The path to the command being run */
   @Json(name = "Path")
-  val path: kotlin.String? = null,
+  var path: kotlin.String? = null,
   /* The arguments to the command being run */
   @Json(name = "Args")
-  val args: kotlin.collections.List<kotlin.String>? = null,
+  var args: kotlin.collections.List<kotlin.String>? = null,
   @Json(name = "State")
-  val state: ContainerState? = null,
+  var state: ContainerState? = null,
   /* The container's image ID */
   @Json(name = "Image")
-  val image: kotlin.String? = null,
+  var image: kotlin.String? = null,
   @Json(name = "ResolvConfPath")
-  val resolvConfPath: kotlin.String? = null,
+  var resolvConfPath: kotlin.String? = null,
   @Json(name = "HostnamePath")
-  val hostnamePath: kotlin.String? = null,
+  var hostnamePath: kotlin.String? = null,
   @Json(name = "HostsPath")
-  val hostsPath: kotlin.String? = null,
+  var hostsPath: kotlin.String? = null,
   @Json(name = "LogPath")
-  val logPath: kotlin.String? = null,
+  var logPath: kotlin.String? = null,
   @Json(name = "Name")
-  val name: kotlin.String? = null,
+  var name: kotlin.String? = null,
   @Json(name = "RestartCount")
-  val restartCount: kotlin.Int? = null,
+  var restartCount: kotlin.Int? = null,
   @Json(name = "Driver")
-  val driver: kotlin.String? = null,
+  var driver: kotlin.String? = null,
   @Json(name = "Platform")
-  val platform: kotlin.String? = null,
+  var platform: kotlin.String? = null,
   @Json(name = "MountLabel")
-  val mountLabel: kotlin.String? = null,
+  var mountLabel: kotlin.String? = null,
   @Json(name = "ProcessLabel")
-  val processLabel: kotlin.String? = null,
+  var processLabel: kotlin.String? = null,
   @Json(name = "AppArmorProfile")
-  val appArmorProfile: kotlin.String? = null,
+  var appArmorProfile: kotlin.String? = null,
   /* IDs of exec instances that are running in the container. */
   @Json(name = "ExecIDs")
-  val execIDs: kotlin.collections.List<kotlin.String>? = null,
+  var execIDs: kotlin.collections.List<kotlin.String>? = null,
   @Json(name = "HostConfig")
-  val hostConfig: HostConfig? = null,
+  var hostConfig: HostConfig? = null,
   @Json(name = "GraphDriver")
-  val graphDriver: GraphDriverData? = null,
+  var graphDriver: GraphDriverData? = null,
   /* The size of files that have been created or changed by this container.  */
   @Json(name = "SizeRw")
-  val sizeRw: kotlin.Long? = null,
+  var sizeRw: kotlin.Long? = null,
   /* The total size of all the files in this container. */
   @Json(name = "SizeRootFs")
-  val sizeRootFs: kotlin.Long? = null,
+  var sizeRootFs: kotlin.Long? = null,
   @Json(name = "Mounts")
-  val mounts: kotlin.collections.List<MountPoint>? = null,
+  var mounts: kotlin.collections.List<MountPoint>? = null,
   @Json(name = "Config")
-  val config: ContainerConfig? = null,
+  var config: ContainerConfig? = null,
   @Json(name = "NetworkSettings")
-  val networkSettings: NetworkSettings? = null
+  var networkSettings: NetworkSettings? = null
 )

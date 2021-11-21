@@ -29,21 +29,21 @@ import com.squareup.moshi.JsonClass
 data class ServiceSpec(
   /* Name of the service. */
   @Json(name = "Name")
-  val name: kotlin.String? = null,
+  var name: kotlin.String? = null,
   /* User-defined key/value metadata. */
   @Json(name = "Labels")
-  val labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
+  var labels: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
   @Json(name = "TaskTemplate")
-  val taskTemplate: TaskSpec? = null,
+  var taskTemplate: TaskSpec? = null,
   @Json(name = "Mode")
-  val mode: ServiceSpecMode? = null,
+  var mode: ServiceSpecMode? = null,
   @Json(name = "UpdateConfig")
-  val updateConfig: ServiceSpecUpdateConfig? = null,
+  var updateConfig: ServiceSpecUpdateConfig? = null,
   @Json(name = "RollbackConfig")
-  val rollbackConfig: ServiceSpecRollbackConfig? = null,
+  var rollbackConfig: ServiceSpecRollbackConfig? = null,
   /* Specifies which networks the service should attach to. */
   @Json(name = "Networks")
-  val networks: kotlin.collections.List<NetworkAttachmentConfig>? = null,
+  var networks: kotlin.collections.List<NetworkAttachmentConfig>? = null,
   @Json(name = "EndpointSpec")
-  val endpointSpec: EndpointSpec? = null
+  var endpointSpec: EndpointSpec? = null
 )

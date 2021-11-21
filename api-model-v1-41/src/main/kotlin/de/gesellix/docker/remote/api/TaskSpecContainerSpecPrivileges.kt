@@ -22,7 +22,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class TaskSpecContainerSpecPrivileges(
   @Json(name = "CredentialSpec")
-  val credentialSpec: TaskSpecContainerSpecPrivilegesCredentialSpec? = null,
+  var credentialSpec: TaskSpecContainerSpecPrivilegesCredentialSpec? = null,
   @Json(name = "SELinuxContext")
-  val seLinuxContext: TaskSpecContainerSpecPrivilegesSELinuxContext? = null
+  var seLinuxContext: TaskSpecContainerSpecPrivilegesSELinuxContext? = null
 )

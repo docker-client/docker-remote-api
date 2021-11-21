@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
 data class ExecStartConfig(
   /* Detach from the command. */
   @Json(name = "Detach")
-  val detach: kotlin.Boolean? = null,
+  var detach: kotlin.Boolean? = null,
   /* Allocate a pseudo-TTY. */
   @Json(name = "Tty")
-  val tty: kotlin.Boolean? = null
+  var tty: kotlin.Boolean? = null
 )

@@ -22,5 +22,5 @@ import com.squareup.moshi.JsonClass
 data class ContainerWaitResponseError(
   /* Details of an error */
   @Json(name = "Message")
-  val message: kotlin.String? = null
+  var message: kotlin.String? = null
 )

@@ -31,32 +31,32 @@ import com.squareup.moshi.JsonClass
 data class ExecConfig(
   /* Attach to `stdin` of the exec command. */
   @Json(name = "AttachStdin")
-  val attachStdin: kotlin.Boolean? = null,
+  var attachStdin: kotlin.Boolean? = null,
   /* Attach to `stdout` of the exec command. */
   @Json(name = "AttachStdout")
-  val attachStdout: kotlin.Boolean? = null,
+  var attachStdout: kotlin.Boolean? = null,
   /* Attach to `stderr` of the exec command. */
   @Json(name = "AttachStderr")
-  val attachStderr: kotlin.Boolean? = null,
+  var attachStderr: kotlin.Boolean? = null,
   /* Override the key sequence for detaching a container. Format is a single character `[a-Z]` or `ctrl-<value>` where `<value>` is one of: `a-z`, `@`, `^`, `[`, `,` or `_`.  */
   @Json(name = "DetachKeys")
-  val detachKeys: kotlin.String? = null,
+  var detachKeys: kotlin.String? = null,
   /* Allocate a pseudo-TTY. */
   @Json(name = "Tty")
-  val tty: kotlin.Boolean? = null,
+  var tty: kotlin.Boolean? = null,
   /* A list of environment variables in the form `[\"VAR=value\", ...]`.  */
   @Json(name = "Env")
-  val env: kotlin.collections.List<kotlin.String>? = null,
+  var env: kotlin.collections.List<kotlin.String>? = null,
   /* Command to run, as a string or array of strings. */
   @Json(name = "Cmd")
-  val cmd: kotlin.collections.List<kotlin.String>? = null,
+  var cmd: kotlin.collections.List<kotlin.String>? = null,
   /* Runs the exec process with extended privileges. */
   @Json(name = "Privileged")
-  val privileged: kotlin.Boolean? = null,
+  var privileged: kotlin.Boolean? = null,
   /* The user, and optionally, group to run the exec process inside the container. Format is one of: `user`, `user:group`, `uid`, or `uid:gid`.  */
   @Json(name = "User")
-  val user: kotlin.String? = null,
+  var user: kotlin.String? = null,
   /* The working directory for the exec process inside the container.  */
   @Json(name = "WorkingDir")
-  val workingDir: kotlin.String? = null
+  var workingDir: kotlin.String? = null
 )

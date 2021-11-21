@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
 data class Commit(
   /* Actual commit ID of external tool. */
   @Json(name = "ID")
-  val ID: kotlin.String? = null,
+  var ID: kotlin.String? = null,
   /* Commit ID of external tool expected by dockerd as set at build time.  */
   @Json(name = "Expected")
-  val expected: kotlin.String? = null
+  var expected: kotlin.String? = null
 )

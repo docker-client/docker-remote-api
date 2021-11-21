@@ -22,8 +22,8 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class DistributionInspect(
   @Json(name = "Descriptor")
-  val descriptor: OCIDescriptor,
+  var descriptor: OCIDescriptor,
   /* An array containing all platforms supported by the image.  */
   @Json(name = "Platforms")
-  val platforms: kotlin.collections.List<OCIPlatform>
+  var platforms: kotlin.collections.List<OCIPlatform>
 )

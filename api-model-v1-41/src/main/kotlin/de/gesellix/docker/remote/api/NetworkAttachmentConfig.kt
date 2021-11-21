@@ -24,11 +24,11 @@ import com.squareup.moshi.JsonClass
 data class NetworkAttachmentConfig(
   /* The target network for attachment. Must be a network name or ID.  */
   @Json(name = "Target")
-  val target: kotlin.String? = null,
+  var target: kotlin.String? = null,
   /* Discoverable alternate names for the service on this network.  */
   @Json(name = "Aliases")
-  val aliases: kotlin.collections.List<kotlin.String>? = null,
+  var aliases: kotlin.collections.List<kotlin.String>? = null,
   /* Driver attachment options for the network target.  */
   @Json(name = "DriverOpts")
-  val driverOpts: kotlin.collections.Map<kotlin.String, kotlin.String>? = null
+  var driverOpts: kotlin.collections.Map<kotlin.String, kotlin.String>? = null
 )

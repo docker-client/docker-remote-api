@@ -25,14 +25,14 @@ import com.squareup.moshi.JsonClass
 data class HealthcheckResult(
   /* Date and time at which this check started in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.  */
   @Json(name = "Start")
-  val start: java.time.OffsetDateTime? = null,
+  var start: java.time.OffsetDateTime? = null,
   /* Date and time at which this check ended in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.  */
   @Json(name = "End")
-  val end: kotlin.String? = null,
+  var end: kotlin.String? = null,
   /* ExitCode meanings:  - `0` healthy - `1` unhealthy - `2` reserved (considered unhealthy) - other values: error running probe  */
   @Json(name = "ExitCode")
-  val exitCode: kotlin.Int? = null,
+  var exitCode: kotlin.Int? = null,
   /* Output from last check */
   @Json(name = "Output")
-  val output: kotlin.String? = null
+  var output: kotlin.String? = null
 )

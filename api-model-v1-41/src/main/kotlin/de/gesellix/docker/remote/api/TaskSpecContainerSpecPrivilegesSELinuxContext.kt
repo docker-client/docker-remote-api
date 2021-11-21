@@ -26,17 +26,17 @@ import com.squareup.moshi.JsonClass
 data class TaskSpecContainerSpecPrivilegesSELinuxContext(
   /* Disable SELinux */
   @Json(name = "Disable")
-  val disable: kotlin.Boolean? = null,
+  var disable: kotlin.Boolean? = null,
   /* SELinux user label */
   @Json(name = "User")
-  val user: kotlin.String? = null,
+  var user: kotlin.String? = null,
   /* SELinux role label */
   @Json(name = "Role")
-  val role: kotlin.String? = null,
+  var role: kotlin.String? = null,
   /* SELinux type label */
   @Json(name = "Type")
-  val type: kotlin.String? = null,
+  var type: kotlin.String? = null,
   /* SELinux level label */
   @Json(name = "Level")
-  val level: kotlin.String? = null
+  var level: kotlin.String? = null
 )

@@ -25,13 +25,13 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ProcessConfig(
   @Json(name = "privileged")
-  val privileged: kotlin.Boolean? = null,
+  var privileged: kotlin.Boolean? = null,
   @Json(name = "user")
-  val user: kotlin.String? = null,
+  var user: kotlin.String? = null,
   @Json(name = "tty")
-  val tty: kotlin.Boolean? = null,
+  var tty: kotlin.Boolean? = null,
   @Json(name = "entrypoint")
-  val entrypoint: kotlin.String? = null,
+  var entrypoint: kotlin.String? = null,
   @Json(name = "arguments")
-  val arguments: kotlin.collections.List<kotlin.String>? = null
+  var arguments: kotlin.collections.List<kotlin.String>? = null
 )

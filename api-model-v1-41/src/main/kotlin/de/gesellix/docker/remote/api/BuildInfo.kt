@@ -28,19 +28,19 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class BuildInfo(
   @Json(name = "id")
-  val id: kotlin.String? = null,
+  var id: kotlin.String? = null,
   @Json(name = "stream")
-  val stream: kotlin.String? = null,
+  var stream: kotlin.String? = null,
   @Json(name = "error")
-  val error: kotlin.String? = null,
+  var error: kotlin.String? = null,
   @Json(name = "errorDetail")
-  val errorDetail: ErrorDetail? = null,
+  var errorDetail: ErrorDetail? = null,
   @Json(name = "status")
-  val status: kotlin.String? = null,
+  var status: kotlin.String? = null,
   @Json(name = "progress")
-  val progress: kotlin.String? = null,
+  var progress: kotlin.String? = null,
   @Json(name = "progressDetail")
-  val progressDetail: ProgressDetail? = null,
+  var progressDetail: ProgressDetail? = null,
   @Json(name = "aux")
-  val aux: ImageID? = null
+  var aux: ImageID? = null
 )

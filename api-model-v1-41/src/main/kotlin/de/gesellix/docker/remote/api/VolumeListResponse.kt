@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
 data class VolumeListResponse(
   /* List of volumes */
   @Json(name = "Volumes")
-  val volumes: kotlin.collections.List<Volume>,
+  var volumes: kotlin.collections.List<Volume>,
   /* Warnings that occurred when fetching the list of volumes.  */
   @Json(name = "Warnings")
-  val warnings: kotlin.collections.List<kotlin.String>?
+  var warnings: kotlin.collections.List<kotlin.String>?
 )

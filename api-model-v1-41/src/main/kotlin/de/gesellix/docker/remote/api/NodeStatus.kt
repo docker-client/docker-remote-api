@@ -23,10 +23,10 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class NodeStatus(
   @Json(name = "State")
-  val state: NodeState? = null,
+  var state: NodeState? = null,
   @Json(name = "Message")
-  val message: kotlin.String? = null,
+  var message: kotlin.String? = null,
   /* IP address of the node. */
   @Json(name = "Addr")
-  val addr: kotlin.String? = null
+  var addr: kotlin.String? = null
 )

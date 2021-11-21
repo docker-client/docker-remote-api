@@ -22,5 +22,5 @@ import com.squareup.moshi.JsonClass
 data class ErrorResponse(
   /* The error message. */
   @Json(name = "message")
-  val message: kotlin.String
+  var message: kotlin.String
 )

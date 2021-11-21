@@ -21,5 +21,5 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ImageMetadata(
   @Json(name = "LastTagTime")
-  val lastTagTime: kotlin.String? = null
+  var lastTagTime: kotlin.String? = null
 )

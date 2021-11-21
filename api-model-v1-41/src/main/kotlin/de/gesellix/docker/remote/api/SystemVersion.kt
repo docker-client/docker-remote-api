@@ -32,38 +32,38 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class SystemVersion(
   @Json(name = "Platform")
-  val platform: SystemVersionPlatform? = null,
+  var platform: SystemVersionPlatform? = null,
   /* Information about system components  */
   @Json(name = "Components")
-  val components: kotlin.collections.List<SystemVersionComponents>? = null,
+  var components: kotlin.collections.List<SystemVersionComponents>? = null,
   /* The version of the daemon */
   @Json(name = "Version")
-  val version: kotlin.String? = null,
+  var version: kotlin.String? = null,
   /* The default (and highest) API version that is supported by the daemon  */
   @Json(name = "ApiVersion")
-  val apiVersion: kotlin.String? = null,
+  var apiVersion: kotlin.String? = null,
   /* The minimum API version that is supported by the daemon  */
   @Json(name = "MinAPIVersion")
-  val minAPIVersion: kotlin.String? = null,
+  var minAPIVersion: kotlin.String? = null,
   /* The Git commit of the source code that was used to build the daemon  */
   @Json(name = "GitCommit")
-  val gitCommit: kotlin.String? = null,
+  var gitCommit: kotlin.String? = null,
   /* The version Go used to compile the daemon, and the version of the Go runtime in use.  */
   @Json(name = "GoVersion")
-  val goVersion: kotlin.String? = null,
+  var goVersion: kotlin.String? = null,
   /* The operating system that the daemon is running on (\"linux\" or \"windows\")  */
   @Json(name = "Os")
-  val os: kotlin.String? = null,
+  var os: kotlin.String? = null,
   /* The architecture that the daemon is running on  */
   @Json(name = "Arch")
-  val arch: kotlin.String? = null,
+  var arch: kotlin.String? = null,
   /* The kernel version (`uname -r`) that the daemon is running on.  This field is omitted when empty.  */
   @Json(name = "KernelVersion")
-  val kernelVersion: kotlin.String? = null,
+  var kernelVersion: kotlin.String? = null,
   /* Indicates if the daemon is started with experimental features enabled.  This field is omitted when empty / false.  */
   @Json(name = "Experimental")
-  val experimental: kotlin.Boolean? = null,
+  var experimental: kotlin.Boolean? = null,
   /* The date and time that the daemon was compiled.  */
   @Json(name = "BuildTime")
-  val buildTime: kotlin.String? = null
+  var buildTime: kotlin.String? = null
 )

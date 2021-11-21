@@ -22,7 +22,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class TaskSpecLogDriver(
   @Json(name = "Name")
-  val name: kotlin.String? = null,
+  var name: kotlin.String? = null,
   @Json(name = "Options")
-  val options: kotlin.collections.Map<kotlin.String, kotlin.String>? = null
+  var options: kotlin.collections.Map<kotlin.String, kotlin.String>? = null
 )

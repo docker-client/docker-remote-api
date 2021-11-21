@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
 data class ContainerChangeResponseItem(
   /* Path to file that has changed */
   @Json(name = "Path")
-  val path: kotlin.String,
+  var path: kotlin.String,
   /* Kind of change */
   @Json(name = "Kind")
-  val kind: kotlin.Int
+  var kind: kotlin.Int
 )

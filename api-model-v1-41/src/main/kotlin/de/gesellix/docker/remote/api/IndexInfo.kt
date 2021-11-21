@@ -25,14 +25,14 @@ import com.squareup.moshi.JsonClass
 data class IndexInfo(
   /* Name of the registry, such as \"docker.io\".  */
   @Json(name = "Name")
-  val name: kotlin.String? = null,
+  var name: kotlin.String? = null,
   /* List of mirrors, expressed as URIs.  */
   @Json(name = "Mirrors")
-  val mirrors: kotlin.collections.List<kotlin.String>? = null,
+  var mirrors: kotlin.collections.List<kotlin.String>? = null,
   /* Indicates if the registry is part of the list of insecure registries.  If `false`, the registry is insecure. Insecure registries accept un-encrypted (HTTP) and/or untrusted (HTTPS with certificates from unknown CAs) communication.  > **Warning**: Insecure registries can be useful when running a local > registry. However, because its use creates security vulnerabilities > it should ONLY be enabled for testing purposes. For increased > security, users should add their CA to their system's list of > trusted CAs instead of enabling this option.  */
   @Json(name = "Secure")
-  val secure: kotlin.Boolean? = null,
+  var secure: kotlin.Boolean? = null,
   /* Indicates whether this is an official registry (i.e., Docker Hub / docker.io)  */
   @Json(name = "Official")
-  val official: kotlin.Boolean? = null
+  var official: kotlin.Boolean? = null
 )

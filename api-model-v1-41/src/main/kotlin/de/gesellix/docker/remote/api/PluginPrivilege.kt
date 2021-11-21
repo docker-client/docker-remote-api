@@ -23,9 +23,9 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class PluginPrivilege(
   @Json(name = "Name")
-  val name: kotlin.String? = null,
+  var name: kotlin.String? = null,
   @Json(name = "Description")
-  val description: kotlin.String? = null,
+  var description: kotlin.String? = null,
   @Json(name = "Value")
-  val value: kotlin.collections.List<kotlin.String>? = null
+  var value: kotlin.collections.List<kotlin.String>? = null
 )

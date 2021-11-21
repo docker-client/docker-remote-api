@@ -25,14 +25,14 @@ import com.squareup.moshi.JsonClass
 data class TaskSpecContainerSpecFile(
   /* Name represents the final filename in the filesystem.  */
   @Json(name = "Name")
-  val name: kotlin.String? = null,
+  var name: kotlin.String? = null,
   /* UID represents the file UID. */
   @Json(name = "UID")
-  val UID: kotlin.String? = null,
+  var UID: kotlin.String? = null,
   /* GID represents the file GID. */
   @Json(name = "GID")
-  val GID: kotlin.String? = null,
+  var GID: kotlin.String? = null,
   /* Mode represents the FileMode of the file. */
   @Json(name = "Mode")
-  val mode: kotlin.Int? = null
+  var mode: kotlin.Int? = null
 )
