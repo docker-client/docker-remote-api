@@ -5733,7 +5733,7 @@ paths:
               Warnings:
                 description: "Warnings encountered when creating the container"
                 type: "array"
-                x-nullable: false
+                x-nullable: true
                 items:
                   type: "string"
           examples:

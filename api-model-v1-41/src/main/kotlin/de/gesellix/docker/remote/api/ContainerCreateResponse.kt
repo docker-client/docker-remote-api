@@ -26,5 +26,5 @@ data class ContainerCreateResponse(
   var id: kotlin.String,
   /* Warnings encountered when creating the container */
   @Json(name = "Warnings")
-  var warnings: kotlin.collections.List<kotlin.String>
+  var warnings: kotlin.collections.List<kotlin.String>?
 )
