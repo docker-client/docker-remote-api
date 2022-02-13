@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ipAMConfig** | [**EndpointIPAMConfig**](EndpointIPAMConfig.md) |  |  [optional]
-**links** | **kotlin.collections.List&lt;kotlin.String&gt;** |  |  [optional]
-**aliases** | **kotlin.collections.List&lt;kotlin.String&gt;** |  |  [optional]
+**links** | **kotlin.collections.MutableList&lt;kotlin.String&gt;** |  |  [optional]
+**aliases** | **kotlin.collections.MutableList&lt;kotlin.String&gt;** |  |  [optional]
 **networkID** | **kotlin.String** | Unique ID of the network.  |  [optional]
 **endpointID** | **kotlin.String** | Unique ID for the service endpoint in a Sandbox.  |  [optional]
 **gateway** | **kotlin.String** | Gateway address for this network.  |  [optional]
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **globalIPv6Address** | **kotlin.String** | Global IPv6 address.  |  [optional]
 **globalIPv6PrefixLen** | **kotlin.Long** | Mask length of the global IPv6 address.  |  [optional]
 **macAddress** | **kotlin.String** | MAC address for the endpoint on this network.  |  [optional]
-**driverOpts** | **kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt;** | DriverOpts is a mapping of driver options and values. These options are passed directly to the driver and are driver specific.  |  [optional]
+**driverOpts** | **kotlin.collections.MutableMap&lt;kotlin.String, kotlin.String&gt;** | DriverOpts is a mapping of driver options and values. These options are passed directly to the driver and are driver specific.  |  [optional]
 
 
 

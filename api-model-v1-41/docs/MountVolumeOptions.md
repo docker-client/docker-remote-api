@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **noCopy** | **kotlin.Boolean** | Populate volume with data from the target. |  [optional]
-**labels** | **kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt;** | User-defined key/value metadata. |  [optional]
+**labels** | **kotlin.collections.MutableMap&lt;kotlin.String, kotlin.String&gt;** | User-defined key/value metadata. |  [optional]
 **driverConfig** | [**MountVolumeOptionsDriverConfig**](MountVolumeOptionsDriverConfig.md) |  |  [optional]
 
 

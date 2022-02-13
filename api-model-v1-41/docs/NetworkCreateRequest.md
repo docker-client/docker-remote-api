@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **ingress** | **kotlin.Boolean** | Ingress network is the network which provides the routing-mesh in swarm mode.  |  [optional]
 **IPAM** | [**IPAM**](IPAM.md) |  |  [optional]
 **enableIPv6** | **kotlin.Boolean** | Enable IPv6 on the network. |  [optional]
-**options** | **kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt;** | Network specific options to be used by the drivers. |  [optional]
-**labels** | **kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt;** | User-defined key/value metadata. |  [optional]
+**options** | **kotlin.collections.MutableMap&lt;kotlin.String, kotlin.String&gt;** | Network specific options to be used by the drivers. |  [optional]
+**labels** | **kotlin.collections.MutableMap&lt;kotlin.String, kotlin.String&gt;** | User-defined key/value metadata. |  [optional]
 
 
 

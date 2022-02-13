@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **privatePort** | **kotlin.Int** | Port on the container | 
-**type** | [**inline**](#TypeEnum) |  | 
+**type** | [**inline**](#Type) |  | 
 **IP** | **kotlin.String** | Host IP address that the container&#39;s port is mapped to |  [optional]
 **publicPort** | **kotlin.Int** | Port exposed on the host |  [optional]
 
 
-<a name="TypeEnum"></a>
+<a name="Type"></a>
 ## Enum: Type
 Name | Value
 ---- | -----
