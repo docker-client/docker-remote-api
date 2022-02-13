@@ -69,7 +69,7 @@ repositories {
 dependencies {
   implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10")
 
-  implementation("com.squareup.moshi:moshi:1.12.0")
+  implementation("com.squareup.moshi:moshi:1.13.0")
   ksp("com.squareup.moshi:moshi-kotlin-codegen:1.12.0")
 }
 
