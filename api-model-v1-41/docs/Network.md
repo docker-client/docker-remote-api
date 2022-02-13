@@ -14,9 +14,9 @@ Name | Type | Description | Notes
 **&#x60;internal&#x60;** | **kotlin.Boolean** |  |  [optional]
 **attachable** | **kotlin.Boolean** |  |  [optional]
 **ingress** | **kotlin.Boolean** |  |  [optional]
-**containers** | [**kotlin.collections.Map&lt;kotlin.String, NetworkContainer&gt;**](NetworkContainer.md) |  |  [optional]
-**options** | **kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt;** |  |  [optional]
-**labels** | **kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt;** |  |  [optional]
+**containers** | [**kotlin.collections.MutableMap&lt;kotlin.String, NetworkContainer&gt;**](NetworkContainer.md) |  |  [optional]
+**options** | **kotlin.collections.MutableMap&lt;kotlin.String, kotlin.String&gt;** |  |  [optional]
+**labels** | **kotlin.collections.MutableMap&lt;kotlin.String, kotlin.String&gt;** |  |  [optional]
 
 
 

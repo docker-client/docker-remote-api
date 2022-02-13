@@ -4,11 +4,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**inline**](#TypeEnum) |  |  [optional]
-**config** | **kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt;** |  |  [optional]
+**type** | [**inline**](#Type) |  |  [optional]
+**config** | **kotlin.collections.MutableMap&lt;kotlin.String, kotlin.String&gt;** |  |  [optional]
 
 
-<a name="TypeEnum"></a>
+<a name="Type"></a>
 ## Enum: Type
 Name | Value
 ---- | -----

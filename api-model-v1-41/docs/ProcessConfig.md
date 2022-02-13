@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **user** | **kotlin.String** |  |  [optional]
 **tty** | **kotlin.Boolean** |  |  [optional]
 **entrypoint** | **kotlin.String** |  |  [optional]
-**arguments** | **kotlin.collections.List&lt;kotlin.String&gt;** |  |  [optional]
+**arguments** | **kotlin.collections.MutableList&lt;kotlin.String&gt;** |  |  [optional]
 
 
 

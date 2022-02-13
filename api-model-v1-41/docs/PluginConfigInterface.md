@@ -4,12 +4,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**types** | [**kotlin.collections.List&lt;PluginInterfaceType&gt;**](PluginInterfaceType.md) |  | 
+**types** | [**kotlin.collections.MutableList&lt;PluginInterfaceType&gt;**](PluginInterfaceType.md) |  | 
 **socket** | **kotlin.String** |  | 
-**protocolScheme** | [**inline**](#ProtocolSchemeEnum) | Protocol to use for clients connecting to the plugin. |  [optional]
+**protocolScheme** | [**inline**](#ProtocolScheme) | Protocol to use for clients connecting to the plugin. |  [optional]
 
 
-<a name="ProtocolSchemeEnum"></a>
+<a name="ProtocolScheme"></a>
 ## Enum: ProtocolScheme
 Name | Value
 ---- | -----

@@ -13,12 +13,12 @@ Name | Type | Description | Notes
 **author** | **kotlin.String** |  | 
 **architecture** | **kotlin.String** |  | 
 **os** | **kotlin.String** |  | 
-**size** | **kotlin.Long** |  | 
+**propertySize** | **kotlin.Long** |  | 
 **virtualSize** | **kotlin.Long** |  | 
 **graphDriver** | [**GraphDriverData**](GraphDriverData.md) |  | 
 **rootFS** | [**ImageRootFS**](ImageRootFS.md) |  | 
-**repoTags** | **kotlin.collections.List&lt;kotlin.String&gt;** |  |  [optional]
-**repoDigests** | **kotlin.collections.List&lt;kotlin.String&gt;** |  |  [optional]
+**repoTags** | **kotlin.collections.MutableList&lt;kotlin.String&gt;** |  |  [optional]
+**repoDigests** | **kotlin.collections.MutableList&lt;kotlin.String&gt;** |  |  [optional]
 **containerConfig** | [**ContainerConfig**](ContainerConfig.md) |  |  [optional]
 **config** | [**ContainerConfig**](ContainerConfig.md) |  |  [optional]
 **osVersion** | **kotlin.String** |  |  [optional]

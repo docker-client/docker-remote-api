@@ -5,19 +5,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **kotlin.String** | Name for the node. |  [optional]
-**labels** | **kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt;** | User-defined key/value metadata. |  [optional]
-**role** | [**inline**](#RoleEnum) | Role of the node. |  [optional]
-**availability** | [**inline**](#AvailabilityEnum) | Availability of the node. |  [optional]
+**labels** | **kotlin.collections.MutableMap&lt;kotlin.String, kotlin.String&gt;** | User-defined key/value metadata. |  [optional]
+**role** | [**inline**](#Role) | Role of the node. |  [optional]
+**availability** | [**inline**](#Availability) | Availability of the node. |  [optional]
 
 
-<a name="RoleEnum"></a>
+<a name="Role"></a>
 ## Enum: Role
 Name | Value
 ---- | -----
 role | worker, manager
 
 
-<a name="AvailabilityEnum"></a>
+<a name="Availability"></a>
 ## Enum: Availability
 Name | Value
 ---- | -----

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **tlSInfo** | [**TLSInfo**](TLSInfo.md) |  |  [optional]
 **rootRotationInProgress** | **kotlin.Boolean** | Whether there is currently a root CA rotation in progress for the swarm  |  [optional]
 **dataPathPort** | **kotlin.Int** | DataPathPort specifies the data path port number for data traffic. Acceptable port range is 1024 to 49151. If no port is set or is set to 0, the default port (4789) is used.  |  [optional]
-**defaultAddrPool** | **kotlin.collections.List&lt;kotlin.String&gt;** | Default Address Pool specifies default subnet pools for global scope networks.  |  [optional]
+**defaultAddrPool** | **kotlin.collections.MutableList&lt;kotlin.String&gt;** | Default Address Pool specifies default subnet pools for global scope networks.  |  [optional]
 **subnetSize** | **kotlin.Int** | SubnetSize specifies the subnet size of the networks created from the default subnet pool.  |  [optional]
 **joinTokens** | [**JoinTokens**](JoinTokens.md) |  |  [optional]
 

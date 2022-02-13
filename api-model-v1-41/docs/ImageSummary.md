@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **kotlin.String** |  | 
 **parentId** | **kotlin.String** |  | 
-**repoTags** | **kotlin.collections.List&lt;kotlin.String&gt;** |  | 
-**repoDigests** | **kotlin.collections.List&lt;kotlin.String&gt;** |  | 
+**repoTags** | **kotlin.collections.MutableList&lt;kotlin.String&gt;** |  | 
+**repoDigests** | **kotlin.collections.MutableList&lt;kotlin.String&gt;** |  | 
 **created** | **kotlin.Int** |  | 
-**size** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  | 
+**propertySize** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  | 
 **sharedSize** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  | 
 **virtualSize** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  | 
-**labels** | **kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt;** |  | 
+**labels** | **kotlin.collections.MutableMap&lt;kotlin.String, kotlin.String&gt;** |  | 
 **containers** | **kotlin.Int** |  | 
 
 

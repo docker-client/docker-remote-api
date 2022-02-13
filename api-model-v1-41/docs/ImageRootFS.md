@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **kotlin.String** |  | 
-**layers** | **kotlin.collections.List&lt;kotlin.String&gt;** |  |  [optional]
+**layers** | **kotlin.collections.MutableList&lt;kotlin.String&gt;** |  |  [optional]
 **baseLayer** | **kotlin.String** |  |  [optional]
 
 

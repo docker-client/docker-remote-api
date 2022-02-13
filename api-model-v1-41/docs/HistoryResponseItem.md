@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **id** | **kotlin.String** |  | 
 **created** | **kotlin.Long** |  | 
 **createdBy** | **kotlin.String** |  | 
-**tags** | **kotlin.collections.List&lt;kotlin.String&gt;** |  | 
-**size** | **kotlin.Long** |  | 
+**tags** | **kotlin.collections.MutableList&lt;kotlin.String&gt;** |  | 
+**propertySize** | **kotlin.Long** |  | 
 **comment** | **kotlin.String** |  | 
 
 

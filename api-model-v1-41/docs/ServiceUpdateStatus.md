@@ -4,13 +4,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**state** | [**inline**](#StateEnum) |  |  [optional]
+**state** | [**inline**](#State) |  |  [optional]
 **startedAt** | **kotlin.String** |  |  [optional]
 **completedAt** | **kotlin.String** |  |  [optional]
 **message** | **kotlin.String** |  |  [optional]
 
 
-<a name="StateEnum"></a>
+<a name="State"></a>
 ## Enum: State
 Name | Value
 ---- | -----
