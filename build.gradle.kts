@@ -7,7 +7,7 @@ plugins {
   id("maven-publish")
   id("com.github.ben-manes.versions") version "0.42.0"
   id("net.ossindex.audit") version "0.4.11"
-  id("io.freefair.maven-central.validate-poms") version "6.4.0"
+  id("io.freefair.maven-central.validate-poms") version "6.4.1"
   id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
   id("org.jetbrains.kotlin.jvm") version "1.6.10" apply false
   id("com.google.devtools.ksp") version("1.6.10-1.0.2") apply false
