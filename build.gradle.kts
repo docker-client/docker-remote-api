@@ -10,13 +10,14 @@ plugins {
   id("io.freefair.maven-central.validate-poms") version "6.4.1"
   id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
   id("org.jetbrains.kotlin.jvm") version "1.6.20" apply false
-  id("com.google.devtools.ksp") version("1.6.10-1.0.2") apply false
+  id("com.google.devtools.ksp") version "1.6.20-1.0.4" apply false
   id("org.openapi.generator") version "5.4.0" apply false
   id("org.jlleitschuh.gradle.ktlint") version "10.2.1" apply false
 }
 
 val dependencyVersions = listOf(
   "org.jetbrains.kotlin:kotlin-reflect:1.6.20",
+  "org.jetbrains.kotlin:kotlin-script-runtime:1.6.20",
   "org.jetbrains.kotlin:kotlin-stdlib:1.6.20",
   "org.jetbrains.kotlin:kotlin-stdlib-common:1.6.20",
   "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.20",
