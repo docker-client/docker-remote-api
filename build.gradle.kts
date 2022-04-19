@@ -19,7 +19,7 @@ val dependencyVersions = listOf(
   "org.jetbrains.kotlin:kotlin-reflect:1.6.20",
   "org.jetbrains.kotlin:kotlin-script-runtime:1.6.20",
   "org.jetbrains.kotlin:kotlin-stdlib:1.6.20",
-  "org.jetbrains.kotlin:kotlin-stdlib-common:1.6.20",
+  "org.jetbrains.kotlin:kotlin-stdlib-common:1.6.21",
   "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.20",
   "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.20"
 )
