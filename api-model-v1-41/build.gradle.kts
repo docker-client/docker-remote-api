@@ -67,6 +67,14 @@ repositories {
 }
 
 dependencies {
+  constraints {
+    implementation("com.squareup.okio:okio") {
+      version {
+        strictly("[2.5,4)")
+        prefer("3.1.0")
+      }
+    }
+  }
   implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.20")
 
   implementation("com.squareup.moshi:moshi:1.13.0")
