@@ -62,15 +62,15 @@ data class ImageSummary(
 
   /* Total size of the image including all layers it is composed of.  */
   @Json(name = "Size")
-  var propertySize: java.math.BigDecimal,
+  var propertySize: kotlin.Long,
 
   /* Total size of image layers that are shared between this image and other images.  This size is not calculated by default. `-1` indicates that the value has not been set / calculated.  */
   @Json(name = "SharedSize")
-  var sharedSize: java.math.BigDecimal,
+  var sharedSize: kotlin.Long,
 
   /* Total size of the image including all layers it is composed of.  In versions of Docker before v1.10, this field was calculated from the image itself and all of its parent images. Docker v1.10 and up store images self-contained, and no longer use a parent-chain, making this field an equivalent of the Size field.  This field is kept for backward compatibility, but may be removed in a future version of the API.  */
   @Json(name = "VirtualSize")
-  var virtualSize: java.math.BigDecimal,
+  var virtualSize: kotlin.Long,
 
   /* User-defined key/value metadata. */
   @Json(name = "Labels")

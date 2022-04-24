@@ -24,22 +24,15 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 /**
+ * container waiting error, if any
  *
- *
- * @param type
- * @param layers
- * @param baseLayer
+ * @param message Details of an error
  */
 @JsonClass(generateAdapter = true)
-data class ImageRootFS(
+data class ContainerWaitExitError(
 
-  @Json(name = "Type")
-  var type: kotlin.String,
-
-  @Json(name = "Layers")
-  var layers: kotlin.collections.MutableList<kotlin.String>? = null,
-
-  @Json(name = "BaseLayer")
-  var baseLayer: kotlin.String? = null
+  /* Details of an error */
+  @Json(name = "Message")
+  var message: kotlin.String? = null
 
 )

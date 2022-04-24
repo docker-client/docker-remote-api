@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **status** | **kotlin.String** | Additional human-readable status of this container (e.g. &#x60;Exit 0&#x60;) |  [optional]
 **hostConfig** | [**ContainerSummaryHostConfig**](ContainerSummaryHostConfig.md) |  |  [optional]
 **networkSettings** | [**ContainerSummaryNetworkSettings**](ContainerSummaryNetworkSettings.md) |  |  [optional]
-**mounts** | [**kotlin.collections.MutableList&lt;Mount&gt;**](Mount.md) |  |  [optional]
+**mounts** | [**kotlin.collections.MutableList&lt;MountPoint&gt;**](MountPoint.md) |  |  [optional]
 
 
 

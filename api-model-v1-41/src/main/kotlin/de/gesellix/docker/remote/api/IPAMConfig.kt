@@ -24,15 +24,26 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 /**
- * container waiting error, if any
  *
- * @param message Details of an error
+ *
+ * @param subnet
+ * @param ipRange
+ * @param gateway
+ * @param auxiliaryAddresses
  */
 @JsonClass(generateAdapter = true)
-data class ContainerWaitResponseError(
+data class IPAMConfig(
 
-  /* Details of an error */
-  @Json(name = "Message")
-  var message: kotlin.String? = null
+  @Json(name = "Subnet")
+  var subnet: kotlin.String? = null,
+
+  @Json(name = "IPRange")
+  var ipRange: kotlin.String? = null,
+
+  @Json(name = "Gateway")
+  var gateway: kotlin.String? = null,
+
+  @Json(name = "AuxiliaryAddresses")
+  var auxiliaryAddresses: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
 
 )

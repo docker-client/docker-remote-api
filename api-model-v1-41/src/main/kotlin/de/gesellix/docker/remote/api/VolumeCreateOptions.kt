@@ -24,86 +24,30 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 /**
+ * Volume configuration
  *
- *
- * @param id
- * @param parent
- * @param comment
- * @param created
- * @param container
- * @param dockerVersion
- * @param author
- * @param architecture
- * @param os
- * @param propertySize
- * @param virtualSize
- * @param graphDriver
- * @param rootFS
- * @param repoTags
- * @param repoDigests
- * @param containerConfig
- * @param config
- * @param osVersion
- * @param metadata
+ * @param name The new volume's name. If not specified, Docker generates a name.
+ * @param driver Name of the volume driver to use.
+ * @param driverOpts A mapping of driver options and values. These options are passed directly to the driver and are driver specific.
+ * @param labels User-defined key/value metadata.
  */
 @JsonClass(generateAdapter = true)
-data class Image(
+data class VolumeCreateOptions(
 
-  @Json(name = "Id")
-  var id: kotlin.String,
+  /* The new volume's name. If not specified, Docker generates a name.  */
+  @Json(name = "Name")
+  var name: kotlin.String? = null,
 
-  @Json(name = "Parent")
-  var parent: kotlin.String,
+  /* Name of the volume driver to use. */
+  @Json(name = "Driver")
+  var driver: kotlin.String? = "local",
 
-  @Json(name = "Comment")
-  var comment: kotlin.String,
+  /* A mapping of driver options and values. These options are passed directly to the driver and are driver specific.  */
+  @Json(name = "DriverOpts")
+  var driverOpts: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
 
-  @Json(name = "Created")
-  var created: kotlin.String,
-
-  @Json(name = "Container")
-  var container: kotlin.String,
-
-  @Json(name = "DockerVersion")
-  var dockerVersion: kotlin.String,
-
-  @Json(name = "Author")
-  var author: kotlin.String,
-
-  @Json(name = "Architecture")
-  var architecture: kotlin.String,
-
-  @Json(name = "Os")
-  var os: kotlin.String,
-
-  @Json(name = "Size")
-  var propertySize: kotlin.Long,
-
-  @Json(name = "VirtualSize")
-  var virtualSize: kotlin.Long,
-
-  @Json(name = "GraphDriver")
-  var graphDriver: GraphDriverData,
-
-  @Json(name = "RootFS")
-  var rootFS: ImageRootFS,
-
-  @Json(name = "RepoTags")
-  var repoTags: kotlin.collections.MutableList<kotlin.String>? = null,
-
-  @Json(name = "RepoDigests")
-  var repoDigests: kotlin.collections.MutableList<kotlin.String>? = null,
-
-  @Json(name = "ContainerConfig")
-  var containerConfig: ContainerConfig? = null,
-
-  @Json(name = "Config")
-  var config: ContainerConfig? = null,
-
-  @Json(name = "OsVersion")
-  var osVersion: kotlin.String? = null,
-
-  @Json(name = "Metadata")
-  var metadata: ImageMetadata? = null
+  /* User-defined key/value metadata. */
+  @Json(name = "Labels")
+  var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
 
 )

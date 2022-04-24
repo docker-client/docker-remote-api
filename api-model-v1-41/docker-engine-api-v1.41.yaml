@@ -215,6 +215,12 @@ definitions:
           - `tmpfs` a `tmpfs`.
           - `npipe` a named pipe from the host into the container.
         type: "string"
+        enum:
+          - "bind"
+          - "volume"
+          - "tmpfs"
+          - "npipe"
+        example: "volume"
       Name:
         description: |
           Name is the name reference to the underlying data defined by `Source`
@@ -1849,15 +1855,36 @@ definitions:
         x-nullable: false
         example: "1644009612"
       Size:
-        type: "number"
+        description: |
+          Total size of the image including all layers it is composed of.
+        type: "integer"
+        format: "int64"
         x-nullable: false
         example: 172064416
       SharedSize:
-        type: "number"
+        description: |
+          Total size of image layers that are shared between this image and other
+          images.
+
+          This size is not calculated by default. `-1` indicates that the value
+          has not been set / calculated.
+        type: "integer"
+        format: "int64"
         x-nullable: false
         example: 1239828
       VirtualSize:
-        type: "number"
+        description: |
+          Total size of the image including all layers it is composed of.
+
+          In versions of Docker before v1.10, this field was calculated from
+          the image itself and all of its parent images. Docker v1.10 and up
+          store images self-contained, and no longer use a parent-chain, making
+          this field an equivalent of the Size field.
+
+          This field is kept for backward compatibility, but may be removed in
+          a future version of the API.
+        type: "integer"
+        format: "int64"
         x-nullable: false
         example: 172064416
       Labels:
@@ -1988,6 +2015,7 @@ definitions:
         properties:
           Size:
             type: "integer"
+            format: "int64"
             default: -1
             description: |
               Amount of disk space used by the volume (in bytes). This information
@@ -2003,17 +2031,43 @@ definitions:
               is set to `-1` if the reference-count is not available.
             x-nullable: false
 
-    example:
-      Name: "tardis"
-      Driver: "custom"
-      Mountpoint: "/var/lib/docker/volumes/tardis"
-      Status:
-        hello: "world"
+  VolumeCreateOptions:
+    description: "Volume configuration"
+    type: "object"
+    title: "VolumeConfig"
+    x-go-name: "VolumeCreateBody"
+    properties:
+      Name:
+        description: |
+          The new volume's name. If not specified, Docker generates a name.
+        type: "string"
+        x-nullable: false
+        example: "tardis"
+      Driver:
+        description: "Name of the volume driver to use."
+        type: "string"
+        default: "local"
+        x-nullable: false
+        example: "custom"
+      DriverOpts:
+        description: |
+          A mapping of driver options and values. These options are
+          passed directly to the driver and are driver specific.
+        type: "object"
+        additionalProperties:
+          type: "string"
+        example:
+          device: "tmpfs"
+          o: "size=100m,uid=1000"
+          type: "tmpfs"
       Labels:
-        com.example.some-label: "some-value"
-        com.example.some-other-label: "some-other-value"
-      Scope: "local"
-      CreatedAt: "2016-06-07T20:31:11.853781916Z"
+        description: "User-defined key/value metadata."
+        type: "object"
+        additionalProperties:
+          type: "string"
+        example:
+          com.example.some-label: "some-value"
+          com.example.some-other-label: "some-other-value"
 
   Network:
     type: "object"
@@ -2101,11 +2155,23 @@ definitions:
           ```
         type: "array"
         items:
-          type: "object"
-          additionalProperties:
-            type: "string"
+          $ref: "#/definitions/IPAMConfig"
       Options:
         description: "Driver-specific options, specified as a map."
+        type: "object"
+        additionalProperties:
+          type: "string"
+
+  IPAMConfig:
+    type: "object"
+    properties:
+      Subnet:
+        type: "string"
+      IPRange:
+        type: "string"
+      Gateway:
+        type: "string"
+      AuxiliaryAddresses:
         type: "object"
         additionalProperties:
           type: "string"
@@ -4350,7 +4416,7 @@ definitions:
       Mounts:
         type: "array"
         items:
-          $ref: "#/definitions/Mount"
+          $ref: "#/definitions/MountPoint"
 
   Driver:
     description: "Driver represents a driver (network, logging, secrets)."
@@ -7283,22 +7349,11 @@ paths:
         200:
           description: "The container has exit."
           schema:
-            type: "object"
-            title: "ContainerWaitResponse"
-            description: "OK response to ContainerWait operation"
-            required: [StatusCode]
-            properties:
-              StatusCode:
-                description: "Exit code of the container"
-                type: "number"
-                x-nullable: false
-              Error:
-                description: "container waiting error, if any"
-                type: "object"
-                properties:
-                  Message:
-                    description: "Details of an error"
-                    type: "string"
+            $ref: "#/definitions/ContainerWaitResponse"
+        400:
+          description: "bad parameter"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
         404:
           description: "no such container"
           schema:
@@ -7323,6 +7378,10 @@ paths:
 
             Defaults to `not-running` if omitted or empty.
           type: "string"
+          enum:
+            - "not-running"
+            - "next-exit"
+            - "removed"
           default: "not-running"
       tags: ["Container"]
   /containers/{id}:
@@ -7398,17 +7457,7 @@ paths:
         400:
           description: "Bad parameter"
           schema:
-            allOf:
-              - $ref: "#/definitions/ErrorResponse"
-              - type: "object"
-                properties:
-                  message:
-                    description: |
-                      The error message. Either "must specify path parameter"
-                      (path cannot be empty) or "not a directory" (path was
-                      asserted to be a directory but exists as a file).
-                    type: "string"
-                    x-nullable: false
+            $ref: "#/definitions/ErrorResponse"
         404:
           description: "Container or path does not exist"
           schema:
@@ -7443,17 +7492,7 @@ paths:
         400:
           description: "Bad parameter"
           schema:
-            allOf:
-              - $ref: "#/definitions/ErrorResponse"
-              - type: "object"
-                properties:
-                  message:
-                    description: |
-                      The error message. Either "must specify path parameter"
-                      (path cannot be empty) or "not a directory" (path was
-                      asserted to be a directory but exists as a file).
-                    type: "string"
-                    x-nullable: false
+            $ref: "#/definitions/ErrorResponse"
         404:
           description: "Container or path does not exist"
           schema:
@@ -7962,84 +8001,7 @@ paths:
         200:
           description: "No error"
           schema:
-            $ref: "#/definitions/Image"
-          examples:
-            application/json:
-              Id: "sha256:85f05633ddc1c50679be2b16a0479ab6f7637f8884e0cfe0f4d20e1ebb3d6e7c"
-              Container: "cb91e48a60d01f1e27028b4fc6819f4f290b3cf12496c8176ec714d0d390984a"
-              Comment: ""
-              Os: "linux"
-              Architecture: "amd64"
-              Parent: "sha256:91e54dfb11794fad694460162bf0cb0a4fa710cfa3f60979c177d920813e267c"
-              ContainerConfig:
-                Tty: false
-                Hostname: "e611e15f9c9d"
-                Domainname: ""
-                AttachStdout: false
-                PublishService: ""
-                AttachStdin: false
-                OpenStdin: false
-                StdinOnce: false
-                NetworkDisabled: false
-                OnBuild: []
-                Image: "91e54dfb11794fad694460162bf0cb0a4fa710cfa3f60979c177d920813e267c"
-                User: ""
-                WorkingDir: ""
-                MacAddress: ""
-                AttachStderr: false
-                Labels:
-                  com.example.license: "GPL"
-                  com.example.version: "1.0"
-                  com.example.vendor: "Acme"
-                Env:
-                  - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-                Cmd:
-                  - "/bin/sh"
-                  - "-c"
-                  - "#(nop) LABEL com.example.vendor=Acme com.example.license=GPL com.example.version=1.0"
-              DockerVersion: "1.9.0-dev"
-              VirtualSize: 188359297
-              Size: 0
-              Author: ""
-              Created: "2015-09-10T08:30:53.26995814Z"
-              GraphDriver:
-                Name: "aufs"
-                Data: {}
-              RepoDigests:
-                - "localhost:5000/test/busybox/example@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf"
-              RepoTags:
-                - "example:1.0"
-                - "example:latest"
-                - "example:stable"
-              Config:
-                Image: "91e54dfb11794fad694460162bf0cb0a4fa710cfa3f60979c177d920813e267c"
-                NetworkDisabled: false
-                OnBuild: []
-                StdinOnce: false
-                PublishService: ""
-                AttachStdin: false
-                OpenStdin: false
-                Domainname: ""
-                AttachStdout: false
-                Tty: false
-                Hostname: "e611e15f9c9d"
-                Cmd:
-                  - "/bin/bash"
-                Env:
-                  - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-                Labels:
-                  com.example.vendor: "Acme"
-                  com.example.version: "1.0"
-                  com.example.license: "GPL"
-                MacAddress: ""
-                AttachStderr: false
-                WorkingDir: ""
-                User: ""
-              RootFS:
-                Type: "layers"
-                Layers:
-                  - "sha256:1834950e52ce4d5a88a1bbd131c537f4d0e56d10ff0dd69e66be3b7dfa9df7e6"
-                  - "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+            $ref: "#/definitions/ImageInspect"
         404:
           description: "No such image"
           schema:

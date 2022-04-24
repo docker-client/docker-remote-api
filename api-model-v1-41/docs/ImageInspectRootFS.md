@@ -1,5 +1,5 @@
 
-# ImageRootFS
+# ImageInspectRootFS
 
 ## Properties
 Name | Type | Description | Notes
