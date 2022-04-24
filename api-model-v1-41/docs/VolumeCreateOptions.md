@@ -1,5 +1,5 @@
 
-# VolumeConfig
+# VolumeCreateOptions
 
 ## Properties
 Name | Type | Description | Notes

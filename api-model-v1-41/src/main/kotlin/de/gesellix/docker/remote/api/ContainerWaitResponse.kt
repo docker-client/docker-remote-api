@@ -34,9 +34,9 @@ data class ContainerWaitResponse(
 
   /* Exit code of the container */
   @Json(name = "StatusCode")
-  var statusCode: java.math.BigDecimal,
+  var statusCode: kotlin.Int,
 
   @Json(name = "Error")
-  var error: ContainerWaitResponseError? = null
+  var error: ContainerWaitExitError? = null
 
 )

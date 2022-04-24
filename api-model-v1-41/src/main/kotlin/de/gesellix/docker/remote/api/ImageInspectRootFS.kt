@@ -24,30 +24,22 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 /**
- * Volume configuration
+ * Information about the image's RootFS, including the layer IDs.
  *
- * @param name The new volume's name. If not specified, Docker generates a name.
- * @param driver Name of the volume driver to use.
- * @param driverOpts A mapping of driver options and values. These options are passed directly to the driver and are driver specific.
- * @param labels User-defined key/value metadata.
+ * @param type
+ * @param layers
+ * @param baseLayer
  */
 @JsonClass(generateAdapter = true)
-data class VolumeConfig(
+data class ImageInspectRootFS(
 
-  /* The new volume's name. If not specified, Docker generates a name.  */
-  @Json(name = "Name")
-  var name: kotlin.String? = null,
+  @Json(name = "Type")
+  var type: kotlin.String,
 
-  /* Name of the volume driver to use. */
-  @Json(name = "Driver")
-  var driver: kotlin.String? = "local",
+  @Json(name = "Layers")
+  var layers: kotlin.collections.MutableList<kotlin.String>? = null,
 
-  /* A mapping of driver options and values. These options are passed directly to the driver and are driver specific.  */
-  @Json(name = "DriverOpts")
-  var driverOpts: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
-
-  /* User-defined key/value metadata. */
-  @Json(name = "Labels")
-  var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
+  @Json(name = "BaseLayer")
+  var baseLayer: kotlin.String? = null
 
 )

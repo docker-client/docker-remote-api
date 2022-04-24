@@ -40,7 +40,7 @@ data class MountPoint(
 
   /* The mount type:  - `bind` a mount of a file or directory from the host into the container. - `volume` a docker volume with the given `Name`. - `tmpfs` a `tmpfs`. - `npipe` a named pipe from the host into the container.  */
   @Json(name = "Type")
-  var type: kotlin.String? = null,
+  var type: MountPoint.Type? = null,
 
   /* Name is the name reference to the underlying data defined by `Source` e.g., the volume name.  */
   @Json(name = "Name")
@@ -70,4 +70,17 @@ data class MountPoint(
   @Json(name = "Propagation")
   var propagation: kotlin.String? = null
 
-)
+) {
+
+  /**
+   * The mount type:  - `bind` a mount of a file or directory from the host into the container. - `volume` a docker volume with the given `Name`. - `tmpfs` a `tmpfs`. - `npipe` a named pipe from the host into the container.
+   *
+   * Values: Bind,Volume,Tmpfs,Npipe
+   */
+  enum class Type(val value: kotlin.String) {
+    @Json(name = "bind") Bind("bind"),
+    @Json(name = "volume") Volume("volume"),
+    @Json(name = "tmpfs") Tmpfs("tmpfs"),
+    @Json(name = "npipe") Npipe("npipe");
+  }
+}

@@ -100,6 +100,6 @@ data class ContainerSummary(
   var networkSettings: ContainerSummaryNetworkSettings? = null,
 
   @Json(name = "Mounts")
-  var mounts: kotlin.collections.MutableList<Mount>? = null
+  var mounts: kotlin.collections.MutableList<MountPoint>? = null
 
 )

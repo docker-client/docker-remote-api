@@ -24,19 +24,15 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 /**
+ * Additional metadata of the image in the local cache. This information is local to the daemon, and not part of the image itself.
  *
- *
- * @param errorResponse
- * @param message The error message. Either \"must specify path parameter\" (path cannot be empty) or \"not a directory\" (path was asserted to be a directory but exists as a file).
+ * @param lastTagTime Date and time at which the image was last tagged in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.  This information is only available if the image was tagged locally, and omitted otherwise.
  */
 @JsonClass(generateAdapter = true)
-data class InlineResponse400(
+data class ImageInspectMetadata(
 
-  @Json(name = "ErrorResponse")
-  var errorResponse: ErrorResponse? = null,
-
-  /* The error message. Either \"must specify path parameter\" (path cannot be empty) or \"not a directory\" (path was asserted to be a directory but exists as a file).  */
-  @Json(name = "message")
-  var message: kotlin.String? = null
+  /* Date and time at which the image was last tagged in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.  This information is only available if the image was tagged locally, and omitted otherwise.  */
+  @Json(name = "LastTagTime")
+  var lastTagTime: kotlin.String? = null
 
 )

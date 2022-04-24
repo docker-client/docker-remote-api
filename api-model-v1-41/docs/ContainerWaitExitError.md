@@ -1,5 +1,5 @@
 
-# ContainerWaitResponseError
+# ContainerWaitExitError
 
 ## Properties
 Name | Type | Description | Notes
