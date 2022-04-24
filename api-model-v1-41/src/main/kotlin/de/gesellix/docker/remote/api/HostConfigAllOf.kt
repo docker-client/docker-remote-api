@@ -170,7 +170,7 @@ data class HostConfigAllOf(
   @Json(name = "ReadonlyRootfs")
   var readonlyRootfs: kotlin.Boolean? = null,
 
-  /* A list of string values to customize labels for MLS systems, such as SELinux. */
+  /* A list of string values to customize labels for MLS systems, such as SELinux.  */
   @Json(name = "SecurityOpt")
   var securityOpt: kotlin.collections.MutableList<kotlin.String>? = null,
 

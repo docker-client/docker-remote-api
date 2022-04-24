@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**hostname** | **kotlin.String** | The hostname to use for the container, as a valid RFC 1123 hostname. |  [optional]
-**domainname** | **kotlin.String** | The domain name to use for the container. |  [optional]
+**hostname** | **kotlin.String** | The hostname to use for the container, as a valid RFC 1123 hostname.  |  [optional]
+**domainname** | **kotlin.String** | The domain name to use for the container.  |  [optional]
 **user** | **kotlin.String** | The user that commands are run as inside the container. |  [optional]
 **attachStdin** | **kotlin.Boolean** | Whether to attach to &#x60;stdin&#x60;. |  [optional]
 **attachStdout** | **kotlin.Boolean** | Whether to attach to &#x60;stdout&#x60;. |  [optional]
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **cmd** | **kotlin.collections.MutableList&lt;kotlin.String&gt;** | Command to run specified as a string or an array of strings.  |  [optional]
 **healthcheck** | [**HealthConfig**](HealthConfig.md) |  |  [optional]
 **argsEscaped** | **kotlin.Boolean** | Command is already escaped (Windows only) |  [optional]
-**image** | **kotlin.String** | The name of the image to use when creating the container/  |  [optional]
+**image** | **kotlin.String** | The name (or reference) of the image to use when creating the container, or which was used when the container was created.  |  [optional]
 **volumes** | [**kotlin.collections.MutableMap&lt;kotlin.String, kotlin.Any&gt;**](kotlin.Any.md) | An object mapping mount point paths inside the container to empty objects.  |  [optional]
 **workingDir** | **kotlin.String** | The working directory for commands to run in. |  [optional]
 **entrypoint** | **kotlin.collections.MutableList&lt;kotlin.String&gt;** | The entry point for the container as a string or an array of strings.  If the array consists of exactly one empty string (&#x60;[\&quot;\&quot;]&#x60;) then the entry point is reset to system default (i.e., the entry point used by docker when there is no &#x60;ENTRYPOINT&#x60; instruction in the &#x60;Dockerfile&#x60;).  |  [optional]
