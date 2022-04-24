@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **privileged** | **kotlin.Boolean** | Gives the container full access to the host. |  [optional]
 **publishAllPorts** | **kotlin.Boolean** | Allocates an ephemeral host port for all of a container&#39;s exposed ports.  Ports are de-allocated when the container stops and allocated when the container starts. The allocated port might be changed when restarting the container.  The port is selected from the ephemeral port range that depends on the kernel. For example, on Linux the range is defined by &#x60;/proc/sys/net/ipv4/ip_local_port_range&#x60;.  |  [optional]
 **readonlyRootfs** | **kotlin.Boolean** | Mount the container&#39;s root filesystem as read only. |  [optional]
-**securityOpt** | **kotlin.collections.MutableList&lt;kotlin.String&gt;** | A list of string values to customize labels for MLS systems, such as SELinux. |  [optional]
+**securityOpt** | **kotlin.collections.MutableList&lt;kotlin.String&gt;** | A list of string values to customize labels for MLS systems, such as SELinux.  |  [optional]
 **storageOpt** | **kotlin.collections.MutableMap&lt;kotlin.String, kotlin.String&gt;** | Storage driver options for this container, in the form &#x60;{\&quot;size\&quot;: \&quot;120G\&quot;}&#x60;.  |  [optional]
 **tmpfs** | **kotlin.collections.MutableMap&lt;kotlin.String, kotlin.String&gt;** | A map of container directories which should be replaced by tmpfs mounts, and their corresponding mount options. For example:  &#x60;&#x60;&#x60; { \&quot;/run\&quot;: \&quot;rw,noexec,nosuid,size&#x3D;65536k\&quot; } &#x60;&#x60;&#x60;  |  [optional]
 **utSMode** | **kotlin.String** | UTS namespace to use for the container. |  [optional]
