@@ -41,11 +41,11 @@ data class HealthConfig(
 
   /* The time to wait between checks in nanoseconds. It should be 0 or at least 1000000 (1 ms). 0 means inherit.  */
   @Json(name = "Interval")
-  var interval: kotlin.Int? = null,
+  var interval: kotlin.Long? = null,
 
   /* The time to wait before considering the check to have hung. It should be 0 or at least 1000000 (1 ms). 0 means inherit.  */
   @Json(name = "Timeout")
-  var timeout: kotlin.Int? = null,
+  var timeout: kotlin.Long? = null,
 
   /* The number of consecutive failures needed to consider a container as unhealthy. 0 means inherit.  */
   @Json(name = "Retries")
@@ -53,6 +53,6 @@ data class HealthConfig(
 
   /* Start period for the container to initialize before starting health-retries countdown in nanoseconds. It should be 0 or at least 1000000 (1 ms). 0 means inherit.  */
   @Json(name = "StartPeriod")
-  var startPeriod: kotlin.Int? = null
+  var startPeriod: kotlin.Long? = null
 
 )
