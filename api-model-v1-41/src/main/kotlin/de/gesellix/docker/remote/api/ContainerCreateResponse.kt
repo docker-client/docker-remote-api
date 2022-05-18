@@ -38,6 +38,6 @@ data class ContainerCreateResponse(
 
   /* Warnings encountered when creating the container */
   @Json(name = "Warnings")
-  var warnings: kotlin.collections.MutableList<kotlin.String>?
+  var warnings: kotlin.collections.MutableList<kotlin.String>? = null
 
 )
