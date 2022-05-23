@@ -34,7 +34,7 @@ data class ContainerWaitResponse(
 
   /* Exit code of the container */
   @Json(name = "StatusCode")
-  var statusCode: kotlin.Int,
+  var statusCode: kotlin.Long,
 
   @Json(name = "Error")
   var error: ContainerWaitExitError? = null
