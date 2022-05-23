@@ -4627,6 +4627,7 @@ definitions:
       StatusCode:
         description: "Exit code of the container"
         type: "integer"
+        format: "int64"
         x-nullable: false
       Error:
         $ref: "#/definitions/ContainerWaitExitError"
