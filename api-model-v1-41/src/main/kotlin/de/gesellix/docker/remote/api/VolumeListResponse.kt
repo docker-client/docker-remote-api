@@ -34,10 +34,10 @@ data class VolumeListResponse(
 
   /* List of volumes */
   @Json(name = "Volumes")
-  var volumes: kotlin.collections.MutableList<Volume>,
+  var volumes: kotlin.collections.MutableList<Volume>? = null,
 
   /* Warnings that occurred when fetching the list of volumes.  */
   @Json(name = "Warnings")
-  var warnings: kotlin.collections.MutableList<kotlin.String>?
+  var warnings: kotlin.collections.MutableList<kotlin.String>? = null
 
 )

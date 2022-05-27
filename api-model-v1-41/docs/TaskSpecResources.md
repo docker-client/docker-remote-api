@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **limits** | [**Limit**](Limit.md) |  |  [optional]
-**reservation** | [**ResourceObject**](ResourceObject.md) |  |  [optional]
+**reservations** | [**ResourceObject**](ResourceObject.md) |  |  [optional]
 
 
 

@@ -38,6 +38,6 @@ data class VolumeUsageData(
 
   /* The number of containers referencing this volume. This field is set to `-1` if the reference-count is not available.  */
   @Json(name = "RefCount")
-  var refCount: kotlin.Int
+  var refCount: kotlin.Long = -1
 
 )

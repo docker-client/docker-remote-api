@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **plugins** | [**PluginsInfo**](PluginsInfo.md) |  |  [optional]
 **memoryLimit** | **kotlin.Boolean** | Indicates if the host has memory limit support enabled. |  [optional]
 **swapLimit** | **kotlin.Boolean** | Indicates if the host has memory swap limit support enabled. |  [optional]
-**kernelMemory** | **kotlin.Boolean** | Indicates if the host has kernel memory limit support enabled.  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;  &gt; **Deprecated**: This field is deprecated as the kernel 5.4 deprecated &gt; &#x60;kmem.limit_in_bytes&#x60;.  |  [optional]
+**kernelMemoryTCP** | **kotlin.Boolean** | Indicates if the host has kernel memory TCP limit support enabled. This field is omitted if not supported.  Kernel memory TCP limits are not supported when using cgroups v2, which does not support the corresponding &#x60;memory.kmem.tcp.limit_in_bytes&#x60; cgroup.  |  [optional]
 **cpuCfsPeriod** | **kotlin.Boolean** | Indicates if CPU CFS(Completely Fair Scheduler) period is supported by the host.  |  [optional]
 **cpuCfsQuota** | **kotlin.Boolean** | Indicates if CPU CFS(Completely Fair Scheduler) quota is supported by the host.  |  [optional]
 **cpUShares** | **kotlin.Boolean** | Indicates if CPU Shares limiting is supported by the host.  |  [optional]

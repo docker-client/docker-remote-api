@@ -44,7 +44,6 @@ import com.squareup.moshi.JsonClass
  * @param devices A list of devices to add to the container.
  * @param deviceCgroupRules a list of cgroup rules to apply to the container
  * @param deviceRequests A list of requests for devices to be sent to device drivers.
- * @param kernelMemory Kernel memory limit in bytes.  <p><br /></p>  > **Deprecated**: This field is deprecated as the kernel 5.4 deprecated > `kmem.limit_in_bytes`.
  * @param kernelMemoryTCP Hard limit for kernel TCP buffer memory (in bytes). Depending on the OCI runtime in use, this option may be ignored. It is no longer supported by the default (runc) runtime.  This field is omitted when empty.
  * @param memoryReservation Memory soft limit in bytes.
  * @param memorySwap Total memory limit (memory + swap). Set as `-1` to enable unlimited swap.
@@ -171,10 +170,6 @@ data class HostConfig(
   /* A list of requests for devices to be sent to device drivers.  */
   @Json(name = "DeviceRequests")
   var deviceRequests: kotlin.collections.MutableList<DeviceRequest>? = null,
-
-  /* Kernel memory limit in bytes.  <p><br /></p>  > **Deprecated**: This field is deprecated as the kernel 5.4 deprecated > `kmem.limit_in_bytes`.  */
-  @Json(name = "KernelMemory")
-  var kernelMemory: kotlin.Long? = null,
 
   /* Hard limit for kernel TCP buffer memory (in bytes). Depending on the OCI runtime in use, this option may be ignored. It is no longer supported by the default (runc) runtime.  This field is omitted when empty.  */
   @Json(name = "KernelMemoryTCP")
@@ -352,7 +347,7 @@ data class HostConfig(
 
   /* Size of `/dev/shm` in bytes. If omitted, the system uses 64MB.  */
   @Json(name = "ShmSize")
-  var shmSize: kotlin.Int? = null,
+  var shmSize: kotlin.Long? = null,
 
   /* A list of kernel parameters (sysctls) to set in the container. For example:  ``` {\"net.ipv4.ip_forward\": \"1\"} ```  */
   @Json(name = "Sysctls")

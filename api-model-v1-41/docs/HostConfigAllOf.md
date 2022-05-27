@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 **tmpfs** | **kotlin.collections.MutableMap&lt;kotlin.String, kotlin.String&gt;** | A map of container directories which should be replaced by tmpfs mounts, and their corresponding mount options. For example:  &#x60;&#x60;&#x60; { \&quot;/run\&quot;: \&quot;rw,noexec,nosuid,size&#x3D;65536k\&quot; } &#x60;&#x60;&#x60;  |  [optional]
 **utSMode** | **kotlin.String** | UTS namespace to use for the container. |  [optional]
 **usernsMode** | **kotlin.String** | Sets the usernamespace mode for the container when usernamespace remapping option is enabled.  |  [optional]
-**shmSize** | **kotlin.Int** | Size of &#x60;/dev/shm&#x60; in bytes. If omitted, the system uses 64MB.  |  [optional]
+**shmSize** | **kotlin.Long** | Size of &#x60;/dev/shm&#x60; in bytes. If omitted, the system uses 64MB.  |  [optional]
 **sysctls** | **kotlin.collections.MutableMap&lt;kotlin.String, kotlin.String&gt;** | A list of kernel parameters (sysctls) to set in the container. For example:  &#x60;&#x60;&#x60; {\&quot;net.ipv4.ip_forward\&quot;: \&quot;1\&quot;} &#x60;&#x60;&#x60;  |  [optional]
 **runtime** | **kotlin.String** | Runtime to use with this container. |  [optional]
 **consoleSize** | **kotlin.collections.MutableList&lt;kotlin.Int&gt;** | Initial console size, as an &#x60;[height, width]&#x60; array. (Windows only)  |  [optional]

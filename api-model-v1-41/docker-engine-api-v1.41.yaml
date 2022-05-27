@@ -577,17 +577,6 @@ definitions:
         type: "array"
         items:
           $ref: "#/definitions/DeviceRequest"
-      KernelMemory:
-        description: |
-          Kernel memory limit in bytes.
-
-          <p><br /></p>
-
-          > **Deprecated**: This field is deprecated as the kernel 5.4 deprecated
-          > `kmem.limit_in_bytes`.
-        type: "integer"
-        format: "int64"
-        example: 209715200
       KernelMemoryTCP:
         description: |
           Hard limit for kernel TCP buffer memory (in bytes). Depending on the
@@ -1116,6 +1105,7 @@ definitions:
               remapping option is enabled.
           ShmSize:
             type: "integer"
+            format: "int64"
             description: |
               Size of `/dev/shm` in bytes. If omitted, the system uses 64MB.
             minimum: 0
@@ -1720,6 +1710,12 @@ definitions:
         type: "string"
         x-nullable: false
         example: "arm"
+      Variant:
+        description: |
+          CPU architecture variant (presently ARM-only).
+        type: "string"
+        x-nullable: true
+        example: "v7"
       Os:
         description: |
           Operating System the image is built to run on.
@@ -1835,7 +1831,7 @@ definitions:
           List of image names/tags in the local image cache that reference this
           image.
 
-          Multiple image tags can refer to the same image and this list may be
+          Multiple image tags can refer to the same image, and this list may be
           empty if no tags reference the image, in which case the image is
           "untagged", in which case it can still be referenced by its ID.
         type: "array"
@@ -2042,6 +2038,7 @@ definitions:
             x-nullable: false
           RefCount:
             type: "integer"
+            format: "int64"
             default: -1
             description: |
               The number of containers referencing this volume. This field
@@ -2085,6 +2082,25 @@ definitions:
         example:
           com.example.some-label: "some-value"
           com.example.some-other-label: "some-other-value"
+
+  VolumeListResponse:
+    type: "object"
+    title: "VolumeListResponse"
+    x-go-name: "VolumeListOKBody"
+    description: "Volume list response"
+    properties:
+      Volumes:
+        type: "array"
+        description: "List of volumes"
+        items:
+          $ref: "#/definitions/Volume"
+      Warnings:
+        type: "array"
+        description: |
+          Warnings that occurred when fetching the list of volumes.
+        items:
+          type: "string"
+        example: []
 
   Network:
     type: "object"
@@ -3693,7 +3709,7 @@ definitions:
           Limits:
             description: "Define resources limits."
             $ref: "#/definitions/Limit"
-          Reservation:
+          Reservations:
             description: "Define resources reservation."
             $ref: "#/definitions/ResourceObject"
       RestartPolicy:
@@ -4821,14 +4837,13 @@ definitions:
         description: "Indicates if the host has memory swap limit support enabled."
         type: "boolean"
         example: true
-      KernelMemory:
+      KernelMemoryTCP:
         description: |
-          Indicates if the host has kernel memory limit support enabled.
+          Indicates if the host has kernel memory TCP limit support enabled. This
+          field is omitted if not supported.
 
-          <p><br /></p>
-
-          > **Deprecated**: This field is deprecated as the kernel 5.4 deprecated
-          > `kmem.limit_in_bytes`.
+          Kernel memory TCP limits are not supported when using cgroups v2, which
+          does not support the corresponding `memory.kmem.tcp.limit_in_bytes` cgroup.
         type: "boolean"
         example: true
       CpuCfsPeriod:
@@ -6281,7 +6296,6 @@ paths:
                       property1: "string"
                       property2: "string"
                 IpcMode: ""
-                LxcConf: []
                 Memory: 0
                 MemorySwap: 0
                 MemoryReservation: 0
@@ -6483,6 +6497,9 @@ paths:
 
         Note: This endpoint works only for containers with the `json-file` or
         `journald` logging driver.
+      produces:
+        - "application/vnd.docker.raw-stream"
+        - "application/vnd.docker.multiplexed-stream"
       operationId: "ContainerLogs"
       responses:
         200:
@@ -7185,7 +7202,8 @@ paths:
         ### Stream format
 
         When the TTY setting is disabled in [`POST /containers/create`](#operation/ContainerCreate),
-        the stream over the hijacked connected is multiplexed to separate out
+        the HTTP Content-Type header is set to application/vnd.docker.multiplexed-stream
+        and the stream over the hijacked connected is multiplexed to separate out
         `stdout` and `stderr`. The stream consists of a series of frames, each
         containing a header and a payload.
 
@@ -7229,6 +7247,7 @@ paths:
       operationId: "ContainerAttach"
       produces:
         - "application/vnd.docker.raw-stream"
+        - "application/vnd.docker.multiplexed-stream"
       responses:
         101:
           description: "no error, hints proxy about hijacking"
@@ -8983,6 +9002,7 @@ paths:
         - "application/json"
       produces:
         - "application/vnd.docker.raw-stream"
+        - "application/vnd.docker.multiplexed-stream"
       responses:
         200:
           description: "No error"
@@ -9137,24 +9157,7 @@ paths:
         200:
           description: "Summary volume data that matches the query"
           schema:
-            type: "object"
-            title: "VolumeListResponse"
-            description: "Volume list response"
-            required: [Volumes, Warnings]
-            properties:
-              Volumes:
-                type: "array"
-                x-nullable: false
-                description: "List of volumes"
-                items:
-                  $ref: "#/definitions/Volume"
-              Warnings:
-                type: "array"
-                x-nullable: true
-                description: |
-                  Warnings that occurred when fetching the list of volumes.
-                items:
-                  type: "string"
+            $ref: "#/definitions/VolumeListResponse"
         500:
           description: "Server error"
           schema:
@@ -10900,6 +10903,9 @@ paths:
 
         **Note**: This endpoint works only for services with the `local`,
         `json-file` or `journald` logging drivers.
+      produces:
+        - "application/vnd.docker.raw-stream"
+        - "application/vnd.docker.multiplexed-stream"
       operationId: "ServiceLogs"
       responses:
         200:
@@ -11155,6 +11161,9 @@ paths:
         **Note**: This endpoint works only for services with the `local`,
         `json-file` or `journald` logging drivers.
       operationId: "TaskLogs"
+      produces:
+        - "application/vnd.docker.raw-stream"
+        - "application/vnd.docker.multiplexed-stream"
       responses:
         200:
           description: "logs returned as a stream in response body"

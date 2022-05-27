@@ -22,7 +22,6 @@ Name | Type | Description | Notes
 **devices** | [**kotlin.collections.MutableList&lt;DeviceMapping&gt;**](DeviceMapping.md) | A list of devices to add to the container. |  [optional]
 **deviceCgroupRules** | **kotlin.collections.MutableList&lt;kotlin.String&gt;** | a list of cgroup rules to apply to the container |  [optional]
 **deviceRequests** | [**kotlin.collections.MutableList&lt;DeviceRequest&gt;**](DeviceRequest.md) | A list of requests for devices to be sent to device drivers.  |  [optional]
-**kernelMemory** | **kotlin.Long** | Kernel memory limit in bytes.  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;  &gt; **Deprecated**: This field is deprecated as the kernel 5.4 deprecated &gt; &#x60;kmem.limit_in_bytes&#x60;.  |  [optional]
 **kernelMemoryTCP** | **kotlin.Long** | Hard limit for kernel TCP buffer memory (in bytes). Depending on the OCI runtime in use, this option may be ignored. It is no longer supported by the default (runc) runtime.  This field is omitted when empty.  |  [optional]
 **memoryReservation** | **kotlin.Long** | Memory soft limit in bytes. |  [optional]
 **memorySwap** | **kotlin.Long** | Total memory limit (memory + swap). Set as &#x60;-1&#x60; to enable unlimited swap.  |  [optional]
