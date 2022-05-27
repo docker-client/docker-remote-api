@@ -192,7 +192,7 @@ data class HostConfigAllOf(
 
   /* Size of `/dev/shm` in bytes. If omitted, the system uses 64MB.  */
   @Json(name = "ShmSize")
-  var shmSize: kotlin.Int? = null,
+  var shmSize: kotlin.Long? = null,
 
   /* A list of kernel parameters (sysctls) to set in the container. For example:  ``` {\"net.ipv4.ip_forward\": \"1\"} ```  */
   @Json(name = "Sysctls")

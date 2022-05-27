@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **author** | **kotlin.String** | Name of the author that was specified when committing the image, or as specified through MAINTAINER (deprecated) in the Dockerfile.  |  [optional]
 **config** | [**ContainerConfig**](ContainerConfig.md) |  |  [optional]
 **architecture** | **kotlin.String** | Hardware CPU architecture that the image runs on.  |  [optional]
+**variant** | **kotlin.String** | CPU architecture variant (presently ARM-only).  |  [optional]
 **os** | **kotlin.String** | Operating System the image is built to run on.  |  [optional]
 **osVersion** | **kotlin.String** | Operating System version the image is built to run on (especially for Windows).  |  [optional]
 **propertySize** | **kotlin.Long** | Total size of the image including all layers it is composed of.  |  [optional]

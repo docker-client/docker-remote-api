@@ -33,7 +33,7 @@ import com.squareup.moshi.JsonClass
  * @param sharedSize Total size of image layers that are shared between this image and other images.  This size is not calculated by default. `-1` indicates that the value has not been set / calculated.
  * @param virtualSize Total size of the image including all layers it is composed of.  In versions of Docker before v1.10, this field was calculated from the image itself and all of its parent images. Docker v1.10 and up store images self-contained, and no longer use a parent-chain, making this field an equivalent of the Size field.  This field is kept for backward compatibility, but may be removed in a future version of the API.
  * @param containers Number of containers using this image. Includes both stopped and running containers.  This size is not calculated by default, and depends on which API endpoint is used. `-1` indicates that the value has not been set / calculated.
- * @param repoTags List of image names/tags in the local image cache that reference this image.  Multiple image tags can refer to the same image and this list may be empty if no tags reference the image, in which case the image is \"untagged\", in which case it can still be referenced by its ID.
+ * @param repoTags List of image names/tags in the local image cache that reference this image.  Multiple image tags can refer to the same image, and this list may be empty if no tags reference the image, in which case the image is \"untagged\", in which case it can still be referenced by its ID.
  * @param repoDigests List of content-addressable digests of locally available image manifests that the image is referenced from. Multiple manifests can refer to the same image.  These digests are usually only available if the image was either pulled from a registry, or if the image was pushed to a registry, which is when the manifest is generated and its digest calculated.
  * @param labels User-defined key/value metadata.
  */
@@ -68,7 +68,7 @@ data class ImageSummary(
   @Json(name = "Containers")
   var containers: kotlin.Int,
 
-  /* List of image names/tags in the local image cache that reference this image.  Multiple image tags can refer to the same image and this list may be empty if no tags reference the image, in which case the image is \"untagged\", in which case it can still be referenced by its ID.  */
+  /* List of image names/tags in the local image cache that reference this image.  Multiple image tags can refer to the same image, and this list may be empty if no tags reference the image, in which case the image is \"untagged\", in which case it can still be referenced by its ID.  */
   @Json(name = "RepoTags")
   var repoTags: kotlin.collections.MutableList<kotlin.String>? = null,
 

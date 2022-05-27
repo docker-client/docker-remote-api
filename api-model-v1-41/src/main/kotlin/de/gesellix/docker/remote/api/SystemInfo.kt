@@ -38,7 +38,7 @@ import com.squareup.moshi.JsonClass
  * @param plugins
  * @param memoryLimit Indicates if the host has memory limit support enabled.
  * @param swapLimit Indicates if the host has memory swap limit support enabled.
- * @param kernelMemory Indicates if the host has kernel memory limit support enabled.  <p><br /></p>  > **Deprecated**: This field is deprecated as the kernel 5.4 deprecated > `kmem.limit_in_bytes`.
+ * @param kernelMemoryTCP Indicates if the host has kernel memory TCP limit support enabled. This field is omitted if not supported.  Kernel memory TCP limits are not supported when using cgroups v2, which does not support the corresponding `memory.kmem.tcp.limit_in_bytes` cgroup.
  * @param cpuCfsPeriod Indicates if CPU CFS(Completely Fair Scheduler) period is supported by the host.
  * @param cpuCfsQuota Indicates if CPU CFS(Completely Fair Scheduler) quota is supported by the host.
  * @param cpUShares Indicates if CPU Shares limiting is supported by the host.
@@ -139,9 +139,9 @@ data class SystemInfo(
   @Json(name = "SwapLimit")
   var swapLimit: kotlin.Boolean? = null,
 
-  /* Indicates if the host has kernel memory limit support enabled.  <p><br /></p>  > **Deprecated**: This field is deprecated as the kernel 5.4 deprecated > `kmem.limit_in_bytes`.  */
-  @Json(name = "KernelMemory")
-  var kernelMemory: kotlin.Boolean? = null,
+  /* Indicates if the host has kernel memory TCP limit support enabled. This field is omitted if not supported.  Kernel memory TCP limits are not supported when using cgroups v2, which does not support the corresponding `memory.kmem.tcp.limit_in_bytes` cgroup.  */
+  @Json(name = "KernelMemoryTCP")
+  var kernelMemoryTCP: kotlin.Boolean? = null,
 
   /* Indicates if CPU CFS(Completely Fair Scheduler) period is supported by the host.  */
   @Json(name = "CpuCfsPeriod")

@@ -27,7 +27,7 @@ import com.squareup.moshi.JsonClass
  * Resource requirements which apply to each individual container created as part of the service.
  *
  * @param limits
- * @param reservation
+ * @param reservations
  */
 @JsonClass(generateAdapter = true)
 data class TaskSpecResources(
@@ -35,7 +35,7 @@ data class TaskSpecResources(
   @Json(name = "Limits")
   var limits: Limit? = null,
 
-  @Json(name = "Reservation")
-  var reservation: ResourceObject? = null
+  @Json(name = "Reservations")
+  var reservations: ResourceObject? = null
 
 )

@@ -38,6 +38,7 @@ import com.squareup.moshi.JsonClass
  * @param author Name of the author that was specified when committing the image, or as specified through MAINTAINER (deprecated) in the Dockerfile.
  * @param config
  * @param architecture Hardware CPU architecture that the image runs on.
+ * @param variant CPU architecture variant (presently ARM-only).
  * @param os Operating System the image is built to run on.
  * @param osVersion Operating System version the image is built to run on (especially for Windows).
  * @param propertySize Total size of the image including all layers it is composed of.
@@ -94,6 +95,10 @@ data class ImageInspect(
   /* Hardware CPU architecture that the image runs on.  */
   @Json(name = "Architecture")
   var architecture: kotlin.String? = null,
+
+  /* CPU architecture variant (presently ARM-only).  */
+  @Json(name = "Variant")
+  var variant: kotlin.String? = null,
 
   /* Operating System the image is built to run on.  */
   @Json(name = "Os")
