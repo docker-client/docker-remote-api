@@ -24,35 +24,45 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 /**
- * CA configuration.
  *
- * @param nodeCertExpiry The duration node certificates are issued for.
- * @param externalCAs Configuration for forwarding signing requests to an external certificate authority.
- * @param signingCACert The desired signing CA certificate for all swarm node TLS leaf certificates, in PEM format.
- * @param signingCAKey The desired signing CA key for all swarm node TLS leaf certificates, in PEM format.
- * @param forceRotate An integer whose purpose is to force swarm to generate a new signing CA certificate and key, if none have been specified in `SigningCACert` and `SigningCAKey`
+ *
+ * @param name Name of the service.
+ * @param labels User-defined key/value metadata.
+ * @param taskTemplate
+ * @param mode
+ * @param updateConfig
+ * @param rollbackConfig
+ * @param networks Specifies which networks the service should attach to.
+ * @param endpointSpec
  */
 @JsonClass(generateAdapter = true)
-data class SwarmSpecCAConfig(
+data class ServiceUpdateRequest(
 
-  /* The duration node certificates are issued for. */
-  @Json(name = "NodeCertExpiry")
-  var nodeCertExpiry: kotlin.Long? = null,
+  /* Name of the service. */
+  @Json(name = "Name")
+  var name: kotlin.String? = null,
 
-  /* Configuration for forwarding signing requests to an external certificate authority.  */
-  @Json(name = "ExternalCAs")
-  var externalCAs: kotlin.collections.MutableList<SwarmSpecCAConfigExternalCAsInner>? = null,
+  /* User-defined key/value metadata. */
+  @Json(name = "Labels")
+  var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
 
-  /* The desired signing CA certificate for all swarm node TLS leaf certificates, in PEM format.  */
-  @Json(name = "SigningCACert")
-  var signingCACert: kotlin.String? = null,
+  @Json(name = "TaskTemplate")
+  var taskTemplate: TaskSpec? = null,
 
-  /* The desired signing CA key for all swarm node TLS leaf certificates, in PEM format.  */
-  @Json(name = "SigningCAKey")
-  var signingCAKey: kotlin.String? = null,
+  @Json(name = "Mode")
+  var mode: ServiceSpecMode? = null,
 
-  /* An integer whose purpose is to force swarm to generate a new signing CA certificate and key, if none have been specified in `SigningCACert` and `SigningCAKey`  */
-  @Json(name = "ForceRotate")
-  var forceRotate: kotlin.Int? = null
+  @Json(name = "UpdateConfig")
+  var updateConfig: ServiceSpecUpdateConfig? = null,
+
+  @Json(name = "RollbackConfig")
+  var rollbackConfig: ServiceSpecRollbackConfig? = null,
+
+  /* Specifies which networks the service should attach to. */
+  @Json(name = "Networks")
+  var networks: kotlin.collections.MutableList<NetworkAttachmentConfig>? = null,
+
+  @Json(name = "EndpointSpec")
+  var endpointSpec: EndpointSpec? = null
 
 )

@@ -26,22 +26,16 @@ import com.squareup.moshi.JsonClass
 /**
  *
  *
- * @param file
- * @param secretID SecretID represents the ID of the specific secret that we're referencing.
- * @param secretName SecretName is the name of the secret that this references, but this is just provided for lookup/display purposes. The secret in the reference will be identified by its ID.
+ * @param networkID
+ * @param addr
  */
 @JsonClass(generateAdapter = true)
-data class TaskSpecContainerSpecSecrets(
+data class ServiceEndpointVirtualIPsInner(
 
-  @Json(name = "File")
-  var file: TaskSpecContainerSpecFile? = null,
+  @Json(name = "NetworkID")
+  var networkID: kotlin.String? = null,
 
-  /* SecretID represents the ID of the specific secret that we're referencing.  */
-  @Json(name = "SecretID")
-  var secretID: kotlin.String? = null,
-
-  /* SecretName is the name of the secret that this references, but this is just provided for lookup/display purposes. The secret in the reference will be identified by its ID.  */
-  @Json(name = "SecretName")
-  var secretName: kotlin.String? = null
+  @Json(name = "Addr")
+  var addr: kotlin.String? = null
 
 )

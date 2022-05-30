@@ -24,18 +24,30 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 /**
+ * File represents a specific target that is backed by a file.
  *
- *
- * @param networkID
- * @param addr
+ * @param name Name represents the final filename in the filesystem.
+ * @param UID UID represents the file UID.
+ * @param GID GID represents the file GID.
+ * @param mode Mode represents the FileMode of the file.
  */
 @JsonClass(generateAdapter = true)
-data class ServiceEndpointVirtualIPs(
+data class TaskSpecContainerSpecSecretsInnerFile(
 
-  @Json(name = "NetworkID")
-  var networkID: kotlin.String? = null,
+  /* Name represents the final filename in the filesystem.  */
+  @Json(name = "Name")
+  var name: kotlin.String? = null,
 
-  @Json(name = "Addr")
-  var addr: kotlin.String? = null
+  /* UID represents the file UID. */
+  @Json(name = "UID")
+  var UID: kotlin.String? = null,
+
+  /* GID represents the file GID. */
+  @Json(name = "GID")
+  var GID: kotlin.String? = null,
+
+  /* Mode represents the FileMode of the file. */
+  @Json(name = "Mode")
+  var mode: kotlin.Int? = null
 
 )

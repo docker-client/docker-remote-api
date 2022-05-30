@@ -40,6 +40,6 @@ data class ServiceEndpoint(
   var ports: kotlin.collections.MutableList<EndpointPortConfig>? = null,
 
   @Json(name = "VirtualIPs")
-  var virtualIPs: kotlin.collections.MutableList<ServiceEndpointVirtualIPs>? = null
+  var virtualIPs: kotlin.collections.MutableList<ServiceEndpointVirtualIPsInner>? = null
 
 )

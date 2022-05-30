@@ -248,7 +248,7 @@ data class SystemInfo(
 
   /* User-defined resources can be either Integer resources (e.g, `SSD=3`) or String resources (e.g, `GPU=UUID1`).  */
   @Json(name = "GenericResources")
-  var genericResources: kotlin.collections.MutableList<kotlin.Any>? = null,
+  var genericResources: kotlin.collections.MutableList<GenericResourcesInner>? = null,
 
   /* HTTP-proxy configured for the daemon. This value is obtained from the [`HTTP_PROXY`](https://www.gnu.org/software/wget/manual/html_node/Proxies.html) environment variable. Credentials ([user info component](https://tools.ietf.org/html/rfc3986#section-3.2.1)) in the proxy URL are masked in the API response.  Containers do not automatically inherit this configuration.  */
   @Json(name = "HttpProxy")
@@ -328,7 +328,7 @@ data class SystemInfo(
 
   /* List of custom default address pools for local networks, which can be specified in the daemon.json file or dockerd option.  Example: a Base \"10.10.0.0/16\" with Size 24 will define the set of 256 10.10.[0-255].0/24 address pools.  */
   @Json(name = "DefaultAddressPools")
-  var defaultAddressPools: kotlin.collections.MutableList<SystemInfoDefaultAddressPools>? = null,
+  var defaultAddressPools: kotlin.collections.MutableList<SystemInfoDefaultAddressPoolsInner>? = null,
 
   /* List of warnings / informational messages about missing features, or issues related to the daemon configuration.  These messages can be printed by the client as information to the user.  */
   @Json(name = "Warnings")

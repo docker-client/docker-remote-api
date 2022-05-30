@@ -32,11 +32,11 @@ import com.squareup.moshi.JsonClass
  * @param caCert The root CA certificate (in PEM format) this external CA uses to issue TLS certificates (assumed to be to the current swarm root CA certificate if not provided).
  */
 @JsonClass(generateAdapter = true)
-data class SwarmSpecCAConfigExternalCAs(
+data class SwarmSpecCAConfigExternalCAsInner(
 
   /* Protocol for communication with the external CA (currently only `cfssl` is supported).  */
   @Json(name = "Protocol")
-  var protocol: SwarmSpecCAConfigExternalCAs.Protocol? = Protocol.Cfssl,
+  var protocol: SwarmSpecCAConfigExternalCAsInner.Protocol? = Protocol.Cfssl,
 
   /* URL where certificate signing requests should be sent.  */
   @Json(name = "URL")

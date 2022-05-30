@@ -1,5 +1,5 @@
 
-# Resources
+# ContainerUpdateRequest
 
 ## Properties
 Name | Type | Description | Notes
@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **cpuPercent** | **kotlin.Long** | The usable percentage of the available CPUs (Windows only).  On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is &#x60;CPUCount&#x60; first, then &#x60;CPUShares&#x60;, and &#x60;CPUPercent&#x60; last.  |  [optional]
 **ioMaximumIOps** | **kotlin.Long** | Maximum IOps for the container system drive (Windows only) |  [optional]
 **ioMaximumBandwidth** | **kotlin.Long** | Maximum IO in bytes per second for the container system drive (Windows only).  |  [optional]
+**restartPolicy** | [**RestartPolicy**](RestartPolicy.md) |  |  [optional]
 
 
 

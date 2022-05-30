@@ -132,11 +132,11 @@ data class TaskSpecContainerSpec(
 
   /* Secrets contains references to zero or more secrets that will be exposed to the service.  */
   @Json(name = "Secrets")
-  var secrets: kotlin.collections.MutableList<TaskSpecContainerSpecSecrets>? = null,
+  var secrets: kotlin.collections.MutableList<TaskSpecContainerSpecSecretsInner>? = null,
 
   /* Configs contains references to zero or more configs that will be exposed to the service.  */
   @Json(name = "Configs")
-  var configs: kotlin.collections.MutableList<TaskSpecContainerSpecConfigs>? = null,
+  var configs: kotlin.collections.MutableList<TaskSpecContainerSpecConfigsInner>? = null,
 
   /* Isolation technology of the containers running the service. (Windows only)  */
   @Json(name = "Isolation")
@@ -160,7 +160,7 @@ data class TaskSpecContainerSpec(
 
   /* A list of resource limits to set in the container. For example: `{\"Name\": \"nofile\", \"Soft\": 1024, \"Hard\": 2048}`\"  */
   @Json(name = "Ulimits")
-  var ulimits: kotlin.collections.MutableList<ResourcesUlimits>? = null
+  var ulimits: kotlin.collections.MutableList<ResourcesUlimitsInner>? = null
 
 ) {
 

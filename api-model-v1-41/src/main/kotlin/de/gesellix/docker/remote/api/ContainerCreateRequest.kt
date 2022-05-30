@@ -1,7 +1,7 @@
 /**
  * Docker Engine API
  *
- * The Engine API is an HTTP API served by Docker Engine. It is the API the Docker client uses to communicate with the Engine, so everything the Docker client can do can be done with the API.  Most of the client's commands map directly to API endpoints (e.g. `docker ps` is `GET /containers/json`). The notable exception is running containers, which consists of several API calls.  # Errors  The API uses standard HTTP status codes to indicate the success or failure of the API call. The body of the response will be JSON in the following format:  ``` {   \"message\": \"page not found\" } ```  # Versioning  The API is usually changed in each release, so API calls are versioned to ensure that clients don't break. To lock to a specific version of the API, you prefix the URL with its version, for example, call `/v1.30/info` to use the v1.30 version of the `/info` endpoint. If the API version specified in the URL is not supported by the daemon, a HTTP `400 Bad Request` error message is returned.  If you omit the version-prefix, the current version of the API (v1.41) is used. For example, calling `/info` is the same as calling `/v1.41/info`. Using the API without a version-prefix is deprecated and will be removed in a future release.  Engine releases in the near future should support this version of the API, so your client will continue to work even if it is talking to a newer Engine.  The API uses an open schema model, which means server may add extra properties to responses. Likewise, the server will ignore any extra query parameters and request body properties. When you write clients, you need to ignore additional properties in responses to ensure they do not break when talking to newer daemons.   # Authentication  Authentication for registries is handled client side. The client has to send authentication details to various endpoints that need to communicate with registries, such as `POST /images/(name)/push`. These are sent as `X-Registry-Auth` header as a [base64url encoded](https://tools.ietf.org/html/rfc4648#section-5) (JSON) string with the following structure:  ``` {   \"username\": \"string\",   \"password\": \"string\",   \"email\": \"string\",   \"serveraddress\": \"string\" } ```  The `serveraddress` is a domain/IP without a protocol. Throughout this structure, double quotes are required.  If you have already got an identity token from the [`/auth` endpoint](#operation/SystemAuth), you can just pass this instead of credentials:  ``` {   \"identitytoken\": \"9cbaf023786cd7...\" } ```
+ * The Engine API is an HTTP API served by Docker Engine. It is the API the Docker client uses to communicate with the Engine, so everything the Docker client can do can be done with the API.  Most of the client's commands map directly to API endpoints (e.g. `docker ps` is `GET /containers/json`). The notable exception is running containers, which consists of several API calls.  # Errors  The API uses standard HTTP status codes to indicate the success or failure of the API call. The body of the response will be JSON in the following format:  ``` {   \"message\": \"page not found\" } ```  # Versioning  The API is usually changed in each release, so API calls are versioned to ensure that clients don't break. To lock to a specific version of the API, you prefix the URL with its version, for example, call `/v1.30/info` to use the v1.30 version of the `/info` endpoint. If the API version specified in the URL is not supported by the daemon, a HTTP `400 Bad Request` error message is returned.  If you omit the version-prefix, the current version of the API (v1.41) is used. For example, calling `/info` is the same as calling `/v1.41/info`. Using the API without a version-prefix is deprecated and will be removed in a future release.  Engine releases in the near future should support this version of the API, so your client will continue to work even if it is talking to a newer Engine.  The API uses an open schema model, which means server may add extra properties to responses. Likewise, the server will ignore any extra query parameters and request body properties. When you write clients, you need to ignore additional properties in responses to ensure they do not break when talking to newer daemons.   # Authentication  Authentication for registries is handled client side. The client has to send authentication details to various endpoints that need to communicate with registries, such as `POST /images/(name)/push`. These are sent as `X-Registry-Auth` header as a [base64url encoded](https://tools.ietf.org/html/rfc4648#section-5) (JSON) string with the following structure:  ``` {   \"username\": \"string\",   \"password\": \"string\",   \"email\": \"string\",   \"serveraddress\": \"string\" } ```  The `serveraddress` is a domain/IP without a protocol. Throughout this structure, double quotes are required.  If you have already got an identity token from the [`/auth` endpoint](#operation/SystemAuth), you can just pass this instead of credentials:  ``` {   \"identitytoken\": \"9cbaf023786cd7...\" } ``` 
  *
  * The version of the OpenAPI document: 1.41
  *
@@ -23,12 +23,8 @@ package de.gesellix.docker.remote.api
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
-// Merged from:
-// - ContainerConfig (embedded)
-// - HostConfig
-// - NetworkingConfig
 /**
- * Configuration for a container that is portable between hosts
+ *
  *
  * @param hostname The hostname to use for the container, as a valid RFC 1123 hostname.
  * @param domainname The domain name to use for the container.
@@ -44,7 +40,7 @@ import com.squareup.moshi.JsonClass
  * @param cmd Command to run specified as a string or an array of strings.
  * @param healthcheck
  * @param argsEscaped Command is already escaped (Windows only)
- * @param image The name of the image to use when creating the container/
+ * @param image The name (or reference) of the image to use when creating the container, or which was used when the container was created.
  * @param volumes An object mapping mount point paths inside the container to empty objects.
  * @param workingDir The working directory for commands to run in.
  * @param entrypoint The entry point for the container as a string or an array of strings.  If the array consists of exactly one empty string (`[\"\"]`) then the entry point is reset to system default (i.e., the entry point used by docker when there is no `ENTRYPOINT` instruction in the `Dockerfile`).
@@ -55,15 +51,17 @@ import com.squareup.moshi.JsonClass
  * @param stopSignal Signal to stop a container as a string or unsigned integer.
  * @param stopTimeout Timeout to stop a container in seconds.
  * @param shell Shell for when `RUN`, `CMD`, and `ENTRYPOINT` uses a shell.
+ * @param hostConfig
+ * @param networkingConfig
  */
 @JsonClass(generateAdapter = true)
 data class ContainerCreateRequest(
 
-  /* The hostname to use for the container, as a valid RFC 1123 hostname. */
+  /* The hostname to use for the container, as a valid RFC 1123 hostname.  */
   @Json(name = "Hostname")
   var hostname: kotlin.String? = null,
 
-  /* The domain name to use for the container. */
+  /* The domain name to use for the container.  */
   @Json(name = "Domainname")
   var domainname: kotlin.String? = null,
 
@@ -114,7 +112,7 @@ data class ContainerCreateRequest(
   @Json(name = "ArgsEscaped")
   var argsEscaped: kotlin.Boolean? = null,
 
-  /* The name of the image to use when creating the container/  */
+  /* The name (or reference) of the image to use when creating the container, or which was used when the container was created.  */
   @Json(name = "Image")
   var image: kotlin.String? = null,
 
@@ -162,5 +160,6 @@ data class ContainerCreateRequest(
   var hostConfig: HostConfig? = null,
 
   @Json(name = "NetworkingConfig")
-  var networkingConfig: NetworkingConfig? = null,
+  var networkingConfig: NetworkingConfig? = null
+
 )

@@ -26,23 +26,27 @@ import com.squareup.moshi.JsonClass
 /**
  *
  *
- * @param name Name of the component
- * @param version Version of the component
- * @param details Key/value pairs of strings with additional information about the component. These values are intended for informational purposes only, and their content is not defined, and not part of the API specification.  These messages can be printed by the client as information to the user.
+ * @param name User-defined name of the config.
+ * @param labels User-defined key/value metadata.
+ * @param `data` Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-5)) config data.
+ * @param templating
  */
 @JsonClass(generateAdapter = true)
-data class SystemVersionComponents(
+data class ConfigCreateRequest(
 
-  /* Name of the component  */
+  /* User-defined name of the config. */
   @Json(name = "Name")
-  var name: kotlin.String,
+  var name: kotlin.String? = null,
 
-  /* Version of the component  */
-  @Json(name = "Version")
-  var version: kotlin.String,
+  /* User-defined key/value metadata. */
+  @Json(name = "Labels")
+  var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
 
-  /* Key/value pairs of strings with additional information about the component. These values are intended for informational purposes only, and their content is not defined, and not part of the API specification.  These messages can be printed by the client as information to the user.  */
-  @Json(name = "Details")
-  var details: kotlin.Any? = null
+  /* Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-5)) config data.  */
+  @Json(name = "Data")
+  var `data`: kotlin.String? = null,
+
+  @Json(name = "Templating")
+  var templating: Driver? = null
 
 )

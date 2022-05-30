@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **platform** | [**SystemVersionPlatform**](SystemVersionPlatform.md) |  |  [optional]
-**components** | [**kotlin.collections.MutableList&lt;SystemVersionComponents&gt;**](SystemVersionComponents.md) | Information about system components  |  [optional]
+**components** | [**kotlin.collections.MutableList&lt;SystemVersionComponentsInner&gt;**](SystemVersionComponentsInner.md) | Information about system components  |  [optional]
 **version** | **kotlin.String** | The version of the daemon |  [optional]
 **apiVersion** | **kotlin.String** | The default (and highest) API version that is supported by the daemon  |  [optional]
 **minAPIVersion** | **kotlin.String** | The minimum API version that is supported by the daemon  |  [optional]
