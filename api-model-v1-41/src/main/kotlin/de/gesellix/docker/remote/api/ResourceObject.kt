@@ -41,6 +41,6 @@ data class ResourceObject(
 
   /* User-defined resources can be either Integer resources (e.g, `SSD=3`) or String resources (e.g, `GPU=UUID1`).  */
   @Json(name = "GenericResources")
-  var genericResources: kotlin.collections.MutableList<kotlin.Any>? = null
+  var genericResources: kotlin.collections.MutableList<GenericResourcesInner>? = null
 
 )

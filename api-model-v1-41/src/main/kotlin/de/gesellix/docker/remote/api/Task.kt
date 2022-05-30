@@ -81,7 +81,7 @@ data class Task(
 
   /* User-defined resources can be either Integer resources (e.g, `SSD=3`) or String resources (e.g, `GPU=UUID1`).  */
   @Json(name = "AssignedGenericResources")
-  var assignedGenericResources: kotlin.collections.MutableList<kotlin.Any>? = null,
+  var assignedGenericResources: kotlin.collections.MutableList<GenericResourcesInner>? = null,
 
   @Json(name = "Status")
   var status: TaskStatus? = null,

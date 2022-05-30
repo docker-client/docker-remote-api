@@ -79,7 +79,7 @@ data class Resources(
 
   /* Block IO weight (relative device weight) in the form:  ``` [{\"Path\": \"device_path\", \"Weight\": weight}] ```  */
   @Json(name = "BlkioWeightDevice")
-  var blkioWeightDevice: kotlin.collections.MutableList<ResourcesBlkioWeightDevice>? = null,
+  var blkioWeightDevice: kotlin.collections.MutableList<ResourcesBlkioWeightDeviceInner>? = null,
 
   /* Limit read rate (bytes per second) from a device, in the form:  ``` [{\"Path\": \"device_path\", \"Rate\": rate}] ```  */
   @Json(name = "BlkioDeviceReadBps")
@@ -167,7 +167,7 @@ data class Resources(
 
   /* A list of resource limits to set in the container. For example:  ``` {\"Name\": \"nofile\", \"Soft\": 1024, \"Hard\": 2048} ```  */
   @Json(name = "Ulimits")
-  var ulimits: kotlin.collections.MutableList<ResourcesUlimits>? = null,
+  var ulimits: kotlin.collections.MutableList<ResourcesUlimitsInner>? = null,
 
   /* The number of usable CPUs (Windows only).  On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.  */
   @Json(name = "CpuCount")

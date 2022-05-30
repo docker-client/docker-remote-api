@@ -26,16 +26,16 @@ import com.squareup.moshi.JsonClass
 /**
  *
  *
- * @param type
- * @param name
+ * @param namedResourceSpec
+ * @param discreteResourceSpec
  */
 @JsonClass(generateAdapter = true)
-data class EngineDescriptionPlugins(
+data class GenericResourcesInner(
 
-  @Json(name = "Type")
-  var type: kotlin.String? = null,
+  @Json(name = "NamedResourceSpec")
+  var namedResourceSpec: GenericResourcesInnerNamedResourceSpec? = null,
 
-  @Json(name = "Name")
-  var name: kotlin.String? = null
+  @Json(name = "DiscreteResourceSpec")
+  var discreteResourceSpec: GenericResourcesInnerDiscreteResourceSpec? = null
 
 )

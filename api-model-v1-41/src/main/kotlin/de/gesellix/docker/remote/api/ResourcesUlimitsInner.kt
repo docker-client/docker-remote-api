@@ -24,35 +24,25 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 /**
- * CA configuration.
  *
- * @param nodeCertExpiry The duration node certificates are issued for.
- * @param externalCAs Configuration for forwarding signing requests to an external certificate authority.
- * @param signingCACert The desired signing CA certificate for all swarm node TLS leaf certificates, in PEM format.
- * @param signingCAKey The desired signing CA key for all swarm node TLS leaf certificates, in PEM format.
- * @param forceRotate An integer whose purpose is to force swarm to generate a new signing CA certificate and key, if none have been specified in `SigningCACert` and `SigningCAKey`
+ *
+ * @param name Name of ulimit
+ * @param soft Soft limit
+ * @param hard Hard limit
  */
 @JsonClass(generateAdapter = true)
-data class SwarmSpecCAConfig(
+data class ResourcesUlimitsInner(
 
-  /* The duration node certificates are issued for. */
-  @Json(name = "NodeCertExpiry")
-  var nodeCertExpiry: kotlin.Long? = null,
+  /* Name of ulimit */
+  @Json(name = "Name")
+  var name: kotlin.String? = null,
 
-  /* Configuration for forwarding signing requests to an external certificate authority.  */
-  @Json(name = "ExternalCAs")
-  var externalCAs: kotlin.collections.MutableList<SwarmSpecCAConfigExternalCAsInner>? = null,
+  /* Soft limit */
+  @Json(name = "Soft")
+  var soft: kotlin.Int? = null,
 
-  /* The desired signing CA certificate for all swarm node TLS leaf certificates, in PEM format.  */
-  @Json(name = "SigningCACert")
-  var signingCACert: kotlin.String? = null,
-
-  /* The desired signing CA key for all swarm node TLS leaf certificates, in PEM format.  */
-  @Json(name = "SigningCAKey")
-  var signingCAKey: kotlin.String? = null,
-
-  /* An integer whose purpose is to force swarm to generate a new signing CA certificate and key, if none have been specified in `SigningCACert` and `SigningCAKey`  */
-  @Json(name = "ForceRotate")
-  var forceRotate: kotlin.Int? = null
+  /* Hard limit */
+  @Json(name = "Hard")
+  var hard: kotlin.Int? = null
 
 )

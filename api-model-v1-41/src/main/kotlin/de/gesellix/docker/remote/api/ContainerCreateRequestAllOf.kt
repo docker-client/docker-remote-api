@@ -26,12 +26,16 @@ import com.squareup.moshi.JsonClass
 /**
  *
  *
- * @param spread
+ * @param hostConfig
+ * @param networkingConfig
  */
 @JsonClass(generateAdapter = true)
-data class TaskSpecPlacementPreferences(
+data class ContainerCreateRequestAllOf(
 
-  @Json(name = "Spread")
-  var spread: TaskSpecPlacementSpread? = null
+  @Json(name = "HostConfig")
+  var hostConfig: HostConfig? = null,
+
+  @Json(name = "NetworkingConfig")
+  var networkingConfig: NetworkingConfig? = null
 
 )

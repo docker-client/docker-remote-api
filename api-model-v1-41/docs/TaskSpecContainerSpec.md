@@ -23,14 +23,14 @@ Name | Type | Description | Notes
 **healthCheck** | [**HealthConfig**](HealthConfig.md) |  |  [optional]
 **hosts** | **kotlin.collections.MutableList&lt;kotlin.String&gt;** | A list of hostname/IP mappings to add to the container&#39;s &#x60;hosts&#x60; file. The format of extra hosts is specified in the [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html) man page:      IP_address canonical_hostname [aliases]  |  [optional]
 **dnSConfig** | [**TaskSpecContainerSpecDNSConfig**](TaskSpecContainerSpecDNSConfig.md) |  |  [optional]
-**secrets** | [**kotlin.collections.MutableList&lt;TaskSpecContainerSpecSecrets&gt;**](TaskSpecContainerSpecSecrets.md) | Secrets contains references to zero or more secrets that will be exposed to the service.  |  [optional]
-**configs** | [**kotlin.collections.MutableList&lt;TaskSpecContainerSpecConfigs&gt;**](TaskSpecContainerSpecConfigs.md) | Configs contains references to zero or more configs that will be exposed to the service.  |  [optional]
+**secrets** | [**kotlin.collections.MutableList&lt;TaskSpecContainerSpecSecretsInner&gt;**](TaskSpecContainerSpecSecretsInner.md) | Secrets contains references to zero or more secrets that will be exposed to the service.  |  [optional]
+**configs** | [**kotlin.collections.MutableList&lt;TaskSpecContainerSpecConfigsInner&gt;**](TaskSpecContainerSpecConfigsInner.md) | Configs contains references to zero or more configs that will be exposed to the service.  |  [optional]
 **isolation** | [**inline**](#Isolation) | Isolation technology of the containers running the service. (Windows only)  |  [optional]
 **&#x60;init&#x60;** | **kotlin.Boolean** | Run an init inside the container that forwards signals and reaps processes. This field is omitted if empty, and the default (as configured on the daemon) is used.  |  [optional]
 **sysctls** | **kotlin.collections.MutableMap&lt;kotlin.String, kotlin.String&gt;** | Set kernel namedspaced parameters (sysctls) in the container. The Sysctls option on services accepts the same sysctls as the are supported on containers. Note that while the same sysctls are supported, no guarantees or checks are made about their suitability for a clustered environment, and it&#39;s up to the user to determine whether a given sysctl will work properly in a Service.  |  [optional]
 **capabilityAdd** | **kotlin.collections.MutableList&lt;kotlin.String&gt;** | A list of kernel capabilities to add to the default set for the container.  |  [optional]
 **capabilityDrop** | **kotlin.collections.MutableList&lt;kotlin.String&gt;** | A list of kernel capabilities to drop from the default set for the container.  |  [optional]
-**ulimits** | [**kotlin.collections.MutableList&lt;ResourcesUlimits&gt;**](ResourcesUlimits.md) | A list of resource limits to set in the container. For example: &#x60;{\&quot;Name\&quot;: \&quot;nofile\&quot;, \&quot;Soft\&quot;: 1024, \&quot;Hard\&quot;: 2048}&#x60;\&quot;  |  [optional]
+**ulimits** | [**kotlin.collections.MutableList&lt;ResourcesUlimitsInner&gt;**](ResourcesUlimitsInner.md) | A list of resource limits to set in the container. For example: &#x60;{\&quot;Name\&quot;: \&quot;nofile\&quot;, \&quot;Soft\&quot;: 1024, \&quot;Hard\&quot;: 2048}&#x60;\&quot;  |  [optional]
 
 
 <a name="Isolation"></a>

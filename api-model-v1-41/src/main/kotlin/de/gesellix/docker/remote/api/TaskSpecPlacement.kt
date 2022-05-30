@@ -40,7 +40,7 @@ data class TaskSpecPlacement(
 
   /* Preferences provide a way to make the scheduler aware of factors such as topology. They are provided in order from highest to lowest precedence.  */
   @Json(name = "Preferences")
-  var preferences: kotlin.collections.MutableList<TaskSpecPlacementPreferences>? = null,
+  var preferences: kotlin.collections.MutableList<TaskSpecPlacementPreferencesInner>? = null,
 
   /* Maximum number of replicas for per node (default value is 0, which is unlimited)  */
   @Json(name = "MaxReplicas")

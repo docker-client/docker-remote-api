@@ -24,29 +24,30 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 /**
+ * File represents a specific target that is backed by a file.  <p><br /><p>  > **Note**: `Configs.File` and `Configs.Runtime` are mutually exclusive
  *
- *
- * @param file
- * @param runtime Runtime represents a target that is not mounted into the container but is used by the task  <p><br /><p>  > **Note**: `Configs.File` and `Configs.Runtime` are mutually > exclusive
- * @param configID ConfigID represents the ID of the specific config that we're referencing.
- * @param configName ConfigName is the name of the config that this references, but this is just provided for lookup/display purposes. The config in the reference will be identified by its ID.
+ * @param name Name represents the final filename in the filesystem.
+ * @param UID UID represents the file UID.
+ * @param GID GID represents the file GID.
+ * @param mode Mode represents the FileMode of the file.
  */
 @JsonClass(generateAdapter = true)
-data class TaskSpecContainerSpecConfigs(
+data class TaskSpecContainerSpecConfigsInnerFile(
 
-  @Json(name = "File")
-  var file: TaskSpecContainerSpecFile1? = null,
+  /* Name represents the final filename in the filesystem.  */
+  @Json(name = "Name")
+  var name: kotlin.String? = null,
 
-  /* Runtime represents a target that is not mounted into the container but is used by the task  <p><br /><p>  > **Note**: `Configs.File` and `Configs.Runtime` are mutually > exclusive  */
-  @Json(name = "Runtime")
-  var runtime: kotlin.Any? = null,
+  /* UID represents the file UID. */
+  @Json(name = "UID")
+  var UID: kotlin.String? = null,
 
-  /* ConfigID represents the ID of the specific config that we're referencing.  */
-  @Json(name = "ConfigID")
-  var configID: kotlin.String? = null,
+  /* GID represents the file GID. */
+  @Json(name = "GID")
+  var GID: kotlin.String? = null,
 
-  /* ConfigName is the name of the config that this references, but this is just provided for lookup/display purposes. The config in the reference will be identified by its ID.  */
-  @Json(name = "ConfigName")
-  var configName: kotlin.String? = null
+  /* Mode represents the FileMode of the file. */
+  @Json(name = "Mode")
+  var mode: kotlin.Int? = null
 
 )

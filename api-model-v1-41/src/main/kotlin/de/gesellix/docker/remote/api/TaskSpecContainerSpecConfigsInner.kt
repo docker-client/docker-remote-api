@@ -24,35 +24,29 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 /**
- * CA configuration.
  *
- * @param nodeCertExpiry The duration node certificates are issued for.
- * @param externalCAs Configuration for forwarding signing requests to an external certificate authority.
- * @param signingCACert The desired signing CA certificate for all swarm node TLS leaf certificates, in PEM format.
- * @param signingCAKey The desired signing CA key for all swarm node TLS leaf certificates, in PEM format.
- * @param forceRotate An integer whose purpose is to force swarm to generate a new signing CA certificate and key, if none have been specified in `SigningCACert` and `SigningCAKey`
+ *
+ * @param file
+ * @param runtime Runtime represents a target that is not mounted into the container but is used by the task  <p><br /><p>  > **Note**: `Configs.File` and `Configs.Runtime` are mutually > exclusive
+ * @param configID ConfigID represents the ID of the specific config that we're referencing.
+ * @param configName ConfigName is the name of the config that this references, but this is just provided for lookup/display purposes. The config in the reference will be identified by its ID.
  */
 @JsonClass(generateAdapter = true)
-data class SwarmSpecCAConfig(
+data class TaskSpecContainerSpecConfigsInner(
 
-  /* The duration node certificates are issued for. */
-  @Json(name = "NodeCertExpiry")
-  var nodeCertExpiry: kotlin.Long? = null,
+  @Json(name = "File")
+  var file: TaskSpecContainerSpecConfigsInnerFile? = null,
 
-  /* Configuration for forwarding signing requests to an external certificate authority.  */
-  @Json(name = "ExternalCAs")
-  var externalCAs: kotlin.collections.MutableList<SwarmSpecCAConfigExternalCAsInner>? = null,
+  /* Runtime represents a target that is not mounted into the container but is used by the task  <p><br /><p>  > **Note**: `Configs.File` and `Configs.Runtime` are mutually > exclusive  */
+  @Json(name = "Runtime")
+  var runtime: kotlin.Any? = null,
 
-  /* The desired signing CA certificate for all swarm node TLS leaf certificates, in PEM format.  */
-  @Json(name = "SigningCACert")
-  var signingCACert: kotlin.String? = null,
+  /* ConfigID represents the ID of the specific config that we're referencing.  */
+  @Json(name = "ConfigID")
+  var configID: kotlin.String? = null,
 
-  /* The desired signing CA key for all swarm node TLS leaf certificates, in PEM format.  */
-  @Json(name = "SigningCAKey")
-  var signingCAKey: kotlin.String? = null,
-
-  /* An integer whose purpose is to force swarm to generate a new signing CA certificate and key, if none have been specified in `SigningCACert` and `SigningCAKey`  */
-  @Json(name = "ForceRotate")
-  var forceRotate: kotlin.Int? = null
+  /* ConfigName is the name of the config that this references, but this is just provided for lookup/display purposes. The config in the reference will be identified by its ID.  */
+  @Json(name = "ConfigName")
+  var configName: kotlin.String? = null
 
 )

@@ -47,7 +47,7 @@ data class SystemVersion(
 
   /* Information about system components  */
   @Json(name = "Components")
-  var components: kotlin.collections.MutableList<SystemVersionComponents>? = null,
+  var components: kotlin.collections.MutableList<SystemVersionComponentsInner>? = null,
 
   /* The version of the daemon */
   @Json(name = "Version")

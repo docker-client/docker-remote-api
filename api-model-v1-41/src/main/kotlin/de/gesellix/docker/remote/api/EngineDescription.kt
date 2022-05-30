@@ -40,6 +40,6 @@ data class EngineDescription(
   var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
 
   @Json(name = "Plugins")
-  var plugins: kotlin.collections.MutableList<EngineDescriptionPlugins>? = null
+  var plugins: kotlin.collections.MutableList<EngineDescriptionPluginsInner>? = null
 
 )
