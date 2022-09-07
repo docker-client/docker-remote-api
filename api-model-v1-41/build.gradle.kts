@@ -82,7 +82,7 @@ dependencies {
   }
   implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10")
 
-  implementation("com.squareup.moshi:moshi:1.13.0")
+  implementation("com.squareup.moshi:moshi:1.14.0")
   ksp("com.squareup.moshi:moshi-kotlin-codegen:1.13.0")
 
   testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.0")
