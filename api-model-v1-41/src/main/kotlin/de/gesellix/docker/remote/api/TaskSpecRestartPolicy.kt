@@ -44,11 +44,11 @@ data class TaskSpecRestartPolicy(
 
   /* Maximum attempts to restart a given container before giving up (default value is 0, which is ignored).  */
   @Json(name = "MaxAttempts")
-  var maxAttempts: kotlin.Long? = 0,
+  var maxAttempts: kotlin.Long? = 0L,
 
   /* Windows is the time window used to evaluate the restart policy (default value is 0, which is unbounded).  */
   @Json(name = "Window")
-  var window: kotlin.Long? = 0
+  var window: kotlin.Long? = 0L
 
 ) {
 

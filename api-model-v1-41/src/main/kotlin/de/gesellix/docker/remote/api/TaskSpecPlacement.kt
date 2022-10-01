@@ -44,7 +44,7 @@ data class TaskSpecPlacement(
 
   /* Maximum number of replicas for per node (default value is 0, which is unlimited)  */
   @Json(name = "MaxReplicas")
-  var maxReplicas: kotlin.Long? = 0,
+  var maxReplicas: kotlin.Long? = 0L,
 
   /* Platforms stores all the platforms that the service's image can run on. This field is used in the platform filter for scheduling. If empty, then the platform filter is off, meaning there are no scheduling restrictions.  */
   @Json(name = "Platforms")
