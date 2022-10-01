@@ -105,7 +105,7 @@ data class HostConfig(
 
   /* Memory limit in bytes. */
   @Json(name = "Memory")
-  var memory: kotlin.Long? = 0,
+  var memory: kotlin.Long? = 0L,
 
   /* Path to `cgroups` under which the container's `cgroup` is created. If the path is not absolute, the path is considered to be relative to the `cgroups` path of the init process. Cgroups are created if they do not already exist.  */
   @Json(name = "CgroupParent")

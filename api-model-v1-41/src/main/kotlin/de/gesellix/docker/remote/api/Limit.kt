@@ -41,6 +41,6 @@ data class Limit(
 
   /* Limits the maximum number of PIDs in the container. Set `0` for unlimited.  */
   @Json(name = "Pids")
-  var pids: kotlin.Long? = 0
+  var pids: kotlin.Long? = 0L
 
 )
