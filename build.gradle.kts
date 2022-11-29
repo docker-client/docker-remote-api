@@ -16,7 +16,7 @@ plugins {
 }
 
 val dependencyVersions = listOf(
-  "org.jetbrains.kotlin:kotlin-reflect:1.7.21",
+  "org.jetbrains.kotlin:kotlin-reflect:1.7.22",
   "org.jetbrains.kotlin:kotlin-script-runtime:1.7.21",
   "org.jetbrains.kotlin:kotlin-stdlib:1.7.21",
   "org.jetbrains.kotlin:kotlin-stdlib-common:1.7.21",
