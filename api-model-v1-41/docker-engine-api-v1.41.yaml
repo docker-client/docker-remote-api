@@ -2021,6 +2021,7 @@ definitions:
       UsageData:
         type: "object"
         x-nullable: true
+        x-go-name: "UsageData"
         required: [Size, RefCount]
         description: |
           Usage details about the volume. This information is used by the
@@ -2049,7 +2050,7 @@ definitions:
     description: "Volume configuration"
     type: "object"
     title: "VolumeConfig"
-    x-go-name: "VolumeCreateBody"
+    x-go-name: "CreateOptions"
     properties:
       Name:
         description: |
@@ -2086,7 +2087,7 @@ definitions:
   VolumeListResponse:
     type: "object"
     title: "VolumeListResponse"
-    x-go-name: "VolumeListOKBody"
+    x-go-name: "ListResponse"
     description: "Volume list response"
     properties:
       Volumes:
@@ -4673,10 +4674,31 @@ definitions:
         x-nullable: true
         $ref: "#/definitions/Health"
 
+  ContainerCreateResponse:
+    description: "OK response to ContainerCreate operation"
+    type: "object"
+    title: "ContainerCreateResponse"
+    x-go-name: "CreateResponse"
+    required: [Id]
+#    required: [Id, Warnings]
+    properties:
+      Id:
+        description: "The ID of the created container"
+        type: "string"
+        x-nullable: false
+        example: "ede54ee1afda366ab42f824e8a5ffd195155d853ceaec74a927f249ea270c743"
+      Warnings:
+        description: "Warnings encountered when creating the container"
+        type: "array"
+        x-nullable: true
+        items:
+          type: "string"
+        example: []
+
   ContainerWaitResponse:
     description: "OK response to ContainerWait operation"
     type: "object"
-    x-go-name: "ContainerWaitOKBody"
+    x-go-name: "WaitResponse"
     title: "ContainerWaitResponse"
     required: [StatusCode]
 #    required: [StatusCode, Error]
@@ -4692,7 +4714,7 @@ definitions:
   ContainerWaitExitError:
     description: "container waiting error, if any"
     type: "object"
-    x-go-name: "ContainerWaitOKBodyError"
+    x-go-name: "WaitExitError"
     properties:
       Message:
         description: "Details of an error"
@@ -6068,7 +6090,6 @@ paths:
                 Memory: 0
                 MemorySwap: 0
                 MemoryReservation: 0
-                KernelMemory: 0
                 NanoCpus: 500000
                 CpuPercent: 80
                 CpuShares: 512
@@ -6162,26 +6183,7 @@ paths:
         201:
           description: "Container created successfully"
           schema:
-            type: "object"
-            title: "ContainerCreateResponse"
-            description: "OK response to ContainerCreate operation"
-            required: [Id]
-#            required: [Id, Warnings]
-            properties:
-              Id:
-                description: "The ID of the created container"
-                type: "string"
-                x-nullable: false
-              Warnings:
-                description: "Warnings encountered when creating the container"
-                type: "array"
-                x-nullable: true
-                items:
-                  type: "string"
-          examples:
-            application/json:
-              Id: "e90e34656806"
-              Warnings: []
+            $ref: "#/definitions/ContainerCreateResponse"
         400:
           description: "bad parameter"
           schema:
@@ -6362,7 +6364,6 @@ paths:
                 Memory: 0
                 MemorySwap: 0
                 MemoryReservation: 0
-                KernelMemory: 0
                 OomKillDisable: false
                 OomScoreAdj: 500
                 NetworkMode: "bridge"
@@ -7111,7 +7112,6 @@ paths:
               Memory: 314572800
               MemorySwap: 514288000
               MemoryReservation: 209715200
-              KernelMemory: 52428800
               RestartPolicy:
                 MaximumRetryCount: 4
                 Name: "on-failure"
@@ -8826,7 +8826,7 @@ paths:
               BuildCache:
                 -
                   ID: "hw53o5aio51xtltp5xjp8v7fx"
-                  Parent: ""
+                  Parents: []
                   Type: "regular"
                   Description: "pulled from docker.io/library/debian@sha256:234cb88d3020898631af0ccbbcca9a66ae7306ecd30c9720690858c1b007d2a0"
                   InUse: false
@@ -8837,7 +8837,7 @@ paths:
                   UsageCount: 26
                 -
                   ID: "ndlpt0hhvkqcdfkputsk4cq9c"
-                  Parent: "hw53o5aio51xtltp5xjp8v7fx"
+                  Parents: ["ndlpt0hhvkqcdfkputsk4cq9c"]
                   Type: "regular"
                   Description: "mount / from exec /bin/sh -c echo 'Binary::apt::APT::Keep-Downloaded-Packages \"true\";' > /etc/apt/apt.conf.d/keep-cache"
                   InUse: false
