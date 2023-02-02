@@ -80,7 +80,7 @@ dependencies {
       }
     }
   }
-  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0")
+  implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.10")
 
   implementation("com.squareup.moshi:moshi:1.14.0")
   ksp("com.squareup.moshi:moshi-kotlin-codegen:1.14.0")
