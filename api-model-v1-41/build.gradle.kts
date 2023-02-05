@@ -52,10 +52,14 @@ val openApiGenerateCleanupGeneratedCode by tasks.register("openApiGenerateCleanu
     }
   }
 }
+
 tasks.runKtlintFormatOverKotlinScripts.get().dependsOn(tasks.openApiGenerate, openApiGenerateCleanupBuildScript)
 tasks.ktlintKotlinScriptFormat.get().dependsOn(tasks.openApiGenerate, openApiGenerateCleanupBuildScript)
 tasks.ktlintMainSourceSetFormat.get().dependsOn(tasks.openApiGenerate, openApiGenerateCleanupBuildScript)
-tasks.ktlintFormat.get().dependsOn(tasks.openApiGenerate, openApiGenerateCleanupBuildScript)
+tasks.ktlintFormat.get().dependsOn(
+  tasks.openApiGenerate,
+  openApiGenerateCleanupBuildScript,
+  tasks.named("ktlintGeneratedByKspKotlinSourceSetFormat"))
 val updateApiModelSources by tasks.register("updateApiModelSources") {
   group = "openapi tools"
   dependsOn(tasks.ktlintFormat)
