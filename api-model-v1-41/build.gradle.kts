@@ -16,6 +16,17 @@ plugins {
 
 val remoteApiVersion = "1.41"
 
+logger.lifecycle("checking base: ${file("$buildDir/generated").path}")
+configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
+  filter {
+// see https://github.com/JLLeitschuh/ktlint-gradle/issues/579
+    exclude("**/generated/**")
+    exclude {
+      it.file.path.startsWith(file("$buildDir/generated").path)
+    }
+  }
+}
+
 openApiGenerate {
   inputSpec.set(file("./docker-engine-api-v$remoteApiVersion.yaml").absolutePath)
   configFile.set(file("./openapi-generator-config.yaml").absolutePath)
@@ -56,10 +67,11 @@ val openApiGenerateCleanupGeneratedCode by tasks.register("openApiGenerateCleanu
 tasks.runKtlintFormatOverKotlinScripts.get().dependsOn(tasks.openApiGenerate, openApiGenerateCleanupBuildScript)
 tasks.ktlintKotlinScriptFormat.get().dependsOn(tasks.openApiGenerate, openApiGenerateCleanupBuildScript)
 tasks.ktlintMainSourceSetFormat.get().dependsOn(tasks.openApiGenerate, openApiGenerateCleanupBuildScript)
-tasks.ktlintFormat.get().dependsOn(
-  tasks.openApiGenerate,
-  openApiGenerateCleanupBuildScript,
-  tasks.named("ktlintGeneratedByKspKotlinSourceSetFormat"))
+// tasks.ktlintFormat.get().dependsOn(
+//  tasks.openApiGenerate,
+//  openApiGenerateCleanupBuildScript,
+//  tasks.named("ktlintGeneratedByKspKotlinSourceSetFormat")
+// )
 val updateApiModelSources by tasks.register("updateApiModelSources") {
   group = "openapi tools"
   dependsOn(tasks.ktlintFormat)
