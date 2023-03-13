@@ -78,6 +78,14 @@ val updateApiModelSources by tasks.register("updateApiModelSources") {
   finalizedBy(openApiGenerateCleanupGeneratedCode)
 }
 
+// TODO find a better solution.
+// This is a deprecated workaround,
+// because the 'kspKotlin' task isn't present at
+// evaluation time.
+afterEvaluate {
+  tasks.findByName("kspKotlin")?.mustRunAfter(tasks.openApiGenerate)
+}
+
 repositories {
   mavenCentral()
 }
