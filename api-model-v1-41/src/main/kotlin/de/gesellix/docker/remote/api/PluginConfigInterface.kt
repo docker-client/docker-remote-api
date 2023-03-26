@@ -47,7 +47,11 @@ data class PluginConfigInterface(
    * Values: EMPTY,MobyPeriodPluginsPeriodHttpSlashV1
    */
   enum class ProtocolScheme(val value: kotlin.String) {
-    @Json(name = "") EMPTY(""),
-    @Json(name = "moby.plugins.http/v1") MobyPeriodPluginsPeriodHttpSlashV1("moby.plugins.http/v1");
+
+    @Json(name = "")
+    EMPTY(""),
+
+    @Json(name = "moby.plugins.http/v1")
+    MobyPeriodPluginsPeriodHttpSlashV1("moby.plugins.http/v1");
   }
 }

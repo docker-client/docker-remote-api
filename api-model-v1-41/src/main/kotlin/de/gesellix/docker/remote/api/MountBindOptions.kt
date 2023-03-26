@@ -44,11 +44,23 @@ data class MountBindOptions(
    * Values: Private,Rprivate,Shared,Rshared,Slave,Rslave
    */
   enum class Propagation(val value: kotlin.String) {
-    @Json(name = "private") Private("private"),
-    @Json(name = "rprivate") Rprivate("rprivate"),
-    @Json(name = "shared") Shared("shared"),
-    @Json(name = "rshared") Rshared("rshared"),
-    @Json(name = "slave") Slave("slave"),
-    @Json(name = "rslave") Rslave("rslave");
+
+    @Json(name = "private")
+    Private("private"),
+
+    @Json(name = "rprivate")
+    Rprivate("rprivate"),
+
+    @Json(name = "shared")
+    Shared("shared"),
+
+    @Json(name = "rshared")
+    Rshared("rshared"),
+
+    @Json(name = "slave")
+    Slave("slave"),
+
+    @Json(name = "rslave")
+    Rslave("rslave");
   }
 }

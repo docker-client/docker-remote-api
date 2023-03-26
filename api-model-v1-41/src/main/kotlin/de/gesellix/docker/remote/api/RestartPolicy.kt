@@ -44,10 +44,20 @@ data class RestartPolicy(
    * Values: EMPTY,No,Always,UnlessMinusStopped,OnMinusFailure
    */
   enum class Name(val value: kotlin.String) {
-    @Json(name = "") EMPTY(""),
-    @Json(name = "no") No("no"),
-    @Json(name = "always") Always("always"),
-    @Json(name = "unless-stopped") UnlessMinusStopped("unless-stopped"),
-    @Json(name = "on-failure") OnMinusFailure("on-failure");
+
+    @Json(name = "")
+    EMPTY(""),
+
+    @Json(name = "no")
+    No("no"),
+
+    @Json(name = "always")
+    Always("always"),
+
+    @Json(name = "unless-stopped")
+    UnlessMinusStopped("unless-stopped"),
+
+    @Json(name = "on-failure")
+    OnMinusFailure("on-failure");
   }
 }

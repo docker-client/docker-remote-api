@@ -74,9 +74,17 @@ data class MountPoint(
    * Values: Bind,Volume,Tmpfs,Npipe
    */
   enum class Type(val value: kotlin.String) {
-    @Json(name = "bind") Bind("bind"),
-    @Json(name = "volume") Volume("volume"),
-    @Json(name = "tmpfs") Tmpfs("tmpfs"),
-    @Json(name = "npipe") Npipe("npipe");
+
+    @Json(name = "bind")
+    Bind("bind"),
+
+    @Json(name = "volume")
+    Volume("volume"),
+
+    @Json(name = "tmpfs")
+    Tmpfs("tmpfs"),
+
+    @Json(name = "npipe")
+    Npipe("npipe");
   }
 }

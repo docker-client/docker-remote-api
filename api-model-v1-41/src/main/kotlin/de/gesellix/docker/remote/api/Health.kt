@@ -49,9 +49,17 @@ data class Health(
    * Values: None,Starting,Healthy,Unhealthy
    */
   enum class Status(val value: kotlin.String) {
-    @Json(name = "none") None("none"),
-    @Json(name = "starting") Starting("starting"),
-    @Json(name = "healthy") Healthy("healthy"),
-    @Json(name = "unhealthy") Unhealthy("unhealthy");
+
+    @Json(name = "none")
+    None("none"),
+
+    @Json(name = "starting")
+    Starting("starting"),
+
+    @Json(name = "healthy")
+    Healthy("healthy"),
+
+    @Json(name = "unhealthy")
+    Unhealthy("unhealthy");
   }
 }

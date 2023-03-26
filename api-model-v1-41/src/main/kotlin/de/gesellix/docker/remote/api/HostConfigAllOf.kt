@@ -49,7 +49,7 @@ import com.squareup.moshi.JsonClass
  * @param readonlyRootfs Mount the container's root filesystem as read only.
  * @param securityOpt A list of string values to customize labels for MLS systems, such as SELinux.
  * @param storageOpt Storage driver options for this container, in the form `{\"size\": \"120G\"}`.
- * @param tmpfs A map of container directories which should be replaced by tmpfs mounts, and their corresponding mount options. For example:  ``` { \"/run\": \"rw,noexec,nosuid,size=65536k\" } ``` 
+ * @param tmpfs A map of container directories which should be replaced by tmpfs mounts, and their corresponding mount options. For example:  ``` { \"/run\": \"rw,noexec,nosuid,size=65536k\" } ```
  * @param utSMode UTS namespace to use for the container.
  * @param usernsMode Sets the usernamespace mode for the container when usernamespace remapping option is enabled.
  * @param shmSize Size of `/dev/shm` in bytes. If omitted, the system uses 64MB.
@@ -222,17 +222,28 @@ data class HostConfigAllOf(
    * Values: Private,Host
    */
   enum class CgroupnsMode(val value: kotlin.String) {
-    @Json(name = "private") Private("private"),
-    @Json(name = "host") Host("host");
+
+    @Json(name = "private")
+    Private("private"),
+
+    @Json(name = "host")
+    Host("host");
   }
+
   /**
    * Isolation technology of the container. (Windows only)
    *
    * Values: Default,Process,Hyperv
    */
   enum class Isolation(val value: kotlin.String) {
-    @Json(name = "default") Default("default"),
-    @Json(name = "process") Process("process"),
-    @Json(name = "hyperv") Hyperv("hyperv");
+
+    @Json(name = "default")
+    Default("default"),
+
+    @Json(name = "process")
+    Process("process"),
+
+    @Json(name = "hyperv")
+    Hyperv("hyperv");
   }
 }

@@ -64,17 +64,28 @@ data class ServiceSpecUpdateConfig(
    * Values: Continue,Pause,Rollback
    */
   enum class FailureAction(val value: kotlin.String) {
-    @Json(name = "continue") Continue("continue"),
-    @Json(name = "pause") Pause("pause"),
-    @Json(name = "rollback") Rollback("rollback");
+
+    @Json(name = "continue")
+    Continue("continue"),
+
+    @Json(name = "pause")
+    Pause("pause"),
+
+    @Json(name = "rollback")
+    Rollback("rollback");
   }
+
   /**
    * The order of operations when rolling out an updated task. Either the old task is shut down before the new task is started, or the new task is started before the old task is shut down.
    *
    * Values: StopMinusFirst,StartMinusFirst
    */
   enum class Order(val value: kotlin.String) {
-    @Json(name = "stop-first") StopMinusFirst("stop-first"),
-    @Json(name = "start-first") StartMinusFirst("start-first");
+
+    @Json(name = "stop-first")
+    StopMinusFirst("stop-first"),
+
+    @Json(name = "start-first")
+    StartMinusFirst("start-first");
   }
 }

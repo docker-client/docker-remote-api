@@ -54,17 +54,28 @@ data class NodeSpec(
    * Values: Worker,Manager
    */
   enum class Role(val value: kotlin.String) {
-    @Json(name = "worker") Worker("worker"),
-    @Json(name = "manager") Manager("manager");
+
+    @Json(name = "worker")
+    Worker("worker"),
+
+    @Json(name = "manager")
+    Manager("manager");
   }
+
   /**
    * Availability of the node.
    *
    * Values: Active,Pause,Drain
    */
   enum class Availability(val value: kotlin.String) {
-    @Json(name = "active") Active("active"),
-    @Json(name = "pause") Pause("pause"),
-    @Json(name = "drain") Drain("drain");
+
+    @Json(name = "active")
+    Active("active"),
+
+    @Json(name = "pause")
+    Pause("pause"),
+
+    @Json(name = "drain")
+    Drain("drain");
   }
 }

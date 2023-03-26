@@ -50,8 +50,14 @@ data class ServiceUpdateStatus(
    * Values: Updating,Paused,Completed
    */
   enum class State(val value: kotlin.String) {
-    @Json(name = "updating") Updating("updating"),
-    @Json(name = "paused") Paused("paused"),
-    @Json(name = "completed") Completed("completed");
+
+    @Json(name = "updating")
+    Updating("updating"),
+
+    @Json(name = "paused")
+    Paused("paused"),
+
+    @Json(name = "completed")
+    Completed("completed");
   }
 }

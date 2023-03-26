@@ -338,10 +338,17 @@ data class SystemInfo(
    * Values: Cgroupfs,Systemd,None
    */
   enum class CgroupDriver(val value: kotlin.String) {
-    @Json(name = "cgroupfs") Cgroupfs("cgroupfs"),
-    @Json(name = "systemd") Systemd("systemd"),
-    @Json(name = "none") None("none");
+
+    @Json(name = "cgroupfs")
+    Cgroupfs("cgroupfs"),
+
+    @Json(name = "systemd")
+    Systemd("systemd"),
+
+    @Json(name = "none")
+    None("none");
   }
+
   /**
    * The version of the cgroup.
    *
@@ -351,6 +358,7 @@ data class SystemInfo(
 
     @Json(name = "V1")
     V1("V1"),
+
     @Json(name = "V2")
     V2("V2");
   }
@@ -361,8 +369,14 @@ data class SystemInfo(
    * Values: Default,Hyperv,Process
    */
   enum class Isolation(val value: kotlin.String) {
-    @Json(name = "default") Default("default"),
-    @Json(name = "hyperv") Hyperv("hyperv"),
-    @Json(name = "process") Process("process");
+
+    @Json(name = "default")
+    Default("default"),
+
+    @Json(name = "hyperv")
+    Hyperv("hyperv"),
+
+    @Json(name = "process")
+    Process("process");
   }
 }
