@@ -201,7 +201,7 @@ data class SystemInfo(
 
   /* The version of the cgroup.  */
   @Json(name = "CgroupVersion")
-  var cgroupVersion: SystemInfo.CgroupVersion? = CgroupVersion._1,
+  var cgroupVersion: SystemInfo.CgroupVersion? = CgroupVersion.V1,
 
   /* Number of event listeners subscribed. */
   @Json(name = "NEventsListener")
@@ -345,12 +345,16 @@ data class SystemInfo(
   /**
    * The version of the cgroup.
    *
-   * Values: _1,_2
+   * Values: V1,V2
    */
   enum class CgroupVersion(val value: kotlin.String) {
-    @Json(name = "1") _1("1"),
-    @Json(name = "2") _2("2");
+
+    @Json(name = "V1")
+    V1("V1"),
+    @Json(name = "V2")
+    V2("V2");
   }
+
   /**
    * Represents the isolation technology to use as a default for containers. The supported values are platform-specific.  If no isolation value is specified on daemon start, on Windows client, the default is `hyperv`, and on Windows server, the default is `process`.  This option is currently not used on other platforms.
    *

@@ -79,7 +79,7 @@ cgroupDriver | cgroupfs, systemd, none
 ## Enum: CgroupVersion
 Name | Value
 ---- | -----
-cgroupVersion | 1, 2
+cgroupVersion | V1, V2
 
 
 <a name="Isolation"></a>
