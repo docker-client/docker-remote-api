@@ -3,7 +3,7 @@ additionalProperties:
   hideGenerationTimestamp: true
 generatorName: kotlin
 packageName: de.gesellix.docker.remote.api
-invokerPackage: de.gesellix.docker.remote.invoker
+#invokerPackage: de.gesellix.docker.remote.invoker
 apiPackage: de.gesellix.docker.remote.client.api
 modelPackage: de.gesellix.docker.remote.api
 enumPropertyNaming: PascalCase
