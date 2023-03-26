@@ -4993,9 +4993,9 @@ definitions:
         description: |
           The version of the cgroup.
         type: "string"
-        enum: ["1", "2"]
-        default: "1"
-        example: "1"
+        enum: ["V1", "V2"]
+        default: "V1"
+        example: "V1"
       NEventsListener:
         description: "Number of event listeners subscribed."
         type: "integer"
