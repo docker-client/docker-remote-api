@@ -44,7 +44,11 @@ data class EndpointSpec(
    * Values: Vip,Dnsrr
    */
   enum class Mode(val value: kotlin.String) {
-    @Json(name = "vip") Vip("vip"),
-    @Json(name = "dnsrr") Dnsrr("dnsrr");
+
+    @Json(name = "vip")
+    Vip("vip"),
+
+    @Json(name = "dnsrr")
+    Dnsrr("dnsrr");
   }
 }

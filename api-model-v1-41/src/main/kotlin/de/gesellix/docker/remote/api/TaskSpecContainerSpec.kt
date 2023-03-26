@@ -166,8 +166,14 @@ data class TaskSpecContainerSpec(
    * Values: Default,Process,Hyperv
    */
   enum class Isolation(val value: kotlin.String) {
-    @Json(name = "default") Default("default"),
-    @Json(name = "process") Process("process"),
-    @Json(name = "hyperv") Hyperv("hyperv");
+
+    @Json(name = "default")
+    Default("default"),
+
+    @Json(name = "process")
+    Process("process"),
+
+    @Json(name = "hyperv")
+    Hyperv("hyperv");
   }
 }

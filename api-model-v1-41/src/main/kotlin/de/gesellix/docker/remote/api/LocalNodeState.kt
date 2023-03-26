@@ -53,6 +53,7 @@ enum class LocalNodeState(val value: kotlin.String) {
   override fun toString(): String = value
 
   companion object {
+
     /**
      * Converts the provided [data] to a [String] on success, null otherwise.
      */

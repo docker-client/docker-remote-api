@@ -91,12 +91,26 @@ data class ContainerState(
    * Values: Created,Running,Paused,Restarting,Removing,Exited,Dead
    */
   enum class Status(val value: kotlin.String) {
-    @Json(name = "created") Created("created"),
-    @Json(name = "running") Running("running"),
-    @Json(name = "paused") Paused("paused"),
-    @Json(name = "restarting") Restarting("restarting"),
-    @Json(name = "removing") Removing("removing"),
-    @Json(name = "exited") Exited("exited"),
-    @Json(name = "dead") Dead("dead");
+
+    @Json(name = "created")
+    Created("created"),
+
+    @Json(name = "running")
+    Running("running"),
+
+    @Json(name = "paused")
+    Paused("paused"),
+
+    @Json(name = "restarting")
+    Restarting("restarting"),
+
+    @Json(name = "removing")
+    Removing("removing"),
+
+    @Json(name = "exited")
+    Exited("exited"),
+
+    @Json(name = "dead")
+    Dead("dead");
   }
 }

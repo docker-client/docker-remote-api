@@ -57,17 +57,28 @@ data class EndpointPortConfig(
    * Values: Tcp,Udp,Sctp
    */
   enum class Protocol(val value: kotlin.String) {
-    @Json(name = "tcp") Tcp("tcp"),
-    @Json(name = "udp") Udp("udp"),
-    @Json(name = "sctp") Sctp("sctp");
+
+    @Json(name = "tcp")
+    Tcp("tcp"),
+
+    @Json(name = "udp")
+    Udp("udp"),
+
+    @Json(name = "sctp")
+    Sctp("sctp");
   }
+
   /**
    * The mode in which port is published.  <p><br /></p>  - \"ingress\" makes the target port accessible on every node,   regardless of whether there is a task for the service running on   that node or not. - \"host\" bypasses the routing mesh and publish the port directly on   the swarm node where that service is running.
    *
    * Values: Ingress,Host
    */
   enum class PublishMode(val value: kotlin.String) {
-    @Json(name = "ingress") Ingress("ingress"),
-    @Json(name = "host") Host("host");
+
+    @Json(name = "ingress")
+    Ingress("ingress"),
+
+    @Json(name = "host")
+    Host("host");
   }
 }

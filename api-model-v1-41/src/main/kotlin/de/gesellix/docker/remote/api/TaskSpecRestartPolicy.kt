@@ -54,8 +54,14 @@ data class TaskSpecRestartPolicy(
    * Values: None,OnMinusFailure,Any
    */
   enum class Condition(val value: kotlin.String) {
-    @Json(name = "none") None("none"),
-    @Json(name = "on-failure") OnMinusFailure("on-failure"),
-    @Json(name = "any") Any("any");
+
+    @Json(name = "none")
+    None("none"),
+
+    @Json(name = "on-failure")
+    OnMinusFailure("on-failure"),
+
+    @Json(name = "any")
+    Any("any");
   }
 }

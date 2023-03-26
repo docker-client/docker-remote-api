@@ -78,7 +78,11 @@ data class Volume(
    * Values: Local,Global
    */
   enum class Scope(val value: kotlin.String) {
-    @Json(name = "local") Local("local"),
-    @Json(name = "global") Global("global");
+
+    @Json(name = "local")
+    Local("local"),
+
+    @Json(name = "global")
+    Global("global");
   }
 }

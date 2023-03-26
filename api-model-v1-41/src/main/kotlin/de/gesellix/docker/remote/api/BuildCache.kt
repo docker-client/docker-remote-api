@@ -88,11 +88,23 @@ data class BuildCache(
    * Values: Internal,Frontend,SourcePeriodLocal,SourcePeriodGitPeriodCheckout,ExecPeriodCachemount,Regular
    */
   enum class Type(val value: kotlin.String) {
-    @Json(name = "internal") Internal("internal"),
-    @Json(name = "frontend") Frontend("frontend"),
-    @Json(name = "source.local") SourcePeriodLocal("source.local"),
-    @Json(name = "source.git.checkout") SourcePeriodGitPeriodCheckout("source.git.checkout"),
-    @Json(name = "exec.cachemount") ExecPeriodCachemount("exec.cachemount"),
-    @Json(name = "regular") Regular("regular");
+
+    @Json(name = "internal")
+    Internal("internal"),
+
+    @Json(name = "frontend")
+    Frontend("frontend"),
+
+    @Json(name = "source.local")
+    SourcePeriodLocal("source.local"),
+
+    @Json(name = "source.git.checkout")
+    SourcePeriodGitPeriodCheckout("source.git.checkout"),
+
+    @Json(name = "exec.cachemount")
+    ExecPeriodCachemount("exec.cachemount"),
+
+    @Json(name = "regular")
+    Regular("regular");
   }
 }

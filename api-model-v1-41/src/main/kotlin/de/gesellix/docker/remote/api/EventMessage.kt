@@ -63,25 +63,52 @@ data class EventMessage(
    * Values: Builder,Config,Container,Daemon,Image,Network,Node,Plugin,Secret,Service,Volume
    */
   enum class Type(val value: kotlin.String) {
-    @Json(name = "builder") Builder("builder"),
-    @Json(name = "config") Config("config"),
-    @Json(name = "container") Container("container"),
-    @Json(name = "daemon") Daemon("daemon"),
-    @Json(name = "image") Image("image"),
-    @Json(name = "network") Network("network"),
-    @Json(name = "node") Node("node"),
-    @Json(name = "plugin") Plugin("plugin"),
-    @Json(name = "secret") Secret("secret"),
-    @Json(name = "service") Service("service"),
-    @Json(name = "volume") Volume("volume");
+
+    @Json(name = "builder")
+    Builder("builder"),
+
+    @Json(name = "config")
+    Config("config"),
+
+    @Json(name = "container")
+    Container("container"),
+
+    @Json(name = "daemon")
+    Daemon("daemon"),
+
+    @Json(name = "image")
+    Image("image"),
+
+    @Json(name = "network")
+    Network("network"),
+
+    @Json(name = "node")
+    Node("node"),
+
+    @Json(name = "plugin")
+    Plugin("plugin"),
+
+    @Json(name = "secret")
+    Secret("secret"),
+
+    @Json(name = "service")
+    Service("service"),
+
+    @Json(name = "volume")
+    Volume("volume");
   }
+
   /**
    * Scope of the event. Engine events are `local` scope. Cluster (Swarm) events are `swarm` scope.
    *
    * Values: Local,Swarm
    */
   enum class Scope(val value: kotlin.String) {
-    @Json(name = "local") Local("local"),
-    @Json(name = "swarm") Swarm("swarm");
+
+    @Json(name = "local")
+    Local("local"),
+
+    @Json(name = "swarm")
+    Swarm("swarm");
   }
 }

@@ -42,14 +42,32 @@ data class HostConfigAllOfLogConfig(
    * Values: JsonMinusFile,Syslog,Journald,Gelf,Fluentd,Awslogs,Splunk,Etwlogs,None
    */
   enum class Type(val value: kotlin.String) {
-    @Json(name = "json-file") JsonMinusFile("json-file"),
-    @Json(name = "syslog") Syslog("syslog"),
-    @Json(name = "journald") Journald("journald"),
-    @Json(name = "gelf") Gelf("gelf"),
-    @Json(name = "fluentd") Fluentd("fluentd"),
-    @Json(name = "awslogs") Awslogs("awslogs"),
-    @Json(name = "splunk") Splunk("splunk"),
-    @Json(name = "etwlogs") Etwlogs("etwlogs"),
-    @Json(name = "none") None("none");
+
+    @Json(name = "json-file")
+    JsonMinusFile("json-file"),
+
+    @Json(name = "syslog")
+    Syslog("syslog"),
+
+    @Json(name = "journald")
+    Journald("journald"),
+
+    @Json(name = "gelf")
+    Gelf("gelf"),
+
+    @Json(name = "fluentd")
+    Fluentd("fluentd"),
+
+    @Json(name = "awslogs")
+    Awslogs("awslogs"),
+
+    @Json(name = "splunk")
+    Splunk("splunk"),
+
+    @Json(name = "etwlogs")
+    Etwlogs("etwlogs"),
+
+    @Json(name = "none")
+    None("none");
   }
 }
