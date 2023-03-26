@@ -34,7 +34,7 @@ openApiGenerate {
 }
 val openApiGenerateCleanupBuildScript by tasks.register("openApiGenerateCleanupBuildScript") {
   group = "openapi tools"
-  dependsOn(tasks.openApiGenerate)
+  mustRunAfter(tasks.openApiGenerate)
   doLast {
     listOf(
       "build.gradle",
@@ -53,7 +53,7 @@ val openApiGenerateCleanupBuildScript by tasks.register("openApiGenerateCleanupB
 }
 val openApiGenerateCleanupGeneratedCode by tasks.register("openApiGenerateCleanupGeneratedCode") {
   group = "openapi tools"
-  dependsOn(tasks.openApiGenerate)
+  mustRunAfter(tasks.openApiGenerate)
   doLast {
     listOf(
       "src/main/kotlin/de/gesellix/docker/remote/api/infrastructure",
@@ -64,18 +64,26 @@ val openApiGenerateCleanupGeneratedCode by tasks.register("openApiGenerateCleanu
   }
 }
 
-tasks.runKtlintFormatOverKotlinScripts.get().dependsOn(tasks.openApiGenerate, openApiGenerateCleanupBuildScript)
-tasks.ktlintKotlinScriptFormat.get().dependsOn(tasks.openApiGenerate, openApiGenerateCleanupBuildScript)
-tasks.ktlintMainSourceSetFormat.get().dependsOn(tasks.openApiGenerate, openApiGenerateCleanupBuildScript)
+tasks.runKtlintFormatOverKotlinScripts.get().mustRunAfter(tasks.openApiGenerate, openApiGenerateCleanupBuildScript, openApiGenerateCleanupGeneratedCode)
+tasks.ktlintKotlinScriptFormat.get().mustRunAfter(tasks.openApiGenerate, openApiGenerateCleanupBuildScript, openApiGenerateCleanupGeneratedCode)
+tasks.ktlintMainSourceSetFormat.get().mustRunAfter(tasks.openApiGenerate, openApiGenerateCleanupBuildScript, openApiGenerateCleanupGeneratedCode)
+tasks.loadKtlintReporters.get().mustRunAfter(tasks.openApiGenerate, openApiGenerateCleanupBuildScript, openApiGenerateCleanupGeneratedCode)
 // tasks.ktlintFormat.get().dependsOn(
 //  tasks.openApiGenerate,
 //  openApiGenerateCleanupBuildScript,
+//  openApiGenerateCleanupGeneratedCode,
 //  tasks.named("ktlintGeneratedByKspKotlinSourceSetFormat")
 // )
 val updateApiModelSources by tasks.register("updateApiModelSources") {
   group = "openapi tools"
-  dependsOn(tasks.ktlintFormat)
-  finalizedBy(openApiGenerateCleanupGeneratedCode)
+  dependsOn(
+    tasks.openApiGenerate,
+    openApiGenerateCleanupBuildScript,
+    openApiGenerateCleanupGeneratedCode)
+
+// TODO try to re-enable this one,
+// so that a  single task can perform everything all at once.
+//  finalizedBy(tasks.ktlintFormat)
 }
 
 // TODO find a better solution.
