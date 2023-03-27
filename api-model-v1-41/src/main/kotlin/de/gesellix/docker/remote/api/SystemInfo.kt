@@ -356,11 +356,11 @@ data class SystemInfo(
    */
   enum class CgroupVersion(val value: kotlin.String) {
 
-    @Json(name = "V1")
-    V1("V1"),
+    @Json(name = "1")
+    V1("1"),
 
-    @Json(name = "V2")
-    V2("V2");
+    @Json(name = "2")
+    V2("2");
   }
 
   /**
