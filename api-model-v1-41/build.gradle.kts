@@ -78,8 +78,9 @@ val updateApiModelSources by tasks.register("updateApiModelSources") {
   group = "openapi tools"
   dependsOn(
     tasks.openApiGenerate,
-    openApiGenerateCleanupBuildScript,
-    openApiGenerateCleanupGeneratedCode)
+    openApiGenerateCleanupBuildScript
+//    openApiGenerateCleanupGeneratedCode
+  )
 
 // TODO try to re-enable this one,
 // so that a  single task can perform everything all at once.
