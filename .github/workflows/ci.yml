@@ -25,7 +25,11 @@ jobs:
           cache: 'gradle'
       # checks if updating the generated sources would succeed
       - name: clean updateApiModelSources
-        run: ./gradlew clean updateApiModelSources assemble --no-daemon --info --stacktrace
+        run: ./gradlew clean updateApiModelSources --no-daemon --info --stacktrace
+      - name: clean openApiGenerateCleanupGeneratedCode
+        run: ./gradlew clean openApiGenerateCleanupGeneratedCode --no-daemon --info --stacktrace
+      - name: clean ktlintFormat
+        run: ./gradlew clean ktlintFormat --no-daemon --info --stacktrace
       - name: clean build
         run: ./gradlew clean build --no-daemon --info --stacktrace
       - name: Upload Test Results
