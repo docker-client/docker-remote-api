@@ -122,7 +122,7 @@ dependencies {
   testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.2")
   testRuntimeOnly("cglib:cglib-nodep:3.3.0")
-  testImplementation("org.junit.platform:junit-platform-launcher:1.9.2")
+  testImplementation("org.junit.platform:junit-platform-launcher:1.9.3")
   testImplementation("org.junit.platform:junit-platform-commons:1.9.2")
 }
 
