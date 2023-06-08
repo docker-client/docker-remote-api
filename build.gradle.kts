@@ -20,7 +20,7 @@ val dependencyVersions = listOf(
   "org.jetbrains.kotlin:kotlin-script-runtime:1.8.21",
   "org.jetbrains.kotlin:kotlin-stdlib:1.8.21",
   "org.jetbrains.kotlin:kotlin-stdlib-common:1.8.21",
-  "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.21",
+  "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22",
   "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21",
   "org.slf4j:slf4j-api:2.0.7",
 )
