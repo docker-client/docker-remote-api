@@ -16,6 +16,7 @@
 package de.gesellix.docker.remote.api
 
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
 /**
  * Reachability represents the reachability of a node.
@@ -23,6 +24,7 @@ import com.squareup.moshi.Json
  * Values: Unknown,Unreachable,Reachable
  */
 
+@JsonClass(generateAdapter = false)
 enum class Reachability(val value: kotlin.String) {
 
   @Json(name = "unknown")

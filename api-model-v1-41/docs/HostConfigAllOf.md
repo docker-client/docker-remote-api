@@ -44,14 +44,14 @@ Name | Type | Description | Notes
 **readonlyPaths** | **kotlin.collections.MutableList&lt;kotlin.String&gt;** | The list of paths to be set as read-only inside the container (this overrides the default set of paths).  |  [optional]
 
 
-<a name="CgroupnsMode"></a>
+<a id="CgroupnsMode"></a>
 ## Enum: CgroupnsMode
 Name | Value
 ---- | -----
 cgroupnsMode | private, host
 
 
-<a name="Isolation"></a>
+<a id="Isolation"></a>
 ## Enum: Isolation
 Name | Value
 ---- | -----

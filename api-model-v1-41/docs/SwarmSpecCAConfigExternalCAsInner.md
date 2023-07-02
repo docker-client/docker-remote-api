@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **caCert** | **kotlin.String** | The root CA certificate (in PEM format) this external CA uses to issue TLS certificates (assumed to be to the current swarm root CA certificate if not provided).  |  [optional]
 
 
-<a name="Protocol"></a>
+<a id="Protocol"></a>
 ## Enum: Protocol
 Name | Value
 ---- | -----

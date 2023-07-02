@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **publicPort** | **kotlin.Int** | Port exposed on the host |  [optional]
 
 
-<a name="Type"></a>
+<a id="Type"></a>
 ## Enum: Type
 Name | Value
 ---- | -----

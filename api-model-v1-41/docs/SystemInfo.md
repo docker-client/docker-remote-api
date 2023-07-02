@@ -68,21 +68,21 @@ Name | Type | Description | Notes
 **warnings** | **kotlin.collections.MutableList&lt;kotlin.String&gt;** | List of warnings / informational messages about missing features, or issues related to the daemon configuration.  These messages can be printed by the client as information to the user.  |  [optional]
 
 
-<a name="CgroupDriver"></a>
+<a id="CgroupDriver"></a>
 ## Enum: CgroupDriver
 Name | Value
 ---- | -----
 cgroupDriver | cgroupfs, systemd, none
 
 
-<a name="CgroupVersion"></a>
+<a id="CgroupVersion"></a>
 ## Enum: CgroupVersion
 Name | Value
 ---- | -----
 cgroupVersion | 1, 2
 
 
-<a name="Isolation"></a>
+<a id="Isolation"></a>
 ## Enum: Isolation
 Name | Value
 ---- | -----

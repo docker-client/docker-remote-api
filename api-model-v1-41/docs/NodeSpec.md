@@ -10,14 +10,14 @@ Name | Type | Description | Notes
 **availability** | [**inline**](#Availability) | Availability of the node. |  [optional]
 
 
-<a name="Role"></a>
+<a id="Role"></a>
 ## Enum: Role
 Name | Value
 ---- | -----
 role | worker, manager
 
 
-<a name="Availability"></a>
+<a id="Availability"></a>
 ## Enum: Availability
 Name | Value
 ---- | -----

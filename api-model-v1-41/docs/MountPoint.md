@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **propagation** | **kotlin.String** | Propagation describes how mounts are propagated from the host into the mount point, and vice-versa. Refer to the [Linux kernel documentation](https://www.kernel.org/doc/Documentation/filesystems/sharedsubtree.txt) for details. This field is not used on Windows.  |  [optional]
 
 
-<a name="Type"></a>
+<a id="Type"></a>
 ## Enum: Type
 Name | Value
 ---- | -----

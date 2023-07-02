@@ -16,6 +16,7 @@
 package de.gesellix.docker.remote.api
 
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
 /**
  *
@@ -23,6 +24,7 @@ import com.squareup.moshi.Json
  * Values: New,Allocated,Pending,Assigned,Accepted,Preparing,Ready,Starting,Running,Complete,Shutdown,Failed,Rejected,Remove,Orphaned
  */
 
+@JsonClass(generateAdapter = false)
 enum class TaskState(val value: kotlin.String) {
 
   @Json(name = "new")

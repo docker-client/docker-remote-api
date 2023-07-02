@@ -165,6 +165,7 @@ data class TaskSpecContainerSpec(
    *
    * Values: Default,Process,Hyperv
    */
+  @JsonClass(generateAdapter = false)
   enum class Isolation(val value: kotlin.String) {
 
     @Json(name = "default")

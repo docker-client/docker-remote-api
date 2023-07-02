@@ -49,6 +49,7 @@ data class ServiceUpdateStatus(
    *
    * Values: Updating,Paused,Completed
    */
+  @JsonClass(generateAdapter = false)
   enum class State(val value: kotlin.String) {
 
     @Json(name = "updating")

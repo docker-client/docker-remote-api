@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **message** | **kotlin.String** |  |  [optional]
 
 
-<a name="State"></a>
+<a id="State"></a>
 ## Enum: State
 Name | Value
 ---- | -----

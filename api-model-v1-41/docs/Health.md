@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **log** | [**kotlin.collections.MutableList&lt;HealthcheckResult&gt;**](HealthcheckResult.md) | Log contains the last few results (oldest first)  |  [optional]
 
 
-<a name="Status"></a>
+<a id="Status"></a>
 ## Enum: Status
 Name | Value
 ---- | -----

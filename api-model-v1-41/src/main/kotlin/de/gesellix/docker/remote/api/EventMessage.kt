@@ -62,6 +62,7 @@ data class EventMessage(
    *
    * Values: Builder,Config,Container,Daemon,Image,Network,Node,Plugin,Secret,Service,Volume
    */
+  @JsonClass(generateAdapter = false)
   enum class Type(val value: kotlin.String) {
 
     @Json(name = "builder")
@@ -103,6 +104,7 @@ data class EventMessage(
    *
    * Values: Local,Swarm
    */
+  @JsonClass(generateAdapter = false)
   enum class Scope(val value: kotlin.String) {
 
     @Json(name = "local")

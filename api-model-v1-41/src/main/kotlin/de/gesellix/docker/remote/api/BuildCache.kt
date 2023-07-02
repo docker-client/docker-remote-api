@@ -87,6 +87,7 @@ data class BuildCache(
    *
    * Values: Internal,Frontend,SourcePeriodLocal,SourcePeriodGitPeriodCheckout,ExecPeriodCachemount,Regular
    */
+  @JsonClass(generateAdapter = false)
   enum class Type(val value: kotlin.String) {
 
     @Json(name = "internal")

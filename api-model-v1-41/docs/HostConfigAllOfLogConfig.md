@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **config** | **kotlin.collections.MutableMap&lt;kotlin.String, kotlin.String&gt;** |  |  [optional]
 
 
-<a name="Type"></a>
+<a id="Type"></a>
 ## Enum: Type
 Name | Value
 ---- | -----

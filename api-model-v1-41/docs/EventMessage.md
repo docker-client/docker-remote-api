@@ -12,14 +12,14 @@ Name | Type | Description | Notes
 **timeNano** | **kotlin.Long** | Timestamp of event, with nanosecond accuracy |  [optional]
 
 
-<a name="Type"></a>
+<a id="Type"></a>
 ## Enum: Type
 Name | Value
 ---- | -----
 type | builder, config, container, daemon, image, network, node, plugin, secret, service, volume
 
 
-<a name="Scope"></a>
+<a id="Scope"></a>
 ## Enum: scope
 Name | Value
 ---- | -----

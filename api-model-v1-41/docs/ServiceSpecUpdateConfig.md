@@ -12,14 +12,14 @@ Name | Type | Description | Notes
 **order** | [**inline**](#Order) | The order of operations when rolling out an updated task. Either the old task is shut down before the new task is started, or the new task is started before the old task is shut down.  |  [optional]
 
 
-<a name="FailureAction"></a>
+<a id="FailureAction"></a>
 ## Enum: FailureAction
 Name | Value
 ---- | -----
 failureAction | continue, pause, rollback
 
 
-<a name="Order"></a>
+<a id="Order"></a>
 ## Enum: Order
 Name | Value
 ---- | -----

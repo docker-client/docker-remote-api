@@ -16,6 +16,7 @@
 package de.gesellix.docker.remote.api
 
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
 /**
  * NodeState represents the state of a node.
@@ -23,6 +24,7 @@ import com.squareup.moshi.Json
  * Values: Unknown,Down,Ready,Disconnected
  */
 
+@JsonClass(generateAdapter = false)
 enum class NodeState(val value: kotlin.String) {
 
   @Json(name = "unknown")
