@@ -52,6 +52,7 @@ data class Port(
    *
    * Values: Tcp,Udp,Sctp
    */
+  @JsonClass(generateAdapter = false)
   enum class Type(val value: kotlin.String) {
 
     @Json(name = "tcp")

@@ -16,6 +16,7 @@
 package de.gesellix.docker.remote.api
 
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
 /**
  * Current local status of this node.
@@ -23,6 +24,7 @@ import com.squareup.moshi.Json
  * Values: EMPTY,Inactive,Pending,Active,Error,Locked
  */
 
+@JsonClass(generateAdapter = false)
 enum class LocalNodeState(val value: kotlin.String) {
 
   @Json(name = "")

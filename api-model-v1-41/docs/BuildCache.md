@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **usageCount** | **kotlin.Int** |  |  [optional]
 
 
-<a name="Type"></a>
+<a id="Type"></a>
 ## Enum: Type
 Name | Value
 ---- | -----

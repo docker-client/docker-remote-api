@@ -53,6 +53,7 @@ data class SwarmSpecCAConfigExternalCAsInner(
    *
    * Values: Cfssl
    */
+  @JsonClass(generateAdapter = false)
   enum class Protocol(val value: kotlin.String) {
 
     @Json(name = "cfssl")

@@ -11,14 +11,14 @@ Name | Type | Description | Notes
 **publishMode** | [**inline**](#PublishMode) | The mode in which port is published.  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;  - \&quot;ingress\&quot; makes the target port accessible on every node,   regardless of whether there is a task for the service running on   that node or not. - \&quot;host\&quot; bypasses the routing mesh and publish the port directly on   the swarm node where that service is running.  |  [optional]
 
 
-<a name="Protocol"></a>
+<a id="Protocol"></a>
 ## Enum: Protocol
 Name | Value
 ---- | -----
 protocol | tcp, udp, sctp
 
 
-<a name="PublishMode"></a>
+<a id="PublishMode"></a>
 ## Enum: PublishMode
 Name | Value
 ---- | -----

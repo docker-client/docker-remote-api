@@ -108,7 +108,7 @@ This runs all tests and packages the library.
 * Some Kotlin and Java types are fully qualified to avoid conflicts with types defined in OpenAPI definitions.
 * Implementation of ApiClient is intended to reduce method counts, specifically to benefit Android targets.
 
-<a name="documentation-for-api-endpoints"></a>
+<a id="documentation-for-api-endpoints"></a>
 ## Documentation for API Endpoints
 
 All URIs are relative to *http://localhost/v1.41*
@@ -223,7 +223,7 @@ Class | Method | HTTP request | Description
 *VolumeApi* | [**volumePrune**](docs/VolumeApi.md#volumeprune) | **POST** /volumes/prune | Delete unused volumes
 
 
-<a name="documentation-for-models"></a>
+<a id="documentation-for-models"></a>
 ## Documentation for Models
 
  - [de.gesellix.docker.remote.api.Address](docs/Address.md)
@@ -425,7 +425,8 @@ Class | Method | HTTP request | Description
  - [de.gesellix.docker.remote.api.VolumeUsageData](docs/VolumeUsageData.md)
 
 
-<a name="documentation-for-authorization"></a>
+<a id="documentation-for-authorization"></a>
 ## Documentation for Authorization
 
-All endpoints do not require authorization.
+Endpoints do not require authorization.
+

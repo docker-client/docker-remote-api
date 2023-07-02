@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **protocolScheme** | [**inline**](#ProtocolScheme) | Protocol to use for clients connecting to the plugin. |  [optional]
 
 
-<a name="ProtocolScheme"></a>
+<a id="ProtocolScheme"></a>
 ## Enum: ProtocolScheme
 Name | Value
 ---- | -----

@@ -73,6 +73,7 @@ data class MountPoint(
    *
    * Values: Bind,Volume,Tmpfs,Npipe
    */
+  @JsonClass(generateAdapter = false)
   enum class Type(val value: kotlin.String) {
 
     @Json(name = "bind")

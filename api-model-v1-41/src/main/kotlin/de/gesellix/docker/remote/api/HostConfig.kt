@@ -376,6 +376,7 @@ data class HostConfig(
    *
    * Values: Private,Host
    */
+  @JsonClass(generateAdapter = false)
   enum class CgroupnsMode(val value: kotlin.String) {
 
     @Json(name = "private")
@@ -390,6 +391,7 @@ data class HostConfig(
    *
    * Values: Default,Process,Hyperv
    */
+  @JsonClass(generateAdapter = false)
   enum class Isolation(val value: kotlin.String) {
 
     @Json(name = "default")

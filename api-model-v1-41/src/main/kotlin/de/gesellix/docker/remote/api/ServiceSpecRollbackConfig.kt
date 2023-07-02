@@ -63,6 +63,7 @@ data class ServiceSpecRollbackConfig(
    *
    * Values: Continue,Pause
    */
+  @JsonClass(generateAdapter = false)
   enum class FailureAction(val value: kotlin.String) {
 
     @Json(name = "continue")
@@ -77,6 +78,7 @@ data class ServiceSpecRollbackConfig(
    *
    * Values: StopMinusFirst,StartMinusFirst
    */
+  @JsonClass(generateAdapter = false)
   enum class Order(val value: kotlin.String) {
 
     @Json(name = "stop-first")
