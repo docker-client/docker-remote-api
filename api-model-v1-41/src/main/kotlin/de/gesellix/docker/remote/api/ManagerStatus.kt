@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -29,14 +29,14 @@ import com.squareup.moshi.JsonClass
 
 data class ManagerStatus(
 
-  @Json(name = "Leader")
-  var leader: kotlin.Boolean? = false,
+    @Json(name = "Leader")
+    var leader: kotlin.Boolean? = false,
 
-  @Json(name = "Reachability")
-  var reachability: Reachability? = null,
+    @Json(name = "Reachability")
+    var reachability: Reachability? = null,
 
-  /* The IP address and port at which the manager is reachable.  */
-  @Json(name = "Addr")
-  var addr: kotlin.String? = null
+    /* The IP address and port at which the manager is reachable.  */
+    @Json(name = "Addr")
+    var addr: kotlin.String? = null
 
 )

@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,12 +28,12 @@ import com.squareup.moshi.JsonClass
 
 data class VolumeListResponse(
 
-  /* List of volumes */
-  @Json(name = "Volumes")
-  var volumes: kotlin.collections.MutableList<Volume>? = null,
+    /* List of volumes */
+    @Json(name = "Volumes")
+    var volumes: kotlin.collections.MutableList<Volume>? = null,
 
-  /* Warnings that occurred when fetching the list of volumes.  */
-  @Json(name = "Warnings")
-  var warnings: kotlin.collections.MutableList<kotlin.String>? = null
+    /* Warnings that occurred when fetching the list of volumes.  */
+    @Json(name = "Warnings")
+    var warnings: kotlin.collections.MutableList<kotlin.String>? = null
 
 )

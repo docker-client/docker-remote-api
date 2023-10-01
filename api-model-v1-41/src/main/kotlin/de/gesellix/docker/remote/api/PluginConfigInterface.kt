@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -29,30 +29,29 @@ import com.squareup.moshi.JsonClass
 
 data class PluginConfigInterface(
 
-  @Json(name = "Types")
-  var types: kotlin.collections.MutableList<PluginInterfaceType>,
+    @Json(name = "Types")
+    var types: kotlin.collections.MutableList<PluginInterfaceType>,
 
-  @Json(name = "Socket")
-  var socket: kotlin.String,
+    @Json(name = "Socket")
+    var socket: kotlin.String,
 
-  /* Protocol to use for clients connecting to the plugin. */
-  @Json(name = "ProtocolScheme")
-  var protocolScheme: PluginConfigInterface.ProtocolScheme? = null
+    /* Protocol to use for clients connecting to the plugin. */
+    @Json(name = "ProtocolScheme")
+    var protocolScheme: PluginConfigInterface.ProtocolScheme? = null
 
 ) {
 
-  /**
-   * Protocol to use for clients connecting to the plugin.
-   *
-   * Values: EMPTY,MobyPeriodPluginsPeriodHttpSlashV1
-   */
-  @JsonClass(generateAdapter = false)
-  enum class ProtocolScheme(val value: kotlin.String) {
+    /**
+     * Protocol to use for clients connecting to the plugin.
+     *
+     * Values: EMPTY,MobyPeriodPluginsPeriodHttpSlashV1
+     */
+    @JsonClass(generateAdapter = false)
+    enum class ProtocolScheme(val value: kotlin.String) {
+        @Json(name = "")
+        EMPTY(""),
 
-    @Json(name = "")
-    EMPTY(""),
-
-    @Json(name = "moby.plugins.http/v1")
-    MobyPeriodPluginsPeriodHttpSlashV1("moby.plugins.http/v1");
-  }
+        @Json(name = "moby.plugins.http/v1")
+        MobyPeriodPluginsPeriodHttpSlashV1("moby.plugins.http/v1");
+    }
 }

@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **os** | **kotlin.String** | Operating System the image is built to run on.  |  [optional]
 **osVersion** | **kotlin.String** | Operating System version the image is built to run on (especially for Windows).  |  [optional]
 **propertySize** | **kotlin.Long** | Total size of the image including all layers it is composed of.  |  [optional]
-**virtualSize** | **kotlin.Long** | Total size of the image including all layers it is composed of.  In versions of Docker before v1.10, this field was calculated from the image itself and all of its parent images. Docker v1.10 and up store images self-contained, and no longer use a parent-chain, making this field an equivalent of the Size field.  This field is kept for backward compatibility, but may be removed in a future version of the API.  |  [optional]
+**virtualSize** | **kotlin.Long** | Total size of the image including all layers it is composed of.  Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.  |  [optional]
 **graphDriver** | [**GraphDriverData**](GraphDriverData.md) |  |  [optional]
 **rootFS** | [**ImageInspectRootFS**](ImageInspectRootFS.md) |  |  [optional]
 **metadata** | [**ImageInspectMetadata**](ImageInspectMetadata.md) |  |  [optional]

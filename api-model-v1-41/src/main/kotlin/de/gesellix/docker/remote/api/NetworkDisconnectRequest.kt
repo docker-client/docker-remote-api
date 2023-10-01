@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,12 +28,12 @@ import com.squareup.moshi.JsonClass
 
 data class NetworkDisconnectRequest(
 
-  /* The ID or name of the container to disconnect from the network.  */
-  @Json(name = "Container")
-  var container: kotlin.String? = null,
+    /* The ID or name of the container to disconnect from the network.  */
+    @Json(name = "Container")
+    var container: kotlin.String? = null,
 
-  /* Force the container to disconnect from the network.  */
-  @Json(name = "Force")
-  var force: kotlin.Boolean? = null
+    /* Force the container to disconnect from the network.  */
+    @Json(name = "Force")
+    var force: kotlin.Boolean? = null
 
 )

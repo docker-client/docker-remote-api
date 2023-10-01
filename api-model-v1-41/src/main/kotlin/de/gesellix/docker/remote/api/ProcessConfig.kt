@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -31,19 +31,19 @@ import com.squareup.moshi.JsonClass
 
 data class ProcessConfig(
 
-  @Json(name = "privileged")
-  var privileged: kotlin.Boolean? = null,
+    @Json(name = "privileged")
+    var privileged: kotlin.Boolean? = null,
 
-  @Json(name = "user")
-  var user: kotlin.String? = null,
+    @Json(name = "user")
+    var user: kotlin.String? = null,
 
-  @Json(name = "tty")
-  var tty: kotlin.Boolean? = null,
+    @Json(name = "tty")
+    var tty: kotlin.Boolean? = null,
 
-  @Json(name = "entrypoint")
-  var entrypoint: kotlin.String? = null,
+    @Json(name = "entrypoint")
+    var entrypoint: kotlin.String? = null,
 
-  @Json(name = "arguments")
-  var arguments: kotlin.collections.MutableList<kotlin.String>? = null
+    @Json(name = "arguments")
+    var arguments: kotlin.collections.MutableList<kotlin.String>? = null
 
 )

@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,12 +28,12 @@ import com.squareup.moshi.JsonClass
 
 data class Commit(
 
-  /* Actual commit ID of external tool. */
-  @Json(name = "ID")
-  var ID: kotlin.String? = null,
+    /* Actual commit ID of external tool. */
+    @Json(name = "ID")
+    var ID: kotlin.String? = null,
 
-  /* Commit ID of external tool expected by dockerd as set at build time.  */
-  @Json(name = "Expected")
-  var expected: kotlin.String? = null
+    /* Commit ID of external tool expected by dockerd as set at build time.  */
+    @Json(name = "Expected")
+    var expected: kotlin.String? = null
 
 )

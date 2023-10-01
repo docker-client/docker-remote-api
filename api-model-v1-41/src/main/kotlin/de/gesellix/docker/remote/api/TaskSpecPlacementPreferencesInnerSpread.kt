@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -27,8 +27,8 @@ import com.squareup.moshi.JsonClass
 
 data class TaskSpecPlacementPreferencesInnerSpread(
 
-  /* label descriptor, such as `engine.labels.az`.  */
-  @Json(name = "SpreadDescriptor")
-  var spreadDescriptor: kotlin.String? = null
+    /* label descriptor, such as `engine.labels.az`.  */
+    @Json(name = "SpreadDescriptor")
+    var spreadDescriptor: kotlin.String? = null
 
 )

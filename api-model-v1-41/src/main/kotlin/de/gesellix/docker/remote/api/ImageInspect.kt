@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -37,7 +37,7 @@ import com.squareup.moshi.JsonClass
  * @param os Operating System the image is built to run on.
  * @param osVersion Operating System version the image is built to run on (especially for Windows).
  * @param propertySize Total size of the image including all layers it is composed of.
- * @param virtualSize Total size of the image including all layers it is composed of.  In versions of Docker before v1.10, this field was calculated from the image itself and all of its parent images. Docker v1.10 and up store images self-contained, and no longer use a parent-chain, making this field an equivalent of the Size field.  This field is kept for backward compatibility, but may be removed in a future version of the API.
+ * @param virtualSize Total size of the image including all layers it is composed of.  Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.
  * @param graphDriver
  * @param rootFS
  * @param metadata
@@ -46,79 +46,79 @@ import com.squareup.moshi.JsonClass
 
 data class ImageInspect(
 
-  /* ID is the content-addressable ID of an image.  This identifier is a content-addressable digest calculated from the image's configuration (which includes the digests of layers used by the image).  Note that this digest differs from the `RepoDigests` below, which holds digests of image manifests that reference the image.  */
-  @Json(name = "Id")
-  var id: kotlin.String? = null,
+    /* ID is the content-addressable ID of an image.  This identifier is a content-addressable digest calculated from the image's configuration (which includes the digests of layers used by the image).  Note that this digest differs from the `RepoDigests` below, which holds digests of image manifests that reference the image.  */
+    @Json(name = "Id")
+    var id: kotlin.String? = null,
 
-  /* List of image names/tags in the local image cache that reference this image.  Multiple image tags can refer to the same image, and this list may be empty if no tags reference the image, in which case the image is \"untagged\", in which case it can still be referenced by its ID.  */
-  @Json(name = "RepoTags")
-  var repoTags: kotlin.collections.MutableList<kotlin.String>? = null,
+    /* List of image names/tags in the local image cache that reference this image.  Multiple image tags can refer to the same image, and this list may be empty if no tags reference the image, in which case the image is \"untagged\", in which case it can still be referenced by its ID.  */
+    @Json(name = "RepoTags")
+    var repoTags: kotlin.collections.MutableList<kotlin.String>? = null,
 
-  /* List of content-addressable digests of locally available image manifests that the image is referenced from. Multiple manifests can refer to the same image.  These digests are usually only available if the image was either pulled from a registry, or if the image was pushed to a registry, which is when the manifest is generated and its digest calculated.  */
-  @Json(name = "RepoDigests")
-  var repoDigests: kotlin.collections.MutableList<kotlin.String>? = null,
+    /* List of content-addressable digests of locally available image manifests that the image is referenced from. Multiple manifests can refer to the same image.  These digests are usually only available if the image was either pulled from a registry, or if the image was pushed to a registry, which is when the manifest is generated and its digest calculated.  */
+    @Json(name = "RepoDigests")
+    var repoDigests: kotlin.collections.MutableList<kotlin.String>? = null,
 
-  /* ID of the parent image.  Depending on how the image was created, this field may be empty and is only set for images that were built/created locally. This field is empty if the image was pulled from an image registry.  */
-  @Json(name = "Parent")
-  var parent: kotlin.String? = null,
+    /* ID of the parent image.  Depending on how the image was created, this field may be empty and is only set for images that were built/created locally. This field is empty if the image was pulled from an image registry.  */
+    @Json(name = "Parent")
+    var parent: kotlin.String? = null,
 
-  /* Optional message that was set when committing or importing the image.  */
-  @Json(name = "Comment")
-  var comment: kotlin.String? = null,
+    /* Optional message that was set when committing or importing the image.  */
+    @Json(name = "Comment")
+    var comment: kotlin.String? = null,
 
-  /* Date and time at which the image was created, formatted in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.  */
-  @Json(name = "Created")
-  var created: kotlin.String? = null,
+    /* Date and time at which the image was created, formatted in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.  */
+    @Json(name = "Created")
+    var created: kotlin.String? = null,
 
-  /* The ID of the container that was used to create the image.  Depending on how the image was created, this field may be empty.  */
-  @Json(name = "Container")
-  var container: kotlin.String? = null,
+    /* The ID of the container that was used to create the image.  Depending on how the image was created, this field may be empty.  */
+    @Json(name = "Container")
+    var container: kotlin.String? = null,
 
-  @Json(name = "ContainerConfig")
-  var containerConfig: ContainerConfig? = null,
+    @Json(name = "ContainerConfig")
+    var containerConfig: ContainerConfig? = null,
 
-  /* The version of Docker that was used to build the image.  Depending on how the image was created, this field may be empty.  */
-  @Json(name = "DockerVersion")
-  var dockerVersion: kotlin.String? = null,
+    /* The version of Docker that was used to build the image.  Depending on how the image was created, this field may be empty.  */
+    @Json(name = "DockerVersion")
+    var dockerVersion: kotlin.String? = null,
 
-  /* Name of the author that was specified when committing the image, or as specified through MAINTAINER (deprecated) in the Dockerfile.  */
-  @Json(name = "Author")
-  var author: kotlin.String? = null,
+    /* Name of the author that was specified when committing the image, or as specified through MAINTAINER (deprecated) in the Dockerfile.  */
+    @Json(name = "Author")
+    var author: kotlin.String? = null,
 
-  @Json(name = "Config")
-  var config: ContainerConfig? = null,
+    @Json(name = "Config")
+    var config: ContainerConfig? = null,
 
-  /* Hardware CPU architecture that the image runs on.  */
-  @Json(name = "Architecture")
-  var architecture: kotlin.String? = null,
+    /* Hardware CPU architecture that the image runs on.  */
+    @Json(name = "Architecture")
+    var architecture: kotlin.String? = null,
 
-  /* CPU architecture variant (presently ARM-only).  */
-  @Json(name = "Variant")
-  var variant: kotlin.String? = null,
+    /* CPU architecture variant (presently ARM-only).  */
+    @Json(name = "Variant")
+    var variant: kotlin.String? = null,
 
-  /* Operating System the image is built to run on.  */
-  @Json(name = "Os")
-  var os: kotlin.String? = null,
+    /* Operating System the image is built to run on.  */
+    @Json(name = "Os")
+    var os: kotlin.String? = null,
 
-  /* Operating System version the image is built to run on (especially for Windows).  */
-  @Json(name = "OsVersion")
-  var osVersion: kotlin.String? = null,
+    /* Operating System version the image is built to run on (especially for Windows).  */
+    @Json(name = "OsVersion")
+    var osVersion: kotlin.String? = null,
 
-  /* Total size of the image including all layers it is composed of.  */
-  @Json(name = "Size")
-  var propertySize: kotlin.Long? = null,
+    /* Total size of the image including all layers it is composed of.  */
+    @Json(name = "Size")
+    var propertySize: kotlin.Long? = null,
 
-  /* Total size of the image including all layers it is composed of.  In versions of Docker before v1.10, this field was calculated from the image itself and all of its parent images. Docker v1.10 and up store images self-contained, and no longer use a parent-chain, making this field an equivalent of the Size field.  This field is kept for backward compatibility, but may be removed in a future version of the API.  */
-  @Json(name = "VirtualSize")
-  var virtualSize: kotlin.Long? = null,
+    /* Total size of the image including all layers it is composed of.  Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.  */
+    @Json(name = "VirtualSize")
+    var virtualSize: kotlin.Long? = null,
 
-  @Json(name = "GraphDriver")
-  var graphDriver: GraphDriverData? = null,
+    @Json(name = "GraphDriver")
+    var graphDriver: GraphDriverData? = null,
 
-  @Json(name = "RootFS")
-  var rootFS: ImageInspectRootFS? = null,
+    @Json(name = "RootFS")
+    var rootFS: ImageInspectRootFS? = null,
 
-  @Json(name = "Metadata")
-  var metadata: ImageInspectMetadata? = null
+    @Json(name = "Metadata")
+    var metadata: ImageInspectMetadata? = null
 
 )

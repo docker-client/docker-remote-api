@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -23,7 +23,7 @@ import com.squareup.moshi.JsonClass
  *
  * @param description
  * @param isOfficial
- * @param isAutomated
+ * @param isAutomated Whether this repository has automated builds enabled.  <p><br /></p>  > **Deprecated**: This field is deprecated and will always > be \"false\" in future.
  * @param name
  * @param starCount
  */
@@ -31,19 +31,20 @@ import com.squareup.moshi.JsonClass
 
 data class ImageSearchResponseItem(
 
-  @Json(name = "description")
-  var description: kotlin.String? = null,
+    @Json(name = "description")
+    var description: kotlin.String? = null,
 
-  @Json(name = "is_official")
-  var isOfficial: kotlin.Boolean? = null,
+    @Json(name = "is_official")
+    var isOfficial: kotlin.Boolean? = null,
 
-  @Json(name = "is_automated")
-  var isAutomated: kotlin.Boolean? = null,
+    /* Whether this repository has automated builds enabled.  <p><br /></p>  > **Deprecated**: This field is deprecated and will always > be \"false\" in future.  */
+    @Json(name = "is_automated")
+    var isAutomated: kotlin.Boolean? = null,
 
-  @Json(name = "name")
-  var name: kotlin.String? = null,
+    @Json(name = "name")
+    var name: kotlin.String? = null,
 
-  @Json(name = "star_count")
-  var starCount: kotlin.Int? = null
+    @Json(name = "star_count")
+    var starCount: kotlin.Int? = null
 
 )

@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -30,35 +30,34 @@ import com.squareup.moshi.JsonClass
 
 data class ServiceUpdateStatus(
 
-  @Json(name = "State")
-  var state: ServiceUpdateStatus.State? = null,
+    @Json(name = "State")
+    var state: ServiceUpdateStatus.State? = null,
 
-  @Json(name = "StartedAt")
-  var startedAt: kotlin.String? = null,
+    @Json(name = "StartedAt")
+    var startedAt: kotlin.String? = null,
 
-  @Json(name = "CompletedAt")
-  var completedAt: kotlin.String? = null,
+    @Json(name = "CompletedAt")
+    var completedAt: kotlin.String? = null,
 
-  @Json(name = "Message")
-  var message: kotlin.String? = null
+    @Json(name = "Message")
+    var message: kotlin.String? = null
 
 ) {
 
-  /**
-   *
-   *
-   * Values: Updating,Paused,Completed
-   */
-  @JsonClass(generateAdapter = false)
-  enum class State(val value: kotlin.String) {
+    /**
+     *
+     *
+     * Values: Updating,Paused,Completed
+     */
+    @JsonClass(generateAdapter = false)
+    enum class State(val value: kotlin.String) {
+        @Json(name = "updating")
+        Updating("updating"),
 
-    @Json(name = "updating")
-    Updating("updating"),
+        @Json(name = "paused")
+        Paused("paused"),
 
-    @Json(name = "paused")
-    Paused("paused"),
-
-    @Json(name = "completed")
-    Completed("completed");
-  }
+        @Json(name = "completed")
+        Completed("completed");
+    }
 }

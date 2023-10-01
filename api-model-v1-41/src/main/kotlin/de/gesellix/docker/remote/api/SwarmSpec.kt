@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -34,30 +34,30 @@ import com.squareup.moshi.JsonClass
 
 data class SwarmSpec(
 
-  /* Name of the swarm. */
-  @Json(name = "Name")
-  var name: kotlin.String? = null,
+    /* Name of the swarm. */
+    @Json(name = "Name")
+    var name: kotlin.String? = null,
 
-  /* User-defined key/value metadata. */
-  @Json(name = "Labels")
-  var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
+    /* User-defined key/value metadata. */
+    @Json(name = "Labels")
+    var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
 
-  @Json(name = "Orchestration")
-  var orchestration: SwarmSpecOrchestration? = null,
+    @Json(name = "Orchestration")
+    var orchestration: SwarmSpecOrchestration? = null,
 
-  @Json(name = "Raft")
-  var raft: SwarmSpecRaft? = null,
+    @Json(name = "Raft")
+    var raft: SwarmSpecRaft? = null,
 
-  @Json(name = "Dispatcher")
-  var dispatcher: SwarmSpecDispatcher? = null,
+    @Json(name = "Dispatcher")
+    var dispatcher: SwarmSpecDispatcher? = null,
 
-  @Json(name = "CAConfig")
-  var caConfig: SwarmSpecCAConfig? = null,
+    @Json(name = "CAConfig")
+    var caConfig: SwarmSpecCAConfig? = null,
 
-  @Json(name = "EncryptionConfig")
-  var encryptionConfig: SwarmSpecEncryptionConfig? = null,
+    @Json(name = "EncryptionConfig")
+    var encryptionConfig: SwarmSpecEncryptionConfig? = null,
 
-  @Json(name = "TaskDefaults")
-  var taskDefaults: SwarmSpecTaskDefaults? = null
+    @Json(name = "TaskDefaults")
+    var taskDefaults: SwarmSpecTaskDefaults? = null
 
 )

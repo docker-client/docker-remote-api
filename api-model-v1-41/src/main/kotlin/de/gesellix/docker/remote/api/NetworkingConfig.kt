@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -21,14 +21,14 @@ import com.squareup.moshi.JsonClass
 /**
  * NetworkingConfig represents the container's networking configuration for each of its interfaces. It is used for the networking configs specified in the `docker create` and `docker network connect` commands.
  *
- * @param endpointsConfig A mapping of network name to endpoint configuration for that network.
+ * @param endpointsConfig A mapping of network name to endpoint configuration for that network. The endpoint configuration can be left empty to connect to that network with no particular endpoint configuration.
  */
 @JsonClass(generateAdapter = true)
 
 data class NetworkingConfig(
 
-  /* A mapping of network name to endpoint configuration for that network.  */
-  @Json(name = "EndpointsConfig")
-  var endpointsConfig: kotlin.collections.MutableMap<kotlin.String, EndpointSettings>? = null
+    /* A mapping of network name to endpoint configuration for that network. The endpoint configuration can be left empty to connect to that network with no particular endpoint configuration.  */
+    @Json(name = "EndpointsConfig")
+    var endpointsConfig: kotlin.collections.MutableMap<kotlin.String, EndpointSettings>? = null
 
 )

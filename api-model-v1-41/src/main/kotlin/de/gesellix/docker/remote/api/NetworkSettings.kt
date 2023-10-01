@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -44,76 +44,76 @@ import com.squareup.moshi.JsonClass
 
 data class NetworkSettings(
 
-  /* Name of the network's bridge (for example, `docker0`). */
-  @Json(name = "Bridge")
-  var bridge: kotlin.String? = null,
+    /* Name of the network's bridge (for example, `docker0`). */
+    @Json(name = "Bridge")
+    var bridge: kotlin.String? = null,
 
-  /* SandboxID uniquely represents a container's network stack. */
-  @Json(name = "SandboxID")
-  var sandboxID: kotlin.String? = null,
+    /* SandboxID uniquely represents a container's network stack. */
+    @Json(name = "SandboxID")
+    var sandboxID: kotlin.String? = null,
 
-  /* Indicates if hairpin NAT should be enabled on the virtual interface.  */
-  @Json(name = "HairpinMode")
-  var hairpinMode: kotlin.Boolean? = null,
+    /* Indicates if hairpin NAT should be enabled on the virtual interface.  */
+    @Json(name = "HairpinMode")
+    var hairpinMode: kotlin.Boolean? = null,
 
-  /* IPv6 unicast address using the link-local prefix. */
-  @Json(name = "LinkLocalIPv6Address")
-  var linkLocalIPv6Address: kotlin.String? = null,
+    /* IPv6 unicast address using the link-local prefix. */
+    @Json(name = "LinkLocalIPv6Address")
+    var linkLocalIPv6Address: kotlin.String? = null,
 
-  /* Prefix length of the IPv6 unicast address. */
-  @Json(name = "LinkLocalIPv6PrefixLen")
-  var linkLocalIPv6PrefixLen: kotlin.Int? = null,
+    /* Prefix length of the IPv6 unicast address. */
+    @Json(name = "LinkLocalIPv6PrefixLen")
+    var linkLocalIPv6PrefixLen: kotlin.Int? = null,
 
-  /* PortMap describes the mapping of container ports to host ports, using the container's port-number and protocol as key in the format `<port>/<protocol>`, for example, `80/udp`.  If a container's port is mapped for multiple protocols, separate entries are added to the mapping table.  */
-  @Json(name = "Ports")
-  var ports: kotlin.collections.MutableMap<kotlin.String, kotlin.collections.MutableList<PortBinding>>? = null,
+    /* PortMap describes the mapping of container ports to host ports, using the container's port-number and protocol as key in the format `<port>/<protocol>`, for example, `80/udp`.  If a container's port is mapped for multiple protocols, separate entries are added to the mapping table.  */
+    @Json(name = "Ports")
+    var ports: kotlin.collections.MutableMap<kotlin.String, kotlin.collections.MutableList<PortBinding>>? = null,
 
-  /* SandboxKey identifies the sandbox */
-  @Json(name = "SandboxKey")
-  var sandboxKey: kotlin.String? = null,
+    /* SandboxKey identifies the sandbox */
+    @Json(name = "SandboxKey")
+    var sandboxKey: kotlin.String? = null,
 
-  /*  */
-  @Json(name = "SecondaryIPAddresses")
-  var secondaryIPAddresses: kotlin.collections.MutableList<Address>? = null,
+    /*  */
+    @Json(name = "SecondaryIPAddresses")
+    var secondaryIPAddresses: kotlin.collections.MutableList<Address>? = null,
 
-  /*  */
-  @Json(name = "SecondaryIPv6Addresses")
-  var secondaryIPv6Addresses: kotlin.collections.MutableList<Address>? = null,
+    /*  */
+    @Json(name = "SecondaryIPv6Addresses")
+    var secondaryIPv6Addresses: kotlin.collections.MutableList<Address>? = null,
 
-  /* EndpointID uniquely represents a service endpoint in a Sandbox.  <p><br /></p>  > **Deprecated**: This field is only propagated when attached to the > default \"bridge\" network. Use the information from the \"bridge\" > network inside the `Networks` map instead, which contains the same > information. This field was deprecated in Docker 1.9 and is scheduled > to be removed in Docker 17.12.0  */
-  @Json(name = "EndpointID")
-  var endpointID: kotlin.String? = null,
+    /* EndpointID uniquely represents a service endpoint in a Sandbox.  <p><br /></p>  > **Deprecated**: This field is only propagated when attached to the > default \"bridge\" network. Use the information from the \"bridge\" > network inside the `Networks` map instead, which contains the same > information. This field was deprecated in Docker 1.9 and is scheduled > to be removed in Docker 17.12.0  */
+    @Json(name = "EndpointID")
+    var endpointID: kotlin.String? = null,
 
-  /* Gateway address for the default \"bridge\" network.  <p><br /></p>  > **Deprecated**: This field is only propagated when attached to the > default \"bridge\" network. Use the information from the \"bridge\" > network inside the `Networks` map instead, which contains the same > information. This field was deprecated in Docker 1.9 and is scheduled > to be removed in Docker 17.12.0  */
-  @Json(name = "Gateway")
-  var gateway: kotlin.String? = null,
+    /* Gateway address for the default \"bridge\" network.  <p><br /></p>  > **Deprecated**: This field is only propagated when attached to the > default \"bridge\" network. Use the information from the \"bridge\" > network inside the `Networks` map instead, which contains the same > information. This field was deprecated in Docker 1.9 and is scheduled > to be removed in Docker 17.12.0  */
+    @Json(name = "Gateway")
+    var gateway: kotlin.String? = null,
 
-  /* Global IPv6 address for the default \"bridge\" network.  <p><br /></p>  > **Deprecated**: This field is only propagated when attached to the > default \"bridge\" network. Use the information from the \"bridge\" > network inside the `Networks` map instead, which contains the same > information. This field was deprecated in Docker 1.9 and is scheduled > to be removed in Docker 17.12.0  */
-  @Json(name = "GlobalIPv6Address")
-  var globalIPv6Address: kotlin.String? = null,
+    /* Global IPv6 address for the default \"bridge\" network.  <p><br /></p>  > **Deprecated**: This field is only propagated when attached to the > default \"bridge\" network. Use the information from the \"bridge\" > network inside the `Networks` map instead, which contains the same > information. This field was deprecated in Docker 1.9 and is scheduled > to be removed in Docker 17.12.0  */
+    @Json(name = "GlobalIPv6Address")
+    var globalIPv6Address: kotlin.String? = null,
 
-  /* Mask length of the global IPv6 address.  <p><br /></p>  > **Deprecated**: This field is only propagated when attached to the > default \"bridge\" network. Use the information from the \"bridge\" > network inside the `Networks` map instead, which contains the same > information. This field was deprecated in Docker 1.9 and is scheduled > to be removed in Docker 17.12.0  */
-  @Json(name = "GlobalIPv6PrefixLen")
-  var globalIPv6PrefixLen: kotlin.Int? = null,
+    /* Mask length of the global IPv6 address.  <p><br /></p>  > **Deprecated**: This field is only propagated when attached to the > default \"bridge\" network. Use the information from the \"bridge\" > network inside the `Networks` map instead, which contains the same > information. This field was deprecated in Docker 1.9 and is scheduled > to be removed in Docker 17.12.0  */
+    @Json(name = "GlobalIPv6PrefixLen")
+    var globalIPv6PrefixLen: kotlin.Int? = null,
 
-  /* IPv4 address for the default \"bridge\" network.  <p><br /></p>  > **Deprecated**: This field is only propagated when attached to the > default \"bridge\" network. Use the information from the \"bridge\" > network inside the `Networks` map instead, which contains the same > information. This field was deprecated in Docker 1.9 and is scheduled > to be removed in Docker 17.12.0  */
-  @Json(name = "IPAddress")
-  var ipAddress: kotlin.String? = null,
+    /* IPv4 address for the default \"bridge\" network.  <p><br /></p>  > **Deprecated**: This field is only propagated when attached to the > default \"bridge\" network. Use the information from the \"bridge\" > network inside the `Networks` map instead, which contains the same > information. This field was deprecated in Docker 1.9 and is scheduled > to be removed in Docker 17.12.0  */
+    @Json(name = "IPAddress")
+    var ipAddress: kotlin.String? = null,
 
-  /* Mask length of the IPv4 address.  <p><br /></p>  > **Deprecated**: This field is only propagated when attached to the > default \"bridge\" network. Use the information from the \"bridge\" > network inside the `Networks` map instead, which contains the same > information. This field was deprecated in Docker 1.9 and is scheduled > to be removed in Docker 17.12.0  */
-  @Json(name = "IPPrefixLen")
-  var ipPrefixLen: kotlin.Int? = null,
+    /* Mask length of the IPv4 address.  <p><br /></p>  > **Deprecated**: This field is only propagated when attached to the > default \"bridge\" network. Use the information from the \"bridge\" > network inside the `Networks` map instead, which contains the same > information. This field was deprecated in Docker 1.9 and is scheduled > to be removed in Docker 17.12.0  */
+    @Json(name = "IPPrefixLen")
+    var ipPrefixLen: kotlin.Int? = null,
 
-  /* IPv6 gateway address for this network.  <p><br /></p>  > **Deprecated**: This field is only propagated when attached to the > default \"bridge\" network. Use the information from the \"bridge\" > network inside the `Networks` map instead, which contains the same > information. This field was deprecated in Docker 1.9 and is scheduled > to be removed in Docker 17.12.0  */
-  @Json(name = "IPv6Gateway")
-  var ipv6Gateway: kotlin.String? = null,
+    /* IPv6 gateway address for this network.  <p><br /></p>  > **Deprecated**: This field is only propagated when attached to the > default \"bridge\" network. Use the information from the \"bridge\" > network inside the `Networks` map instead, which contains the same > information. This field was deprecated in Docker 1.9 and is scheduled > to be removed in Docker 17.12.0  */
+    @Json(name = "IPv6Gateway")
+    var ipv6Gateway: kotlin.String? = null,
 
-  /* MAC address for the container on the default \"bridge\" network.  <p><br /></p>  > **Deprecated**: This field is only propagated when attached to the > default \"bridge\" network. Use the information from the \"bridge\" > network inside the `Networks` map instead, which contains the same > information. This field was deprecated in Docker 1.9 and is scheduled > to be removed in Docker 17.12.0  */
-  @Json(name = "MacAddress")
-  var macAddress: kotlin.String? = null,
+    /* MAC address for the container on the default \"bridge\" network.  <p><br /></p>  > **Deprecated**: This field is only propagated when attached to the > default \"bridge\" network. Use the information from the \"bridge\" > network inside the `Networks` map instead, which contains the same > information. This field was deprecated in Docker 1.9 and is scheduled > to be removed in Docker 17.12.0  */
+    @Json(name = "MacAddress")
+    var macAddress: kotlin.String? = null,
 
-  /* Information about all networks that the container is connected to.  */
-  @Json(name = "Networks")
-  var networks: kotlin.collections.MutableMap<kotlin.String, EndpointSettings>? = null
+    /* Information about all networks that the container is connected to.  */
+    @Json(name = "Networks")
+    var networks: kotlin.collections.MutableMap<kotlin.String, EndpointSettings>? = null
 
 )

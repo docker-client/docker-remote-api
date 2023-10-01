@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -22,7 +22,7 @@ import com.squareup.moshi.JsonClass
  *
  *
  * @param name The network's name.
- * @param checkDuplicate Check for networks with duplicate names. Since Network is primarily keyed based on a random ID and not on the name, and network name is strictly a user-friendly alias to the network which is uniquely identified using ID, there is no guaranteed way to check for duplicates. CheckDuplicate is there to provide a best effort checking of any networks which has the same name but it is not guaranteed to catch all name collisions.
+ * @param checkDuplicate Deprecated: CheckDuplicate is now always enabled.
  * @param driver Name of the network driver plugin to use.
  * @param `internal` Restrict external access to the network.
  * @param attachable Globally scoped network is manually attachable by regular containers from workers in swarm mode.
@@ -36,43 +36,43 @@ import com.squareup.moshi.JsonClass
 
 data class NetworkCreateRequest(
 
-  /* The network's name. */
-  @Json(name = "Name")
-  var name: kotlin.String,
+    /* The network's name. */
+    @Json(name = "Name")
+    var name: kotlin.String,
 
-  /* Check for networks with duplicate names. Since Network is primarily keyed based on a random ID and not on the name, and network name is strictly a user-friendly alias to the network which is uniquely identified using ID, there is no guaranteed way to check for duplicates. CheckDuplicate is there to provide a best effort checking of any networks which has the same name but it is not guaranteed to catch all name collisions.  */
-  @Json(name = "CheckDuplicate")
-  var checkDuplicate: kotlin.Boolean? = null,
+    /* Deprecated: CheckDuplicate is now always enabled.  */
+    @Json(name = "CheckDuplicate")
+    var checkDuplicate: kotlin.Boolean? = null,
 
-  /* Name of the network driver plugin to use. */
-  @Json(name = "Driver")
-  var driver: kotlin.String? = "bridge",
+    /* Name of the network driver plugin to use. */
+    @Json(name = "Driver")
+    var driver: kotlin.String? = "bridge",
 
-  /* Restrict external access to the network. */
-  @Json(name = "Internal")
-  var `internal`: kotlin.Boolean? = null,
+    /* Restrict external access to the network. */
+    @Json(name = "Internal")
+    var `internal`: kotlin.Boolean? = null,
 
-  /* Globally scoped network is manually attachable by regular containers from workers in swarm mode.  */
-  @Json(name = "Attachable")
-  var attachable: kotlin.Boolean? = null,
+    /* Globally scoped network is manually attachable by regular containers from workers in swarm mode.  */
+    @Json(name = "Attachable")
+    var attachable: kotlin.Boolean? = null,
 
-  /* Ingress network is the network which provides the routing-mesh in swarm mode.  */
-  @Json(name = "Ingress")
-  var ingress: kotlin.Boolean? = null,
+    /* Ingress network is the network which provides the routing-mesh in swarm mode.  */
+    @Json(name = "Ingress")
+    var ingress: kotlin.Boolean? = null,
 
-  @Json(name = "IPAM")
-  var IPAM: IPAM? = null,
+    @Json(name = "IPAM")
+    var IPAM: IPAM? = null,
 
-  /* Enable IPv6 on the network. */
-  @Json(name = "EnableIPv6")
-  var enableIPv6: kotlin.Boolean? = null,
+    /* Enable IPv6 on the network. */
+    @Json(name = "EnableIPv6")
+    var enableIPv6: kotlin.Boolean? = null,
 
-  /* Network specific options to be used by the drivers. */
-  @Json(name = "Options")
-  var options: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
+    /* Network specific options to be used by the drivers. */
+    @Json(name = "Options")
+    var options: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
 
-  /* User-defined key/value metadata. */
-  @Json(name = "Labels")
-  var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
+    /* User-defined key/value metadata. */
+    @Json(name = "Labels")
+    var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
 
 )

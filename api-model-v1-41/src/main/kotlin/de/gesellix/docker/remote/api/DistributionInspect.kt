@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,11 +28,11 @@ import com.squareup.moshi.JsonClass
 
 data class DistributionInspect(
 
-  @Json(name = "Descriptor")
-  var descriptor: OCIDescriptor,
+    @Json(name = "Descriptor")
+    var descriptor: OCIDescriptor,
 
-  /* An array containing all platforms supported by the image.  */
-  @Json(name = "Platforms")
-  var platforms: kotlin.collections.MutableList<OCIPlatform>
+    /* An array containing all platforms supported by the image.  */
+    @Json(name = "Platforms")
+    var platforms: kotlin.collections.MutableList<OCIPlatform>
 
 )

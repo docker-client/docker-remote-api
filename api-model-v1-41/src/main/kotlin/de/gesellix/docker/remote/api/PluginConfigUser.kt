@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,10 +28,10 @@ import com.squareup.moshi.JsonClass
 
 data class PluginConfigUser(
 
-  @Json(name = "UID")
-  var UID: kotlin.Int? = null,
+    @Json(name = "UID")
+    var UID: kotlin.Int? = null,
 
-  @Json(name = "GID")
-  var GID: kotlin.Int? = null
+    @Json(name = "GID")
+    var GID: kotlin.Int? = null
 
 )

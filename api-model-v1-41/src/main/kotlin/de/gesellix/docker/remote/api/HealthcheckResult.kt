@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -30,20 +30,20 @@ import com.squareup.moshi.JsonClass
 
 data class HealthcheckResult(
 
-  /* Date and time at which this check started in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.  */
-  @Json(name = "Start")
-  var start: java.time.OffsetDateTime? = null,
+    /* Date and time at which this check started in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.  */
+    @Json(name = "Start")
+    var start: java.time.OffsetDateTime? = null,
 
-  /* Date and time at which this check ended in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.  */
-  @Json(name = "End")
-  var end: kotlin.String? = null,
+    /* Date and time at which this check ended in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.  */
+    @Json(name = "End")
+    var end: kotlin.String? = null,
 
-  /* ExitCode meanings:  - `0` healthy - `1` unhealthy - `2` reserved (considered unhealthy) - other values: error running probe  */
-  @Json(name = "ExitCode")
-  var exitCode: kotlin.Int? = null,
+    /* ExitCode meanings:  - `0` healthy - `1` unhealthy - `2` reserved (considered unhealthy) - other values: error running probe  */
+    @Json(name = "ExitCode")
+    var exitCode: kotlin.Int? = null,
 
-  /* Output from last check */
-  @Json(name = "Output")
-  var output: kotlin.String? = null
+    /* Output from last check */
+    @Json(name = "Output")
+    var output: kotlin.String? = null
 
 )

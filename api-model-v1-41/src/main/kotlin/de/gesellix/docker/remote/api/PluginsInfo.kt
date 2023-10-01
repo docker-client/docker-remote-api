@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -30,20 +30,20 @@ import com.squareup.moshi.JsonClass
 
 data class PluginsInfo(
 
-  /* Names of available volume-drivers, and network-driver plugins. */
-  @Json(name = "Volume")
-  var volume: kotlin.collections.MutableList<kotlin.String>? = null,
+    /* Names of available volume-drivers, and network-driver plugins. */
+    @Json(name = "Volume")
+    var volume: kotlin.collections.MutableList<kotlin.String>? = null,
 
-  /* Names of available network-drivers, and network-driver plugins. */
-  @Json(name = "Network")
-  var network: kotlin.collections.MutableList<kotlin.String>? = null,
+    /* Names of available network-drivers, and network-driver plugins. */
+    @Json(name = "Network")
+    var network: kotlin.collections.MutableList<kotlin.String>? = null,
 
-  /* Names of available authorization plugins. */
-  @Json(name = "Authorization")
-  var authorization: kotlin.collections.MutableList<kotlin.String>? = null,
+    /* Names of available authorization plugins. */
+    @Json(name = "Authorization")
+    var authorization: kotlin.collections.MutableList<kotlin.String>? = null,
 
-  /* Names of available logging-drivers, and logging-driver plugins. */
-  @Json(name = "Log")
-  var log: kotlin.collections.MutableList<kotlin.String>? = null
+    /* Names of available logging-drivers, and logging-driver plugins. */
+    @Json(name = "Log")
+    var log: kotlin.collections.MutableList<kotlin.String>? = null
 
 )

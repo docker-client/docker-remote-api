@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -27,75 +27,74 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = false)
 enum class TaskState(val value: kotlin.String) {
 
-  @Json(name = "new")
-  New("new"),
+    @Json(name = "new")
+    New("new"),
 
-  @Json(name = "allocated")
-  Allocated("allocated"),
+    @Json(name = "allocated")
+    Allocated("allocated"),
 
-  @Json(name = "pending")
-  Pending("pending"),
+    @Json(name = "pending")
+    Pending("pending"),
 
-  @Json(name = "assigned")
-  Assigned("assigned"),
+    @Json(name = "assigned")
+    Assigned("assigned"),
 
-  @Json(name = "accepted")
-  Accepted("accepted"),
+    @Json(name = "accepted")
+    Accepted("accepted"),
 
-  @Json(name = "preparing")
-  Preparing("preparing"),
+    @Json(name = "preparing")
+    Preparing("preparing"),
 
-  @Json(name = "ready")
-  Ready("ready"),
+    @Json(name = "ready")
+    Ready("ready"),
 
-  @Json(name = "starting")
-  Starting("starting"),
+    @Json(name = "starting")
+    Starting("starting"),
 
-  @Json(name = "running")
-  Running("running"),
+    @Json(name = "running")
+    Running("running"),
 
-  @Json(name = "complete")
-  Complete("complete"),
+    @Json(name = "complete")
+    Complete("complete"),
 
-  @Json(name = "shutdown")
-  Shutdown("shutdown"),
+    @Json(name = "shutdown")
+    Shutdown("shutdown"),
 
-  @Json(name = "failed")
-  Failed("failed"),
+    @Json(name = "failed")
+    Failed("failed"),
 
-  @Json(name = "rejected")
-  Rejected("rejected"),
+    @Json(name = "rejected")
+    Rejected("rejected"),
 
-  @Json(name = "remove")
-  Remove("remove"),
+    @Json(name = "remove")
+    Remove("remove"),
 
-  @Json(name = "orphaned")
-  Orphaned("orphaned");
-
-  /**
-   * Override toString() to avoid using the enum variable name as the value, and instead use
-   * the actual value defined in the API spec file.
-   *
-   * This solves a problem when the variable name and its value are different, and ensures that
-   * the client sends the correct enum values to the server always.
-   */
-  override fun toString(): String = value
-
-  companion object {
+    @Json(name = "orphaned")
+    Orphaned("orphaned");
 
     /**
-     * Converts the provided [data] to a [String] on success, null otherwise.
+     * Override [toString()] to avoid using the enum variable name as the value, and instead use
+     * the actual value defined in the API spec file.
+     *
+     * This solves a problem when the variable name and its value are different, and ensures that
+     * the client sends the correct enum values to the server always.
      */
-    fun encode(data: kotlin.Any?): kotlin.String? = if (data is TaskState) "$data" else null
+    override fun toString(): String = value
 
-    /**
-     * Returns a valid [TaskState] for [data], null otherwise.
-     */
-    fun decode(data: kotlin.Any?): TaskState? = data?.let {
-      val normalizedData = "$it".lowercase()
-      values().firstOrNull { value ->
-        it == value || normalizedData == "$value".lowercase()
-      }
+    companion object {
+        /**
+         * Converts the provided [data] to a [String] on success, null otherwise.
+         */
+        fun encode(data: kotlin.Any?): kotlin.String? = if (data is TaskState) "$data" else null
+
+        /**
+         * Returns a valid [TaskState] for [data], null otherwise.
+         */
+        fun decode(data: kotlin.Any?): TaskState? = data?.let {
+            val normalizedData = "$it".lowercase()
+            values().firstOrNull { value ->
+                it == value || normalizedData == "$value".lowercase()
+            }
+        }
     }
-  }
 }

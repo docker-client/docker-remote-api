@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -26,29 +26,34 @@ import com.squareup.moshi.JsonClass
  * @param timeout The time to wait before considering the check to have hung. It should be 0 or at least 1000000 (1 ms). 0 means inherit.
  * @param retries The number of consecutive failures needed to consider a container as unhealthy. 0 means inherit.
  * @param startPeriod Start period for the container to initialize before starting health-retries countdown in nanoseconds. It should be 0 or at least 1000000 (1 ms). 0 means inherit.
+ * @param startInterval The time to wait between checks in nanoseconds during the start period. It should be 0 or at least 1000000 (1 ms). 0 means inherit.
  */
 @JsonClass(generateAdapter = true)
 
 data class HealthConfig(
 
-  /* The test to perform. Possible values are:  - `[]` inherit healthcheck from image or parent image - `[\"NONE\"]` disable healthcheck - `[\"CMD\", args...]` exec arguments directly - `[\"CMD-SHELL\", command]` run command with system's default shell  */
-  @Json(name = "Test")
-  var test: kotlin.collections.MutableList<kotlin.String>? = null,
+    /* The test to perform. Possible values are:  - `[]` inherit healthcheck from image or parent image - `[\"NONE\"]` disable healthcheck - `[\"CMD\", args...]` exec arguments directly - `[\"CMD-SHELL\", command]` run command with system's default shell  */
+    @Json(name = "Test")
+    var test: kotlin.collections.MutableList<kotlin.String>? = null,
 
-  /* The time to wait between checks in nanoseconds. It should be 0 or at least 1000000 (1 ms). 0 means inherit.  */
-  @Json(name = "Interval")
-  var interval: kotlin.Long? = null,
+    /* The time to wait between checks in nanoseconds. It should be 0 or at least 1000000 (1 ms). 0 means inherit.  */
+    @Json(name = "Interval")
+    var interval: kotlin.Long? = null,
 
-  /* The time to wait before considering the check to have hung. It should be 0 or at least 1000000 (1 ms). 0 means inherit.  */
-  @Json(name = "Timeout")
-  var timeout: kotlin.Long? = null,
+    /* The time to wait before considering the check to have hung. It should be 0 or at least 1000000 (1 ms). 0 means inherit.  */
+    @Json(name = "Timeout")
+    var timeout: kotlin.Long? = null,
 
-  /* The number of consecutive failures needed to consider a container as unhealthy. 0 means inherit.  */
-  @Json(name = "Retries")
-  var retries: kotlin.Int? = null,
+    /* The number of consecutive failures needed to consider a container as unhealthy. 0 means inherit.  */
+    @Json(name = "Retries")
+    var retries: kotlin.Int? = null,
 
-  /* Start period for the container to initialize before starting health-retries countdown in nanoseconds. It should be 0 or at least 1000000 (1 ms). 0 means inherit.  */
-  @Json(name = "StartPeriod")
-  var startPeriod: kotlin.Long? = null
+    /* Start period for the container to initialize before starting health-retries countdown in nanoseconds. It should be 0 or at least 1000000 (1 ms). 0 means inherit.  */
+    @Json(name = "StartPeriod")
+    var startPeriod: kotlin.Long? = null,
+
+    /* The time to wait between checks in nanoseconds during the start period. It should be 0 or at least 1000000 (1 ms). 0 means inherit.  */
+    @Json(name = "StartInterval")
+    var startInterval: kotlin.Long? = null
 
 )

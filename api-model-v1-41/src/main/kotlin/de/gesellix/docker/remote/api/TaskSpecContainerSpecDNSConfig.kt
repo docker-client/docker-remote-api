@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -29,16 +29,16 @@ import com.squareup.moshi.JsonClass
 
 data class TaskSpecContainerSpecDNSConfig(
 
-  /* The IP addresses of the name servers. */
-  @Json(name = "Nameservers")
-  var nameservers: kotlin.collections.MutableList<kotlin.String>? = null,
+    /* The IP addresses of the name servers. */
+    @Json(name = "Nameservers")
+    var nameservers: kotlin.collections.MutableList<kotlin.String>? = null,
 
-  /* A search list for host-name lookup. */
-  @Json(name = "Search")
-  var search: kotlin.collections.MutableList<kotlin.String>? = null,
+    /* A search list for host-name lookup. */
+    @Json(name = "Search")
+    var search: kotlin.collections.MutableList<kotlin.String>? = null,
 
-  /* A list of internal resolver variables to be modified (e.g., `debug`, `ndots:3`, etc.).  */
-  @Json(name = "Options")
-  var options: kotlin.collections.MutableList<kotlin.String>? = null
+    /* A list of internal resolver variables to be modified (e.g., `debug`, `ndots:3`, etc.).  */
+    @Json(name = "Options")
+    var options: kotlin.collections.MutableList<kotlin.String>? = null
 
 )

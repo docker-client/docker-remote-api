@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -29,16 +29,16 @@ import com.squareup.moshi.JsonClass
 
 data class IPAM(
 
-  /* Name of the IPAM driver to use. */
-  @Json(name = "Driver")
-  var driver: kotlin.String? = "default",
+    /* Name of the IPAM driver to use. */
+    @Json(name = "Driver")
+    var driver: kotlin.String? = "default",
 
-  /* List of IPAM configuration options, specified as a map:  ``` {\"Subnet\": <CIDR>, \"IPRange\": <CIDR>, \"Gateway\": <IP address>, \"AuxAddress\": <device_name:IP address>} ```  */
-  @Json(name = "Config")
-  var config: kotlin.collections.MutableList<IPAMConfig>? = null,
+    /* List of IPAM configuration options, specified as a map:  ``` {\"Subnet\": <CIDR>, \"IPRange\": <CIDR>, \"Gateway\": <IP address>, \"AuxAddress\": <device_name:IP address>} ```  */
+    @Json(name = "Config")
+    var config: kotlin.collections.MutableList<IPAMConfig>? = null,
 
-  /* Driver-specific options, specified as a map. */
-  @Json(name = "Options")
-  var options: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
+    /* Driver-specific options, specified as a map. */
+    @Json(name = "Options")
+    var options: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
 
 )

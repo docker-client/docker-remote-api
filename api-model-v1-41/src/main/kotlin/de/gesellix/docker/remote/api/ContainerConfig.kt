@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -51,103 +51,103 @@ import com.squareup.moshi.JsonClass
 
 data class ContainerConfig(
 
-  /* The hostname to use for the container, as a valid RFC 1123 hostname.  */
-  @Json(name = "Hostname")
-  var hostname: kotlin.String? = null,
+    /* The hostname to use for the container, as a valid RFC 1123 hostname.  */
+    @Json(name = "Hostname")
+    var hostname: kotlin.String? = null,
 
-  /* The domain name to use for the container.  */
-  @Json(name = "Domainname")
-  var domainname: kotlin.String? = null,
+    /* The domain name to use for the container.  */
+    @Json(name = "Domainname")
+    var domainname: kotlin.String? = null,
 
-  /* The user that commands are run as inside the container. */
-  @Json(name = "User")
-  var user: kotlin.String? = null,
+    /* The user that commands are run as inside the container. */
+    @Json(name = "User")
+    var user: kotlin.String? = null,
 
-  /* Whether to attach to `stdin`. */
-  @Json(name = "AttachStdin")
-  var attachStdin: kotlin.Boolean? = false,
+    /* Whether to attach to `stdin`. */
+    @Json(name = "AttachStdin")
+    var attachStdin: kotlin.Boolean? = false,
 
-  /* Whether to attach to `stdout`. */
-  @Json(name = "AttachStdout")
-  var attachStdout: kotlin.Boolean? = true,
+    /* Whether to attach to `stdout`. */
+    @Json(name = "AttachStdout")
+    var attachStdout: kotlin.Boolean? = true,
 
-  /* Whether to attach to `stderr`. */
-  @Json(name = "AttachStderr")
-  var attachStderr: kotlin.Boolean? = true,
+    /* Whether to attach to `stderr`. */
+    @Json(name = "AttachStderr")
+    var attachStderr: kotlin.Boolean? = true,
 
-  /* An object mapping ports to an empty object in the form:  `{\"<port>/<tcp|udp|sctp>\": {}}`  */
-  @Json(name = "ExposedPorts")
-  var exposedPorts: kotlin.collections.MutableMap<kotlin.String, kotlin.Any>? = null,
+    /* An object mapping ports to an empty object in the form:  `{\"<port>/<tcp|udp|sctp>\": {}}`  */
+    @Json(name = "ExposedPorts")
+    var exposedPorts: kotlin.collections.MutableMap<kotlin.String, kotlin.Any>? = null,
 
-  /* Attach standard streams to a TTY, including `stdin` if it is not closed.  */
-  @Json(name = "Tty")
-  var tty: kotlin.Boolean? = false,
+    /* Attach standard streams to a TTY, including `stdin` if it is not closed.  */
+    @Json(name = "Tty")
+    var tty: kotlin.Boolean? = false,
 
-  /* Open `stdin` */
-  @Json(name = "OpenStdin")
-  var openStdin: kotlin.Boolean? = false,
+    /* Open `stdin` */
+    @Json(name = "OpenStdin")
+    var openStdin: kotlin.Boolean? = false,
 
-  /* Close `stdin` after one attached client disconnects */
-  @Json(name = "StdinOnce")
-  var stdinOnce: kotlin.Boolean? = false,
+    /* Close `stdin` after one attached client disconnects */
+    @Json(name = "StdinOnce")
+    var stdinOnce: kotlin.Boolean? = false,
 
-  /* A list of environment variables to set inside the container in the form `[\"VAR=value\", ...]`. A variable without `=` is removed from the environment, rather than to have an empty value.  */
-  @Json(name = "Env")
-  var env: kotlin.collections.MutableList<kotlin.String>? = null,
+    /* A list of environment variables to set inside the container in the form `[\"VAR=value\", ...]`. A variable without `=` is removed from the environment, rather than to have an empty value.  */
+    @Json(name = "Env")
+    var env: kotlin.collections.MutableList<kotlin.String>? = null,
 
-  /* Command to run specified as a string or an array of strings.  */
-  @Json(name = "Cmd")
-  var cmd: kotlin.collections.MutableList<kotlin.String>? = null,
+    /* Command to run specified as a string or an array of strings.  */
+    @Json(name = "Cmd")
+    var cmd: kotlin.collections.MutableList<kotlin.String>? = null,
 
-  @Json(name = "Healthcheck")
-  var healthcheck: HealthConfig? = null,
+    @Json(name = "Healthcheck")
+    var healthcheck: HealthConfig? = null,
 
-  /* Command is already escaped (Windows only) */
-  @Json(name = "ArgsEscaped")
-  var argsEscaped: kotlin.Boolean? = null,
+    /* Command is already escaped (Windows only) */
+    @Json(name = "ArgsEscaped")
+    var argsEscaped: kotlin.Boolean? = null,
 
-  /* The name (or reference) of the image to use when creating the container, or which was used when the container was created.  */
-  @Json(name = "Image")
-  var image: kotlin.String? = null,
+    /* The name (or reference) of the image to use when creating the container, or which was used when the container was created.  */
+    @Json(name = "Image")
+    var image: kotlin.String? = null,
 
-  /* An object mapping mount point paths inside the container to empty objects.  */
-  @Json(name = "Volumes")
-  var volumes: kotlin.collections.MutableMap<kotlin.String, kotlin.Any>? = null,
+    /* An object mapping mount point paths inside the container to empty objects.  */
+    @Json(name = "Volumes")
+    var volumes: kotlin.collections.MutableMap<kotlin.String, kotlin.Any>? = null,
 
-  /* The working directory for commands to run in. */
-  @Json(name = "WorkingDir")
-  var workingDir: kotlin.String? = null,
+    /* The working directory for commands to run in. */
+    @Json(name = "WorkingDir")
+    var workingDir: kotlin.String? = null,
 
-  /* The entry point for the container as a string or an array of strings.  If the array consists of exactly one empty string (`[\"\"]`) then the entry point is reset to system default (i.e., the entry point used by docker when there is no `ENTRYPOINT` instruction in the `Dockerfile`).  */
-  @Json(name = "Entrypoint")
-  var entrypoint: kotlin.collections.MutableList<kotlin.String>? = null,
+    /* The entry point for the container as a string or an array of strings.  If the array consists of exactly one empty string (`[\"\"]`) then the entry point is reset to system default (i.e., the entry point used by docker when there is no `ENTRYPOINT` instruction in the `Dockerfile`).  */
+    @Json(name = "Entrypoint")
+    var entrypoint: kotlin.collections.MutableList<kotlin.String>? = null,
 
-  /* Disable networking for the container. */
-  @Json(name = "NetworkDisabled")
-  var networkDisabled: kotlin.Boolean? = null,
+    /* Disable networking for the container. */
+    @Json(name = "NetworkDisabled")
+    var networkDisabled: kotlin.Boolean? = null,
 
-  /* MAC address of the container. */
-  @Json(name = "MacAddress")
-  var macAddress: kotlin.String? = null,
+    /* MAC address of the container. */
+    @Json(name = "MacAddress")
+    var macAddress: kotlin.String? = null,
 
-  /* `ONBUILD` metadata that were defined in the image's `Dockerfile`.  */
-  @Json(name = "OnBuild")
-  var onBuild: kotlin.collections.MutableList<kotlin.String>? = null,
+    /* `ONBUILD` metadata that were defined in the image's `Dockerfile`.  */
+    @Json(name = "OnBuild")
+    var onBuild: kotlin.collections.MutableList<kotlin.String>? = null,
 
-  /* User-defined key/value metadata. */
-  @Json(name = "Labels")
-  var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
+    /* User-defined key/value metadata. */
+    @Json(name = "Labels")
+    var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
 
-  /* Signal to stop a container as a string or unsigned integer.  */
-  @Json(name = "StopSignal")
-  var stopSignal: kotlin.String? = "SIGTERM",
+    /* Signal to stop a container as a string or unsigned integer.  */
+    @Json(name = "StopSignal")
+    var stopSignal: kotlin.String? = "SIGTERM",
 
-  /* Timeout to stop a container in seconds. */
-  @Json(name = "StopTimeout")
-  var stopTimeout: kotlin.Int? = null,
+    /* Timeout to stop a container in seconds. */
+    @Json(name = "StopTimeout")
+    var stopTimeout: kotlin.Int? = null,
 
-  /* Shell for when `RUN`, `CMD`, and `ENTRYPOINT` uses a shell.  */
-  @Json(name = "Shell")
-  var shell: kotlin.collections.MutableList<kotlin.String>? = null
+    /* Shell for when `RUN`, `CMD`, and `ENTRYPOINT` uses a shell.  */
+    @Json(name = "Shell")
+    var shell: kotlin.collections.MutableList<kotlin.String>? = null
 
 )

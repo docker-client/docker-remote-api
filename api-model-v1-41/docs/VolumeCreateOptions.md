@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **driver** | **kotlin.String** | Name of the volume driver to use. |  [optional]
 **driverOpts** | **kotlin.collections.MutableMap&lt;kotlin.String, kotlin.String&gt;** | A mapping of driver options and values. These options are passed directly to the driver and are driver specific.  |  [optional]
 **labels** | **kotlin.collections.MutableMap&lt;kotlin.String, kotlin.String&gt;** | User-defined key/value metadata. |  [optional]
+**clusterVolumeSpec** | [**ClusterVolumeSpec**](ClusterVolumeSpec.md) |  |  [optional]
 
 
 

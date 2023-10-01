@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,12 +28,12 @@ import com.squareup.moshi.JsonClass
 
 data class PortBinding(
 
-  /* Host IP address that the container's port is mapped to. */
-  @Json(name = "HostIp")
-  var hostIp: kotlin.String? = null,
+    /* Host IP address that the container's port is mapped to. */
+    @Json(name = "HostIp")
+    var hostIp: kotlin.String? = null,
 
-  /* Host port number that the container's port is mapped to. */
-  @Json(name = "HostPort")
-  var hostPort: kotlin.String? = null
+    /* Host port number that the container's port is mapped to. */
+    @Json(name = "HostPort")
+    var hostPort: kotlin.String? = null
 
 )

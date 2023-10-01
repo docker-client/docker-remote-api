@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -27,8 +27,8 @@ import com.squareup.moshi.JsonClass
 
 data class SwarmUnlockRequest(
 
-  /* The swarm's unlock key. */
-  @Json(name = "UnlockKey")
-  var unlockKey: kotlin.String? = null
+    /* The swarm's unlock key. */
+    @Json(name = "UnlockKey")
+    var unlockKey: kotlin.String? = null
 
 )

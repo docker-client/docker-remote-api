@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,10 +28,10 @@ import com.squareup.moshi.JsonClass
 
 data class GenericResourcesInnerNamedResourceSpec(
 
-  @Json(name = "Kind")
-  var kind: kotlin.String? = null,
+    @Json(name = "Kind")
+    var kind: kotlin.String? = null,
 
-  @Json(name = "Value")
-  var `value`: kotlin.String? = null
+    @Json(name = "Value")
+    var `value`: kotlin.String? = null
 
 )

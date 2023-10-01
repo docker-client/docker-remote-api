@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -27,8 +27,8 @@ import com.squareup.moshi.JsonClass
 
 data class SwarmSpecDispatcher(
 
-  /* The delay for an agent to send a heartbeat to the dispatcher.  */
-  @Json(name = "HeartbeatPeriod")
-  var heartbeatPeriod: kotlin.Long? = null
+    /* The delay for an agent to send a heartbeat to the dispatcher.  */
+    @Json(name = "HeartbeatPeriod")
+    var heartbeatPeriod: kotlin.Long? = null
 
 )

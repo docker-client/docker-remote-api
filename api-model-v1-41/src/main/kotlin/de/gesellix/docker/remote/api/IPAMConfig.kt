@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -30,16 +30,16 @@ import com.squareup.moshi.JsonClass
 
 data class IPAMConfig(
 
-  @Json(name = "Subnet")
-  var subnet: kotlin.String? = null,
+    @Json(name = "Subnet")
+    var subnet: kotlin.String? = null,
 
-  @Json(name = "IPRange")
-  var ipRange: kotlin.String? = null,
+    @Json(name = "IPRange")
+    var ipRange: kotlin.String? = null,
 
-  @Json(name = "Gateway")
-  var gateway: kotlin.String? = null,
+    @Json(name = "Gateway")
+    var gateway: kotlin.String? = null,
 
-  @Json(name = "AuxiliaryAddresses")
-  var auxiliaryAddresses: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
+    @Json(name = "AuxiliaryAddresses")
+    var auxiliaryAddresses: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
 
 )

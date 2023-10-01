@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -27,8 +27,8 @@ import com.squareup.moshi.JsonClass
 
 data class ContainerWaitExitError(
 
-  /* Details of an error */
-  @Json(name = "Message")
-  var message: kotlin.String? = null
+    /* Details of an error */
+    @Json(name = "Message")
+    var message: kotlin.String? = null
 
 )

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **running** | **kotlin.Boolean** | Whether this container is running.  Note that a running container can be _paused_. The &#x60;Running&#x60; and &#x60;Paused&#x60; booleans are not mutually exclusive:  When pausing a container (on Linux), the freezer cgroup is used to suspend all processes in the container. Freezing the process requires the process to be running. As a result, paused containers are both &#x60;Running&#x60; _and_ &#x60;Paused&#x60;.  Use the &#x60;Status&#x60; field instead to determine if a container&#39;s state is \&quot;running\&quot;.  |  [optional]
 **paused** | **kotlin.Boolean** | Whether this container is paused. |  [optional]
 **restarting** | **kotlin.Boolean** | Whether this container is restarting. |  [optional]
-**ooMKilled** | **kotlin.Boolean** | Whether this container has been killed because it ran out of memory.  |  [optional]
+**ooMKilled** | **kotlin.Boolean** | Whether a process within this container has been killed because it ran out of memory since the container was last started.  |  [optional]
 **dead** | **kotlin.Boolean** |  |  [optional]
 **pid** | **kotlin.Int** | The process ID of this container |  [optional]
 **exitCode** | **kotlin.Int** | The last exit code of this container |  [optional]

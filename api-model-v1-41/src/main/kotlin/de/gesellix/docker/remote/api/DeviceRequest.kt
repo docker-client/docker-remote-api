@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -31,21 +31,21 @@ import com.squareup.moshi.JsonClass
 
 data class DeviceRequest(
 
-  @Json(name = "Driver")
-  var driver: kotlin.String? = null,
+    @Json(name = "Driver")
+    var driver: kotlin.String? = null,
 
-  @Json(name = "Count")
-  var count: kotlin.Int? = null,
+    @Json(name = "Count")
+    var count: kotlin.Int? = null,
 
-  @Json(name = "DeviceIDs")
-  var deviceIDs: kotlin.collections.MutableList<kotlin.String>? = null,
+    @Json(name = "DeviceIDs")
+    var deviceIDs: kotlin.collections.MutableList<kotlin.String>? = null,
 
-  /* A list of capabilities; an OR list of AND lists of capabilities.  */
-  @Json(name = "Capabilities")
-  var capabilities: kotlin.collections.MutableList<kotlin.collections.MutableList<kotlin.String>>? = null,
+    /* A list of capabilities; an OR list of AND lists of capabilities.  */
+    @Json(name = "Capabilities")
+    var capabilities: kotlin.collections.MutableList<kotlin.collections.MutableList<kotlin.String>>? = null,
 
-  /* Driver-specific options, specified as a key/value pairs. These options are passed directly to the driver.  */
-  @Json(name = "Options")
-  var options: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
+    /* Driver-specific options, specified as a key/value pairs. These options are passed directly to the driver.  */
+    @Json(name = "Options")
+    var options: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
 
 )

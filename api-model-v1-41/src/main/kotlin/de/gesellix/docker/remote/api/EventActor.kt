@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,12 +28,12 @@ import com.squareup.moshi.JsonClass
 
 data class EventActor(
 
-  /* The ID of the object emitting the event */
-  @Json(name = "ID")
-  var ID: kotlin.String? = null,
+    /* The ID of the object emitting the event */
+    @Json(name = "ID")
+    var ID: kotlin.String? = null,
 
-  /* Various key/value attributes of the object, depending on its type.  */
-  @Json(name = "Attributes")
-  var attributes: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
+    /* Various key/value attributes of the object, depending on its type.  */
+    @Json(name = "Attributes")
+    var attributes: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
 
 )

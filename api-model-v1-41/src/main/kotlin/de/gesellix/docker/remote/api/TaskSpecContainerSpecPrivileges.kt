@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,10 +28,10 @@ import com.squareup.moshi.JsonClass
 
 data class TaskSpecContainerSpecPrivileges(
 
-  @Json(name = "CredentialSpec")
-  var credentialSpec: TaskSpecContainerSpecPrivilegesCredentialSpec? = null,
+    @Json(name = "CredentialSpec")
+    var credentialSpec: TaskSpecContainerSpecPrivilegesCredentialSpec? = null,
 
-  @Json(name = "SELinuxContext")
-  var seLinuxContext: TaskSpecContainerSpecPrivilegesSELinuxContext? = null
+    @Json(name = "SELinuxContext")
+    var seLinuxContext: TaskSpecContainerSpecPrivilegesSELinuxContext? = null
 
 )

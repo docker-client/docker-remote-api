@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,28 +28,27 @@ import com.squareup.moshi.JsonClass
 
 data class EndpointSpec(
 
-  /* The mode of resolution to use for internal load balancing between tasks.  */
-  @Json(name = "Mode")
-  var mode: EndpointSpec.Mode? = Mode.Vip,
+    /* The mode of resolution to use for internal load balancing between tasks.  */
+    @Json(name = "Mode")
+    var mode: EndpointSpec.Mode? = Mode.Vip,
 
-  /* List of exposed ports that this service is accessible on from the outside. Ports can only be provided if `vip` resolution mode is used.  */
-  @Json(name = "Ports")
-  var ports: kotlin.collections.MutableList<EndpointPortConfig>? = null
+    /* List of exposed ports that this service is accessible on from the outside. Ports can only be provided if `vip` resolution mode is used.  */
+    @Json(name = "Ports")
+    var ports: kotlin.collections.MutableList<EndpointPortConfig>? = null
 
 ) {
 
-  /**
-   * The mode of resolution to use for internal load balancing between tasks.
-   *
-   * Values: Vip,Dnsrr
-   */
-  @JsonClass(generateAdapter = false)
-  enum class Mode(val value: kotlin.String) {
+    /**
+     * The mode of resolution to use for internal load balancing between tasks.
+     *
+     * Values: Vip,Dnsrr
+     */
+    @JsonClass(generateAdapter = false)
+    enum class Mode(val value: kotlin.String) {
+        @Json(name = "vip")
+        Vip("vip"),
 
-    @Json(name = "vip")
-    Vip("vip"),
-
-    @Json(name = "dnsrr")
-    Dnsrr("dnsrr");
-  }
+        @Json(name = "dnsrr")
+        Dnsrr("dnsrr");
+    }
 }
