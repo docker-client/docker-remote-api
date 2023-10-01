@@ -43,7 +43,7 @@ enum class ChangeType(val value: kotlin.Int) {
      * This solves a problem when the variable name and its value are different, and ensures that
      * the client sends the correct enum values to the server always.
      */
-    override fun toString(): String = value.toString()
+    override fun toString(): kotlin.String = value.toString()
 
     companion object {
         /**
