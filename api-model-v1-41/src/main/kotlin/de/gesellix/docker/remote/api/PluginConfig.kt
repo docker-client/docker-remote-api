@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -42,53 +42,53 @@ import com.squareup.moshi.JsonClass
 
 data class PluginConfig(
 
-  @Json(name = "Description")
-  var description: kotlin.String,
+    @Json(name = "Description")
+    var description: kotlin.String,
 
-  @Json(name = "Documentation")
-  var documentation: kotlin.String,
+    @Json(name = "Documentation")
+    var documentation: kotlin.String,
 
-  @Json(name = "Interface")
-  var `interface`: PluginConfigInterface,
+    @Json(name = "Interface")
+    var `interface`: PluginConfigInterface,
 
-  @Json(name = "Entrypoint")
-  var entrypoint: kotlin.collections.MutableList<kotlin.String>,
+    @Json(name = "Entrypoint")
+    var entrypoint: kotlin.collections.MutableList<kotlin.String>,
 
-  @Json(name = "WorkDir")
-  var workDir: kotlin.String,
+    @Json(name = "WorkDir")
+    var workDir: kotlin.String,
 
-  @Json(name = "Network")
-  var network: PluginConfigNetwork,
+    @Json(name = "Network")
+    var network: PluginConfigNetwork,
 
-  @Json(name = "Linux")
-  var linux: PluginConfigLinux,
+    @Json(name = "Linux")
+    var linux: PluginConfigLinux,
 
-  @Json(name = "PropagatedMount")
-  var propagatedMount: kotlin.String,
+    @Json(name = "PropagatedMount")
+    var propagatedMount: kotlin.String,
 
-  @Json(name = "IpcHost")
-  var ipcHost: kotlin.Boolean,
+    @Json(name = "IpcHost")
+    var ipcHost: kotlin.Boolean,
 
-  @Json(name = "PidHost")
-  var pidHost: kotlin.Boolean,
+    @Json(name = "PidHost")
+    var pidHost: kotlin.Boolean,
 
-  @Json(name = "Mounts")
-  var mounts: kotlin.collections.MutableList<PluginMount>,
+    @Json(name = "Mounts")
+    var mounts: kotlin.collections.MutableList<PluginMount>,
 
-  @Json(name = "Env")
-  var env: kotlin.collections.MutableList<PluginEnv>,
+    @Json(name = "Env")
+    var env: kotlin.collections.MutableList<PluginEnv>,
 
-  @Json(name = "Args")
-  var args: PluginConfigArgs,
+    @Json(name = "Args")
+    var args: PluginConfigArgs,
 
-  /* Docker Version used to create the plugin */
-  @Json(name = "DockerVersion")
-  var dockerVersion: kotlin.String? = null,
+    /* Docker Version used to create the plugin */
+    @Json(name = "DockerVersion")
+    var dockerVersion: kotlin.String? = null,
 
-  @Json(name = "User")
-  var user: PluginConfigUser? = null,
+    @Json(name = "User")
+    var user: PluginConfigUser? = null,
 
-  @Json(name = "rootfs")
-  var rootfs: PluginConfigRootfs? = null
+    @Json(name = "rootfs")
+    var rootfs: PluginConfigRootfs? = null
 
 )

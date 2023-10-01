@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -29,14 +29,14 @@ import com.squareup.moshi.JsonClass
 
 data class Limit(
 
-  @Json(name = "NanoCPUs")
-  var nanoCPUs: kotlin.Long? = null,
+    @Json(name = "NanoCPUs")
+    var nanoCPUs: kotlin.Long? = null,
 
-  @Json(name = "MemoryBytes")
-  var memoryBytes: kotlin.Long? = null,
+    @Json(name = "MemoryBytes")
+    var memoryBytes: kotlin.Long? = null,
 
-  /* Limits the maximum number of PIDs in the container. Set `0` for unlimited.  */
-  @Json(name = "Pids")
-  var pids: kotlin.Long? = 0L
+    /* Limits the maximum number of PIDs in the container. Set `0` for unlimited.  */
+    @Json(name = "Pids")
+    var pids: kotlin.Long? = 0L
 
 )

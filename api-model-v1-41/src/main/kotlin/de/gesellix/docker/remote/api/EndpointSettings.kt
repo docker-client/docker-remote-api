@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -39,53 +39,53 @@ import com.squareup.moshi.JsonClass
 
 data class EndpointSettings(
 
-  @Json(name = "IPAMConfig")
-  var ipAMConfig: EndpointIPAMConfig? = null,
+    @Json(name = "IPAMConfig")
+    var ipAMConfig: EndpointIPAMConfig? = null,
 
-  @Json(name = "Links")
-  var links: kotlin.collections.MutableList<kotlin.String>? = null,
+    @Json(name = "Links")
+    var links: kotlin.collections.MutableList<kotlin.String>? = null,
 
-  @Json(name = "Aliases")
-  var aliases: kotlin.collections.MutableList<kotlin.String>? = null,
+    @Json(name = "Aliases")
+    var aliases: kotlin.collections.MutableList<kotlin.String>? = null,
 
-  /* Unique ID of the network.  */
-  @Json(name = "NetworkID")
-  var networkID: kotlin.String? = null,
+    /* Unique ID of the network.  */
+    @Json(name = "NetworkID")
+    var networkID: kotlin.String? = null,
 
-  /* Unique ID for the service endpoint in a Sandbox.  */
-  @Json(name = "EndpointID")
-  var endpointID: kotlin.String? = null,
+    /* Unique ID for the service endpoint in a Sandbox.  */
+    @Json(name = "EndpointID")
+    var endpointID: kotlin.String? = null,
 
-  /* Gateway address for this network.  */
-  @Json(name = "Gateway")
-  var gateway: kotlin.String? = null,
+    /* Gateway address for this network.  */
+    @Json(name = "Gateway")
+    var gateway: kotlin.String? = null,
 
-  /* IPv4 address.  */
-  @Json(name = "IPAddress")
-  var ipAddress: kotlin.String? = null,
+    /* IPv4 address.  */
+    @Json(name = "IPAddress")
+    var ipAddress: kotlin.String? = null,
 
-  /* Mask length of the IPv4 address.  */
-  @Json(name = "IPPrefixLen")
-  var ipPrefixLen: kotlin.Int? = null,
+    /* Mask length of the IPv4 address.  */
+    @Json(name = "IPPrefixLen")
+    var ipPrefixLen: kotlin.Int? = null,
 
-  /* IPv6 gateway address.  */
-  @Json(name = "IPv6Gateway")
-  var ipv6Gateway: kotlin.String? = null,
+    /* IPv6 gateway address.  */
+    @Json(name = "IPv6Gateway")
+    var ipv6Gateway: kotlin.String? = null,
 
-  /* Global IPv6 address.  */
-  @Json(name = "GlobalIPv6Address")
-  var globalIPv6Address: kotlin.String? = null,
+    /* Global IPv6 address.  */
+    @Json(name = "GlobalIPv6Address")
+    var globalIPv6Address: kotlin.String? = null,
 
-  /* Mask length of the global IPv6 address.  */
-  @Json(name = "GlobalIPv6PrefixLen")
-  var globalIPv6PrefixLen: kotlin.Long? = null,
+    /* Mask length of the global IPv6 address.  */
+    @Json(name = "GlobalIPv6PrefixLen")
+    var globalIPv6PrefixLen: kotlin.Long? = null,
 
-  /* MAC address for the endpoint on this network.  */
-  @Json(name = "MacAddress")
-  var macAddress: kotlin.String? = null,
+    /* MAC address for the endpoint on this network.  */
+    @Json(name = "MacAddress")
+    var macAddress: kotlin.String? = null,
 
-  /* DriverOpts is a mapping of driver options and values. These options are passed directly to the driver and are driver specific.  */
-  @Json(name = "DriverOpts")
-  var driverOpts: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
+    /* DriverOpts is a mapping of driver options and values. These options are passed directly to the driver and are driver specific.  */
+    @Json(name = "DriverOpts")
+    var driverOpts: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
 
 )

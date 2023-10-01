@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -29,13 +29,13 @@ import com.squareup.moshi.JsonClass
 
 data class TaskStatusContainerStatus(
 
-  @Json(name = "ContainerID")
-  var containerID: kotlin.String? = null,
+    @Json(name = "ContainerID")
+    var containerID: kotlin.String? = null,
 
-  @Json(name = "PID")
-  var PID: kotlin.Int? = null,
+    @Json(name = "PID")
+    var PID: kotlin.Int? = null,
 
-  @Json(name = "ExitCode")
-  var exitCode: kotlin.Int? = null
+    @Json(name = "ExitCode")
+    var exitCode: kotlin.Int? = null
 
 )

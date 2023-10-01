@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -29,13 +29,13 @@ import com.squareup.moshi.JsonClass
 
 data class DeviceMapping(
 
-  @Json(name = "PathOnHost")
-  var pathOnHost: kotlin.String? = null,
+    @Json(name = "PathOnHost")
+    var pathOnHost: kotlin.String? = null,
 
-  @Json(name = "PathInContainer")
-  var pathInContainer: kotlin.String? = null,
+    @Json(name = "PathInContainer")
+    var pathInContainer: kotlin.String? = null,
 
-  @Json(name = "CgroupPermissions")
-  var cgroupPermissions: kotlin.String? = null
+    @Json(name = "CgroupPermissions")
+    var cgroupPermissions: kotlin.String? = null
 
 )

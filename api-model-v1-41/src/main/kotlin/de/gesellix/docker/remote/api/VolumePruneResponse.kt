@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,12 +28,12 @@ import com.squareup.moshi.JsonClass
 
 data class VolumePruneResponse(
 
-  /* Volumes that were deleted */
-  @Json(name = "VolumesDeleted")
-  var volumesDeleted: kotlin.collections.MutableList<kotlin.String>? = null,
+    /* Volumes that were deleted */
+    @Json(name = "VolumesDeleted")
+    var volumesDeleted: kotlin.collections.MutableList<kotlin.String>? = null,
 
-  /* Disk space reclaimed in bytes */
-  @Json(name = "SpaceReclaimed")
-  var spaceReclaimed: kotlin.Long? = null
+    /* Disk space reclaimed in bytes */
+    @Json(name = "SpaceReclaimed")
+    var spaceReclaimed: kotlin.Long? = null
 
 )

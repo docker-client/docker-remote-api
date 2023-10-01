@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -27,7 +27,7 @@ import com.squareup.moshi.JsonClass
 
 data class ImageID(
 
-  @Json(name = "ID")
-  var ID: kotlin.String? = null
+    @Json(name = "ID")
+    var ID: kotlin.String? = null
 
 )

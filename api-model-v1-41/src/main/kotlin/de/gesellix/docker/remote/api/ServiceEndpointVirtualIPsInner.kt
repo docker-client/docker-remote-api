@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,10 +28,10 @@ import com.squareup.moshi.JsonClass
 
 data class ServiceEndpointVirtualIPsInner(
 
-  @Json(name = "NetworkID")
-  var networkID: kotlin.String? = null,
+    @Json(name = "NetworkID")
+    var networkID: kotlin.String? = null,
 
-  @Json(name = "Addr")
-  var addr: kotlin.String? = null
+    @Json(name = "Addr")
+    var addr: kotlin.String? = null
 
 )

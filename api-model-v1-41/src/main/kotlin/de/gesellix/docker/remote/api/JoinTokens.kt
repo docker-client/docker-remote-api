@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,12 +28,12 @@ import com.squareup.moshi.JsonClass
 
 data class JoinTokens(
 
-  /* The token workers can use to join the swarm.  */
-  @Json(name = "Worker")
-  var worker: kotlin.String? = null,
+    /* The token workers can use to join the swarm.  */
+    @Json(name = "Worker")
+    var worker: kotlin.String? = null,
 
-  /* The token managers can use to join the swarm.  */
-  @Json(name = "Manager")
-  var manager: kotlin.String? = null
+    /* The token managers can use to join the swarm.  */
+    @Json(name = "Manager")
+    var manager: kotlin.String? = null
 
 )

@@ -221,6 +221,7 @@ Class | Method | HTTP request | Description
 *VolumeApi* | [**volumeInspect**](docs/VolumeApi.md#volumeinspect) | **GET** /volumes/{name} | Inspect a volume
 *VolumeApi* | [**volumeList**](docs/VolumeApi.md#volumelist) | **GET** /volumes | List volumes
 *VolumeApi* | [**volumePrune**](docs/VolumeApi.md#volumeprune) | **POST** /volumes/prune | Delete unused volumes
+*VolumeApi* | [**volumeUpdate**](docs/VolumeApi.md#volumeupdate) | **PUT** /volumes/{name} | \"Update a volume. Valid only for Swarm cluster volumes\" 
 
 
 <a id="documentation-for-models"></a>
@@ -231,12 +232,20 @@ Class | Method | HTTP request | Description
  - [de.gesellix.docker.remote.api.BuildCache](docs/BuildCache.md)
  - [de.gesellix.docker.remote.api.BuildInfo](docs/BuildInfo.md)
  - [de.gesellix.docker.remote.api.BuildPruneResponse](docs/BuildPruneResponse.md)
+ - [de.gesellix.docker.remote.api.ChangeType](docs/ChangeType.md)
  - [de.gesellix.docker.remote.api.ClusterInfo](docs/ClusterInfo.md)
+ - [de.gesellix.docker.remote.api.ClusterVolume](docs/ClusterVolume.md)
+ - [de.gesellix.docker.remote.api.ClusterVolumeInfo](docs/ClusterVolumeInfo.md)
+ - [de.gesellix.docker.remote.api.ClusterVolumePublishStatusInner](docs/ClusterVolumePublishStatusInner.md)
+ - [de.gesellix.docker.remote.api.ClusterVolumeSpec](docs/ClusterVolumeSpec.md)
+ - [de.gesellix.docker.remote.api.ClusterVolumeSpecAccessMode](docs/ClusterVolumeSpecAccessMode.md)
+ - [de.gesellix.docker.remote.api.ClusterVolumeSpecAccessModeAccessibilityRequirements](docs/ClusterVolumeSpecAccessModeAccessibilityRequirements.md)
+ - [de.gesellix.docker.remote.api.ClusterVolumeSpecAccessModeCapacityRange](docs/ClusterVolumeSpecAccessModeCapacityRange.md)
+ - [de.gesellix.docker.remote.api.ClusterVolumeSpecAccessModeSecretsInner](docs/ClusterVolumeSpecAccessModeSecretsInner.md)
  - [de.gesellix.docker.remote.api.Commit](docs/Commit.md)
  - [de.gesellix.docker.remote.api.Config](docs/Config.md)
  - [de.gesellix.docker.remote.api.ConfigCreateRequest](docs/ConfigCreateRequest.md)
  - [de.gesellix.docker.remote.api.ConfigSpec](docs/ConfigSpec.md)
- - [de.gesellix.docker.remote.api.ContainerChangeResponseItem](docs/ContainerChangeResponseItem.md)
  - [de.gesellix.docker.remote.api.ContainerConfig](docs/ContainerConfig.md)
  - [de.gesellix.docker.remote.api.ContainerCreateRequest](docs/ContainerCreateRequest.md)
  - [de.gesellix.docker.remote.api.ContainerCreateRequestAllOf](docs/ContainerCreateRequestAllOf.md)
@@ -271,6 +280,7 @@ Class | Method | HTTP request | Description
  - [de.gesellix.docker.remote.api.ExecConfig](docs/ExecConfig.md)
  - [de.gesellix.docker.remote.api.ExecInspectResponse](docs/ExecInspectResponse.md)
  - [de.gesellix.docker.remote.api.ExecStartConfig](docs/ExecStartConfig.md)
+ - [de.gesellix.docker.remote.api.FilesystemChange](docs/FilesystemChange.md)
  - [de.gesellix.docker.remote.api.GenericResourcesInner](docs/GenericResourcesInner.md)
  - [de.gesellix.docker.remote.api.GenericResourcesInnerDiscreteResourceSpec](docs/GenericResourcesInnerDiscreteResourceSpec.md)
  - [de.gesellix.docker.remote.api.GenericResourcesInnerNamedResourceSpec](docs/GenericResourcesInnerNamedResourceSpec.md)
@@ -422,6 +432,7 @@ Class | Method | HTTP request | Description
  - [de.gesellix.docker.remote.api.VolumeCreateOptions](docs/VolumeCreateOptions.md)
  - [de.gesellix.docker.remote.api.VolumeListResponse](docs/VolumeListResponse.md)
  - [de.gesellix.docker.remote.api.VolumePruneResponse](docs/VolumePruneResponse.md)
+ - [de.gesellix.docker.remote.api.VolumeUpdateRequest](docs/VolumeUpdateRequest.md)
  - [de.gesellix.docker.remote.api.VolumeUsageData](docs/VolumeUsageData.md)
 
 

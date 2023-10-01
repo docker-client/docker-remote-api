@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -30,17 +30,17 @@ import com.squareup.moshi.JsonClass
 
 data class ServiceSpecMode(
 
-  @Json(name = "Replicated")
-  var replicated: ServiceSpecModeReplicated? = null,
+    @Json(name = "Replicated")
+    var replicated: ServiceSpecModeReplicated? = null,
 
-  @Json(name = "Global")
-  var global: kotlin.Any? = null,
+    @Json(name = "Global")
+    var global: kotlin.Any? = null,
 
-  @Json(name = "ReplicatedJob")
-  var replicatedJob: ServiceSpecModeReplicatedJob? = null,
+    @Json(name = "ReplicatedJob")
+    var replicatedJob: ServiceSpecModeReplicatedJob? = null,
 
-  /* The mode used for services which run a task to the completed state on each valid node.  */
-  @Json(name = "GlobalJob")
-  var globalJob: kotlin.Any? = null
+    /* The mode used for services which run a task to the completed state on each valid node.  */
+    @Json(name = "GlobalJob")
+    var globalJob: kotlin.Any? = null
 
 )

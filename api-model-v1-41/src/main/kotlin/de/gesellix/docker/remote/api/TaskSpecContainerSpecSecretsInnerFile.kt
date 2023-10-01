@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -30,20 +30,20 @@ import com.squareup.moshi.JsonClass
 
 data class TaskSpecContainerSpecSecretsInnerFile(
 
-  /* Name represents the final filename in the filesystem.  */
-  @Json(name = "Name")
-  var name: kotlin.String? = null,
+    /* Name represents the final filename in the filesystem.  */
+    @Json(name = "Name")
+    var name: kotlin.String? = null,
 
-  /* UID represents the file UID. */
-  @Json(name = "UID")
-  var UID: kotlin.String? = null,
+    /* UID represents the file UID. */
+    @Json(name = "UID")
+    var UID: kotlin.String? = null,
 
-  /* GID represents the file GID. */
-  @Json(name = "GID")
-  var GID: kotlin.String? = null,
+    /* GID represents the file GID. */
+    @Json(name = "GID")
+    var GID: kotlin.String? = null,
 
-  /* Mode represents the FileMode of the file. */
-  @Json(name = "Mode")
-  var mode: kotlin.Int? = null
+    /* Mode represents the FileMode of the file. */
+    @Json(name = "Mode")
+    var mode: kotlin.Int? = null
 
 )

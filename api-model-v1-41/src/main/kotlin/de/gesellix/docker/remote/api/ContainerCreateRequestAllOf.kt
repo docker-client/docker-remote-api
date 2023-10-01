@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,10 +28,10 @@ import com.squareup.moshi.JsonClass
 
 data class ContainerCreateRequestAllOf(
 
-  @Json(name = "HostConfig")
-  var hostConfig: HostConfig? = null,
+    @Json(name = "HostConfig")
+    var hostConfig: HostConfig? = null,
 
-  @Json(name = "NetworkingConfig")
-  var networkingConfig: NetworkingConfig? = null
+    @Json(name = "NetworkingConfig")
+    var networkingConfig: NetworkingConfig? = null
 
 )

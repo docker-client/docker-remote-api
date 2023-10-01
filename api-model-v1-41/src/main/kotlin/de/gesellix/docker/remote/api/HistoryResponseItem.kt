@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -32,22 +32,22 @@ import com.squareup.moshi.JsonClass
 
 data class HistoryResponseItem(
 
-  @Json(name = "Id")
-  var id: kotlin.String,
+    @Json(name = "Id")
+    var id: kotlin.String,
 
-  @Json(name = "Created")
-  var created: kotlin.Long,
+    @Json(name = "Created")
+    var created: kotlin.Long,
 
-  @Json(name = "CreatedBy")
-  var createdBy: kotlin.String,
+    @Json(name = "CreatedBy")
+    var createdBy: kotlin.String,
 
-  @Json(name = "Tags")
-  var tags: kotlin.collections.MutableList<kotlin.String>?,
+    @Json(name = "Tags")
+    var tags: kotlin.collections.MutableList<kotlin.String>?,
 
-  @Json(name = "Size")
-  var propertySize: kotlin.Long,
+    @Json(name = "Size")
+    var propertySize: kotlin.Long,
 
-  @Json(name = "Comment")
-  var comment: kotlin.String
+    @Json(name = "Comment")
+    var comment: kotlin.String
 
 )

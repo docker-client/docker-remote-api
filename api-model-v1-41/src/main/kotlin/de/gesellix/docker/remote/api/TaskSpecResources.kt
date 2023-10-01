@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,10 +28,10 @@ import com.squareup.moshi.JsonClass
 
 data class TaskSpecResources(
 
-  @Json(name = "Limits")
-  var limits: Limit? = null,
+    @Json(name = "Limits")
+    var limits: Limit? = null,
 
-  @Json(name = "Reservations")
-  var reservations: ResourceObject? = null
+    @Json(name = "Reservations")
+    var reservations: ResourceObject? = null
 
 )

@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -38,51 +38,51 @@ import com.squareup.moshi.JsonClass
 
 data class SystemVersion(
 
-  @Json(name = "Platform")
-  var platform: SystemVersionPlatform? = null,
+    @Json(name = "Platform")
+    var platform: SystemVersionPlatform? = null,
 
-  /* Information about system components  */
-  @Json(name = "Components")
-  var components: kotlin.collections.MutableList<SystemVersionComponentsInner>? = null,
+    /* Information about system components  */
+    @Json(name = "Components")
+    var components: kotlin.collections.MutableList<SystemVersionComponentsInner>? = null,
 
-  /* The version of the daemon */
-  @Json(name = "Version")
-  var version: kotlin.String? = null,
+    /* The version of the daemon */
+    @Json(name = "Version")
+    var version: kotlin.String? = null,
 
-  /* The default (and highest) API version that is supported by the daemon  */
-  @Json(name = "ApiVersion")
-  var apiVersion: kotlin.String? = null,
+    /* The default (and highest) API version that is supported by the daemon  */
+    @Json(name = "ApiVersion")
+    var apiVersion: kotlin.String? = null,
 
-  /* The minimum API version that is supported by the daemon  */
-  @Json(name = "MinAPIVersion")
-  var minAPIVersion: kotlin.String? = null,
+    /* The minimum API version that is supported by the daemon  */
+    @Json(name = "MinAPIVersion")
+    var minAPIVersion: kotlin.String? = null,
 
-  /* The Git commit of the source code that was used to build the daemon  */
-  @Json(name = "GitCommit")
-  var gitCommit: kotlin.String? = null,
+    /* The Git commit of the source code that was used to build the daemon  */
+    @Json(name = "GitCommit")
+    var gitCommit: kotlin.String? = null,
 
-  /* The version Go used to compile the daemon, and the version of the Go runtime in use.  */
-  @Json(name = "GoVersion")
-  var goVersion: kotlin.String? = null,
+    /* The version Go used to compile the daemon, and the version of the Go runtime in use.  */
+    @Json(name = "GoVersion")
+    var goVersion: kotlin.String? = null,
 
-  /* The operating system that the daemon is running on (\"linux\" or \"windows\")  */
-  @Json(name = "Os")
-  var os: kotlin.String? = null,
+    /* The operating system that the daemon is running on (\"linux\" or \"windows\")  */
+    @Json(name = "Os")
+    var os: kotlin.String? = null,
 
-  /* The architecture that the daemon is running on  */
-  @Json(name = "Arch")
-  var arch: kotlin.String? = null,
+    /* The architecture that the daemon is running on  */
+    @Json(name = "Arch")
+    var arch: kotlin.String? = null,
 
-  /* The kernel version (`uname -r`) that the daemon is running on.  This field is omitted when empty.  */
-  @Json(name = "KernelVersion")
-  var kernelVersion: kotlin.String? = null,
+    /* The kernel version (`uname -r`) that the daemon is running on.  This field is omitted when empty.  */
+    @Json(name = "KernelVersion")
+    var kernelVersion: kotlin.String? = null,
 
-  /* Indicates if the daemon is started with experimental features enabled.  This field is omitted when empty / false.  */
-  @Json(name = "Experimental")
-  var experimental: kotlin.Boolean? = null,
+    /* Indicates if the daemon is started with experimental features enabled.  This field is omitted when empty / false.  */
+    @Json(name = "Experimental")
+    var experimental: kotlin.Boolean? = null,
 
-  /* The date and time that the daemon was compiled.  */
-  @Json(name = "BuildTime")
-  var buildTime: kotlin.String? = null
+    /* The date and time that the daemon was compiled.  */
+    @Json(name = "BuildTime")
+    var buildTime: kotlin.String? = null
 
 )

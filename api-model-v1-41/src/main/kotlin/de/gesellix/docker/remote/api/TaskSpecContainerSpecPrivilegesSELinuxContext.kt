@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -31,24 +31,24 @@ import com.squareup.moshi.JsonClass
 
 data class TaskSpecContainerSpecPrivilegesSELinuxContext(
 
-  /* Disable SELinux */
-  @Json(name = "Disable")
-  var disable: kotlin.Boolean? = null,
+    /* Disable SELinux */
+    @Json(name = "Disable")
+    var disable: kotlin.Boolean? = null,
 
-  /* SELinux user label */
-  @Json(name = "User")
-  var user: kotlin.String? = null,
+    /* SELinux user label */
+    @Json(name = "User")
+    var user: kotlin.String? = null,
 
-  /* SELinux role label */
-  @Json(name = "Role")
-  var role: kotlin.String? = null,
+    /* SELinux role label */
+    @Json(name = "Role")
+    var role: kotlin.String? = null,
 
-  /* SELinux type label */
-  @Json(name = "Type")
-  var type: kotlin.String? = null,
+    /* SELinux type label */
+    @Json(name = "Type")
+    var type: kotlin.String? = null,
 
-  /* SELinux level label */
-  @Json(name = "Level")
-  var level: kotlin.String? = null
+    /* SELinux level label */
+    @Json(name = "Level")
+    var level: kotlin.String? = null
 
 )

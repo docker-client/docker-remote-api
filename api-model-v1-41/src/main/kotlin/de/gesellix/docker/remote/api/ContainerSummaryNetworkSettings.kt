@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -27,7 +27,7 @@ import com.squareup.moshi.JsonClass
 
 data class ContainerSummaryNetworkSettings(
 
-  @Json(name = "Networks")
-  var networks: kotlin.collections.MutableMap<kotlin.String, EndpointSettings>? = null
+    @Json(name = "Networks")
+    var networks: kotlin.collections.MutableMap<kotlin.String, EndpointSettings>? = null
 
 )

@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**inline**](#Type) | The mount type:  - &#x60;bind&#x60; a mount of a file or directory from the host into the container. - &#x60;volume&#x60; a docker volume with the given &#x60;Name&#x60;. - &#x60;tmpfs&#x60; a &#x60;tmpfs&#x60;. - &#x60;npipe&#x60; a named pipe from the host into the container.  |  [optional]
+**type** | [**inline**](#Type) | The mount type:  - &#x60;bind&#x60; a mount of a file or directory from the host into the container. - &#x60;volume&#x60; a docker volume with the given &#x60;Name&#x60;. - &#x60;tmpfs&#x60; a &#x60;tmpfs&#x60;. - &#x60;npipe&#x60; a named pipe from the host into the container. - &#x60;cluster&#x60; a Swarm cluster volume  |  [optional]
 **name** | **kotlin.String** | Name is the name reference to the underlying data defined by &#x60;Source&#x60; e.g., the volume name.  |  [optional]
 **source** | **kotlin.String** | Source location of the mount.  For volumes, this contains the storage location of the volume (within &#x60;/var/lib/docker/volumes/&#x60;). For bind-mounts, and &#x60;npipe&#x60;, this contains the source (host) part of the bind-mount. For &#x60;tmpfs&#x60; mount points, this field is empty.  |  [optional]
 **destination** | **kotlin.String** | Destination is the path relative to the container root (&#x60;/&#x60;) where the &#x60;Source&#x60; is mounted inside the container.  |  [optional]
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 ## Enum: Type
 Name | Value
 ---- | -----
-type | bind, volume, tmpfs, npipe
+type | bind, volume, tmpfs, npipe, cluster
 
 
 

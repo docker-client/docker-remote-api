@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -29,38 +29,37 @@ import com.squareup.moshi.JsonClass
 
 data class Health(
 
-  /* Status is one of `none`, `starting`, `healthy` or `unhealthy`  - \"none\"      Indicates there is no healthcheck - \"starting\"  Starting indicates that the container is not yet ready - \"healthy\"   Healthy indicates that the container is running correctly - \"unhealthy\" Unhealthy indicates that the container has a problem  */
-  @Json(name = "Status")
-  var status: Health.Status? = null,
+    /* Status is one of `none`, `starting`, `healthy` or `unhealthy`  - \"none\"      Indicates there is no healthcheck - \"starting\"  Starting indicates that the container is not yet ready - \"healthy\"   Healthy indicates that the container is running correctly - \"unhealthy\" Unhealthy indicates that the container has a problem  */
+    @Json(name = "Status")
+    var status: Health.Status? = null,
 
-  /* FailingStreak is the number of consecutive failures */
-  @Json(name = "FailingStreak")
-  var failingStreak: kotlin.Int? = null,
+    /* FailingStreak is the number of consecutive failures */
+    @Json(name = "FailingStreak")
+    var failingStreak: kotlin.Int? = null,
 
-  /* Log contains the last few results (oldest first)  */
-  @Json(name = "Log")
-  var log: kotlin.collections.MutableList<HealthcheckResult>? = null
+    /* Log contains the last few results (oldest first)  */
+    @Json(name = "Log")
+    var log: kotlin.collections.MutableList<HealthcheckResult>? = null
 
 ) {
 
-  /**
-   * Status is one of `none`, `starting`, `healthy` or `unhealthy`  - \"none\"      Indicates there is no healthcheck - \"starting\"  Starting indicates that the container is not yet ready - \"healthy\"   Healthy indicates that the container is running correctly - \"unhealthy\" Unhealthy indicates that the container has a problem
-   *
-   * Values: None,Starting,Healthy,Unhealthy
-   */
-  @JsonClass(generateAdapter = false)
-  enum class Status(val value: kotlin.String) {
+    /**
+     * Status is one of `none`, `starting`, `healthy` or `unhealthy`  - \"none\"      Indicates there is no healthcheck - \"starting\"  Starting indicates that the container is not yet ready - \"healthy\"   Healthy indicates that the container is running correctly - \"unhealthy\" Unhealthy indicates that the container has a problem
+     *
+     * Values: None,Starting,Healthy,Unhealthy
+     */
+    @JsonClass(generateAdapter = false)
+    enum class Status(val value: kotlin.String) {
+        @Json(name = "none")
+        None("none"),
 
-    @Json(name = "none")
-    None("none"),
+        @Json(name = "starting")
+        Starting("starting"),
 
-    @Json(name = "starting")
-    Starting("starting"),
+        @Json(name = "healthy")
+        Healthy("healthy"),
 
-    @Json(name = "healthy")
-    Healthy("healthy"),
-
-    @Json(name = "unhealthy")
-    Unhealthy("unhealthy");
-  }
+        @Json(name = "unhealthy")
+        Unhealthy("unhealthy");
+    }
 }

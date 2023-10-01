@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,12 +28,12 @@ import com.squareup.moshi.JsonClass
 
 data class MountTmpfsOptions(
 
-  /* The size for the tmpfs mount in bytes. */
-  @Json(name = "SizeBytes")
-  var sizeBytes: kotlin.Long? = null,
+    /* The size for the tmpfs mount in bytes. */
+    @Json(name = "SizeBytes")
+    var sizeBytes: kotlin.Long? = null,
 
-  /* The permission mode for the tmpfs mount in an integer. */
-  @Json(name = "Mode")
-  var mode: kotlin.Int? = null
+    /* The permission mode for the tmpfs mount in an integer. */
+    @Json(name = "Mode")
+    var mode: kotlin.Int? = null
 
 )

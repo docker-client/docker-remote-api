@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,12 +28,12 @@ import com.squareup.moshi.JsonClass
 
 data class SystemAuthResponse(
 
-  /* The status of the authentication */
-  @Json(name = "Status")
-  var status: kotlin.String,
+    /* The status of the authentication */
+    @Json(name = "Status")
+    var status: kotlin.String,
 
-  /* An opaque token used to authenticate a user after a successful login */
-  @Json(name = "IdentityToken")
-  var identityToken: kotlin.String? = null
+    /* An opaque token used to authenticate a user after a successful login */
+    @Json(name = "IdentityToken")
+    var identityToken: kotlin.String? = null
 
 )

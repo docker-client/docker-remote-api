@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,12 +28,12 @@ import com.squareup.moshi.JsonClass
 
 data class Platform(
 
-  /* Architecture represents the hardware architecture (for example, `x86_64`).  */
-  @Json(name = "Architecture")
-  var architecture: kotlin.String? = null,
+    /* Architecture represents the hardware architecture (for example, `x86_64`).  */
+    @Json(name = "Architecture")
+    var architecture: kotlin.String? = null,
 
-  /* OS represents the Operating System (for example, `linux` or `windows`).  */
-  @Json(name = "OS")
-  var OS: kotlin.String? = null
+    /* OS represents the Operating System (for example, `linux` or `windows`).  */
+    @Json(name = "OS")
+    var OS: kotlin.String? = null
 
 )

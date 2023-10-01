@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -27,48 +27,47 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = false)
 enum class LocalNodeState(val value: kotlin.String) {
 
-  @Json(name = "")
-  EMPTY(""),
+    @Json(name = "")
+    EMPTY(""),
 
-  @Json(name = "inactive")
-  Inactive("inactive"),
+    @Json(name = "inactive")
+    Inactive("inactive"),
 
-  @Json(name = "pending")
-  Pending("pending"),
+    @Json(name = "pending")
+    Pending("pending"),
 
-  @Json(name = "active")
-  Active("active"),
+    @Json(name = "active")
+    Active("active"),
 
-  @Json(name = "error")
-  Error("error"),
+    @Json(name = "error")
+    Error("error"),
 
-  @Json(name = "locked")
-  Locked("locked");
-
-  /**
-   * Override toString() to avoid using the enum variable name as the value, and instead use
-   * the actual value defined in the API spec file.
-   *
-   * This solves a problem when the variable name and its value are different, and ensures that
-   * the client sends the correct enum values to the server always.
-   */
-  override fun toString(): String = value
-
-  companion object {
+    @Json(name = "locked")
+    Locked("locked");
 
     /**
-     * Converts the provided [data] to a [String] on success, null otherwise.
+     * Override [toString()] to avoid using the enum variable name as the value, and instead use
+     * the actual value defined in the API spec file.
+     *
+     * This solves a problem when the variable name and its value are different, and ensures that
+     * the client sends the correct enum values to the server always.
      */
-    fun encode(data: kotlin.Any?): kotlin.String? = if (data is LocalNodeState) "$data" else null
+    override fun toString(): String = value
 
-    /**
-     * Returns a valid [LocalNodeState] for [data], null otherwise.
-     */
-    fun decode(data: kotlin.Any?): LocalNodeState? = data?.let {
-      val normalizedData = "$it".lowercase()
-      values().firstOrNull { value ->
-        it == value || normalizedData == "$value".lowercase()
-      }
+    companion object {
+        /**
+         * Converts the provided [data] to a [String] on success, null otherwise.
+         */
+        fun encode(data: kotlin.Any?): kotlin.String? = if (data is LocalNodeState) "$data" else null
+
+        /**
+         * Returns a valid [LocalNodeState] for [data], null otherwise.
+         */
+        fun decode(data: kotlin.Any?): LocalNodeState? = data?.let {
+            val normalizedData = "$it".lowercase()
+            values().firstOrNull { value ->
+                it == value || normalizedData == "$value".lowercase()
+            }
+        }
     }
-  }
 }

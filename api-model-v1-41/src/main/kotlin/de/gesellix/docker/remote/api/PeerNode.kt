@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,12 +28,12 @@ import com.squareup.moshi.JsonClass
 
 data class PeerNode(
 
-  /* Unique identifier of for this node in the swarm. */
-  @Json(name = "NodeID")
-  var nodeID: kotlin.String? = null,
+    /* Unique identifier of for this node in the swarm. */
+    @Json(name = "NodeID")
+    var nodeID: kotlin.String? = null,
 
-  /* IP address and ports at which this node can be reached.  */
-  @Json(name = "Addr")
-  var addr: kotlin.String? = null
+    /* IP address and ports at which this node can be reached.  */
+    @Json(name = "Addr")
+    var addr: kotlin.String? = null
 
 )

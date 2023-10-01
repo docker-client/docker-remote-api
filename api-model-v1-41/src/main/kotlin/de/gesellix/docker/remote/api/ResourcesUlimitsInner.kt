@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -29,16 +29,16 @@ import com.squareup.moshi.JsonClass
 
 data class ResourcesUlimitsInner(
 
-  /* Name of ulimit */
-  @Json(name = "Name")
-  var name: kotlin.String? = null,
+    /* Name of ulimit */
+    @Json(name = "Name")
+    var name: kotlin.String? = null,
 
-  /* Soft limit */
-  @Json(name = "Soft")
-  var soft: kotlin.Int? = null,
+    /* Soft limit */
+    @Json(name = "Soft")
+    var soft: kotlin.Int? = null,
 
-  /* Hard limit */
-  @Json(name = "Hard")
-  var hard: kotlin.Int? = null
+    /* Hard limit */
+    @Json(name = "Hard")
+    var hard: kotlin.Int? = null
 
 )

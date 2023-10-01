@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **timeout** | **kotlin.Long** | The time to wait before considering the check to have hung. It should be 0 or at least 1000000 (1 ms). 0 means inherit.  |  [optional]
 **retries** | **kotlin.Int** | The number of consecutive failures needed to consider a container as unhealthy. 0 means inherit.  |  [optional]
 **startPeriod** | **kotlin.Long** | Start period for the container to initialize before starting health-retries countdown in nanoseconds. It should be 0 or at least 1000000 (1 ms). 0 means inherit.  |  [optional]
+**startInterval** | **kotlin.Long** | The time to wait between checks in nanoseconds during the start period. It should be 0 or at least 1000000 (1 ms). 0 means inherit.  |  [optional]
 
 
 

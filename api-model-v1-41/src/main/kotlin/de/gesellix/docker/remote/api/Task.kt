@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -40,52 +40,52 @@ import com.squareup.moshi.JsonClass
 
 data class Task(
 
-  /* The ID of the task. */
-  @Json(name = "ID")
-  var ID: kotlin.String? = null,
+    /* The ID of the task. */
+    @Json(name = "ID")
+    var ID: kotlin.String? = null,
 
-  @Json(name = "Version")
-  var version: ObjectVersion? = null,
+    @Json(name = "Version")
+    var version: ObjectVersion? = null,
 
-  @Json(name = "CreatedAt")
-  var createdAt: kotlin.String? = null,
+    @Json(name = "CreatedAt")
+    var createdAt: kotlin.String? = null,
 
-  @Json(name = "UpdatedAt")
-  var updatedAt: kotlin.String? = null,
+    @Json(name = "UpdatedAt")
+    var updatedAt: kotlin.String? = null,
 
-  /* Name of the task. */
-  @Json(name = "Name")
-  var name: kotlin.String? = null,
+    /* Name of the task. */
+    @Json(name = "Name")
+    var name: kotlin.String? = null,
 
-  /* User-defined key/value metadata. */
-  @Json(name = "Labels")
-  var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
+    /* User-defined key/value metadata. */
+    @Json(name = "Labels")
+    var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
 
-  @Json(name = "Spec")
-  var spec: TaskSpec? = null,
+    @Json(name = "Spec")
+    var spec: TaskSpec? = null,
 
-  /* The ID of the service this task is part of. */
-  @Json(name = "ServiceID")
-  var serviceID: kotlin.String? = null,
+    /* The ID of the service this task is part of. */
+    @Json(name = "ServiceID")
+    var serviceID: kotlin.String? = null,
 
-  @Json(name = "Slot")
-  var slot: kotlin.Int? = null,
+    @Json(name = "Slot")
+    var slot: kotlin.Int? = null,
 
-  /* The ID of the node that this task is on. */
-  @Json(name = "NodeID")
-  var nodeID: kotlin.String? = null,
+    /* The ID of the node that this task is on. */
+    @Json(name = "NodeID")
+    var nodeID: kotlin.String? = null,
 
-  /* User-defined resources can be either Integer resources (e.g, `SSD=3`) or String resources (e.g, `GPU=UUID1`).  */
-  @Json(name = "AssignedGenericResources")
-  var assignedGenericResources: kotlin.collections.MutableList<GenericResourcesInner>? = null,
+    /* User-defined resources can be either Integer resources (e.g, `SSD=3`) or String resources (e.g, `GPU=UUID1`).  */
+    @Json(name = "AssignedGenericResources")
+    var assignedGenericResources: kotlin.collections.MutableList<GenericResourcesInner>? = null,
 
-  @Json(name = "Status")
-  var status: TaskStatus? = null,
+    @Json(name = "Status")
+    var status: TaskStatus? = null,
 
-  @Json(name = "DesiredState")
-  var desiredState: TaskState? = null,
+    @Json(name = "DesiredState")
+    var desiredState: TaskState? = null,
 
-  @Json(name = "JobIteration")
-  var jobIteration: ObjectVersion? = null
+    @Json(name = "JobIteration")
+    var jobIteration: ObjectVersion? = null
 
 )

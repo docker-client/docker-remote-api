@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,12 +28,12 @@ import com.squareup.moshi.JsonClass
 
 data class ServiceCreateResponse(
 
-  /* The ID of the created service. */
-  @Json(name = "ID")
-  var ID: kotlin.String? = null,
+    /* The ID of the created service. */
+    @Json(name = "ID")
+    var ID: kotlin.String? = null,
 
-  /* Optional warning message */
-  @Json(name = "Warning")
-  var warning: kotlin.String? = null
+    /* Optional warning message */
+    @Json(name = "Warning")
+    var warning: kotlin.String? = null
 
 )

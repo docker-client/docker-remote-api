@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,12 +28,12 @@ import com.squareup.moshi.JsonClass
 
 data class ThrottleDevice(
 
-  /* Device path */
-  @Json(name = "Path")
-  var path: kotlin.String? = null,
+    /* Device path */
+    @Json(name = "Path")
+    var path: kotlin.String? = null,
 
-  /* Rate */
-  @Json(name = "Rate")
-  var rate: kotlin.Long? = null
+    /* Rate */
+    @Json(name = "Rate")
+    var rate: kotlin.Long? = null
 
 )

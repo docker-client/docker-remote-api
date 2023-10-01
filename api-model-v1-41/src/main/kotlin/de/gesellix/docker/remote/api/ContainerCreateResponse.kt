@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,12 +28,12 @@ import com.squareup.moshi.JsonClass
 
 data class ContainerCreateResponse(
 
-  /* The ID of the created container */
-  @Json(name = "Id")
-  var id: kotlin.String,
+    /* The ID of the created container */
+    @Json(name = "Id")
+    var id: kotlin.String,
 
-  /* Warnings encountered when creating the container */
-  @Json(name = "Warnings")
-  var warnings: kotlin.collections.MutableList<kotlin.String>? = null
+    /* Warnings encountered when creating the container */
+    @Json(name = "Warnings")
+    var warnings: kotlin.collections.MutableList<kotlin.String>? = null
 
 )

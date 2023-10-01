@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,12 +28,12 @@ import com.squareup.moshi.JsonClass
 
 data class Driver(
 
-  /* Name of the driver. */
-  @Json(name = "Name")
-  var name: kotlin.String,
+    /* Name of the driver. */
+    @Json(name = "Name")
+    var name: kotlin.String,
 
-  /* Key/value map of driver-specific options. */
-  @Json(name = "Options")
-  var options: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
+    /* Key/value map of driver-specific options. */
+    @Json(name = "Options")
+    var options: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
 
 )

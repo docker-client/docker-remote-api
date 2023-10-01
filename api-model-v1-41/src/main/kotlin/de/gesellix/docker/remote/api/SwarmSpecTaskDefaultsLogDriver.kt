@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,12 +28,12 @@ import com.squareup.moshi.JsonClass
 
 data class SwarmSpecTaskDefaultsLogDriver(
 
-  /* The log driver to use as a default for new tasks.  */
-  @Json(name = "Name")
-  var name: kotlin.String? = null,
+    /* The log driver to use as a default for new tasks.  */
+    @Json(name = "Name")
+    var name: kotlin.String? = null,
 
-  /* Driver-specific options for the selectd log driver, specified as key/value pairs.  */
-  @Json(name = "Options")
-  var options: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
+    /* Driver-specific options for the selectd log driver, specified as key/value pairs.  */
+    @Json(name = "Options")
+    var options: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
 
 )

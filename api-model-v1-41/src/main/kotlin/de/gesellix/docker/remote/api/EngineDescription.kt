@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -29,13 +29,13 @@ import com.squareup.moshi.JsonClass
 
 data class EngineDescription(
 
-  @Json(name = "EngineVersion")
-  var engineVersion: kotlin.String? = null,
+    @Json(name = "EngineVersion")
+    var engineVersion: kotlin.String? = null,
 
-  @Json(name = "Labels")
-  var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
+    @Json(name = "Labels")
+    var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
 
-  @Json(name = "Plugins")
-  var plugins: kotlin.collections.MutableList<EngineDescriptionPluginsInner>? = null
+    @Json(name = "Plugins")
+    var plugins: kotlin.collections.MutableList<EngineDescriptionPluginsInner>? = null
 
 )

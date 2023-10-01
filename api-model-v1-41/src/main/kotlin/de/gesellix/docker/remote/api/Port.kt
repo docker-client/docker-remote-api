@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -30,38 +30,37 @@ import com.squareup.moshi.JsonClass
 
 data class Port(
 
-  /* Port on the container */
-  @Json(name = "PrivatePort")
-  var privatePort: kotlin.Int,
+    /* Port on the container */
+    @Json(name = "PrivatePort")
+    var privatePort: kotlin.Int,
 
-  @Json(name = "Type")
-  var type: Port.Type,
+    @Json(name = "Type")
+    var type: Port.Type,
 
-  /* Host IP address that the container's port is mapped to */
-  @Json(name = "IP")
-  var IP: kotlin.String? = null,
+    /* Host IP address that the container's port is mapped to */
+    @Json(name = "IP")
+    var IP: kotlin.String? = null,
 
-  /* Port exposed on the host */
-  @Json(name = "PublicPort")
-  var publicPort: kotlin.Int? = null
+    /* Port exposed on the host */
+    @Json(name = "PublicPort")
+    var publicPort: kotlin.Int? = null
 
 ) {
 
-  /**
-   *
-   *
-   * Values: Tcp,Udp,Sctp
-   */
-  @JsonClass(generateAdapter = false)
-  enum class Type(val value: kotlin.String) {
+    /**
+     *
+     *
+     * Values: Tcp,Udp,Sctp
+     */
+    @JsonClass(generateAdapter = false)
+    enum class Type(val value: kotlin.String) {
+        @Json(name = "tcp")
+        Tcp("tcp"),
 
-    @Json(name = "tcp")
-    Tcp("tcp"),
+        @Json(name = "udp")
+        Udp("udp"),
 
-    @Json(name = "udp")
-    Udp("udp"),
-
-    @Json(name = "sctp")
-    Sctp("sctp");
-  }
+        @Json(name = "sctp")
+        Sctp("sctp");
+    }
 }

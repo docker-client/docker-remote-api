@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -29,15 +29,15 @@ import com.squareup.moshi.JsonClass
 
 data class MountVolumeOptions(
 
-  /* Populate volume with data from the target. */
-  @Json(name = "NoCopy")
-  var noCopy: kotlin.Boolean? = false,
+    /* Populate volume with data from the target. */
+    @Json(name = "NoCopy")
+    var noCopy: kotlin.Boolean? = false,
 
-  /* User-defined key/value metadata. */
-  @Json(name = "Labels")
-  var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
+    /* User-defined key/value metadata. */
+    @Json(name = "Labels")
+    var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
 
-  @Json(name = "DriverConfig")
-  var driverConfig: MountVolumeOptionsDriverConfig? = null
+    @Json(name = "DriverConfig")
+    var driverConfig: MountVolumeOptionsDriverConfig? = null
 
 )

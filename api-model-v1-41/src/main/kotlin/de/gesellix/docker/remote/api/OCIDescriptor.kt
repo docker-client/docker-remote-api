@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -29,16 +29,16 @@ import com.squareup.moshi.JsonClass
 
 data class OCIDescriptor(
 
-  /* The media type of the object this schema refers to.  */
-  @Json(name = "mediaType")
-  var mediaType: kotlin.String? = null,
+    /* The media type of the object this schema refers to.  */
+    @Json(name = "mediaType")
+    var mediaType: kotlin.String? = null,
 
-  /* The digest of the targeted content.  */
-  @Json(name = "digest")
-  var digest: kotlin.String? = null,
+    /* The digest of the targeted content.  */
+    @Json(name = "digest")
+    var digest: kotlin.String? = null,
 
-  /* The size in bytes of the blob.  */
-  @Json(name = "size")
-  var propertySize: kotlin.Long? = null
+    /* The size in bytes of the blob.  */
+    @Json(name = "size")
+    var propertySize: kotlin.Long? = null
 
 )

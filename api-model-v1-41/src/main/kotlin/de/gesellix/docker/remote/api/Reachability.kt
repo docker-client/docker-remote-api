@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -27,39 +27,38 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = false)
 enum class Reachability(val value: kotlin.String) {
 
-  @Json(name = "unknown")
-  Unknown("unknown"),
+    @Json(name = "unknown")
+    Unknown("unknown"),
 
-  @Json(name = "unreachable")
-  Unreachable("unreachable"),
+    @Json(name = "unreachable")
+    Unreachable("unreachable"),
 
-  @Json(name = "reachable")
-  Reachable("reachable");
-
-  /**
-   * Override toString() to avoid using the enum variable name as the value, and instead use
-   * the actual value defined in the API spec file.
-   *
-   * This solves a problem when the variable name and its value are different, and ensures that
-   * the client sends the correct enum values to the server always.
-   */
-  override fun toString(): String = value
-
-  companion object {
+    @Json(name = "reachable")
+    Reachable("reachable");
 
     /**
-     * Converts the provided [data] to a [String] on success, null otherwise.
+     * Override [toString()] to avoid using the enum variable name as the value, and instead use
+     * the actual value defined in the API spec file.
+     *
+     * This solves a problem when the variable name and its value are different, and ensures that
+     * the client sends the correct enum values to the server always.
      */
-    fun encode(data: kotlin.Any?): kotlin.String? = if (data is Reachability) "$data" else null
+    override fun toString(): String = value
 
-    /**
-     * Returns a valid [Reachability] for [data], null otherwise.
-     */
-    fun decode(data: kotlin.Any?): Reachability? = data?.let {
-      val normalizedData = "$it".lowercase()
-      values().firstOrNull { value ->
-        it == value || normalizedData == "$value".lowercase()
-      }
+    companion object {
+        /**
+         * Converts the provided [data] to a [String] on success, null otherwise.
+         */
+        fun encode(data: kotlin.Any?): kotlin.String? = if (data is Reachability) "$data" else null
+
+        /**
+         * Returns a valid [Reachability] for [data], null otherwise.
+         */
+        fun decode(data: kotlin.Any?): Reachability? = data?.let {
+            val normalizedData = "$it".lowercase()
+            values().firstOrNull { value ->
+                it == value || normalizedData == "$value".lowercase()
+            }
+        }
     }
-  }
 }

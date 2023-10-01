@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -29,61 +29,64 @@ import com.squareup.moshi.JsonClass
  * @param status Low-level details about the volume, provided by the volume driver. Details are returned as a map with key/value pairs: `{\"key\":\"value\",\"key2\":\"value2\"}`.  The `Status` field is optional, and is omitted if the volume driver does not support this feature.
  * @param labels User-defined key/value metadata.
  * @param scope The level at which the volume exists. Either `global` for cluster-wide, or `local` for machine level.
+ * @param clusterVolume
  * @param usageData
  */
 @JsonClass(generateAdapter = true)
 
 data class Volume(
 
-  /* Name of the volume. */
-  @Json(name = "Name")
-  var name: kotlin.String,
+    /* Name of the volume. */
+    @Json(name = "Name")
+    var name: kotlin.String,
 
-  /* Name of the volume driver used by the volume. */
-  @Json(name = "Driver")
-  var driver: kotlin.String,
+    /* Name of the volume driver used by the volume. */
+    @Json(name = "Driver")
+    var driver: kotlin.String,
 
-  /* Mount path of the volume on the host. */
-  @Json(name = "Mountpoint")
-  var mountpoint: kotlin.String,
+    /* Mount path of the volume on the host. */
+    @Json(name = "Mountpoint")
+    var mountpoint: kotlin.String,
 
-  /* The driver specific options used when creating the volume.  */
-  @Json(name = "Options")
-  var options: kotlin.collections.MutableMap<kotlin.String, kotlin.String>?,
+    /* The driver specific options used when creating the volume.  */
+    @Json(name = "Options")
+    var options: kotlin.collections.MutableMap<kotlin.String, kotlin.String>?,
 
-  /* Date/Time the volume was created. */
-  @Json(name = "CreatedAt")
-  var createdAt: kotlin.String? = null,
+    /* Date/Time the volume was created. */
+    @Json(name = "CreatedAt")
+    var createdAt: kotlin.String? = null,
 
-  /* Low-level details about the volume, provided by the volume driver. Details are returned as a map with key/value pairs: `{\"key\":\"value\",\"key2\":\"value2\"}`.  The `Status` field is optional, and is omitted if the volume driver does not support this feature.  */
-  @Json(name = "Status")
-  var status: kotlin.collections.MutableMap<kotlin.String, kotlin.Any>? = null,
+    /* Low-level details about the volume, provided by the volume driver. Details are returned as a map with key/value pairs: `{\"key\":\"value\",\"key2\":\"value2\"}`.  The `Status` field is optional, and is omitted if the volume driver does not support this feature.  */
+    @Json(name = "Status")
+    var status: kotlin.collections.MutableMap<kotlin.String, kotlin.Any>? = null,
 
-  /* User-defined key/value metadata. */
-  @Json(name = "Labels")
-  var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
+    /* User-defined key/value metadata. */
+    @Json(name = "Labels")
+    var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
 
-  /* The level at which the volume exists. Either `global` for cluster-wide, or `local` for machine level.  */
-  @Json(name = "Scope")
-  var scope: Volume.Scope? = Scope.Local,
+    /* The level at which the volume exists. Either `global` for cluster-wide, or `local` for machine level.  */
+    @Json(name = "Scope")
+    var scope: Volume.Scope? = Scope.Local,
 
-  @Json(name = "UsageData")
-  var usageData: VolumeUsageData? = null
+    @Json(name = "ClusterVolume")
+    var clusterVolume: ClusterVolume? = null,
+
+    @Json(name = "UsageData")
+    var usageData: VolumeUsageData? = null
 
 ) {
 
-  /**
-   * The level at which the volume exists. Either `global` for cluster-wide, or `local` for machine level.
-   *
-   * Values: Local,Global
-   */
-  @JsonClass(generateAdapter = false)
-  enum class Scope(val value: kotlin.String) {
+    /**
+     * The level at which the volume exists. Either `global` for cluster-wide, or `local` for machine level.
+     *
+     * Values: Local,Global
+     */
+    @JsonClass(generateAdapter = false)
+    enum class Scope(val value: kotlin.String) {
+        @Json(name = "local")
+        Local("local"),
 
-    @Json(name = "local")
-    Local("local"),
-
-    @Json(name = "global")
-    Global("global");
-  }
+        @Json(name = "global")
+        Global("global");
+    }
 }

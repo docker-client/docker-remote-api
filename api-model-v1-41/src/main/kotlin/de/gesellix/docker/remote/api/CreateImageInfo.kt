@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -23,6 +23,7 @@ import com.squareup.moshi.JsonClass
  *
  * @param id
  * @param error
+ * @param errorDetail
  * @param status
  * @param progress
  * @param progressDetail
@@ -31,19 +32,22 @@ import com.squareup.moshi.JsonClass
 
 data class CreateImageInfo(
 
-  @Json(name = "id")
-  var id: kotlin.String? = null,
+    @Json(name = "id")
+    var id: kotlin.String? = null,
 
-  @Json(name = "error")
-  var error: kotlin.String? = null,
+    @Json(name = "error")
+    var error: kotlin.String? = null,
 
-  @Json(name = "status")
-  var status: kotlin.String? = null,
+    @Json(name = "errorDetail")
+    var errorDetail: ErrorDetail? = null,
 
-  @Json(name = "progress")
-  var progress: kotlin.String? = null,
+    @Json(name = "status")
+    var status: kotlin.String? = null,
 
-  @Json(name = "progressDetail")
-  var progressDetail: ProgressDetail? = null
+    @Json(name = "progress")
+    var progress: kotlin.String? = null,
+
+    @Json(name = "progressDetail")
+    var progressDetail: ProgressDetail? = null
 
 )

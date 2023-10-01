@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,37 +28,36 @@ import com.squareup.moshi.JsonClass
 
 data class RestartPolicy(
 
-  /* - Empty string means not to restart - `no` Do not automatically restart - `always` Always restart - `unless-stopped` Restart always except when the user has manually stopped the container - `on-failure` Restart only when the container exit code is non-zero  */
-  @Json(name = "Name")
-  var name: RestartPolicy.Name? = null,
+    /* - Empty string means not to restart - `no` Do not automatically restart - `always` Always restart - `unless-stopped` Restart always except when the user has manually stopped the container - `on-failure` Restart only when the container exit code is non-zero  */
+    @Json(name = "Name")
+    var name: RestartPolicy.Name? = null,
 
-  /* If `on-failure` is used, the number of times to retry before giving up.  */
-  @Json(name = "MaximumRetryCount")
-  var maximumRetryCount: kotlin.Int? = null
+    /* If `on-failure` is used, the number of times to retry before giving up.  */
+    @Json(name = "MaximumRetryCount")
+    var maximumRetryCount: kotlin.Int? = null
 
 ) {
 
-  /**
-   * - Empty string means not to restart - `no` Do not automatically restart - `always` Always restart - `unless-stopped` Restart always except when the user has manually stopped the container - `on-failure` Restart only when the container exit code is non-zero
-   *
-   * Values: EMPTY,No,Always,UnlessMinusStopped,OnMinusFailure
-   */
-  @JsonClass(generateAdapter = false)
-  enum class Name(val value: kotlin.String) {
+    /**
+     * - Empty string means not to restart - `no` Do not automatically restart - `always` Always restart - `unless-stopped` Restart always except when the user has manually stopped the container - `on-failure` Restart only when the container exit code is non-zero
+     *
+     * Values: EMPTY,No,Always,UnlessMinusStopped,OnMinusFailure
+     */
+    @JsonClass(generateAdapter = false)
+    enum class Name(val value: kotlin.String) {
+        @Json(name = "")
+        EMPTY(""),
 
-    @Json(name = "")
-    EMPTY(""),
+        @Json(name = "no")
+        No("no"),
 
-    @Json(name = "no")
-    No("no"),
+        @Json(name = "always")
+        Always("always"),
 
-    @Json(name = "always")
-    Always("always"),
+        @Json(name = "unless-stopped")
+        UnlessMinusStopped("unless-stopped"),
 
-    @Json(name = "unless-stopped")
-    UnlessMinusStopped("unless-stopped"),
-
-    @Json(name = "on-failure")
-    OnMinusFailure("on-failure");
-  }
+        @Json(name = "on-failure")
+        OnMinusFailure("on-failure");
+    }
 }

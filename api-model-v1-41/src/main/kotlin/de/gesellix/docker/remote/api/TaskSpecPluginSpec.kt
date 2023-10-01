@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -30,19 +30,19 @@ import com.squareup.moshi.JsonClass
 
 data class TaskSpecPluginSpec(
 
-  /* The name or 'alias' to use for the plugin. */
-  @Json(name = "Name")
-  var name: kotlin.String? = null,
+    /* The name or 'alias' to use for the plugin. */
+    @Json(name = "Name")
+    var name: kotlin.String? = null,
 
-  /* The plugin image reference to use. */
-  @Json(name = "Remote")
-  var remote: kotlin.String? = null,
+    /* The plugin image reference to use. */
+    @Json(name = "Remote")
+    var remote: kotlin.String? = null,
 
-  /* Disable the plugin once scheduled. */
-  @Json(name = "Disabled")
-  var disabled: kotlin.Boolean? = null,
+    /* Disable the plugin once scheduled. */
+    @Json(name = "Disabled")
+    var disabled: kotlin.Boolean? = null,
 
-  @Json(name = "PluginPrivilege")
-  var pluginPrivilege: kotlin.collections.MutableList<PluginPrivilege>? = null
+    @Json(name = "PluginPrivilege")
+    var pluginPrivilege: kotlin.collections.MutableList<PluginPrivilege>? = null
 
 )

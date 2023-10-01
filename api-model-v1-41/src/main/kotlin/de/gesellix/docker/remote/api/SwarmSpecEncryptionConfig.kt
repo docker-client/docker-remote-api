@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -27,8 +27,8 @@ import com.squareup.moshi.JsonClass
 
 data class SwarmSpecEncryptionConfig(
 
-  /* If set, generate a key and use it to lock data stored on the managers.  */
-  @Json(name = "AutoLockManagers")
-  var autoLockManagers: kotlin.Boolean? = null
+    /* If set, generate a key and use it to lock data stored on the managers.  */
+    @Json(name = "AutoLockManagers")
+    var autoLockManagers: kotlin.Boolean? = null
 
 )

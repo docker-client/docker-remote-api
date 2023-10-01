@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -28,12 +28,12 @@ import com.squareup.moshi.JsonClass
 
 data class ImageDeleteResponseItem(
 
-  /* The image ID of an image that was untagged */
-  @Json(name = "Untagged")
-  var untagged: kotlin.String? = null,
+    /* The image ID of an image that was untagged */
+    @Json(name = "Untagged")
+    var untagged: kotlin.String? = null,
 
-  /* The image ID of an image that was deleted */
-  @Json(name = "Deleted")
-  var deleted: kotlin.String? = null
+    /* The image ID of an image that was deleted */
+    @Json(name = "Deleted")
+    var deleted: kotlin.String? = null
 
 )

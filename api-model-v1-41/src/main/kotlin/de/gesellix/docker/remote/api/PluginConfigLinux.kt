@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -29,13 +29,13 @@ import com.squareup.moshi.JsonClass
 
 data class PluginConfigLinux(
 
-  @Json(name = "Capabilities")
-  var capabilities: kotlin.collections.MutableList<kotlin.String>,
+    @Json(name = "Capabilities")
+    var capabilities: kotlin.collections.MutableList<kotlin.String>,
 
-  @Json(name = "AllowAllDevices")
-  var allowAllDevices: kotlin.Boolean,
+    @Json(name = "AllowAllDevices")
+    var allowAllDevices: kotlin.Boolean,
 
-  @Json(name = "Devices")
-  var devices: kotlin.collections.MutableList<PluginDevice>
+    @Json(name = "Devices")
+    var devices: kotlin.collections.MutableList<PluginDevice>
 
 )

@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -32,85 +32,83 @@ import com.squareup.moshi.JsonClass
 
 data class EventMessage(
 
-  /* The type of object emitting the event */
-  @Json(name = "Type")
-  var type: EventMessage.Type? = null,
+    /* The type of object emitting the event */
+    @Json(name = "Type")
+    var type: EventMessage.Type? = null,
 
-  /* The type of event */
-  @Json(name = "Action")
-  var action: kotlin.String? = null,
+    /* The type of event */
+    @Json(name = "Action")
+    var action: kotlin.String? = null,
 
-  @Json(name = "Actor")
-  var actor: EventActor? = null,
+    @Json(name = "Actor")
+    var actor: EventActor? = null,
 
-  /* Scope of the event. Engine events are `local` scope. Cluster (Swarm) events are `swarm` scope.  */
-  @Json(name = "scope")
-  var scope: EventMessage.Scope? = null,
+    /* Scope of the event. Engine events are `local` scope. Cluster (Swarm) events are `swarm` scope.  */
+    @Json(name = "scope")
+    var scope: EventMessage.Scope? = null,
 
-  /* Timestamp of event */
-  @Json(name = "time")
-  var time: kotlin.Long? = null,
+    /* Timestamp of event */
+    @Json(name = "time")
+    var time: kotlin.Long? = null,
 
-  /* Timestamp of event, with nanosecond accuracy */
-  @Json(name = "timeNano")
-  var timeNano: kotlin.Long? = null
+    /* Timestamp of event, with nanosecond accuracy */
+    @Json(name = "timeNano")
+    var timeNano: kotlin.Long? = null
 
 ) {
 
-  /**
-   * The type of object emitting the event
-   *
-   * Values: Builder,Config,Container,Daemon,Image,Network,Node,Plugin,Secret,Service,Volume
-   */
-  @JsonClass(generateAdapter = false)
-  enum class Type(val value: kotlin.String) {
+    /**
+     * The type of object emitting the event
+     *
+     * Values: Builder,Config,Container,Daemon,Image,Network,Node,Plugin,Secret,Service,Volume
+     */
+    @JsonClass(generateAdapter = false)
+    enum class Type(val value: kotlin.String) {
+        @Json(name = "builder")
+        Builder("builder"),
 
-    @Json(name = "builder")
-    Builder("builder"),
+        @Json(name = "config")
+        Config("config"),
 
-    @Json(name = "config")
-    Config("config"),
+        @Json(name = "container")
+        Container("container"),
 
-    @Json(name = "container")
-    Container("container"),
+        @Json(name = "daemon")
+        Daemon("daemon"),
 
-    @Json(name = "daemon")
-    Daemon("daemon"),
+        @Json(name = "image")
+        Image("image"),
 
-    @Json(name = "image")
-    Image("image"),
+        @Json(name = "network")
+        Network("network"),
 
-    @Json(name = "network")
-    Network("network"),
+        @Json(name = "node")
+        Node("node"),
 
-    @Json(name = "node")
-    Node("node"),
+        @Json(name = "plugin")
+        Plugin("plugin"),
 
-    @Json(name = "plugin")
-    Plugin("plugin"),
+        @Json(name = "secret")
+        Secret("secret"),
 
-    @Json(name = "secret")
-    Secret("secret"),
+        @Json(name = "service")
+        Service("service"),
 
-    @Json(name = "service")
-    Service("service"),
+        @Json(name = "volume")
+        Volume("volume");
+    }
 
-    @Json(name = "volume")
-    Volume("volume");
-  }
+    /**
+     * Scope of the event. Engine events are `local` scope. Cluster (Swarm) events are `swarm` scope.
+     *
+     * Values: Local,Swarm
+     */
+    @JsonClass(generateAdapter = false)
+    enum class Scope(val value: kotlin.String) {
+        @Json(name = "local")
+        Local("local"),
 
-  /**
-   * Scope of the event. Engine events are `local` scope. Cluster (Swarm) events are `swarm` scope.
-   *
-   * Values: Local,Swarm
-   */
-  @JsonClass(generateAdapter = false)
-  enum class Scope(val value: kotlin.String) {
-
-    @Json(name = "local")
-    Local("local"),
-
-    @Json(name = "swarm")
-    Swarm("swarm");
-  }
+        @Json(name = "swarm")
+        Swarm("swarm");
+    }
 }

@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -31,19 +31,19 @@ import com.squareup.moshi.JsonClass
 
 data class NodeDescription(
 
-  @Json(name = "Hostname")
-  var hostname: kotlin.String? = null,
+    @Json(name = "Hostname")
+    var hostname: kotlin.String? = null,
 
-  @Json(name = "Platform")
-  var platform: Platform? = null,
+    @Json(name = "Platform")
+    var platform: Platform? = null,
 
-  @Json(name = "Resources")
-  var resources: ResourceObject? = null,
+    @Json(name = "Resources")
+    var resources: ResourceObject? = null,
 
-  @Json(name = "Engine")
-  var engine: EngineDescription? = null,
+    @Json(name = "Engine")
+    var engine: EngineDescription? = null,
 
-  @Json(name = "TLSInfo")
-  var tlSInfo: TLSInfo? = null
+    @Json(name = "TLSInfo")
+    var tlSInfo: TLSInfo? = null
 
 )

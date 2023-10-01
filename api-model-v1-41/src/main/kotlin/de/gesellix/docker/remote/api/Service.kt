@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -35,31 +35,31 @@ import com.squareup.moshi.JsonClass
 
 data class Service(
 
-  @Json(name = "ID")
-  var ID: kotlin.String? = null,
+    @Json(name = "ID")
+    var ID: kotlin.String? = null,
 
-  @Json(name = "Version")
-  var version: ObjectVersion? = null,
+    @Json(name = "Version")
+    var version: ObjectVersion? = null,
 
-  @Json(name = "CreatedAt")
-  var createdAt: kotlin.String? = null,
+    @Json(name = "CreatedAt")
+    var createdAt: kotlin.String? = null,
 
-  @Json(name = "UpdatedAt")
-  var updatedAt: kotlin.String? = null,
+    @Json(name = "UpdatedAt")
+    var updatedAt: kotlin.String? = null,
 
-  @Json(name = "Spec")
-  var spec: ServiceSpec? = null,
+    @Json(name = "Spec")
+    var spec: ServiceSpec? = null,
 
-  @Json(name = "Endpoint")
-  var endpoint: ServiceEndpoint? = null,
+    @Json(name = "Endpoint")
+    var endpoint: ServiceEndpoint? = null,
 
-  @Json(name = "UpdateStatus")
-  var updateStatus: ServiceUpdateStatus? = null,
+    @Json(name = "UpdateStatus")
+    var updateStatus: ServiceUpdateStatus? = null,
 
-  @Json(name = "ServiceStatus")
-  var serviceStatus: ServiceServiceStatus? = null,
+    @Json(name = "ServiceStatus")
+    var serviceStatus: ServiceServiceStatus? = null,
 
-  @Json(name = "JobStatus")
-  var jobStatus: ServiceJobStatus? = null
+    @Json(name = "JobStatus")
+    var jobStatus: ServiceJobStatus? = null
 
 )

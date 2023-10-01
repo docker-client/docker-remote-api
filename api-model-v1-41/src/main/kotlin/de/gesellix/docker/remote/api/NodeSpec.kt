@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -30,54 +30,52 @@ import com.squareup.moshi.JsonClass
 
 data class NodeSpec(
 
-  /* Name for the node. */
-  @Json(name = "Name")
-  var name: kotlin.String? = null,
+    /* Name for the node. */
+    @Json(name = "Name")
+    var name: kotlin.String? = null,
 
-  /* User-defined key/value metadata. */
-  @Json(name = "Labels")
-  var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
+    /* User-defined key/value metadata. */
+    @Json(name = "Labels")
+    var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
 
-  /* Role of the node. */
-  @Json(name = "Role")
-  var role: NodeSpec.Role? = null,
+    /* Role of the node. */
+    @Json(name = "Role")
+    var role: NodeSpec.Role? = null,
 
-  /* Availability of the node. */
-  @Json(name = "Availability")
-  var availability: NodeSpec.Availability? = null
+    /* Availability of the node. */
+    @Json(name = "Availability")
+    var availability: NodeSpec.Availability? = null
 
 ) {
 
-  /**
-   * Role of the node.
-   *
-   * Values: Worker,Manager
-   */
-  @JsonClass(generateAdapter = false)
-  enum class Role(val value: kotlin.String) {
+    /**
+     * Role of the node.
+     *
+     * Values: Worker,Manager
+     */
+    @JsonClass(generateAdapter = false)
+    enum class Role(val value: kotlin.String) {
+        @Json(name = "worker")
+        Worker("worker"),
 
-    @Json(name = "worker")
-    Worker("worker"),
+        @Json(name = "manager")
+        Manager("manager");
+    }
 
-    @Json(name = "manager")
-    Manager("manager");
-  }
+    /**
+     * Availability of the node.
+     *
+     * Values: Active,Pause,Drain
+     */
+    @JsonClass(generateAdapter = false)
+    enum class Availability(val value: kotlin.String) {
+        @Json(name = "active")
+        Active("active"),
 
-  /**
-   * Availability of the node.
-   *
-   * Values: Active,Pause,Drain
-   */
-  @JsonClass(generateAdapter = false)
-  enum class Availability(val value: kotlin.String) {
+        @Json(name = "pause")
+        Pause("pause"),
 
-    @Json(name = "active")
-    Active("active"),
-
-    @Json(name = "pause")
-    Pause("pause"),
-
-    @Json(name = "drain")
-    Drain("drain");
-  }
+        @Json(name = "drain")
+        Drain("drain");
+    }
 }

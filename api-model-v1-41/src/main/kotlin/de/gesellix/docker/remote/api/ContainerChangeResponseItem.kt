@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -23,17 +23,23 @@ import com.squareup.moshi.JsonClass
  *
  * @param path Path to file that has changed
  * @param kind Kind of change
+ *
+ * @deprecated use de.gesellix.docker.remote.api.FilesystemChange
  */
+@Deprecated(
+    message = "Replaced with FilesystemChange",
+    replaceWith = ReplaceWith("FilesystemChange", imports = arrayOf("de.gesellix.docker.remote.api.FilesystemChange")),
+    level = DeprecationLevel.WARNING
+)
 @JsonClass(generateAdapter = true)
-
 data class ContainerChangeResponseItem(
 
-  /* Path to file that has changed */
-  @Json(name = "Path")
-  var path: kotlin.String,
+    /* Path to file that has changed */
+    @Json(name = "Path")
+    var path: kotlin.String,
 
-  /* Kind of change */
-  @Json(name = "Kind")
-  var kind: kotlin.Int
+    /* Kind of change */
+    @Json(name = "Kind")
+    var kind: kotlin.Int
 
 )

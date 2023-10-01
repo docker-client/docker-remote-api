@@ -7,10 +7,10 @@
  */
 
 @file:Suppress(
-  "ArrayInDataClass",
-  "EnumEntryName",
-  "RemoveRedundantQualifierName",
-  "UnusedImport"
+    "ArrayInDataClass",
+    "EnumEntryName",
+    "RemoveRedundantQualifierName",
+    "UnusedImport"
 )
 
 package de.gesellix.docker.remote.api
@@ -27,8 +27,8 @@ import com.squareup.moshi.JsonClass
 
 data class NetworkPruneResponse(
 
-  /* Networks that were deleted */
-  @Json(name = "NetworksDeleted")
-  var networksDeleted: kotlin.collections.MutableList<kotlin.String>? = null
+    /* Networks that were deleted */
+    @Json(name = "NetworksDeleted")
+    var networksDeleted: kotlin.collections.MutableList<kotlin.String>? = null
 
 )
