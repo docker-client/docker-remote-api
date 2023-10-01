@@ -16,13 +16,13 @@ plugins {
 
 val remoteApiVersion = "1.41"
 
-logger.lifecycle("checking base: ${file("$buildDir/generated").path}")
+logger.lifecycle("checking base: ${file("${layout.buildDirectory}/generated").path}")
 configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
     filter {
 // see https://github.com/JLLeitschuh/ktlint-gradle/issues/579
         exclude("**/generated/**")
         exclude {
-            it.file.path.startsWith(file("$buildDir/generated").path)
+            it.file.path.startsWith(file("${layout.buildDirectory}/generated").path)
         }
     }
 }
