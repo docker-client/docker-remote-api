@@ -22,8 +22,8 @@ import com.squareup.moshi.JsonClass
  *
  *
  * @param description
- * @param isOfficial
- * @param isAutomated Whether this repository has automated builds enabled.  <p><br /></p>  > **Deprecated**: This field is deprecated and will always > be \"false\" in future.
+ * @param official
+ * @param automated Whether this repository has automated builds enabled.  <p><br /></p>  > **Deprecated**: This field is deprecated and will always > be \"false\" in future.
  * @param name
  * @param starCount
  */
@@ -35,11 +35,11 @@ data class ImageSearchResponseItem(
     var description: kotlin.String? = null,
 
     @Json(name = "is_official")
-    var isOfficial: kotlin.Boolean? = null,
+    var official: kotlin.Boolean? = null,
 
     /* Whether this repository has automated builds enabled.  <p><br /></p>  > **Deprecated**: This field is deprecated and will always > be \"false\" in future.  */
     @Json(name = "is_automated")
-    var isAutomated: kotlin.Boolean? = null,
+    var automated: kotlin.Boolean? = null,
 
     @Json(name = "name")
     var name: kotlin.String? = null,
