@@ -40,7 +40,7 @@ import com.squareup.moshi.JsonClass
  * @param workingDir The working directory for commands to run in.
  * @param entrypoint The entry point for the container as a string or an array of strings.  If the array consists of exactly one empty string (`[\"\"]`) then the entry point is reset to system default (i.e., the entry point used by docker when there is no `ENTRYPOINT` instruction in the `Dockerfile`).
  * @param networkDisabled Disable networking for the container.
- * @param macAddress MAC address of the container.
+ * @param macAddress MAC address of the container.  Deprecated: this field is deprecated in API v1.44 and up. Use EndpointSettings.MacAddress instead.
  * @param onBuild `ONBUILD` metadata that were defined in the image's `Dockerfile`.
  * @param labels User-defined key/value metadata.
  * @param stopSignal Signal to stop a container as a string or unsigned integer.
@@ -107,7 +107,7 @@ data class ContainerCreateRequest(
     // Disable networking for the container.
     @Json(name = "NetworkDisabled")
     var networkDisabled: kotlin.Boolean? = null,
-    // MAC address of the container.
+    // MAC address of the container.  Deprecated: this field is deprecated in API v1.44 and up. Use EndpointSettings.MacAddress instead.
     @Json(name = "MacAddress")
     var macAddress: kotlin.String? = null,
     // `ONBUILD` metadata that were defined in the image's `Dockerfile`.

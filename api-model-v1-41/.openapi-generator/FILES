@@ -27,6 +27,7 @@ docs/ContainerCreateResponse.md
 docs/ContainerInspectResponse.md
 docs/ContainerPruneResponse.md
 docs/ContainerState.md
+docs/ContainerStatus.md
 docs/ContainerSummary.md
 docs/ContainerSummaryHostConfig.md
 docs/ContainerSummaryNetworkSettings.md
@@ -129,6 +130,7 @@ docs/PluginSettings.md
 docs/PluginsInfo.md
 docs/Port.md
 docs/PortBinding.md
+docs/PortStatus.md
 docs/ProcessConfig.md
 docs/ProgressDetail.md
 docs/PushImageInfo.md
@@ -208,7 +210,6 @@ docs/TaskSpecResources.md
 docs/TaskSpecRestartPolicy.md
 docs/TaskState.md
 docs/TaskStatus.md
-docs/TaskStatusContainerStatus.md
 docs/ThrottleDevice.md
 docs/UnlockKeyResponse.md
 docs/Volume.md
@@ -248,6 +249,7 @@ src/main/kotlin/de/gesellix/docker/remote/api/ContainerCreateResponse.kt
 src/main/kotlin/de/gesellix/docker/remote/api/ContainerInspectResponse.kt
 src/main/kotlin/de/gesellix/docker/remote/api/ContainerPruneResponse.kt
 src/main/kotlin/de/gesellix/docker/remote/api/ContainerState.kt
+src/main/kotlin/de/gesellix/docker/remote/api/ContainerStatus.kt
 src/main/kotlin/de/gesellix/docker/remote/api/ContainerSummary.kt
 src/main/kotlin/de/gesellix/docker/remote/api/ContainerSummaryHostConfig.kt
 src/main/kotlin/de/gesellix/docker/remote/api/ContainerSummaryNetworkSettings.kt
@@ -344,6 +346,7 @@ src/main/kotlin/de/gesellix/docker/remote/api/PluginSettings.kt
 src/main/kotlin/de/gesellix/docker/remote/api/PluginsInfo.kt
 src/main/kotlin/de/gesellix/docker/remote/api/Port.kt
 src/main/kotlin/de/gesellix/docker/remote/api/PortBinding.kt
+src/main/kotlin/de/gesellix/docker/remote/api/PortStatus.kt
 src/main/kotlin/de/gesellix/docker/remote/api/ProcessConfig.kt
 src/main/kotlin/de/gesellix/docker/remote/api/ProgressDetail.kt
 src/main/kotlin/de/gesellix/docker/remote/api/PushImageInfo.kt
@@ -417,7 +420,6 @@ src/main/kotlin/de/gesellix/docker/remote/api/TaskSpecResources.kt
 src/main/kotlin/de/gesellix/docker/remote/api/TaskSpecRestartPolicy.kt
 src/main/kotlin/de/gesellix/docker/remote/api/TaskState.kt
 src/main/kotlin/de/gesellix/docker/remote/api/TaskStatus.kt
-src/main/kotlin/de/gesellix/docker/remote/api/TaskStatusContainerStatus.kt
 src/main/kotlin/de/gesellix/docker/remote/api/ThrottleDevice.kt
 src/main/kotlin/de/gesellix/docker/remote/api/UnlockKeyResponse.kt
 src/main/kotlin/de/gesellix/docker/remote/api/Volume.kt

@@ -27,7 +27,7 @@ import com.squareup.moshi.JsonClass
  * @param parent ID of the parent image.  Depending on how the image was created, this field may be empty and is only set for images that were built/created locally. This field is empty if the image was pulled from an image registry.
  * @param comment Optional message that was set when committing or importing the image.
  * @param created Date and time at which the image was created, formatted in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
- * @param container The ID of the container that was used to create the image.  Depending on how the image was created, this field may be empty.
+ * @param container The ID of the container that was used to create the image.  Depending on how the image was created, this field may be empty.  **Deprecated**: this field is kept for backward compatibility, but will be removed in API v1.45.
  * @param containerConfig
  * @param dockerVersion The version of Docker that was used to build the image.  Depending on how the image was created, this field may be empty.
  * @param author Name of the author that was specified when committing the image, or as specified through MAINTAINER (deprecated) in the Dockerfile.
@@ -62,7 +62,7 @@ data class ImageInspect(
     // Date and time at which the image was created, formatted in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
     @Json(name = "Created")
     var created: kotlin.String? = null,
-    // The ID of the container that was used to create the image.  Depending on how the image was created, this field may be empty.
+    // The ID of the container that was used to create the image.  Depending on how the image was created, this field may be empty.  **Deprecated**: this field is kept for backward compatibility, but will be removed in API v1.45.
     @Json(name = "Container")
     var container: kotlin.String? = null,
     @Json(name = "ContainerConfig")

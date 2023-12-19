@@ -23,6 +23,7 @@ import com.squareup.moshi.JsonClass
  *
  * @param ipAMConfig
  * @param links
+ * @param macAddress MAC address for the endpoint on this network. The network driver might ignore this parameter.
  * @param aliases
  * @param networkID Unique ID of the network.
  * @param endpointID Unique ID for the service endpoint in a Sandbox.
@@ -32,7 +33,6 @@ import com.squareup.moshi.JsonClass
  * @param ipv6Gateway IPv6 gateway address.
  * @param globalIPv6Address Global IPv6 address.
  * @param globalIPv6PrefixLen Mask length of the global IPv6 address.
- * @param macAddress MAC address for the endpoint on this network.
  * @param driverOpts DriverOpts is a mapping of driver options and values. These options are passed directly to the driver and are driver specific.
  */
 @JsonClass(generateAdapter = true)
@@ -41,6 +41,9 @@ data class EndpointSettings(
     var ipAMConfig: EndpointIPAMConfig? = null,
     @Json(name = "Links")
     var links: kotlin.collections.MutableList<kotlin.String>? = null,
+    // MAC address for the endpoint on this network. The network driver might ignore this parameter.
+    @Json(name = "MacAddress")
+    var macAddress: kotlin.String? = null,
     @Json(name = "Aliases")
     var aliases: kotlin.collections.MutableList<kotlin.String>? = null,
     // Unique ID of the network.
@@ -67,9 +70,6 @@ data class EndpointSettings(
     // Mask length of the global IPv6 address.
     @Json(name = "GlobalIPv6PrefixLen")
     var globalIPv6PrefixLen: kotlin.Long? = null,
-    // MAC address for the endpoint on this network.
-    @Json(name = "MacAddress")
-    var macAddress: kotlin.String? = null,
     // DriverOpts is a mapping of driver options and values. These options are passed directly to the driver and are driver specific.
     @Json(name = "DriverOpts")
     var driverOpts: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,

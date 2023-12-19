@@ -19,18 +19,12 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 /**
+ * represents the port status of a task's host ports whose service has published host ports
  *
- *
- * @param containerID
- * @param PID
- * @param exitCode
+ * @param ports
  */
 @JsonClass(generateAdapter = true)
-data class TaskStatusContainerStatus(
-    @Json(name = "ContainerID")
-    var containerID: kotlin.String? = null,
-    @Json(name = "PID")
-    var PID: kotlin.Int? = null,
-    @Json(name = "ExitCode")
-    var exitCode: kotlin.Int? = null,
+data class PortStatus(
+    @Json(name = "Ports")
+    var ports: kotlin.collections.MutableList<EndpointPortConfig>? = null,
 )
