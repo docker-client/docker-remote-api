@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **workingDir** | **kotlin.String** | The working directory for commands to run in. |  [optional]
 **entrypoint** | **kotlin.collections.MutableList&lt;kotlin.String&gt;** | The entry point for the container as a string or an array of strings.  If the array consists of exactly one empty string (&#x60;[\&quot;\&quot;]&#x60;) then the entry point is reset to system default (i.e., the entry point used by docker when there is no &#x60;ENTRYPOINT&#x60; instruction in the &#x60;Dockerfile&#x60;).  |  [optional]
 **networkDisabled** | **kotlin.Boolean** | Disable networking for the container. |  [optional]
-**macAddress** | **kotlin.String** | MAC address of the container. |  [optional]
+**macAddress** | **kotlin.String** | MAC address of the container.  Deprecated: this field is deprecated in API v1.44 and up. Use EndpointSettings.MacAddress instead.  |  [optional]
 **onBuild** | **kotlin.collections.MutableList&lt;kotlin.String&gt;** | &#x60;ONBUILD&#x60; metadata that were defined in the image&#39;s &#x60;Dockerfile&#x60;.  |  [optional]
 **labels** | **kotlin.collections.MutableMap&lt;kotlin.String, kotlin.String&gt;** | User-defined key/value metadata. |  [optional]
 **stopSignal** | **kotlin.String** | Signal to stop a container as a string or unsigned integer.  |  [optional]

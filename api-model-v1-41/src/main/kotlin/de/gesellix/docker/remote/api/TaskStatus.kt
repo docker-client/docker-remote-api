@@ -19,13 +19,14 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 /**
- *
+ * represents the status of a task.
  *
  * @param timestamp
  * @param state
  * @param message
  * @param err
  * @param containerStatus
+ * @param portStatus
  */
 @JsonClass(generateAdapter = true)
 data class TaskStatus(
@@ -38,5 +39,7 @@ data class TaskStatus(
     @Json(name = "Err")
     var err: kotlin.String? = null,
     @Json(name = "ContainerStatus")
-    var containerStatus: TaskStatusContainerStatus? = null,
+    var containerStatus: ContainerStatus? = null,
+    @Json(name = "PortStatus")
+    var portStatus: PortStatus? = null,
 )

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **mode** | [**ServiceSpecMode**](ServiceSpecMode.md) |  |  [optional]
 **updateConfig** | [**ServiceSpecUpdateConfig**](ServiceSpecUpdateConfig.md) |  |  [optional]
 **rollbackConfig** | [**ServiceSpecRollbackConfig**](ServiceSpecRollbackConfig.md) |  |  [optional]
-**networks** | [**kotlin.collections.MutableList&lt;NetworkAttachmentConfig&gt;**](NetworkAttachmentConfig.md) | Specifies which networks the service should attach to. |  [optional]
+**networks** | [**kotlin.collections.MutableList&lt;NetworkAttachmentConfig&gt;**](NetworkAttachmentConfig.md) | Specifies which networks the service should attach to.  Deprecated: This field is deprecated since v1.44. The Networks field in TaskSpec should be used instead.  |  [optional]
 **endpointSpec** | [**EndpointSpec**](EndpointSpec.md) |  |  [optional]
 
 

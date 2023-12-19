@@ -1300,7 +1300,10 @@ definitions:
         type: "boolean"
 #        x-nullable: true
       MacAddress:
-        description: "MAC address of the container."
+        description: |
+          MAC address of the container.
+
+          Deprecated: this field is deprecated in API v1.44 and up. Use EndpointSettings.MacAddress instead.
         type: "string"
 #        x-nullable: true
       OnBuild:
@@ -1369,6 +1372,7 @@ definitions:
             LinkLocalIPs:
               - "169.254.34.68"
               - "fe80::3468"
+          MacAddress: "02:42:ac:12:05:02"
           Links:
             - "container_1"
             - "container_2"
@@ -1730,10 +1734,16 @@ definitions:
           The ID of the container that was used to create the image.
 
           Depending on how the image was created, this field may be empty.
+
+          **Deprecated**: this field is kept for backward compatibility, but
+          will be removed in API v1.45.
         type: "string"
         x-nullable: false
         example: "65974bc86f1770ae4bff79f651ebdbce166ae9aada632ee3fa9af3a264911735"
       ContainerConfig:
+        description: |
+          **Deprecated**: this field is kept for backward compatibility, but
+          will be removed in API v1.45.
         $ref: "#/definitions/ContainerConfig"
       DockerVersion:
         description: |
@@ -2448,6 +2458,11 @@ definitions:
         example:
           - "container_1"
           - "container_2"
+      MacAddress:
+        description: |
+          MAC address for the endpoint on this network. The network driver might ignore this parameter.
+        type: "string"
+        example: "02:42:ac:11:00:04"
       Aliases:
         type: "array"
         items:
@@ -2498,11 +2513,6 @@ definitions:
         type: "integer"
         format: "int64"
         example: 64
-      MacAddress:
-        description: |
-          MAC address for the endpoint on this network.
-        type: "string"
-        example: "02:42:ac:11:00:04"
       DriverOpts:
         description: |
           DriverOpts is a mapping of driver options and values. These options
@@ -3942,6 +3952,44 @@ definitions:
       - "remove"
       - "orphaned"
 
+  ContainerStatus:
+    type: "object"
+    description: "represents the status of a container."
+    properties:
+      ContainerID:
+        type: "string"
+      PID:
+        type: "integer"
+      ExitCode:
+        type: "integer"
+
+  PortStatus:
+    type: "object"
+    description: "represents the port status of a task's host ports whose service has published host ports"
+    properties:
+      Ports:
+        type: "array"
+        items:
+          $ref: "#/definitions/EndpointPortConfig"
+
+  TaskStatus:
+    type: "object"
+    description: "represents the status of a task."
+    properties:
+      Timestamp:
+        type: "string"
+        format: "dateTime"
+      State:
+        $ref: "#/definitions/TaskState"
+      Message:
+        type: "string"
+      Err:
+        type: "string"
+      ContainerStatus:
+        $ref: "#/definitions/ContainerStatus"
+      PortStatus:
+        $ref: "#/definitions/PortStatus"
+
   Task:
     type: "object"
     properties:
@@ -3977,26 +4025,7 @@ definitions:
       AssignedGenericResources:
         $ref: "#/definitions/GenericResources"
       Status:
-        type: "object"
-        properties:
-          Timestamp:
-            type: "string"
-            format: "dateTime"
-          State:
-            $ref: "#/definitions/TaskState"
-          Message:
-            type: "string"
-          Err:
-            type: "string"
-          ContainerStatus:
-            type: "object"
-            properties:
-              ContainerID:
-                type: "string"
-              PID:
-                type: "integer"
-              ExitCode:
-                type: "integer"
+        $ref: "#/definitions/TaskStatus"
       DesiredState:
         $ref: "#/definitions/TaskState"
       JobIteration:
@@ -4212,7 +4241,10 @@ definitions:
               - "stop-first"
               - "start-first"
       Networks:
-        description: "Specifies which networks the service should attach to."
+        description: |
+          Specifies which networks the service should attach to.
+
+          Deprecated: This field is deprecated since v1.44. The Networks field in TaskSpec should be used instead.
         type: "array"
         items:
           $ref: "#/definitions/NetworkAttachmentConfig"
@@ -4454,6 +4486,37 @@ definitions:
         description: "The image ID of an image that was deleted"
         type: "string"
 
+  ServiceCreateResponse:
+    type: "object"
+    description: |
+      contains the information returned to a client on the
+      creation of a new service.
+    properties:
+      ID:
+        description: "The ID of the created service."
+        type: "string"
+        x-nullable: false
+        example: "ak7w3gjqoa3kuz8xcpnyy0pvl"
+      Warning:
+        description: |
+          Optional warning message.
+
+          deprecated: this is only kept for backwards compatibility and will be removed.
+        type: "string"
+        x-nullable: true
+        example:  "unable to pin image doesnotexist:latest to digest: image library/doesnotexist:latest not found"
+      Warnings:
+        description: |
+          Optional warning message.
+
+          FIXME(thaJeztah): this should have "omitempty" in the generated type.
+        type: "array"
+        x-nullable: true
+        items:
+          type: "string"
+        example:
+          - "unable to pin image doesnotexist:latest to digest: image library/doesnotexist:latest not found"
+
   ServiceUpdateResponse:
     type: "object"
     properties:
@@ -4463,7 +4526,8 @@ definitions:
         items:
           type: "string"
     example:
-      Warning: "unable to pin image doesnotexist:latest to digest: image library/doesnotexist:latest not found"
+      Warnings:
+        - "unable to pin image doesnotexist:latest to digest: image library/doesnotexist:latest not found"
 
   ContainerSummary:
     type: "object"
@@ -5734,22 +5798,22 @@ definitions:
         type: "integer"
         format: "int64"
         example: 3987495
-      # TODO Not yet including these fields for now, as they are nil / omitted in our response.
-      # urls:
-      #   description: |
-      #     List of URLs from which this object MAY be downloaded.
-      #   type: "array"
-      #   items:
-      #     type: "string"
-      #     format: "uri"
-      # annotations:
-      #   description: |
-      #     Arbitrary metadata relating to the targeted content.
-      #   type: "object"
-      #   additionalProperties:
-      #     type: "string"
-      # platform:
-      #   $ref: "#/definitions/OCIPlatform"
+        # TODO Not yet including these fields for now, as they are nil / omitted in our response.
+        # urls:
+        #   description: |
+        #     List of URLs from which this object MAY be downloaded.
+        #   type: "array"
+        #   items:
+        #     type: "string"
+        #     format: "uri"
+        # annotations:
+        #   description: |
+        #     Arbitrary metadata relating to the targeted content.
+        #   type: "object"
+        #   additionalProperties:
+        #     type: "string"
+        # platform:
+        #   $ref: "#/definitions/OCIPlatform"
 
   OCIPlatform:
     type: "object"
@@ -8001,6 +8065,7 @@ paths:
             - `label=key` or `label="key=value"` of an image label
             - `reference`=(`<image-name>[:<tag>]`)
             - `since`=(`<image-name>[:<tag>]`,  `<image id>` or `<image@digest>`)
+            - `until=<timestamp>`
           type: "string"
         - name: "shared-size"
           in: "query"
@@ -10017,6 +10082,7 @@ paths:
   /networks/{id}/connect:
     post:
       summary: "Connect a container to a network"
+      description: "The network must be either a local-scoped network or a swarm-scoped network with the `attachable` option set. A network cannot be re-attached to a running container"
       operationId: "NetworkConnect"
       consumes:
         - "application/json"
@@ -10028,7 +10094,7 @@ paths:
           schema:
             $ref: "#/definitions/ErrorResponse"
         403:
-          description: "Operation not supported for swarm scoped networks"
+          description: "Operation forbidden or not supported for swarm scoped networks"
           schema:
             $ref: "#/definitions/ErrorResponse"
         404:
@@ -10063,6 +10129,7 @@ paths:
                 IPAMConfig:
                   IPv4Address: "172.24.56.89"
                   IPv6Address: "2001:db8::5689"
+                MacAddress: "02:42:ac:12:05:02"
       tags: ["Network"]
 
   /networks/{id}/disconnect:
@@ -11056,18 +11123,7 @@ paths:
         201:
           description: "no error"
           schema:
-            type: "object"
-            title: "ServiceCreateResponse"
-            properties:
-              ID:
-                description: "The ID of the created service."
-                type: "string"
-              Warning:
-                description: "Optional warning message"
-                type: "string"
-            example:
-              ID: "ak7w3gjqoa3kuz8xcpnyy0pvl"
-              Warning: "unable to pin image doesnotexist:latest to digest: image library/doesnotexist:latest not found"
+            $ref: "#/definitions/ServiceCreateResponse"
         400:
           description: "bad parameter"
           schema:

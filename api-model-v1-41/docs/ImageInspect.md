@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **parent** | **kotlin.String** | ID of the parent image.  Depending on how the image was created, this field may be empty and is only set for images that were built/created locally. This field is empty if the image was pulled from an image registry.  |  [optional]
 **comment** | **kotlin.String** | Optional message that was set when committing or importing the image.  |  [optional]
 **created** | **kotlin.String** | Date and time at which the image was created, formatted in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.  |  [optional]
-**container** | **kotlin.String** | The ID of the container that was used to create the image.  Depending on how the image was created, this field may be empty.  |  [optional]
+**container** | **kotlin.String** | The ID of the container that was used to create the image.  Depending on how the image was created, this field may be empty.  **Deprecated**: this field is kept for backward compatibility, but will be removed in API v1.45.  |  [optional]
 **containerConfig** | [**ContainerConfig**](ContainerConfig.md) |  |  [optional]
 **dockerVersion** | **kotlin.String** | The version of Docker that was used to build the image.  Depending on how the image was created, this field may be empty.  |  [optional]
 **author** | **kotlin.String** | Name of the author that was specified when committing the image, or as specified through MAINTAINER (deprecated) in the Dockerfile.  |  [optional]

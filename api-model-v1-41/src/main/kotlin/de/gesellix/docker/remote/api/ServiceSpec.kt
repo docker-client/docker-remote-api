@@ -27,7 +27,7 @@ import com.squareup.moshi.JsonClass
  * @param mode
  * @param updateConfig
  * @param rollbackConfig
- * @param networks Specifies which networks the service should attach to.
+ * @param networks Specifies which networks the service should attach to.  Deprecated: This field is deprecated since v1.44. The Networks field in TaskSpec should be used instead.
  * @param endpointSpec
  */
 @JsonClass(generateAdapter = true)
@@ -46,7 +46,7 @@ data class ServiceSpec(
     var updateConfig: ServiceSpecUpdateConfig? = null,
     @Json(name = "RollbackConfig")
     var rollbackConfig: ServiceSpecRollbackConfig? = null,
-    // Specifies which networks the service should attach to.
+    // Specifies which networks the service should attach to.  Deprecated: This field is deprecated since v1.44. The Networks field in TaskSpec should be used instead.
     @Json(name = "Networks")
     var networks: kotlin.collections.MutableList<NetworkAttachmentConfig>? = null,
     @Json(name = "EndpointSpec")

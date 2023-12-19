@@ -8,7 +8,8 @@ Name | Type | Description | Notes
 **state** | [**TaskState**](TaskState.md) |  |  [optional]
 **message** | **kotlin.String** |  |  [optional]
 **err** | **kotlin.String** |  |  [optional]
-**containerStatus** | [**TaskStatusContainerStatus**](TaskStatusContainerStatus.md) |  |  [optional]
+**containerStatus** | [**ContainerStatus**](ContainerStatus.md) |  |  [optional]
+**portStatus** | [**PortStatus**](PortStatus.md) |  |  [optional]
 
 
 

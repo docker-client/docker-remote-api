@@ -19,17 +19,21 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 /**
- *
+ * contains the information returned to a client on the creation of a new service.
  *
  * @param ID The ID of the created service.
- * @param warning Optional warning message
+ * @param warning Optional warning message.  deprecated: this is only kept for backwards compatibility and will be removed.
+ * @param warnings Optional warning message.  FIXME(thaJeztah): this should have \"omitempty\" in the generated type.
  */
 @JsonClass(generateAdapter = true)
 data class ServiceCreateResponse(
     // The ID of the created service.
     @Json(name = "ID")
     var ID: kotlin.String? = null,
-    // Optional warning message
+    // Optional warning message.  deprecated: this is only kept for backwards compatibility and will be removed.
     @Json(name = "Warning")
     var warning: kotlin.String? = null,
+    // Optional warning message.  FIXME(thaJeztah): this should have \"omitempty\" in the generated type.
+    @Json(name = "Warnings")
+    var warnings: kotlin.collections.MutableList<kotlin.String>? = null,
 )
