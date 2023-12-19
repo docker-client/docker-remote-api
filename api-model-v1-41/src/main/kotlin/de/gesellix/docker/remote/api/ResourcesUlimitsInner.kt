@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -26,19 +26,14 @@ import com.squareup.moshi.JsonClass
  * @param hard Hard limit
  */
 @JsonClass(generateAdapter = true)
-
 data class ResourcesUlimitsInner(
-
-    /* Name of ulimit */
+    // Name of ulimit
     @Json(name = "Name")
     var name: kotlin.String? = null,
-
-    /* Soft limit */
+    // Soft limit
     @Json(name = "Soft")
     var soft: kotlin.Int? = null,
-
-    /* Hard limit */
+    // Hard limit
     @Json(name = "Hard")
-    var hard: kotlin.Int? = null
-
+    var hard: kotlin.Int? = null,
 )

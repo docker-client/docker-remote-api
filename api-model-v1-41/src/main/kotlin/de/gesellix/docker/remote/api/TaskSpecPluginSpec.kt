@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -27,22 +27,16 @@ import com.squareup.moshi.JsonClass
  * @param pluginPrivilege
  */
 @JsonClass(generateAdapter = true)
-
 data class TaskSpecPluginSpec(
-
-    /* The name or 'alias' to use for the plugin. */
+    // The name or 'alias' to use for the plugin.
     @Json(name = "Name")
     var name: kotlin.String? = null,
-
-    /* The plugin image reference to use. */
+    // The plugin image reference to use.
     @Json(name = "Remote")
     var remote: kotlin.String? = null,
-
-    /* Disable the plugin once scheduled. */
+    // Disable the plugin once scheduled.
     @Json(name = "Disabled")
     var disabled: kotlin.Boolean? = null,
-
     @Json(name = "PluginPrivilege")
-    var pluginPrivilege: kotlin.collections.MutableList<PluginPrivilege>? = null
-
+    var pluginPrivilege: kotlin.collections.MutableList<PluginPrivilege>? = null,
 )

@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -26,23 +26,17 @@ import com.squareup.moshi.JsonClass
  * @param publishContext A map of strings to strings returned by the CSI controller plugin when a volume is published.
  */
 @JsonClass(generateAdapter = true)
-
 data class ClusterVolumePublishStatusInner(
-
-    /* The ID of the Swarm node the volume is published on.  */
+    // The ID of the Swarm node the volume is published on.
     @Json(name = "NodeID")
     var nodeID: kotlin.String? = null,
-
-    /* The published state of the volume. * `pending-publish` The volume should be published to this node, but the call to the controller plugin to do so has not yet been successfully completed. * `published` The volume is published successfully to the node. * `pending-node-unpublish` The volume should be unpublished from the node, and the manager is awaiting confirmation from the worker that it has done so. * `pending-controller-unpublish` The volume is successfully unpublished from the node, but has not yet been successfully unpublished on the controller.  */
+    // The published state of the volume. * `pending-publish` The volume should be published to this node, but the call to the controller plugin to do so has not yet been successfully completed. * `published` The volume is published successfully to the node. * `pending-node-unpublish` The volume should be unpublished from the node, and the manager is awaiting confirmation from the worker that it has done so. * `pending-controller-unpublish` The volume is successfully unpublished from the node, but has not yet been successfully unpublished on the controller.
     @Json(name = "State")
     var state: ClusterVolumePublishStatusInner.State? = null,
-
-    /* A map of strings to strings returned by the CSI controller plugin when a volume is published.  */
+    // A map of strings to strings returned by the CSI controller plugin when a volume is published.
     @Json(name = "PublishContext")
-    var publishContext: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
-
+    var publishContext: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
 ) {
-
     /**
      * The published state of the volume. * `pending-publish` The volume should be published to this node, but the call to the controller plugin to do so has not yet been successfully completed. * `published` The volume is published successfully to the node. * `pending-node-unpublish` The volume should be unpublished from the node, and the manager is awaiting confirmation from the worker that it has done so. * `pending-controller-unpublish` The volume is successfully unpublished from the node, but has not yet been successfully unpublished on the controller.
      *
@@ -60,6 +54,6 @@ data class ClusterVolumePublishStatusInner(
         PendingMinusNodeMinusUnpublish("pending-node-unpublish"),
 
         @Json(name = "pending-controller-unpublish")
-        PendingMinusControllerMinusUnpublish("pending-controller-unpublish");
+        PendingMinusControllerMinusUnpublish("pending-controller-unpublish"),
     }
 }

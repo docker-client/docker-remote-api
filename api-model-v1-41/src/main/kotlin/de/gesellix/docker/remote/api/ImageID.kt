@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -24,10 +24,7 @@ import com.squareup.moshi.JsonClass
  * @param ID
  */
 @JsonClass(generateAdapter = true)
-
 data class ImageID(
-
     @Json(name = "ID")
-    var ID: kotlin.String? = null
-
+    var ID: kotlin.String? = null,
 )

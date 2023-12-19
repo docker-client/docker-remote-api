@@ -18,7 +18,7 @@ insert_final_newline = true
 # it's automatically set to 100 on `ktlint --android ...` (per Android Kotlin Style Guide)
 max_line_length = off
 trim_trailing_whitespace = true
-ktlint_disabled_rules = no-wildcard-imports
+# ktlint_disabled_rules = no-wildcard-imports
 # ktlint_standard_no-wildcard-imports = disabled
 # ktlint_standard_enum-entry-name-case = disabled
 # ktlint_standard = disabled

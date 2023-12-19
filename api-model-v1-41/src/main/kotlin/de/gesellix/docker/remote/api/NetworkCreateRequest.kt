@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -33,46 +33,34 @@ import com.squareup.moshi.JsonClass
  * @param labels User-defined key/value metadata.
  */
 @JsonClass(generateAdapter = true)
-
 data class NetworkCreateRequest(
-
-    /* The network's name. */
+    // The network's name.
     @Json(name = "Name")
     var name: kotlin.String,
-
-    /* Deprecated: CheckDuplicate is now always enabled.  */
+    // Deprecated: CheckDuplicate is now always enabled.
     @Json(name = "CheckDuplicate")
     var checkDuplicate: kotlin.Boolean? = null,
-
-    /* Name of the network driver plugin to use. */
+    // Name of the network driver plugin to use.
     @Json(name = "Driver")
     var driver: kotlin.String? = "bridge",
-
-    /* Restrict external access to the network. */
+    // Restrict external access to the network.
     @Json(name = "Internal")
     var `internal`: kotlin.Boolean? = null,
-
-    /* Globally scoped network is manually attachable by regular containers from workers in swarm mode.  */
+    // Globally scoped network is manually attachable by regular containers from workers in swarm mode.
     @Json(name = "Attachable")
     var attachable: kotlin.Boolean? = null,
-
-    /* Ingress network is the network which provides the routing-mesh in swarm mode.  */
+    // Ingress network is the network which provides the routing-mesh in swarm mode.
     @Json(name = "Ingress")
     var ingress: kotlin.Boolean? = null,
-
     @Json(name = "IPAM")
     var IPAM: IPAM? = null,
-
-    /* Enable IPv6 on the network. */
+    // Enable IPv6 on the network.
     @Json(name = "EnableIPv6")
     var enableIPv6: kotlin.Boolean? = null,
-
-    /* Network specific options to be used by the drivers. */
+    // Network specific options to be used by the drivers.
     @Json(name = "Options")
     var options: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
-
-    /* User-defined key/value metadata. */
+    // User-defined key/value metadata.
     @Json(name = "Labels")
-    var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
-
+    var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
 )

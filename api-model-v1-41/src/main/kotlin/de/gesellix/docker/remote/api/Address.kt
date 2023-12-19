@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,15 +25,11 @@ import com.squareup.moshi.JsonClass
  * @param prefixLen Mask length of the IP address.
  */
 @JsonClass(generateAdapter = true)
-
 data class Address(
-
-    /* IP address. */
+    // IP address.
     @Json(name = "Addr")
     var addr: kotlin.String? = null,
-
-    /* Mask length of the IP address. */
+    // Mask length of the IP address.
     @Json(name = "PrefixLen")
-    var prefixLen: kotlin.Int? = null
-
+    var prefixLen: kotlin.Int? = null,
 )

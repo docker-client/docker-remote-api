@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -26,17 +26,12 @@ import com.squareup.moshi.JsonClass
  * @param addr IP address of the node.
  */
 @JsonClass(generateAdapter = true)
-
 data class NodeStatus(
-
     @Json(name = "State")
     var state: NodeState? = null,
-
     @Json(name = "Message")
     var message: kotlin.String? = null,
-
-    /* IP address of the node. */
+    // IP address of the node.
     @Json(name = "Addr")
-    var addr: kotlin.String? = null
-
+    var addr: kotlin.String? = null,
 )

@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -26,19 +26,14 @@ import com.squareup.moshi.JsonClass
  * @param details Key/value pairs of strings with additional information about the component. These values are intended for informational purposes only, and their content is not defined, and not part of the API specification.  These messages can be printed by the client as information to the user.
  */
 @JsonClass(generateAdapter = true)
-
 data class SystemVersionComponentsInner(
-
-    /* Name of the component  */
+    // Name of the component
     @Json(name = "Name")
     var name: kotlin.String,
-
-    /* Version of the component  */
+    // Version of the component
     @Json(name = "Version")
     var version: kotlin.String,
-
-    /* Key/value pairs of strings with additional information about the component. These values are intended for informational purposes only, and their content is not defined, and not part of the API specification.  These messages can be printed by the client as information to the user.  */
+    // Key/value pairs of strings with additional information about the component. These values are intended for informational purposes only, and their content is not defined, and not part of the API specification.  These messages can be printed by the client as information to the user.
     @Json(name = "Details")
-    var details: kotlin.Any? = null
-
+    var details: kotlin.Any? = null,
 )

@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,17 +25,12 @@ import com.squareup.moshi.JsonClass
  * @param config
  */
 @JsonClass(generateAdapter = true)
-
 data class HostConfigAllOfLogConfig(
-
     @Json(name = "Type")
     var type: HostConfigAllOfLogConfig.Type? = null,
-
     @Json(name = "Config")
-    var config: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
-
+    var config: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
 ) {
-
     /**
      *
      *
@@ -68,6 +63,6 @@ data class HostConfigAllOfLogConfig(
         Etwlogs("etwlogs"),
 
         @Json(name = "none")
-        None("none");
+        None("none"),
     }
 }

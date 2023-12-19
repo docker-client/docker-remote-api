@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,15 +25,11 @@ import com.squareup.moshi.JsonClass
  * @param runtimeArgs List of command-line arguments to pass to the runtime when invoked.
  */
 @JsonClass(generateAdapter = true)
-
 data class Runtime(
-
-    /* Name and, optional, path, of the OCI executable binary.  If the path is omitted, the daemon searches the host's `$PATH` for the binary and uses the first result.  */
+    // Name and, optional, path, of the OCI executable binary.  If the path is omitted, the daemon searches the host's `$PATH` for the binary and uses the first result.
     @Json(name = "path")
     var path: kotlin.String? = null,
-
-    /* List of command-line arguments to pass to the runtime when invoked.  */
+    // List of command-line arguments to pass to the runtime when invoked.
     @Json(name = "runtimeArgs")
-    var runtimeArgs: kotlin.collections.MutableList<kotlin.String>? = null
-
+    var runtimeArgs: kotlin.collections.MutableList<kotlin.String>? = null,
 )

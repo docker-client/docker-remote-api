@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -26,21 +26,15 @@ import com.squareup.moshi.JsonClass
  * @param protocolScheme Protocol to use for clients connecting to the plugin.
  */
 @JsonClass(generateAdapter = true)
-
 data class PluginConfigInterface(
-
     @Json(name = "Types")
     var types: kotlin.collections.MutableList<PluginInterfaceType>,
-
     @Json(name = "Socket")
     var socket: kotlin.String,
-
-    /* Protocol to use for clients connecting to the plugin. */
+    // Protocol to use for clients connecting to the plugin.
     @Json(name = "ProtocolScheme")
-    var protocolScheme: PluginConfigInterface.ProtocolScheme? = null
-
+    var protocolScheme: PluginConfigInterface.ProtocolScheme? = null,
 ) {
-
     /**
      * Protocol to use for clients connecting to the plugin.
      *
@@ -52,6 +46,6 @@ data class PluginConfigInterface(
         EMPTY(""),
 
         @Json(name = "moby.plugins.http/v1")
-        MobyPeriodPluginsPeriodHttpSlashV1("moby.plugins.http/v1");
+        MobyPeriodPluginsPeriodHttpSlashV1("moby.plugins.http/v1"),
     }
 }

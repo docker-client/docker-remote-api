@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,15 +25,11 @@ import com.squareup.moshi.JsonClass
  * @param manager The token managers can use to join the swarm.
  */
 @JsonClass(generateAdapter = true)
-
 data class JoinTokens(
-
-    /* The token workers can use to join the swarm.  */
+    // The token workers can use to join the swarm.
     @Json(name = "Worker")
     var worker: kotlin.String? = null,
-
-    /* The token managers can use to join the swarm.  */
+    // The token managers can use to join the swarm.
     @Json(name = "Manager")
-    var manager: kotlin.String? = null
-
+    var manager: kotlin.String? = null,
 )

@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,14 +25,10 @@ import com.squareup.moshi.JsonClass
  * @param error
  */
 @JsonClass(generateAdapter = true)
-
 data class ContainerWaitResponse(
-
-    /* Exit code of the container */
+    // Exit code of the container
     @Json(name = "StatusCode")
     var statusCode: kotlin.Long,
-
     @Json(name = "Error")
-    var error: ContainerWaitExitError? = null
-
+    var error: ContainerWaitExitError? = null,
 )

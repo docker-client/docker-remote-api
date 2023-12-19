@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -38,64 +38,47 @@ import com.squareup.moshi.JsonClass
  * @param mounts
  */
 @JsonClass(generateAdapter = true)
-
 data class ContainerSummary(
-
-    /* The ID of this container */
+    // The ID of this container
     @Json(name = "Id")
     var id: kotlin.String? = null,
-
-    /* The names that this container has been given */
+    // The names that this container has been given
     @Json(name = "Names")
     var names: kotlin.collections.MutableList<kotlin.String>? = null,
-
-    /* The name of the image used when creating this container */
+    // The name of the image used when creating this container
     @Json(name = "Image")
     var image: kotlin.String? = null,
-
-    /* The ID of the image that this container was created from */
+    // The ID of the image that this container was created from
     @Json(name = "ImageID")
     var imageID: kotlin.String? = null,
-
-    /* Command to run when starting the container */
+    // Command to run when starting the container
     @Json(name = "Command")
     var command: kotlin.String? = null,
-
-    /* When the container was created */
+    // When the container was created
     @Json(name = "Created")
     var created: kotlin.Long? = null,
-
-    /* The ports exposed by this container */
+    // The ports exposed by this container
     @Json(name = "Ports")
     var ports: kotlin.collections.MutableList<Port>? = null,
-
-    /* The size of files that have been created or changed by this container */
+    // The size of files that have been created or changed by this container
     @Json(name = "SizeRw")
     var sizeRw: kotlin.Long? = null,
-
-    /* The total size of all the files in this container */
+    // The total size of all the files in this container
     @Json(name = "SizeRootFs")
     var sizeRootFs: kotlin.Long? = null,
-
-    /* User-defined key/value metadata. */
+    // User-defined key/value metadata.
     @Json(name = "Labels")
     var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
-
-    /* The state of this container (e.g. `Exited`) */
+    // The state of this container (e.g. `Exited`)
     @Json(name = "State")
     var state: kotlin.String? = null,
-
-    /* Additional human-readable status of this container (e.g. `Exit 0`) */
+    // Additional human-readable status of this container (e.g. `Exit 0`)
     @Json(name = "Status")
     var status: kotlin.String? = null,
-
     @Json(name = "HostConfig")
     var hostConfig: ContainerSummaryHostConfig? = null,
-
     @Json(name = "NetworkSettings")
     var networkSettings: ContainerSummaryNetworkSettings? = null,
-
     @Json(name = "Mounts")
-    var mounts: kotlin.collections.MutableList<MountPoint>? = null
-
+    var mounts: kotlin.collections.MutableList<MountPoint>? = null,
 )

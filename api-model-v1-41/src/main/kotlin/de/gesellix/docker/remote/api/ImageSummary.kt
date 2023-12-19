@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -33,47 +33,35 @@ import com.squareup.moshi.JsonClass
  * @param labels User-defined key/value metadata.
  */
 @JsonClass(generateAdapter = true)
-
 data class ImageSummary(
-
-    /* ID is the content-addressable ID of an image.  This identifier is a content-addressable digest calculated from the image's configuration (which includes the digests of layers used by the image).  Note that this digest differs from the `RepoDigests` below, which holds digests of image manifests that reference the image.  */
+    // ID is the content-addressable ID of an image.  This identifier is a content-addressable digest calculated from the image's configuration (which includes the digests of layers used by the image).  Note that this digest differs from the `RepoDigests` below, which holds digests of image manifests that reference the image.
     @Json(name = "Id")
     var id: kotlin.String,
-
-    /* ID of the parent image.  Depending on how the image was created, this field may be empty and is only set for images that were built/created locally. This field is empty if the image was pulled from an image registry.  */
+    // ID of the parent image.  Depending on how the image was created, this field may be empty and is only set for images that were built/created locally. This field is empty if the image was pulled from an image registry.
     @Json(name = "ParentId")
     var parentId: kotlin.String,
-
-    /* Date and time at which the image was created as a Unix timestamp (number of seconds sinds EPOCH).  */
+    // Date and time at which the image was created as a Unix timestamp (number of seconds sinds EPOCH).
     @Json(name = "Created")
     var created: kotlin.Int,
-
-    /* Total size of the image including all layers it is composed of.  */
+    // Total size of the image including all layers it is composed of.
     @Json(name = "Size")
     var propertySize: kotlin.Long,
-
-    /* Total size of image layers that are shared between this image and other images.  This size is not calculated by default. `-1` indicates that the value has not been set / calculated.  */
+    // Total size of image layers that are shared between this image and other images.  This size is not calculated by default. `-1` indicates that the value has not been set / calculated.
     @Json(name = "SharedSize")
     var sharedSize: kotlin.Long,
-
-    /* Number of containers using this image. Includes both stopped and running containers.  This size is not calculated by default, and depends on which API endpoint is used. `-1` indicates that the value has not been set / calculated.  */
+    // Number of containers using this image. Includes both stopped and running containers.  This size is not calculated by default, and depends on which API endpoint is used. `-1` indicates that the value has not been set / calculated.
     @Json(name = "Containers")
     var containers: kotlin.Int,
-
-    /* List of image names/tags in the local image cache that reference this image.  Multiple image tags can refer to the same image, and this list may be empty if no tags reference the image, in which case the image is \"untagged\", in which case it can still be referenced by its ID.  */
+    // List of image names/tags in the local image cache that reference this image.  Multiple image tags can refer to the same image, and this list may be empty if no tags reference the image, in which case the image is \"untagged\", in which case it can still be referenced by its ID.
     @Json(name = "RepoTags")
     var repoTags: kotlin.collections.MutableList<kotlin.String>? = null,
-
-    /* List of content-addressable digests of locally available image manifests that the image is referenced from. Multiple manifests can refer to the same image.  These digests are usually only available if the image was either pulled from a registry, or if the image was pushed to a registry, which is when the manifest is generated and its digest calculated.  */
+    // List of content-addressable digests of locally available image manifests that the image is referenced from. Multiple manifests can refer to the same image.  These digests are usually only available if the image was either pulled from a registry, or if the image was pushed to a registry, which is when the manifest is generated and its digest calculated.
     @Json(name = "RepoDigests")
     var repoDigests: kotlin.collections.MutableList<kotlin.String>? = null,
-
-    /* Total size of the image including all layers it is composed of.  Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead. */
+    // Total size of the image including all layers it is composed of.  Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.
     @Json(name = "VirtualSize")
     var virtualSize: kotlin.Long? = null,
-
-    /* User-defined key/value metadata. */
+    // User-defined key/value metadata.
     @Json(name = "Labels")
-    var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
-
+    var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
 )

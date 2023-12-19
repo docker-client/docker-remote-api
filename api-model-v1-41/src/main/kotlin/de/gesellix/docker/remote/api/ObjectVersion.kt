@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -24,10 +24,7 @@ import com.squareup.moshi.JsonClass
  * @param index
  */
 @JsonClass(generateAdapter = true)
-
 data class ObjectVersion(
-
     @Json(name = "Index")
-    var index: kotlin.Int? = null
-
+    var index: kotlin.Int? = null,
 )

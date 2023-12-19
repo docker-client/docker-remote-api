@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -26,7 +26,6 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = false)
 enum class NodeState(val value: kotlin.String) {
-
     @Json(name = "unknown")
     Unknown("unknown"),
 
@@ -37,7 +36,8 @@ enum class NodeState(val value: kotlin.String) {
     Ready("ready"),
 
     @Json(name = "disconnected")
-    Disconnected("disconnected");
+    Disconnected("disconnected"),
+    ;
 
     /**
      * Override [toString()] to avoid using the enum variable name as the value, and instead use
@@ -57,11 +57,12 @@ enum class NodeState(val value: kotlin.String) {
         /**
          * Returns a valid [NodeState] for [data], null otherwise.
          */
-        fun decode(data: kotlin.Any?): NodeState? = data?.let {
-            val normalizedData = "$it".lowercase()
-            values().firstOrNull { value ->
-                it == value || normalizedData == "$value".lowercase()
+        fun decode(data: kotlin.Any?): NodeState? =
+            data?.let {
+                val normalizedData = "$it".lowercase()
+                values().firstOrNull { value ->
+                    it == value || normalizedData == "$value".lowercase()
+                }
             }
-        }
     }
 }

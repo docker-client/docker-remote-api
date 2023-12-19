@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,15 +25,11 @@ import com.squareup.moshi.JsonClass
  * @param propertySize The network pool size
  */
 @JsonClass(generateAdapter = true)
-
 data class SystemInfoDefaultAddressPoolsInner(
-
-    /* The network address in CIDR format */
+    // The network address in CIDR format
     @Json(name = "Base")
     var base: kotlin.String? = null,
-
-    /* The network pool size */
+    // The network pool size
     @Json(name = "Size")
-    var propertySize: kotlin.Int? = null
-
+    var propertySize: kotlin.Int? = null,
 )

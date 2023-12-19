@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -26,16 +26,11 @@ import com.squareup.moshi.JsonClass
  * @param virtualIPs
  */
 @JsonClass(generateAdapter = true)
-
 data class ServiceEndpoint(
-
     @Json(name = "Spec")
     var spec: EndpointSpec? = null,
-
     @Json(name = "Ports")
     var ports: kotlin.collections.MutableList<EndpointPortConfig>? = null,
-
     @Json(name = "VirtualIPs")
-    var virtualIPs: kotlin.collections.MutableList<ServiceEndpointVirtualIPsInner>? = null
-
+    var virtualIPs: kotlin.collections.MutableList<ServiceEndpointVirtualIPsInner>? = null,
 )

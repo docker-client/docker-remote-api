@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -27,22 +27,16 @@ import com.squareup.moshi.JsonClass
  * @param configName ConfigName is the name of the config that this references, but this is just provided for lookup/display purposes. The config in the reference will be identified by its ID.
  */
 @JsonClass(generateAdapter = true)
-
 data class TaskSpecContainerSpecConfigsInner(
-
     @Json(name = "File")
     var file: TaskSpecContainerSpecConfigsInnerFile? = null,
-
-    /* Runtime represents a target that is not mounted into the container but is used by the task  <p><br /><p>  > **Note**: `Configs.File` and `Configs.Runtime` are mutually > exclusive  */
+    // Runtime represents a target that is not mounted into the container but is used by the task  <p><br /><p>  > **Note**: `Configs.File` and `Configs.Runtime` are mutually > exclusive
     @Json(name = "Runtime")
     var runtime: kotlin.Any? = null,
-
-    /* ConfigID represents the ID of the specific config that we're referencing.  */
+    // ConfigID represents the ID of the specific config that we're referencing.
     @Json(name = "ConfigID")
     var configID: kotlin.String? = null,
-
-    /* ConfigName is the name of the config that this references, but this is just provided for lookup/display purposes. The config in the reference will be identified by its ID.  */
+    // ConfigName is the name of the config that this references, but this is just provided for lookup/display purposes. The config in the reference will be identified by its ID.
     @Json(name = "ConfigName")
-    var configName: kotlin.String? = null
-
+    var configName: kotlin.String? = null,
 )

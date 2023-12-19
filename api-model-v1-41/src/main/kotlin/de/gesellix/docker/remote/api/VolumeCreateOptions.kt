@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -28,26 +28,19 @@ import com.squareup.moshi.JsonClass
  * @param clusterVolumeSpec
  */
 @JsonClass(generateAdapter = true)
-
 data class VolumeCreateOptions(
-
-    /* The new volume's name. If not specified, Docker generates a name.  */
+    // The new volume's name. If not specified, Docker generates a name.
     @Json(name = "Name")
     var name: kotlin.String? = null,
-
-    /* Name of the volume driver to use. */
+    // Name of the volume driver to use.
     @Json(name = "Driver")
     var driver: kotlin.String? = "local",
-
-    /* A mapping of driver options and values. These options are passed directly to the driver and are driver specific.  */
+    // A mapping of driver options and values. These options are passed directly to the driver and are driver specific.
     @Json(name = "DriverOpts")
     var driverOpts: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
-
-    /* User-defined key/value metadata. */
+    // User-defined key/value metadata.
     @Json(name = "Labels")
     var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
-
     @Json(name = "ClusterVolumeSpec")
-    var clusterVolumeSpec: ClusterVolumeSpec? = null
-
+    var clusterVolumeSpec: ClusterVolumeSpec? = null,
 )

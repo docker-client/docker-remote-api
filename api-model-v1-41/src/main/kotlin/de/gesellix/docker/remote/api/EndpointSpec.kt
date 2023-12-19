@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,19 +25,14 @@ import com.squareup.moshi.JsonClass
  * @param ports List of exposed ports that this service is accessible on from the outside. Ports can only be provided if `vip` resolution mode is used.
  */
 @JsonClass(generateAdapter = true)
-
 data class EndpointSpec(
-
-    /* The mode of resolution to use for internal load balancing between tasks.  */
+    // The mode of resolution to use for internal load balancing between tasks.
     @Json(name = "Mode")
     var mode: EndpointSpec.Mode? = Mode.Vip,
-
-    /* List of exposed ports that this service is accessible on from the outside. Ports can only be provided if `vip` resolution mode is used.  */
+    // List of exposed ports that this service is accessible on from the outside. Ports can only be provided if `vip` resolution mode is used.
     @Json(name = "Ports")
-    var ports: kotlin.collections.MutableList<EndpointPortConfig>? = null
-
+    var ports: kotlin.collections.MutableList<EndpointPortConfig>? = null,
 ) {
-
     /**
      * The mode of resolution to use for internal load balancing between tasks.
      *
@@ -49,6 +44,6 @@ data class EndpointSpec(
         Vip("vip"),
 
         @Json(name = "dnsrr")
-        Dnsrr("dnsrr");
+        Dnsrr("dnsrr"),
     }
 }

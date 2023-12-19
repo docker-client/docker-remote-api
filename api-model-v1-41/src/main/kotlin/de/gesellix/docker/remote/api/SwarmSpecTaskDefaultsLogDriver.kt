@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,15 +25,11 @@ import com.squareup.moshi.JsonClass
  * @param options Driver-specific options for the selectd log driver, specified as key/value pairs.
  */
 @JsonClass(generateAdapter = true)
-
 data class SwarmSpecTaskDefaultsLogDriver(
-
-    /* The log driver to use as a default for new tasks.  */
+    // The log driver to use as a default for new tasks.
     @Json(name = "Name")
     var name: kotlin.String? = null,
-
-    /* Driver-specific options for the selectd log driver, specified as key/value pairs.  */
+    // Driver-specific options for the selectd log driver, specified as key/value pairs.
     @Json(name = "Options")
-    var options: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
-
+    var options: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
 )

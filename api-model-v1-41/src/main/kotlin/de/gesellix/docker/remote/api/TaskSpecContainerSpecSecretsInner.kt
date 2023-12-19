@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -26,18 +26,13 @@ import com.squareup.moshi.JsonClass
  * @param secretName SecretName is the name of the secret that this references, but this is just provided for lookup/display purposes. The secret in the reference will be identified by its ID.
  */
 @JsonClass(generateAdapter = true)
-
 data class TaskSpecContainerSpecSecretsInner(
-
     @Json(name = "File")
     var file: TaskSpecContainerSpecSecretsInnerFile? = null,
-
-    /* SecretID represents the ID of the specific secret that we're referencing.  */
+    // SecretID represents the ID of the specific secret that we're referencing.
     @Json(name = "SecretID")
     var secretID: kotlin.String? = null,
-
-    /* SecretName is the name of the secret that this references, but this is just provided for lookup/display purposes. The secret in the reference will be identified by its ID.  */
+    // SecretName is the name of the secret that this references, but this is just provided for lookup/display purposes. The secret in the reference will be identified by its ID.
     @Json(name = "SecretName")
-    var secretName: kotlin.String? = null
-
+    var secretName: kotlin.String? = null,
 )

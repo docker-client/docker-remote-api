@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -27,23 +27,16 @@ import com.squareup.moshi.JsonClass
  * @param message
  */
 @JsonClass(generateAdapter = true)
-
 data class ServiceUpdateStatus(
-
     @Json(name = "State")
     var state: ServiceUpdateStatus.State? = null,
-
     @Json(name = "StartedAt")
     var startedAt: kotlin.String? = null,
-
     @Json(name = "CompletedAt")
     var completedAt: kotlin.String? = null,
-
     @Json(name = "Message")
-    var message: kotlin.String? = null
-
+    var message: kotlin.String? = null,
 ) {
-
     /**
      *
      *
@@ -58,6 +51,6 @@ data class ServiceUpdateStatus(
         Paused("paused"),
 
         @Json(name = "completed")
-        Completed("completed");
+        Completed("completed"),
     }
 }

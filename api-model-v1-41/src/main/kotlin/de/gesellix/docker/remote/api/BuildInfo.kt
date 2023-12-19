@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -31,31 +31,21 @@ import com.squareup.moshi.JsonClass
  * @param aux
  */
 @JsonClass(generateAdapter = true)
-
 data class BuildInfo(
-
     @Json(name = "id")
     var id: kotlin.String? = null,
-
     @Json(name = "stream")
     var stream: kotlin.String? = null,
-
     @Json(name = "error")
     var error: kotlin.String? = null,
-
     @Json(name = "errorDetail")
     var errorDetail: ErrorDetail? = null,
-
     @Json(name = "status")
     var status: kotlin.String? = null,
-
     @Json(name = "progress")
     var progress: kotlin.String? = null,
-
     @Json(name = "progressDetail")
     var progressDetail: ProgressDetail? = null,
-
     @Json(name = "aux")
-    var aux: ImageID? = null
-
+    var aux: ImageID? = null,
 )

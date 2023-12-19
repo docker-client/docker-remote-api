@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,19 +25,14 @@ import com.squareup.moshi.JsonClass
  * @param maximumRetryCount If `on-failure` is used, the number of times to retry before giving up.
  */
 @JsonClass(generateAdapter = true)
-
 data class RestartPolicy(
-
-    /* - Empty string means not to restart - `no` Do not automatically restart - `always` Always restart - `unless-stopped` Restart always except when the user has manually stopped the container - `on-failure` Restart only when the container exit code is non-zero  */
+    // - Empty string means not to restart - `no` Do not automatically restart - `always` Always restart - `unless-stopped` Restart always except when the user has manually stopped the container - `on-failure` Restart only when the container exit code is non-zero
     @Json(name = "Name")
     var name: RestartPolicy.Name? = null,
-
-    /* If `on-failure` is used, the number of times to retry before giving up.  */
+    // If `on-failure` is used, the number of times to retry before giving up.
     @Json(name = "MaximumRetryCount")
-    var maximumRetryCount: kotlin.Int? = null
-
+    var maximumRetryCount: kotlin.Int? = null,
 ) {
-
     /**
      * - Empty string means not to restart - `no` Do not automatically restart - `always` Always restart - `unless-stopped` Restart always except when the user has manually stopped the container - `on-failure` Restart only when the container exit code is non-zero
      *
@@ -58,6 +53,6 @@ data class RestartPolicy(
         UnlessMinusStopped("unless-stopped"),
 
         @Json(name = "on-failure")
-        OnMinusFailure("on-failure");
+        OnMinusFailure("on-failure"),
     }
 }

@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -29,27 +29,19 @@ import com.squareup.moshi.JsonClass
  * @param pluginReference plugin remote reference used to push/pull the plugin
  */
 @JsonClass(generateAdapter = true)
-
 data class Plugin(
-
     @Json(name = "Name")
     var name: kotlin.String,
-
-    /* True if the plugin is running. False if the plugin is not running, only installed. */
+    // True if the plugin is running. False if the plugin is not running, only installed.
     @Json(name = "Enabled")
     var enabled: kotlin.Boolean,
-
     @Json(name = "Settings")
     var settings: PluginSettings,
-
     @Json(name = "Config")
     var config: PluginConfig,
-
     @Json(name = "Id")
     var id: kotlin.String? = null,
-
-    /* plugin remote reference used to push/pull the plugin */
+    // plugin remote reference used to push/pull the plugin
     @Json(name = "PluginReference")
-    var pluginReference: kotlin.String? = null
-
+    var pluginReference: kotlin.String? = null,
 )

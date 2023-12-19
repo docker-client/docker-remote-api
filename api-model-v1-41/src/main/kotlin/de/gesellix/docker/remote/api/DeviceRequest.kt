@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -28,24 +28,17 @@ import com.squareup.moshi.JsonClass
  * @param options Driver-specific options, specified as a key/value pairs. These options are passed directly to the driver.
  */
 @JsonClass(generateAdapter = true)
-
 data class DeviceRequest(
-
     @Json(name = "Driver")
     var driver: kotlin.String? = null,
-
     @Json(name = "Count")
     var count: kotlin.Int? = null,
-
     @Json(name = "DeviceIDs")
     var deviceIDs: kotlin.collections.MutableList<kotlin.String>? = null,
-
-    /* A list of capabilities; an OR list of AND lists of capabilities.  */
+    // A list of capabilities; an OR list of AND lists of capabilities.
     @Json(name = "Capabilities")
     var capabilities: kotlin.collections.MutableList<kotlin.collections.MutableList<kotlin.String>>? = null,
-
-    /* Driver-specific options, specified as a key/value pairs. These options are passed directly to the driver.  */
+    // Driver-specific options, specified as a key/value pairs. These options are passed directly to the driver.
     @Json(name = "Options")
-    var options: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
-
+    var options: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
 )

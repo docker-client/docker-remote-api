@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,13 +25,9 @@ import com.squareup.moshi.JsonClass
  * @param total
  */
 @JsonClass(generateAdapter = true)
-
 data class ProgressDetail(
-
     @Json(name = "current")
     var current: kotlin.Int? = null,
-
     @Json(name = "total")
-    var total: kotlin.Int? = null
-
+    var total: kotlin.Int? = null,
 )

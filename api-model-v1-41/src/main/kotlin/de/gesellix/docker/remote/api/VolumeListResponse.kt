@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,15 +25,11 @@ import com.squareup.moshi.JsonClass
  * @param warnings Warnings that occurred when fetching the list of volumes.
  */
 @JsonClass(generateAdapter = true)
-
 data class VolumeListResponse(
-
-    /* List of volumes */
+    // List of volumes
     @Json(name = "Volumes")
     var volumes: kotlin.collections.MutableList<Volume>? = null,
-
-    /* Warnings that occurred when fetching the list of volumes.  */
+    // Warnings that occurred when fetching the list of volumes.
     @Json(name = "Warnings")
-    var warnings: kotlin.collections.MutableList<kotlin.String>? = null
-
+    var warnings: kotlin.collections.MutableList<kotlin.String>? = null,
 )

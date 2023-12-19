@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -24,11 +24,8 @@ import com.squareup.moshi.JsonClass
  * @param warnings Optional warning messages
  */
 @JsonClass(generateAdapter = true)
-
 data class ServiceUpdateResponse(
-
-    /* Optional warning messages */
+    // Optional warning messages
     @Json(name = "Warnings")
-    var warnings: kotlin.collections.MutableList<kotlin.String>? = null
-
+    var warnings: kotlin.collections.MutableList<kotlin.String>? = null,
 )

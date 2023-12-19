@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -30,28 +30,19 @@ import com.squareup.moshi.JsonClass
  * @param options
  */
 @JsonClass(generateAdapter = true)
-
 data class PluginMount(
-
     @Json(name = "Name")
     var name: kotlin.String,
-
     @Json(name = "Description")
     var description: kotlin.String,
-
     @Json(name = "Settable")
     var settable: kotlin.collections.MutableList<kotlin.String>,
-
     @Json(name = "Source")
     var source: kotlin.String,
-
     @Json(name = "Destination")
     var destination: kotlin.String,
-
     @Json(name = "Type")
     var type: kotlin.String,
-
     @Json(name = "Options")
-    var options: kotlin.collections.MutableList<kotlin.String>
-
+    var options: kotlin.collections.MutableList<kotlin.String>,
 )

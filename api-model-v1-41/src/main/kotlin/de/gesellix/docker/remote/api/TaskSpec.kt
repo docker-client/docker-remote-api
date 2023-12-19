@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -33,40 +33,28 @@ import com.squareup.moshi.JsonClass
  * @param logDriver
  */
 @JsonClass(generateAdapter = true)
-
 data class TaskSpec(
-
     @Json(name = "PluginSpec")
     var pluginSpec: TaskSpecPluginSpec? = null,
-
     @Json(name = "ContainerSpec")
     var containerSpec: TaskSpecContainerSpec? = null,
-
     @Json(name = "NetworkAttachmentSpec")
     var networkAttachmentSpec: TaskSpecNetworkAttachmentSpec? = null,
-
     @Json(name = "Resources")
     var resources: TaskSpecResources? = null,
-
     @Json(name = "RestartPolicy")
     var restartPolicy: TaskSpecRestartPolicy? = null,
-
     @Json(name = "Placement")
     var placement: TaskSpecPlacement? = null,
-
-    /* A counter that triggers an update even if no relevant parameters have been changed.  */
+    // A counter that triggers an update even if no relevant parameters have been changed.
     @Json(name = "ForceUpdate")
     var forceUpdate: kotlin.Int? = null,
-
-    /* Runtime is the type of runtime specified for the task executor.  */
+    // Runtime is the type of runtime specified for the task executor.
     @Json(name = "Runtime")
     var runtime: kotlin.String? = null,
-
-    /* Specifies which networks the service should attach to. */
+    // Specifies which networks the service should attach to.
     @Json(name = "Networks")
     var networks: kotlin.collections.MutableList<NetworkAttachmentConfig>? = null,
-
     @Json(name = "LogDriver")
-    var logDriver: TaskSpecLogDriver? = null
-
+    var logDriver: TaskSpecLogDriver? = null,
 )

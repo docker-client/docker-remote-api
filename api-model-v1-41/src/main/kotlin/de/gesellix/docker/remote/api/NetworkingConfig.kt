@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -24,11 +24,8 @@ import com.squareup.moshi.JsonClass
  * @param endpointsConfig A mapping of network name to endpoint configuration for that network. The endpoint configuration can be left empty to connect to that network with no particular endpoint configuration.
  */
 @JsonClass(generateAdapter = true)
-
 data class NetworkingConfig(
-
-    /* A mapping of network name to endpoint configuration for that network. The endpoint configuration can be left empty to connect to that network with no particular endpoint configuration.  */
+    // A mapping of network name to endpoint configuration for that network. The endpoint configuration can be left empty to connect to that network with no particular endpoint configuration.
     @Json(name = "EndpointsConfig")
-    var endpointsConfig: kotlin.collections.MutableMap<kotlin.String, EndpointSettings>? = null
-
+    var endpointsConfig: kotlin.collections.MutableMap<kotlin.String, EndpointSettings>? = null,
 )

@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -28,29 +28,21 @@ import com.squareup.moshi.JsonClass
  * @param publishMode The mode in which port is published.  <p><br /></p>  - \"ingress\" makes the target port accessible on every node,   regardless of whether there is a task for the service running on   that node or not. - \"host\" bypasses the routing mesh and publish the port directly on   the swarm node where that service is running.
  */
 @JsonClass(generateAdapter = true)
-
 data class EndpointPortConfig(
-
     @Json(name = "Name")
     var name: kotlin.String? = null,
-
     @Json(name = "Protocol")
     var protocol: EndpointPortConfig.Protocol? = null,
-
-    /* The port inside the container. */
+    // The port inside the container.
     @Json(name = "TargetPort")
     var targetPort: kotlin.Int? = null,
-
-    /* The port on the swarm hosts. */
+    // The port on the swarm hosts.
     @Json(name = "PublishedPort")
     var publishedPort: kotlin.Int? = null,
-
-    /* The mode in which port is published.  <p><br /></p>  - \"ingress\" makes the target port accessible on every node,   regardless of whether there is a task for the service running on   that node or not. - \"host\" bypasses the routing mesh and publish the port directly on   the swarm node where that service is running.  */
+    // The mode in which port is published.  <p><br /></p>  - \"ingress\" makes the target port accessible on every node,   regardless of whether there is a task for the service running on   that node or not. - \"host\" bypasses the routing mesh and publish the port directly on   the swarm node where that service is running.
     @Json(name = "PublishMode")
-    var publishMode: EndpointPortConfig.PublishMode? = PublishMode.Ingress
-
+    var publishMode: EndpointPortConfig.PublishMode? = PublishMode.Ingress,
 ) {
-
     /**
      *
      *
@@ -65,7 +57,7 @@ data class EndpointPortConfig(
         Udp("udp"),
 
         @Json(name = "sctp")
-        Sctp("sctp");
+        Sctp("sctp"),
     }
 
     /**
@@ -79,6 +71,6 @@ data class EndpointPortConfig(
         Ingress("ingress"),
 
         @Json(name = "host")
-        Host("host");
+        Host("host"),
     }
 }

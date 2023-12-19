@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,15 +25,11 @@ import com.squareup.moshi.JsonClass
  * @param force Force the container to disconnect from the network.
  */
 @JsonClass(generateAdapter = true)
-
 data class NetworkDisconnectRequest(
-
-    /* The ID or name of the container to disconnect from the network.  */
+    // The ID or name of the container to disconnect from the network.
     @Json(name = "Container")
     var container: kotlin.String? = null,
-
-    /* Force the container to disconnect from the network.  */
+    // Force the container to disconnect from the network.
     @Json(name = "Force")
-    var force: kotlin.Boolean? = null
-
+    var force: kotlin.Boolean? = null,
 )

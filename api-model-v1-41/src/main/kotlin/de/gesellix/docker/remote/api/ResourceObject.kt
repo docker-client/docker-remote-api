@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -26,17 +26,12 @@ import com.squareup.moshi.JsonClass
  * @param genericResources User-defined resources can be either Integer resources (e.g, `SSD=3`) or String resources (e.g, `GPU=UUID1`).
  */
 @JsonClass(generateAdapter = true)
-
 data class ResourceObject(
-
     @Json(name = "NanoCPUs")
     var nanoCPUs: kotlin.Long? = null,
-
     @Json(name = "MemoryBytes")
     var memoryBytes: kotlin.Long? = null,
-
-    /* User-defined resources can be either Integer resources (e.g, `SSD=3`) or String resources (e.g, `GPU=UUID1`).  */
+    // User-defined resources can be either Integer resources (e.g, `SSD=3`) or String resources (e.g, `GPU=UUID1`).
     @Json(name = "GenericResources")
-    var genericResources: kotlin.collections.MutableList<GenericResourcesInner>? = null
-
+    var genericResources: kotlin.collections.MutableList<GenericResourcesInner>? = null,
 )

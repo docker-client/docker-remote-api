@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -27,19 +27,13 @@ import com.squareup.moshi.JsonClass
  * @param serveraddress
  */
 @JsonClass(generateAdapter = true)
-
 data class AuthConfig(
-
     @Json(name = "username")
     var username: kotlin.String? = null,
-
     @Json(name = "password")
     var password: kotlin.String? = null,
-
     @Json(name = "email")
     var email: kotlin.String? = null,
-
     @Json(name = "serveraddress")
-    var serveraddress: kotlin.String? = null
-
+    var serveraddress: kotlin.String? = null,
 )

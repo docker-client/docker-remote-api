@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -24,10 +24,7 @@ import com.squareup.moshi.JsonClass
  * @param name
  */
 @JsonClass(generateAdapter = true)
-
 data class SystemVersionPlatform(
-
     @Json(name = "Name")
-    var name: kotlin.String
-
+    var name: kotlin.String,
 )

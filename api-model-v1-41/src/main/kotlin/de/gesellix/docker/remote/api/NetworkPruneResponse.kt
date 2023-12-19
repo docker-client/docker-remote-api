@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -24,11 +24,8 @@ import com.squareup.moshi.JsonClass
  * @param networksDeleted Networks that were deleted
  */
 @JsonClass(generateAdapter = true)
-
 data class NetworkPruneResponse(
-
-    /* Networks that were deleted */
+    // Networks that were deleted
     @Json(name = "NetworksDeleted")
-    var networksDeleted: kotlin.collections.MutableList<kotlin.String>? = null
-
+    var networksDeleted: kotlin.collections.MutableList<kotlin.String>? = null,
 )

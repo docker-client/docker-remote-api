@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -24,11 +24,8 @@ import com.squareup.moshi.JsonClass
  * @param autoLockManagers If set, generate a key and use it to lock data stored on the managers.
  */
 @JsonClass(generateAdapter = true)
-
 data class SwarmSpecEncryptionConfig(
-
-    /* If set, generate a key and use it to lock data stored on the managers.  */
+    // If set, generate a key and use it to lock data stored on the managers.
     @Json(name = "AutoLockManagers")
-    var autoLockManagers: kotlin.Boolean? = null
-
+    var autoLockManagers: kotlin.Boolean? = null,
 )

@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -29,35 +29,26 @@ import com.squareup.moshi.JsonClass
  * @param order The order of operations when rolling out an updated task. Either the old task is shut down before the new task is started, or the new task is started before the old task is shut down.
  */
 @JsonClass(generateAdapter = true)
-
 data class ServiceSpecUpdateConfig(
-
-    /* Maximum number of tasks to be updated in one iteration (0 means unlimited parallelism).  */
+    // Maximum number of tasks to be updated in one iteration (0 means unlimited parallelism).
     @Json(name = "Parallelism")
     var parallelism: kotlin.Long? = null,
-
-    /* Amount of time between updates, in nanoseconds. */
+    // Amount of time between updates, in nanoseconds.
     @Json(name = "Delay")
     var delay: kotlin.Long? = null,
-
-    /* Action to take if an updated task fails to run, or stops running during the update.  */
+    // Action to take if an updated task fails to run, or stops running during the update.
     @Json(name = "FailureAction")
     var failureAction: ServiceSpecUpdateConfig.FailureAction? = null,
-
-    /* Amount of time to monitor each updated task for failures, in nanoseconds.  */
+    // Amount of time to monitor each updated task for failures, in nanoseconds.
     @Json(name = "Monitor")
     var monitor: kotlin.Long? = null,
-
-    /* The fraction of tasks that may fail during an update before the failure action is invoked, specified as a floating point number between 0 and 1.  */
+    // The fraction of tasks that may fail during an update before the failure action is invoked, specified as a floating point number between 0 and 1.
     @Json(name = "MaxFailureRatio")
     var maxFailureRatio: java.math.BigDecimal? = null,
-
-    /* The order of operations when rolling out an updated task. Either the old task is shut down before the new task is started, or the new task is started before the old task is shut down.  */
+    // The order of operations when rolling out an updated task. Either the old task is shut down before the new task is started, or the new task is started before the old task is shut down.
     @Json(name = "Order")
-    var order: ServiceSpecUpdateConfig.Order? = null
-
+    var order: ServiceSpecUpdateConfig.Order? = null,
 ) {
-
     /**
      * Action to take if an updated task fails to run, or stops running during the update.
      *
@@ -72,7 +63,7 @@ data class ServiceSpecUpdateConfig(
         Pause("pause"),
 
         @Json(name = "rollback")
-        Rollback("rollback");
+        Rollback("rollback"),
     }
 
     /**
@@ -86,6 +77,6 @@ data class ServiceSpecUpdateConfig(
         StopMinusFirst("stop-first"),
 
         @Json(name = "start-first")
-        StartMinusFirst("start-first");
+        StartMinusFirst("start-first"),
     }
 }

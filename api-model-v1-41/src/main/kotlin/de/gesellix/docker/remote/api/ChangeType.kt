@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -26,7 +26,6 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = false)
 enum class ChangeType(val value: kotlin.Int) {
-
     @Json(name = "0")
     T0(0),
 
@@ -34,7 +33,8 @@ enum class ChangeType(val value: kotlin.Int) {
     T1(1),
 
     @Json(name = "2")
-    T2(2);
+    T2(2),
+    ;
 
     /**
      * Override [toString()] to avoid using the enum variable name as the value, and instead use
@@ -54,11 +54,12 @@ enum class ChangeType(val value: kotlin.Int) {
         /**
          * Returns a valid [ChangeType] for [data], null otherwise.
          */
-        fun decode(data: kotlin.Any?): ChangeType? = data?.let {
-            val normalizedData = "$it".lowercase()
-            values().firstOrNull { value ->
-                it == value || normalizedData == "$value".lowercase()
+        fun decode(data: kotlin.Any?): ChangeType? =
+            data?.let {
+                val normalizedData = "$it".lowercase()
+                values().firstOrNull { value ->
+                    it == value || normalizedData == "$value".lowercase()
+                }
             }
-        }
     }
 }

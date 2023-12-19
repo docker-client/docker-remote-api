@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -28,27 +28,20 @@ import com.squareup.moshi.JsonClass
  * @param variant Optional field specifying a variant of the CPU, for example `v7` to specify ARMv7 when architecture is `arm`.
  */
 @JsonClass(generateAdapter = true)
-
 data class OCIPlatform(
-
-    /* The CPU architecture, for example `amd64` or `ppc64`.  */
+    // The CPU architecture, for example `amd64` or `ppc64`.
     @Json(name = "architecture")
     var architecture: kotlin.String? = null,
-
-    /* The operating system, for example `linux` or `windows`.  */
+    // The operating system, for example `linux` or `windows`.
     @Json(name = "os")
     var os: kotlin.String? = null,
-
-    /* Optional field specifying the operating system version, for example on Windows `10.0.19041.1165`.  */
+    // Optional field specifying the operating system version, for example on Windows `10.0.19041.1165`.
     @Json(name = "os.version")
     var osVersion: kotlin.String? = null,
-
-    /* Optional field specifying an array of strings, each listing a required OS feature (for example on Windows `win32k`).  */
+    // Optional field specifying an array of strings, each listing a required OS feature (for example on Windows `win32k`).
     @Json(name = "os.features")
     var osFeatures: kotlin.collections.MutableList<kotlin.String>? = null,
-
-    /* Optional field specifying a variant of the CPU, for example `v7` to specify ARMv7 when architecture is `arm`.  */
+    // Optional field specifying a variant of the CPU, for example `v7` to specify ARMv7 when architecture is `arm`.
     @Json(name = "variant")
-    var variant: kotlin.String? = null
-
+    var variant: kotlin.String? = null,
 )

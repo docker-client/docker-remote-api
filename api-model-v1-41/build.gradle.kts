@@ -24,6 +24,10 @@ configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
         exclude {
             it.file.path.startsWith(file(layout.buildDirectory.dir("generated")).path)
         }
+        exclude("**/build.gradle.kts")
+        exclude {
+            it.file.path.endsWith("build.gradle.kts")
+        }
     }
 }
 

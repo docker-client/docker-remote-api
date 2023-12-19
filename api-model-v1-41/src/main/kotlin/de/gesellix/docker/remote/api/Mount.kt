@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -31,40 +31,29 @@ import com.squareup.moshi.JsonClass
  * @param tmpfsOptions
  */
 @JsonClass(generateAdapter = true)
-
 data class Mount(
-
-    /* Container path. */
+    // Container path.
     @Json(name = "Target")
     var target: kotlin.String? = null,
-
-    /* Mount source (e.g. a volume name, a host path). */
+    // Mount source (e.g. a volume name, a host path).
     @Json(name = "Source")
     var source: kotlin.String? = null,
-
-    /* The mount type. Available types:  - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container. - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed. - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs. - `npipe` Mounts a named pipe from the host into the container. Must exist prior to creating the container. - `cluster` a Swarm cluster volume  */
+    // The mount type. Available types:  - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container. - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed. - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs. - `npipe` Mounts a named pipe from the host into the container. Must exist prior to creating the container. - `cluster` a Swarm cluster volume
     @Json(name = "Type")
     var type: Mount.Type? = null,
-
-    /* Whether the mount should be read-only. */
+    // Whether the mount should be read-only.
     @Json(name = "ReadOnly")
     var readOnly: kotlin.Boolean? = null,
-
-    /* The consistency requirement for the mount: `default`, `consistent`, `cached`, or `delegated`. */
+    // The consistency requirement for the mount: `default`, `consistent`, `cached`, or `delegated`.
     @Json(name = "Consistency")
     var consistency: kotlin.String? = null,
-
     @Json(name = "BindOptions")
     var bindOptions: MountBindOptions? = null,
-
     @Json(name = "VolumeOptions")
     var volumeOptions: MountVolumeOptions? = null,
-
     @Json(name = "TmpfsOptions")
-    var tmpfsOptions: MountTmpfsOptions? = null
-
+    var tmpfsOptions: MountTmpfsOptions? = null,
 ) {
-
     /**
      * The mount type. Available types:  - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container. - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed. - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs. - `npipe` Mounts a named pipe from the host into the container. Must exist prior to creating the container. - `cluster` a Swarm cluster volume
      *
@@ -85,6 +74,6 @@ data class Mount(
         Npipe("npipe"),
 
         @Json(name = "cluster")
-        Cluster("cluster");
+        Cluster("cluster"),
     }
 }

@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,15 +25,11 @@ import com.squareup.moshi.JsonClass
  * @param expected Commit ID of external tool expected by dockerd as set at build time.
  */
 @JsonClass(generateAdapter = true)
-
 data class Commit(
-
-    /* Actual commit ID of external tool. */
+    // Actual commit ID of external tool.
     @Json(name = "ID")
     var ID: kotlin.String? = null,
-
-    /* Commit ID of external tool expected by dockerd as set at build time.  */
+    // Commit ID of external tool expected by dockerd as set at build time.
     @Json(name = "Expected")
-    var expected: kotlin.String? = null
-
+    var expected: kotlin.String? = null,
 )

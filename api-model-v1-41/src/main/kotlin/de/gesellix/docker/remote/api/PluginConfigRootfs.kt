@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,13 +25,9 @@ import com.squareup.moshi.JsonClass
  * @param diffIds
  */
 @JsonClass(generateAdapter = true)
-
 data class PluginConfigRootfs(
-
     @Json(name = "type")
     var type: kotlin.String? = null,
-
     @Json(name = "diff_ids")
-    var diffIds: kotlin.collections.MutableList<kotlin.String>? = null
-
+    var diffIds: kotlin.collections.MutableList<kotlin.String>? = null,
 )

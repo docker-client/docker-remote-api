@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -24,10 +24,7 @@ import com.squareup.moshi.JsonClass
  * @param networkMode
  */
 @JsonClass(generateAdapter = true)
-
 data class ContainerSummaryHostConfig(
-
     @Json(name = "NetworkMode")
-    var networkMode: kotlin.String? = null
-
+    var networkMode: kotlin.String? = null,
 )

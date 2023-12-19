@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,15 +25,11 @@ import com.squareup.moshi.JsonClass
  * @param limitBytes The volume must not be bigger than this. The value of 0 indicates an unspecified maximum.
  */
 @JsonClass(generateAdapter = true)
-
 data class ClusterVolumeSpecAccessModeCapacityRange(
-
-    /* The volume must be at least this big. The value of 0 indicates an unspecified minimum  */
+    // The volume must be at least this big. The value of 0 indicates an unspecified minimum
     @Json(name = "RequiredBytes")
     var requiredBytes: kotlin.Long? = null,
-
-    /* The volume must not be bigger than this. The value of 0 indicates an unspecified maximum.  */
+    // The volume must not be bigger than this. The value of 0 indicates an unspecified maximum.
     @Json(name = "LimitBytes")
-    var limitBytes: kotlin.Long? = null
-
+    var limitBytes: kotlin.Long? = null,
 )
