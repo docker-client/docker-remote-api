@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -24,11 +24,8 @@ import com.squareup.moshi.JsonClass
  * @param containerID ID of the container represented by this task
  */
 @JsonClass(generateAdapter = true)
-
 data class TaskSpecNetworkAttachmentSpec(
-
-    /* ID of the container represented by this task */
+    // ID of the container represented by this task
     @Json(name = "ContainerID")
-    var containerID: kotlin.String? = null
-
+    var containerID: kotlin.String? = null,
 )

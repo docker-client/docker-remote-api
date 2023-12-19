@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,15 +25,11 @@ import com.squareup.moshi.JsonClass
  * @param spaceReclaimed Disk space reclaimed in bytes
  */
 @JsonClass(generateAdapter = true)
-
 data class ContainerPruneResponse(
-
-    /* Container IDs that were deleted */
+    // Container IDs that were deleted
     @Json(name = "ContainersDeleted")
     var containersDeleted: kotlin.collections.MutableList<kotlin.String>? = null,
-
-    /* Disk space reclaimed in bytes */
+    // Disk space reclaimed in bytes
     @Json(name = "SpaceReclaimed")
-    var spaceReclaimed: kotlin.Long? = null
-
+    var spaceReclaimed: kotlin.Long? = null,
 )

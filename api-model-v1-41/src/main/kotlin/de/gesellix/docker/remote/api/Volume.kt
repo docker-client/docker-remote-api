@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -33,49 +33,36 @@ import com.squareup.moshi.JsonClass
  * @param usageData
  */
 @JsonClass(generateAdapter = true)
-
 data class Volume(
-
-    /* Name of the volume. */
+    // Name of the volume.
     @Json(name = "Name")
     var name: kotlin.String,
-
-    /* Name of the volume driver used by the volume. */
+    // Name of the volume driver used by the volume.
     @Json(name = "Driver")
     var driver: kotlin.String,
-
-    /* Mount path of the volume on the host. */
+    // Mount path of the volume on the host.
     @Json(name = "Mountpoint")
     var mountpoint: kotlin.String,
-
-    /* The driver specific options used when creating the volume.  */
+    // The driver specific options used when creating the volume.
     @Json(name = "Options")
     var options: kotlin.collections.MutableMap<kotlin.String, kotlin.String>?,
-
-    /* Date/Time the volume was created. */
+    // Date/Time the volume was created.
     @Json(name = "CreatedAt")
     var createdAt: kotlin.String? = null,
-
-    /* Low-level details about the volume, provided by the volume driver. Details are returned as a map with key/value pairs: `{\"key\":\"value\",\"key2\":\"value2\"}`.  The `Status` field is optional, and is omitted if the volume driver does not support this feature.  */
+    // Low-level details about the volume, provided by the volume driver. Details are returned as a map with key/value pairs: `{\"key\":\"value\",\"key2\":\"value2\"}`.  The `Status` field is optional, and is omitted if the volume driver does not support this feature.
     @Json(name = "Status")
     var status: kotlin.collections.MutableMap<kotlin.String, kotlin.Any>? = null,
-
-    /* User-defined key/value metadata. */
+    // User-defined key/value metadata.
     @Json(name = "Labels")
     var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
-
-    /* The level at which the volume exists. Either `global` for cluster-wide, or `local` for machine level.  */
+    // The level at which the volume exists. Either `global` for cluster-wide, or `local` for machine level.
     @Json(name = "Scope")
     var scope: Volume.Scope? = Scope.Local,
-
     @Json(name = "ClusterVolume")
     var clusterVolume: ClusterVolume? = null,
-
     @Json(name = "UsageData")
-    var usageData: VolumeUsageData? = null
-
+    var usageData: VolumeUsageData? = null,
 ) {
-
     /**
      * The level at which the volume exists. Either `global` for cluster-wide, or `local` for machine level.
      *
@@ -87,6 +74,6 @@ data class Volume(
         Local("local"),
 
         @Json(name = "global")
-        Global("global");
+        Global("global"),
     }
 }

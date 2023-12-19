@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -27,23 +27,17 @@ import com.squareup.moshi.JsonClass
  * @param mode Mode represents the FileMode of the file.
  */
 @JsonClass(generateAdapter = true)
-
 data class TaskSpecContainerSpecConfigsInnerFile(
-
-    /* Name represents the final filename in the filesystem.  */
+    // Name represents the final filename in the filesystem.
     @Json(name = "Name")
     var name: kotlin.String? = null,
-
-    /* UID represents the file UID. */
+    // UID represents the file UID.
     @Json(name = "UID")
     var UID: kotlin.String? = null,
-
-    /* GID represents the file GID. */
+    // GID represents the file GID.
     @Json(name = "GID")
     var GID: kotlin.String? = null,
-
-    /* Mode represents the FileMode of the file. */
+    // Mode represents the FileMode of the file.
     @Json(name = "Mode")
-    var mode: kotlin.Int? = null
-
+    var mode: kotlin.Int? = null,
 )

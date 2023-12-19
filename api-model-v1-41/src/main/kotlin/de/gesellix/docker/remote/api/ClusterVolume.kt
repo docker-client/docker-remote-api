@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -30,30 +30,21 @@ import com.squareup.moshi.JsonClass
  * @param publishStatus The status of the volume as it pertains to its publishing and use on specific nodes
  */
 @JsonClass(generateAdapter = true)
-
 data class ClusterVolume(
-
-    /* The Swarm ID of this volume. Because cluster volumes are Swarm objects, they have an ID, unlike non-cluster volumes. This ID can be used to refer to the Volume instead of the name.  */
+    // The Swarm ID of this volume. Because cluster volumes are Swarm objects, they have an ID, unlike non-cluster volumes. This ID can be used to refer to the Volume instead of the name.
     @Json(name = "ID")
     var ID: kotlin.String? = null,
-
     @Json(name = "Version")
     var version: ObjectVersion? = null,
-
     @Json(name = "CreatedAt")
     var createdAt: kotlin.String? = null,
-
     @Json(name = "UpdatedAt")
     var updatedAt: kotlin.String? = null,
-
     @Json(name = "Spec")
     var spec: ClusterVolumeSpec? = null,
-
     @Json(name = "Info")
     var info: ClusterVolumeInfo? = null,
-
-    /* The status of the volume as it pertains to its publishing and use on specific nodes  */
+    // The status of the volume as it pertains to its publishing and use on specific nodes
     @Json(name = "PublishStatus")
-    var publishStatus: kotlin.collections.MutableList<ClusterVolumePublishStatusInner>? = null
-
+    var publishStatus: kotlin.collections.MutableList<ClusterVolumePublishStatusInner>? = null,
 )

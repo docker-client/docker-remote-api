@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -26,19 +26,14 @@ import com.squareup.moshi.JsonClass
  * @param consoleSize Initial console size, as an `[height, width]` array.
  */
 @JsonClass(generateAdapter = true)
-
 data class ExecStartConfig(
-
-    /* Detach from the command. */
+    // Detach from the command.
     @Json(name = "Detach")
     var detach: kotlin.Boolean? = null,
-
-    /* Allocate a pseudo-TTY. */
+    // Allocate a pseudo-TTY.
     @Json(name = "Tty")
     var tty: kotlin.Boolean? = null,
-
-    /* Initial console size, as an `[height, width]` array. */
+    // Initial console size, as an `[height, width]` array.
     @Json(name = "ConsoleSize")
-    var consoleSize: kotlin.collections.MutableList<kotlin.Int>? = null
-
+    var consoleSize: kotlin.collections.MutableList<kotlin.Int>? = null,
 )

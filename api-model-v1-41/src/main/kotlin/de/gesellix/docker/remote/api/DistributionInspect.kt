@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,14 +25,10 @@ import com.squareup.moshi.JsonClass
  * @param platforms An array containing all platforms supported by the image.
  */
 @JsonClass(generateAdapter = true)
-
 data class DistributionInspect(
-
     @Json(name = "Descriptor")
     var descriptor: OCIDescriptor,
-
-    /* An array containing all platforms supported by the image.  */
+    // An array containing all platforms supported by the image.
     @Json(name = "Platforms")
-    var platforms: kotlin.collections.MutableList<OCIPlatform>
-
+    var platforms: kotlin.collections.MutableList<OCIPlatform>,
 )

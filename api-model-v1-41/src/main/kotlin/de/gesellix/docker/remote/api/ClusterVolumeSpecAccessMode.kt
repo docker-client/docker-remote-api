@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -30,37 +30,27 @@ import com.squareup.moshi.JsonClass
  * @param availability The availability of the volume for use in tasks. - `active` The volume is fully available for scheduling on the cluster - `pause` No new workloads should use the volume, but existing workloads are not stopped. - `drain` All workloads using this volume should be stopped and rescheduled, and no new ones should be started.
  */
 @JsonClass(generateAdapter = true)
-
 data class ClusterVolumeSpecAccessMode(
-
-    /* The set of nodes this volume can be used on at one time. - `single` The volume may only be scheduled to one node at a time. - `multi` the volume may be scheduled to any supported number of nodes at a time.  */
+    // The set of nodes this volume can be used on at one time. - `single` The volume may only be scheduled to one node at a time. - `multi` the volume may be scheduled to any supported number of nodes at a time.
     @Json(name = "Scope")
     var scope: ClusterVolumeSpecAccessMode.Scope? = Scope.Single,
-
-    /* The number and way that different tasks can use this volume at one time. - `none` The volume may only be used by one task at a time. - `readonly` The volume may be used by any number of tasks, but they all must mount the volume as readonly - `onewriter` The volume may be used by any number of tasks, but only one may mount it as read/write. - `all` The volume may have any number of readers and writers.  */
+    // The number and way that different tasks can use this volume at one time. - `none` The volume may only be used by one task at a time. - `readonly` The volume may be used by any number of tasks, but they all must mount the volume as readonly - `onewriter` The volume may be used by any number of tasks, but only one may mount it as read/write. - `all` The volume may have any number of readers and writers.
     @Json(name = "Sharing")
     var sharing: ClusterVolumeSpecAccessMode.Sharing? = Sharing.None,
-
-    /* Options for using this volume as a Mount-type volume.      Either MountVolume or BlockVolume, but not both, must be     present.   properties:     FsType:       type: \"string\"       description: |         Specifies the filesystem type for the mount volume.         Optional.     MountFlags:       type: \"array\"       description: |         Flags to pass when mounting the volume. Optional.       items:         type: \"string\" BlockVolume:   type: \"object\"   description: |     Options for using this volume as a Block-type volume.     Intentionally empty.  */
+    // Options for using this volume as a Mount-type volume.      Either MountVolume or BlockVolume, but not both, must be     present.   properties:     FsType:       type: \"string\"       description: |         Specifies the filesystem type for the mount volume.         Optional.     MountFlags:       type: \"array\"       description: |         Flags to pass when mounting the volume. Optional.       items:         type: \"string\" BlockVolume:   type: \"object\"   description: |     Options for using this volume as a Block-type volume.     Intentionally empty.
     @Json(name = "MountVolume")
     var mountVolume: kotlin.Any? = null,
-
-    /* Swarm Secrets that are passed to the CSI storage plugin when operating on this volume.  */
+    // Swarm Secrets that are passed to the CSI storage plugin when operating on this volume.
     @Json(name = "Secrets")
     var secrets: kotlin.collections.MutableList<ClusterVolumeSpecAccessModeSecretsInner>? = null,
-
     @Json(name = "AccessibilityRequirements")
     var accessibilityRequirements: ClusterVolumeSpecAccessModeAccessibilityRequirements? = null,
-
     @Json(name = "CapacityRange")
     var capacityRange: ClusterVolumeSpecAccessModeCapacityRange? = null,
-
-    /* The availability of the volume for use in tasks. - `active` The volume is fully available for scheduling on the cluster - `pause` No new workloads should use the volume, but existing workloads are not stopped. - `drain` All workloads using this volume should be stopped and rescheduled, and no new ones should be started.  */
+    // The availability of the volume for use in tasks. - `active` The volume is fully available for scheduling on the cluster - `pause` No new workloads should use the volume, but existing workloads are not stopped. - `drain` All workloads using this volume should be stopped and rescheduled, and no new ones should be started.
     @Json(name = "Availability")
-    var availability: ClusterVolumeSpecAccessMode.Availability? = Availability.Active
-
+    var availability: ClusterVolumeSpecAccessMode.Availability? = Availability.Active,
 ) {
-
     /**
      * The set of nodes this volume can be used on at one time. - `single` The volume may only be scheduled to one node at a time. - `multi` the volume may be scheduled to any supported number of nodes at a time.
      *
@@ -72,7 +62,7 @@ data class ClusterVolumeSpecAccessMode(
         Single("single"),
 
         @Json(name = "multi")
-        Multi("multi");
+        Multi("multi"),
     }
 
     /**
@@ -92,7 +82,7 @@ data class ClusterVolumeSpecAccessMode(
         Onewriter("onewriter"),
 
         @Json(name = "all")
-        All("all");
+        All("all"),
     }
 
     /**
@@ -109,6 +99,6 @@ data class ClusterVolumeSpecAccessMode(
         Pause("pause"),
 
         @Json(name = "drain")
-        Drain("drain");
+        Drain("drain"),
     }
 }

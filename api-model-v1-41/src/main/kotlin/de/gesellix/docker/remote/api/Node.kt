@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -31,33 +31,23 @@ import com.squareup.moshi.JsonClass
  * @param managerStatus
  */
 @JsonClass(generateAdapter = true)
-
 data class Node(
-
     @Json(name = "ID")
     var ID: kotlin.String? = null,
-
     @Json(name = "Version")
     var version: ObjectVersion? = null,
-
-    /* Date and time at which the node was added to the swarm in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.  */
+    // Date and time at which the node was added to the swarm in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
     @Json(name = "CreatedAt")
     var createdAt: kotlin.String? = null,
-
-    /* Date and time at which the node was last updated in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.  */
+    // Date and time at which the node was last updated in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
     @Json(name = "UpdatedAt")
     var updatedAt: kotlin.String? = null,
-
     @Json(name = "Spec")
     var spec: NodeSpec? = null,
-
     @Json(name = "Description")
     var description: NodeDescription? = null,
-
     @Json(name = "Status")
     var status: NodeStatus? = null,
-
     @Json(name = "ManagerStatus")
-    var managerStatus: ManagerStatus? = null
-
+    var managerStatus: ManagerStatus? = null,
 )

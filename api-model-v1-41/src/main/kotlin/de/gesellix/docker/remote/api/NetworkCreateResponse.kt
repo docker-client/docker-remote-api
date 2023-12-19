@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,14 +25,10 @@ import com.squareup.moshi.JsonClass
  * @param warning
  */
 @JsonClass(generateAdapter = true)
-
 data class NetworkCreateResponse(
-
-    /* The ID of the created network. */
+    // The ID of the created network.
     @Json(name = "Id")
     var id: kotlin.String? = null,
-
     @Json(name = "Warning")
-    var warning: kotlin.String? = null
-
+    var warning: kotlin.String? = null,
 )

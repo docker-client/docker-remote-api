@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,15 +25,11 @@ import com.squareup.moshi.JsonClass
  * @param preferred A list of topologies that the volume should attempt to be provisioned in.
  */
 @JsonClass(generateAdapter = true)
-
 data class ClusterVolumeSpecAccessModeAccessibilityRequirements(
-
-    /* A list of required topologies, at least one of which the volume must be accessible from.  */
+    // A list of required topologies, at least one of which the volume must be accessible from.
     @Json(name = "Requisite")
     var requisite: kotlin.collections.MutableList<kotlin.collections.MutableMap<kotlin.String, kotlin.String>>? = null,
-
-    /* A list of topologies that the volume should attempt to be provisioned in.  */
+    // A list of topologies that the volume should attempt to be provisioned in.
     @Json(name = "Preferred")
-    var preferred: kotlin.collections.MutableList<kotlin.collections.MutableMap<kotlin.String, kotlin.String>>? = null
-
+    var preferred: kotlin.collections.MutableList<kotlin.collections.MutableMap<kotlin.String, kotlin.String>>? = null,
 )

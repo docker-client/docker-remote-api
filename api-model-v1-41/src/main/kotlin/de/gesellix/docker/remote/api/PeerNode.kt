@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,15 +25,11 @@ import com.squareup.moshi.JsonClass
  * @param addr IP address and ports at which this node can be reached.
  */
 @JsonClass(generateAdapter = true)
-
 data class PeerNode(
-
-    /* Unique identifier of for this node in the swarm. */
+    // Unique identifier of for this node in the swarm.
     @Json(name = "NodeID")
     var nodeID: kotlin.String? = null,
-
-    /* IP address and ports at which this node can be reached.  */
+    // IP address and ports at which this node can be reached.
     @Json(name = "Addr")
-    var addr: kotlin.String? = null
-
+    var addr: kotlin.String? = null,
 )

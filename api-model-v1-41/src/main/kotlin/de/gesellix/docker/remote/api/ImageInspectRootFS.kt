@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,13 +25,9 @@ import com.squareup.moshi.JsonClass
  * @param layers
  */
 @JsonClass(generateAdapter = true)
-
 data class ImageInspectRootFS(
-
     @Json(name = "Type")
     var type: kotlin.String,
-
     @Json(name = "Layers")
-    var layers: kotlin.collections.MutableList<kotlin.String>? = null
-
+    var layers: kotlin.collections.MutableList<kotlin.String>? = null,
 )

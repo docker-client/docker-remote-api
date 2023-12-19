@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -26,16 +26,11 @@ import com.squareup.moshi.JsonClass
  * @param cgroupPermissions
  */
 @JsonClass(generateAdapter = true)
-
 data class DeviceMapping(
-
     @Json(name = "PathOnHost")
     var pathOnHost: kotlin.String? = null,
-
     @Json(name = "PathInContainer")
     var pathInContainer: kotlin.String? = null,
-
     @Json(name = "CgroupPermissions")
-    var cgroupPermissions: kotlin.String? = null
-
+    var cgroupPermissions: kotlin.String? = null,
 )

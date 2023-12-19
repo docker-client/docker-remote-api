@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -29,34 +29,25 @@ import com.squareup.moshi.JsonClass
  * @param timeNano Timestamp of event, with nanosecond accuracy
  */
 @JsonClass(generateAdapter = true)
-
 data class EventMessage(
-
-    /* The type of object emitting the event */
+    // The type of object emitting the event
     @Json(name = "Type")
     var type: EventMessage.Type? = null,
-
-    /* The type of event */
+    // The type of event
     @Json(name = "Action")
     var action: kotlin.String? = null,
-
     @Json(name = "Actor")
     var actor: EventActor? = null,
-
-    /* Scope of the event. Engine events are `local` scope. Cluster (Swarm) events are `swarm` scope.  */
+    // Scope of the event. Engine events are `local` scope. Cluster (Swarm) events are `swarm` scope.
     @Json(name = "scope")
     var scope: EventMessage.Scope? = null,
-
-    /* Timestamp of event */
+    // Timestamp of event
     @Json(name = "time")
     var time: kotlin.Long? = null,
-
-    /* Timestamp of event, with nanosecond accuracy */
+    // Timestamp of event, with nanosecond accuracy
     @Json(name = "timeNano")
-    var timeNano: kotlin.Long? = null
-
+    var timeNano: kotlin.Long? = null,
 ) {
-
     /**
      * The type of object emitting the event
      *
@@ -95,7 +86,7 @@ data class EventMessage(
         Service("service"),
 
         @Json(name = "volume")
-        Volume("volume");
+        Volume("volume"),
     }
 
     /**
@@ -109,6 +100,6 @@ data class EventMessage(
         Local("local"),
 
         @Json(name = "swarm")
-        Swarm("swarm");
+        Swarm("swarm"),
     }
 }

@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -27,27 +27,20 @@ import com.squareup.moshi.JsonClass
  * @param availability Availability of the node.
  */
 @JsonClass(generateAdapter = true)
-
 data class NodeSpec(
-
-    /* Name for the node. */
+    // Name for the node.
     @Json(name = "Name")
     var name: kotlin.String? = null,
-
-    /* User-defined key/value metadata. */
+    // User-defined key/value metadata.
     @Json(name = "Labels")
     var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
-
-    /* Role of the node. */
+    // Role of the node.
     @Json(name = "Role")
     var role: NodeSpec.Role? = null,
-
-    /* Availability of the node. */
+    // Availability of the node.
     @Json(name = "Availability")
-    var availability: NodeSpec.Availability? = null
-
+    var availability: NodeSpec.Availability? = null,
 ) {
-
     /**
      * Role of the node.
      *
@@ -59,7 +52,7 @@ data class NodeSpec(
         Worker("worker"),
 
         @Json(name = "manager")
-        Manager("manager");
+        Manager("manager"),
     }
 
     /**
@@ -76,6 +69,6 @@ data class NodeSpec(
         Pause("pause"),
 
         @Json(name = "drain")
-        Drain("drain");
+        Drain("drain"),
     }
 }

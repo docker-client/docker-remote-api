@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -26,16 +26,11 @@ import com.squareup.moshi.JsonClass
  * @param linkLocalIPs
  */
 @JsonClass(generateAdapter = true)
-
 data class EndpointIPAMConfig(
-
     @Json(name = "IPv4Address")
     var ipv4Address: kotlin.String? = null,
-
     @Json(name = "IPv6Address")
     var ipv6Address: kotlin.String? = null,
-
     @Json(name = "LinkLocalIPs")
-    var linkLocalIPs: kotlin.collections.MutableList<kotlin.String>? = null
-
+    var linkLocalIPs: kotlin.collections.MutableList<kotlin.String>? = null,
 )

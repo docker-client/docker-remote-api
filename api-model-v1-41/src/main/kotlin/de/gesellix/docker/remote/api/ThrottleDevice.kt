@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,15 +25,11 @@ import com.squareup.moshi.JsonClass
  * @param rate Rate
  */
 @JsonClass(generateAdapter = true)
-
 data class ThrottleDevice(
-
-    /* Device path */
+    // Device path
     @Json(name = "Path")
     var path: kotlin.String? = null,
-
-    /* Rate */
+    // Rate
     @Json(name = "Rate")
-    var rate: kotlin.Long? = null
-
+    var rate: kotlin.Long? = null,
 )

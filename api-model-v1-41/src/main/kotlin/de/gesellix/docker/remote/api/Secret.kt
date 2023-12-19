@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -28,22 +28,15 @@ import com.squareup.moshi.JsonClass
  * @param spec
  */
 @JsonClass(generateAdapter = true)
-
 data class Secret(
-
     @Json(name = "ID")
     var ID: kotlin.String? = null,
-
     @Json(name = "Version")
     var version: ObjectVersion? = null,
-
     @Json(name = "CreatedAt")
     var createdAt: kotlin.String? = null,
-
     @Json(name = "UpdatedAt")
     var updatedAt: kotlin.String? = null,
-
     @Json(name = "Spec")
-    var spec: SecretSpec? = null
-
+    var spec: SecretSpec? = null,
 )

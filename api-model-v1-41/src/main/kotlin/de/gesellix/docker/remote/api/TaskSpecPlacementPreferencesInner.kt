@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -24,10 +24,7 @@ import com.squareup.moshi.JsonClass
  * @param spread
  */
 @JsonClass(generateAdapter = true)
-
 data class TaskSpecPlacementPreferencesInner(
-
     @Json(name = "Spread")
-    var spread: TaskSpecPlacementPreferencesInnerSpread? = null
-
+    var spread: TaskSpecPlacementPreferencesInnerSpread? = null,
 )

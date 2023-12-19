@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -26,19 +26,14 @@ import com.squareup.moshi.JsonClass
  * @param driverOpts Driver attachment options for the network target.
  */
 @JsonClass(generateAdapter = true)
-
 data class NetworkAttachmentConfig(
-
-    /* The target network for attachment. Must be a network name or ID.  */
+    // The target network for attachment. Must be a network name or ID.
     @Json(name = "Target")
     var target: kotlin.String? = null,
-
-    /* Discoverable alternate names for the service on this network.  */
+    // Discoverable alternate names for the service on this network.
     @Json(name = "Aliases")
     var aliases: kotlin.collections.MutableList<kotlin.String>? = null,
-
-    /* Driver attachment options for the network target.  */
+    // Driver attachment options for the network target.
     @Json(name = "DriverOpts")
-    var driverOpts: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null
-
+    var driverOpts: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
 )

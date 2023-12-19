@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -28,22 +28,15 @@ import com.squareup.moshi.JsonClass
  * @param containerStatus
  */
 @JsonClass(generateAdapter = true)
-
 data class TaskStatus(
-
     @Json(name = "Timestamp")
     var timestamp: kotlin.String? = null,
-
     @Json(name = "State")
     var state: TaskState? = null,
-
     @Json(name = "Message")
     var message: kotlin.String? = null,
-
     @Json(name = "Err")
     var err: kotlin.String? = null,
-
     @Json(name = "ContainerStatus")
-    var containerStatus: TaskStatusContainerStatus? = null
-
+    var containerStatus: TaskStatusContainerStatus? = null,
 )

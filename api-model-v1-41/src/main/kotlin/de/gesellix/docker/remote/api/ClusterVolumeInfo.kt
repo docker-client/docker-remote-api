@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -27,23 +27,17 @@ import com.squareup.moshi.JsonClass
  * @param accessibleTopology The topology this volume is actually accessible from.
  */
 @JsonClass(generateAdapter = true)
-
 data class ClusterVolumeInfo(
-
-    /* The capacity of the volume in bytes. A value of 0 indicates that the capacity is unknown.  */
+    // The capacity of the volume in bytes. A value of 0 indicates that the capacity is unknown.
     @Json(name = "CapacityBytes")
     var capacityBytes: kotlin.Long? = null,
-
-    /* A map of strings to strings returned from the storage plugin when the volume is created.  */
+    // A map of strings to strings returned from the storage plugin when the volume is created.
     @Json(name = "VolumeContext")
     var volumeContext: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
-
-    /* The ID of the volume as returned by the CSI storage plugin. This is distinct from the volume's ID as provided by Docker. This ID is never used by the user when communicating with Docker to refer to this volume. If the ID is blank, then the Volume has not been successfully created in the plugin yet.  */
+    // The ID of the volume as returned by the CSI storage plugin. This is distinct from the volume's ID as provided by Docker. This ID is never used by the user when communicating with Docker to refer to this volume. If the ID is blank, then the Volume has not been successfully created in the plugin yet.
     @Json(name = "VolumeID")
     var volumeID: kotlin.String? = null,
-
-    /* The topology this volume is actually accessible from.  */
+    // The topology this volume is actually accessible from.
     @Json(name = "AccessibleTopology")
-    var accessibleTopology: kotlin.collections.MutableList<kotlin.collections.MutableMap<kotlin.String, kotlin.String>>? = null
-
+    var accessibleTopology: kotlin.collections.MutableList<kotlin.collections.MutableMap<kotlin.String, kotlin.String>>? = null,
 )

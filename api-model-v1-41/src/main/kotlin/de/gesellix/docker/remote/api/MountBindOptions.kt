@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,19 +25,14 @@ import com.squareup.moshi.JsonClass
  * @param nonRecursive Disable recursive bind mount.
  */
 @JsonClass(generateAdapter = true)
-
 data class MountBindOptions(
-
-    /* A propagation mode with the value `[r]private`, `[r]shared`, or `[r]slave`. */
+    // A propagation mode with the value `[r]private`, `[r]shared`, or `[r]slave`.
     @Json(name = "Propagation")
     var propagation: MountBindOptions.Propagation? = null,
-
-    /* Disable recursive bind mount. */
+    // Disable recursive bind mount.
     @Json(name = "NonRecursive")
-    var nonRecursive: kotlin.Boolean? = false
-
+    var nonRecursive: kotlin.Boolean? = false,
 ) {
-
     /**
      * A propagation mode with the value `[r]private`, `[r]shared`, or `[r]slave`.
      *
@@ -61,6 +56,6 @@ data class MountBindOptions(
         Slave("slave"),
 
         @Json(name = "rslave")
-        Rslave("rslave");
+        Rslave("rslave"),
     }
 }

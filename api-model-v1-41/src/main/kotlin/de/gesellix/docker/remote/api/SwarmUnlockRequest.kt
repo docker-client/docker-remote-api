@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -24,11 +24,8 @@ import com.squareup.moshi.JsonClass
  * @param unlockKey The swarm's unlock key.
  */
 @JsonClass(generateAdapter = true)
-
 data class SwarmUnlockRequest(
-
-    /* The swarm's unlock key. */
+    // The swarm's unlock key.
     @Json(name = "UnlockKey")
-    var unlockKey: kotlin.String? = null
-
+    var unlockKey: kotlin.String? = null,
 )

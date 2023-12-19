@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,13 +25,9 @@ import com.squareup.moshi.JsonClass
  * @param weight
  */
 @JsonClass(generateAdapter = true)
-
 data class ResourcesBlkioWeightDeviceInner(
-
     @Json(name = "Path")
     var path: kotlin.String? = null,
-
     @Json(name = "Weight")
-    var weight: kotlin.Int? = null
-
+    var weight: kotlin.Int? = null,
 )

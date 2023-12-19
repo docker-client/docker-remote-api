@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,14 +25,10 @@ import com.squareup.moshi.JsonClass
  * @param lastExecution The last time, as observed by the server, that this job was started.
  */
 @JsonClass(generateAdapter = true)
-
 data class ServiceJobStatus(
-
     @Json(name = "JobIteration")
     var jobIteration: ObjectVersion? = null,
-
-    /* The last time, as observed by the server, that this job was started.  */
+    // The last time, as observed by the server, that this job was started.
     @Json(name = "LastExecution")
-    var lastExecution: kotlin.String? = null
-
+    var lastExecution: kotlin.String? = null,
 )

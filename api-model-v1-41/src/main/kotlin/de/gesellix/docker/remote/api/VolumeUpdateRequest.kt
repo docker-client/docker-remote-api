@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -24,10 +24,7 @@ import com.squareup.moshi.JsonClass
  * @param spec
  */
 @JsonClass(generateAdapter = true)
-
 data class VolumeUpdateRequest(
-
     @Json(name = "Spec")
-    var spec: ClusterVolumeSpec? = null
-
+    var spec: ClusterVolumeSpec? = null,
 )

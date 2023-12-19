@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -26,19 +26,14 @@ import com.squareup.moshi.JsonClass
  * @param certIssuerPublicKey The base64-url-safe-encoded raw public key bytes of the issuer.
  */
 @JsonClass(generateAdapter = true)
-
 data class TLSInfo(
-
-    /* The root CA certificate(s) that are used to validate leaf TLS certificates.  */
+    // The root CA certificate(s) that are used to validate leaf TLS certificates.
     @Json(name = "TrustRoot")
     var trustRoot: kotlin.String? = null,
-
-    /* The base64-url-safe-encoded raw subject bytes of the issuer. */
+    // The base64-url-safe-encoded raw subject bytes of the issuer.
     @Json(name = "CertIssuerSubject")
     var certIssuerSubject: kotlin.String? = null,
-
-    /* The base64-url-safe-encoded raw public key bytes of the issuer.  */
+    // The base64-url-safe-encoded raw public key bytes of the issuer.
     @Json(name = "CertIssuerPublicKey")
-    var certIssuerPublicKey: kotlin.String? = null
-
+    var certIssuerPublicKey: kotlin.String? = null,
 )

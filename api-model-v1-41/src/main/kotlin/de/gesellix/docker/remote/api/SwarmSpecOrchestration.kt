@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -24,11 +24,8 @@ import com.squareup.moshi.JsonClass
  * @param taskHistoryRetentionLimit The number of historic tasks to keep per instance or node. If negative, never remove completed or failed tasks.
  */
 @JsonClass(generateAdapter = true)
-
 data class SwarmSpecOrchestration(
-
-    /* The number of historic tasks to keep per instance or node. If negative, never remove completed or failed tasks.  */
+    // The number of historic tasks to keep per instance or node. If negative, never remove completed or failed tasks.
     @Json(name = "TaskHistoryRetentionLimit")
-    var taskHistoryRetentionLimit: kotlin.Long? = null
-
+    var taskHistoryRetentionLimit: kotlin.Long? = null,
 )

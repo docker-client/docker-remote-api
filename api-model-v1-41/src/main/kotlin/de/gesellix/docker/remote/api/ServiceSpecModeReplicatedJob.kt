@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,15 +25,11 @@ import com.squareup.moshi.JsonClass
  * @param totalCompletions The total number of replicas desired to reach the Completed state. If unset, will default to the value of `MaxConcurrent`
  */
 @JsonClass(generateAdapter = true)
-
 data class ServiceSpecModeReplicatedJob(
-
-    /* The maximum number of replicas to run simultaneously.  */
+    // The maximum number of replicas to run simultaneously.
     @Json(name = "MaxConcurrent")
     var maxConcurrent: kotlin.Long? = 1L,
-
-    /* The total number of replicas desired to reach the Completed state. If unset, will default to the value of `MaxConcurrent`  */
+    // The total number of replicas desired to reach the Completed state. If unset, will default to the value of `MaxConcurrent`
     @Json(name = "TotalCompletions")
-    var totalCompletions: kotlin.Long? = null
-
+    var totalCompletions: kotlin.Long? = null,
 )

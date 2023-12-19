@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -35,56 +35,41 @@ import com.squareup.moshi.JsonClass
  * @param health
  */
 @JsonClass(generateAdapter = true)
-
 data class ContainerState(
-
-    /* String representation of the container state. Can be one of \"created\", \"running\", \"paused\", \"restarting\", \"removing\", \"exited\", or \"dead\".  */
+    // String representation of the container state. Can be one of \"created\", \"running\", \"paused\", \"restarting\", \"removing\", \"exited\", or \"dead\".
     @Json(name = "Status")
     var status: ContainerState.Status? = null,
-
-    /* Whether this container is running.  Note that a running container can be _paused_. The `Running` and `Paused` booleans are not mutually exclusive:  When pausing a container (on Linux), the freezer cgroup is used to suspend all processes in the container. Freezing the process requires the process to be running. As a result, paused containers are both `Running` _and_ `Paused`.  Use the `Status` field instead to determine if a container's state is \"running\".  */
+    // Whether this container is running.  Note that a running container can be _paused_. The `Running` and `Paused` booleans are not mutually exclusive:  When pausing a container (on Linux), the freezer cgroup is used to suspend all processes in the container. Freezing the process requires the process to be running. As a result, paused containers are both `Running` _and_ `Paused`.  Use the `Status` field instead to determine if a container's state is \"running\".
     @Json(name = "Running")
     var running: kotlin.Boolean? = null,
-
-    /* Whether this container is paused. */
+    // Whether this container is paused.
     @Json(name = "Paused")
     var paused: kotlin.Boolean? = null,
-
-    /* Whether this container is restarting. */
+    // Whether this container is restarting.
     @Json(name = "Restarting")
     var restarting: kotlin.Boolean? = null,
-
-    /* Whether a process within this container has been killed because it ran out of memory since the container was last started.  */
+    // Whether a process within this container has been killed because it ran out of memory since the container was last started.
     @Json(name = "OOMKilled")
     var ooMKilled: kotlin.Boolean? = null,
-
     @Json(name = "Dead")
     var dead: kotlin.Boolean? = null,
-
-    /* The process ID of this container */
+    // The process ID of this container
     @Json(name = "Pid")
     var pid: kotlin.Int? = null,
-
-    /* The last exit code of this container */
+    // The last exit code of this container
     @Json(name = "ExitCode")
     var exitCode: kotlin.Int? = null,
-
     @Json(name = "Error")
     var error: kotlin.String? = null,
-
-    /* The time when this container was last started. */
+    // The time when this container was last started.
     @Json(name = "StartedAt")
     var startedAt: kotlin.String? = null,
-
-    /* The time when this container last exited. */
+    // The time when this container last exited.
     @Json(name = "FinishedAt")
     var finishedAt: kotlin.String? = null,
-
     @Json(name = "Health")
-    var health: Health? = null
-
+    var health: Health? = null,
 ) {
-
     /**
      * String representation of the container state. Can be one of \"created\", \"running\", \"paused\", \"restarting\", \"removing\", \"exited\", or \"dead\".
      *
@@ -111,6 +96,6 @@ data class ContainerState(
         Exited("exited"),
 
         @Json(name = "dead")
-        Dead("dead");
+        Dead("dead"),
     }
 }

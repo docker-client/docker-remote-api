@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -24,10 +24,7 @@ import com.squareup.moshi.JsonClass
  * @param logDriver
  */
 @JsonClass(generateAdapter = true)
-
 data class SwarmSpecTaskDefaults(
-
     @Json(name = "LogDriver")
-    var logDriver: SwarmSpecTaskDefaultsLogDriver? = null
-
+    var logDriver: SwarmSpecTaskDefaultsLogDriver? = null,
 )

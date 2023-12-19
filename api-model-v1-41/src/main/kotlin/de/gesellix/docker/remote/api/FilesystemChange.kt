@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,14 +25,10 @@ import com.squareup.moshi.JsonClass
  * @param kind
  */
 @JsonClass(generateAdapter = true)
-
 data class FilesystemChange(
-
-    /* Path to file or directory that has changed.  */
+    // Path to file or directory that has changed.
     @Json(name = "Path")
     var path: kotlin.String,
-
     @Json(name = "Kind")
-    var kind: ChangeType
-
+    var kind: ChangeType,
 )

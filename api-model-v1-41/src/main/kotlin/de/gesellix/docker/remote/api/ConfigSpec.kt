@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -27,22 +27,16 @@ import com.squareup.moshi.JsonClass
  * @param templating
  */
 @JsonClass(generateAdapter = true)
-
 data class ConfigSpec(
-
-    /* User-defined name of the config. */
+    // User-defined name of the config.
     @Json(name = "Name")
     var name: kotlin.String? = null,
-
-    /* User-defined key/value metadata. */
+    // User-defined key/value metadata.
     @Json(name = "Labels")
     var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
-
-    /* Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-5)) config data.  */
+    // Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-5)) config data.
     @Json(name = "Data")
     var `data`: kotlin.String? = null,
-
     @Json(name = "Templating")
-    var templating: Driver? = null
-
+    var templating: Driver? = null,
 )

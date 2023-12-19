@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -28,22 +28,15 @@ import com.squareup.moshi.JsonClass
  * @param tlSInfo
  */
 @JsonClass(generateAdapter = true)
-
 data class NodeDescription(
-
     @Json(name = "Hostname")
     var hostname: kotlin.String? = null,
-
     @Json(name = "Platform")
     var platform: Platform? = null,
-
     @Json(name = "Resources")
     var resources: ResourceObject? = null,
-
     @Json(name = "Engine")
     var engine: EngineDescription? = null,
-
     @Json(name = "TLSInfo")
-    var tlSInfo: TLSInfo? = null
-
+    var tlSInfo: TLSInfo? = null,
 )

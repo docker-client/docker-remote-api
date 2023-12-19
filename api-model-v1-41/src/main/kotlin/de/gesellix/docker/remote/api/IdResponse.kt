@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -24,11 +24,8 @@ import com.squareup.moshi.JsonClass
  * @param id The id of the newly created object.
  */
 @JsonClass(generateAdapter = true)
-
 data class IdResponse(
-
-    /* The id of the newly created object. */
+    // The id of the newly created object.
     @Json(name = "Id")
-    var id: kotlin.String
-
+    var id: kotlin.String,
 )

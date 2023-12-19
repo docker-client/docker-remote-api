@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -27,19 +27,13 @@ import com.squareup.moshi.JsonClass
  * @param progressDetail
  */
 @JsonClass(generateAdapter = true)
-
 data class PushImageInfo(
-
     @Json(name = "error")
     var error: kotlin.String? = null,
-
     @Json(name = "status")
     var status: kotlin.String? = null,
-
     @Json(name = "progress")
     var progress: kotlin.String? = null,
-
     @Json(name = "progressDetail")
-    var progressDetail: ProgressDetail? = null
-
+    var progressDetail: ProgressDetail? = null,
 )

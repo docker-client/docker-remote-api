@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -32,39 +32,28 @@ import com.squareup.moshi.JsonClass
  * @param cluster
  */
 @JsonClass(generateAdapter = true)
-
 data class SwarmInfo(
-
-    /* Unique identifier of for this node in the swarm. */
+    // Unique identifier of for this node in the swarm.
     @Json(name = "NodeID")
     var nodeID: kotlin.String? = "",
-
-    /* IP address at which this node can be reached by other nodes in the swarm.  */
+    // IP address at which this node can be reached by other nodes in the swarm.
     @Json(name = "NodeAddr")
     var nodeAddr: kotlin.String? = "",
-
     @Json(name = "LocalNodeState")
     var localNodeState: LocalNodeState? = LocalNodeState.EMPTY,
-
     @Json(name = "ControlAvailable")
     var controlAvailable: kotlin.Boolean? = false,
-
     @Json(name = "Error")
     var error: kotlin.String? = "",
-
-    /* List of ID's and addresses of other managers in the swarm.  */
+    // List of ID's and addresses of other managers in the swarm.
     @Json(name = "RemoteManagers")
     var remoteManagers: kotlin.collections.MutableList<PeerNode>? = null,
-
-    /* Total number of nodes in the swarm. */
+    // Total number of nodes in the swarm.
     @Json(name = "Nodes")
     var nodes: kotlin.Int? = null,
-
-    /* Total number of managers in the swarm. */
+    // Total number of managers in the swarm.
     @Json(name = "Managers")
     var managers: kotlin.Int? = null,
-
     @Json(name = "Cluster")
-    var cluster: ClusterInfo? = null
-
+    var cluster: ClusterInfo? = null,
 )

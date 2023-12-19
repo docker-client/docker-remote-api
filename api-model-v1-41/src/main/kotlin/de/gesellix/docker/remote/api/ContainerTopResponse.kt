@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,15 +25,11 @@ import com.squareup.moshi.JsonClass
  * @param processes Each process running in the container, where each is process is an array of values corresponding to the titles.
  */
 @JsonClass(generateAdapter = true)
-
 data class ContainerTopResponse(
-
-    /* The ps column titles */
+    // The ps column titles
     @Json(name = "Titles")
     var titles: kotlin.collections.MutableList<kotlin.String>? = null,
-
-    /* Each process running in the container, where each is process is an array of values corresponding to the titles.  */
+    // Each process running in the container, where each is process is an array of values corresponding to the titles.
     @Json(name = "Processes")
-    var processes: kotlin.collections.MutableList<kotlin.collections.MutableList<kotlin.String>>? = null
-
+    var processes: kotlin.collections.MutableList<kotlin.collections.MutableList<kotlin.String>>? = null,
 )

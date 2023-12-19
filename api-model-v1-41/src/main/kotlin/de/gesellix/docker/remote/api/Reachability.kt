@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -26,7 +26,6 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = false)
 enum class Reachability(val value: kotlin.String) {
-
     @Json(name = "unknown")
     Unknown("unknown"),
 
@@ -34,7 +33,8 @@ enum class Reachability(val value: kotlin.String) {
     Unreachable("unreachable"),
 
     @Json(name = "reachable")
-    Reachable("reachable");
+    Reachable("reachable"),
+    ;
 
     /**
      * Override [toString()] to avoid using the enum variable name as the value, and instead use
@@ -54,11 +54,12 @@ enum class Reachability(val value: kotlin.String) {
         /**
          * Returns a valid [Reachability] for [data], null otherwise.
          */
-        fun decode(data: kotlin.Any?): Reachability? = data?.let {
-            val normalizedData = "$it".lowercase()
-            values().firstOrNull { value ->
-                it == value || normalizedData == "$value".lowercase()
+        fun decode(data: kotlin.Any?): Reachability? =
+            data?.let {
+                val normalizedData = "$it".lowercase()
+                values().firstOrNull { value ->
+                    it == value || normalizedData == "$value".lowercase()
+                }
             }
-        }
     }
 }

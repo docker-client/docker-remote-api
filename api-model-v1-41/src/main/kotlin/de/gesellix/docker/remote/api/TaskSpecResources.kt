@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -25,13 +25,9 @@ import com.squareup.moshi.JsonClass
  * @param reservations
  */
 @JsonClass(generateAdapter = true)
-
 data class TaskSpecResources(
-
     @Json(name = "Limits")
     var limits: Limit? = null,
-
     @Json(name = "Reservations")
-    var reservations: ResourceObject? = null
-
+    var reservations: ResourceObject? = null,
 )

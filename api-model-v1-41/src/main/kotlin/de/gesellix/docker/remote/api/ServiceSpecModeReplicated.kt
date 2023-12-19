@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -24,10 +24,7 @@ import com.squareup.moshi.JsonClass
  * @param replicas
  */
 @JsonClass(generateAdapter = true)
-
 data class ServiceSpecModeReplicated(
-
     @Json(name = "Replicas")
-    var replicas: kotlin.Long? = null
-
+    var replicas: kotlin.Long? = null,
 )

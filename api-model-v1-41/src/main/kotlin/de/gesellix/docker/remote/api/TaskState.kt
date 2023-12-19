@@ -10,7 +10,7 @@
     "ArrayInDataClass",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "UnusedImport",
 )
 
 package de.gesellix.docker.remote.api
@@ -26,7 +26,6 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = false)
 enum class TaskState(val value: kotlin.String) {
-
     @Json(name = "new")
     New("new"),
 
@@ -70,7 +69,8 @@ enum class TaskState(val value: kotlin.String) {
     Remove("remove"),
 
     @Json(name = "orphaned")
-    Orphaned("orphaned");
+    Orphaned("orphaned"),
+    ;
 
     /**
      * Override [toString()] to avoid using the enum variable name as the value, and instead use
@@ -90,11 +90,12 @@ enum class TaskState(val value: kotlin.String) {
         /**
          * Returns a valid [TaskState] for [data], null otherwise.
          */
-        fun decode(data: kotlin.Any?): TaskState? = data?.let {
-            val normalizedData = "$it".lowercase()
-            values().firstOrNull { value ->
-                it == value || normalizedData == "$value".lowercase()
+        fun decode(data: kotlin.Any?): TaskState? =
+            data?.let {
+                val normalizedData = "$it".lowercase()
+                values().firstOrNull { value ->
+                    it == value || normalizedData == "$value".lowercase()
+                }
             }
-        }
     }
 }
