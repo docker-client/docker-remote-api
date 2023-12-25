@@ -10,18 +10,18 @@ plugins {
   id("io.freefair.maven-central.validate-poms") version "8.4"
   id("io.github.gradle-nexus.publish-plugin") version "1.3.0"
   id("org.jetbrains.kotlin.jvm") version "1.9.21" apply false
-  id("com.google.devtools.ksp") version "1.9.21-1.0.16" apply false
+  id("com.google.devtools.ksp") version "1.9.22-1.0.16" apply false
   id("org.openapi.generator") version "7.1.0" apply false
   id("org.jlleitschuh.gradle.ktlint") version "12.0.3" apply false
 }
 
 val dependencyVersions = listOf(
-  "org.jetbrains.kotlin:kotlin-reflect:1.9.21",
-  "org.jetbrains.kotlin:kotlin-script-runtime:1.9.21",
-  "org.jetbrains.kotlin:kotlin-stdlib:1.9.21",
-  "org.jetbrains.kotlin:kotlin-stdlib-common:1.9.21",
-  "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.21",
-  "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.21",
+  "org.jetbrains.kotlin:kotlin-reflect:1.9.22",
+  "org.jetbrains.kotlin:kotlin-script-runtime:1.9.22",
+  "org.jetbrains.kotlin:kotlin-stdlib:1.9.22",
+  "org.jetbrains.kotlin:kotlin-stdlib-common:1.9.22",
+  "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.22",
+  "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.22",
   "org.slf4j:slf4j-api:2.0.9",
 )
 
