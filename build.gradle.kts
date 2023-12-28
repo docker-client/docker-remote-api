@@ -22,7 +22,7 @@ val dependencyVersions = listOf(
   "org.jetbrains.kotlin:kotlin-stdlib-common:1.9.22",
   "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.22",
   "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.22",
-  "org.slf4j:slf4j-api:2.0.9",
+  "org.slf4j:slf4j-api:2.0.10",
 )
 
 val dependencyGroupVersions = mapOf<String, String>(
