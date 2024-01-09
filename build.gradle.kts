@@ -12,7 +12,7 @@ plugins {
   id("org.jetbrains.kotlin.jvm") version "1.9.22" apply false
   id("com.google.devtools.ksp") version "1.9.22-1.0.16" apply false
   id("org.openapi.generator") version "7.2.0" apply false
-  id("org.jlleitschuh.gradle.ktlint") version "12.0.3" apply false
+  id("org.jlleitschuh.gradle.ktlint") version "12.1.0" apply false
 }
 
 val dependencyVersions = listOf(
