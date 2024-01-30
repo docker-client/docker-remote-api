@@ -119,8 +119,8 @@ dependencies {
     }
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.22")
 
-    implementation("com.squareup.moshi:moshi:1.15.0")
-    ksp("com.squareup.moshi:moshi-kotlin-codegen:1.15.0")
+    implementation("com.squareup.moshi:moshi:1.15.1")
+    ksp("com.squareup.moshi:moshi-kotlin-codegen:1.15.1")
     compileOnly("com.squareup.okhttp3:okhttp:4.12.0")
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.1")
