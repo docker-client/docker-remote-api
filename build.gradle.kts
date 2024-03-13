@@ -26,6 +26,8 @@ val dependencyVersions = listOf(
 )
 
 val dependencyGroupVersions = mapOf<String, String>(
+//    "org.junit.jupiter" to "5.10.2",
+//    "org.junit.platform" to "1.10.2",
 )
 
 subprojects {

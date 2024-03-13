@@ -61,7 +61,10 @@ val openApiGenerateCleanupGeneratedCode by tasks.register("openApiGenerateCleanu
     doLast {
         listOf(
             "src/main/kotlin/de/gesellix/docker/remote/api/infrastructure",
-            "src/main/kotlin/de/gesellix/docker/remote/client"
+            "src/main/kotlin/de/gesellix/docker/remote/client",
+            "src/test/kotlin/de/gesellix/docker/remote/api/infrastructure",
+            "src/test/kotlin/de/gesellix/docker/remote/api",
+            "src/test/kotlin/de/gesellix/docker/remote/client",
         ).onEach {
             file(it).deleteRecursively()
         }
@@ -128,6 +131,7 @@ dependencies {
     testRuntimeOnly("cglib:cglib-nodep:3.3.0")
     testImplementation("org.junit.platform:junit-platform-launcher:1.10.2")
     testImplementation("org.junit.platform:junit-platform-commons:1.10.2")
+//    testImplementation("io.kotlintest:kotlintest-runner-junit5:3.4.2")
 }
 
 java {
