@@ -9,7 +9,7 @@ plugins {
   id("net.ossindex.audit") version "0.4.11"
   id("io.freefair.maven-central.validate-poms") version "8.6"
   id("io.github.gradle-nexus.publish-plugin") version "1.3.0"
-  id("org.jetbrains.kotlin.jvm") version "1.9.23" apply false
+  id("org.jetbrains.kotlin.jvm") version "1.9.24" apply false
   id("com.google.devtools.ksp") version "1.9.23-1.0.20" apply false
   id("org.openapi.generator") version "7.5.0" apply false
   id("org.jlleitschuh.gradle.ktlint") version "12.1.1" apply false
