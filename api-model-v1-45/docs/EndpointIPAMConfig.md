@@ -2,11 +2,11 @@
 # EndpointIPAMConfig
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**ipv4Address** | **kotlin.String** |  |  [optional]
-**ipv6Address** | **kotlin.String** |  |  [optional]
-**linkLocalIPs** | **kotlin.collections.MutableList&lt;kotlin.String&gt;** |  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **ipv4Address** | **kotlin.String** |  |  [optional] |
+| **ipv6Address** | **kotlin.String** |  |  [optional] |
+| **linkLocalIPs** | **kotlin.collections.MutableList&lt;kotlin.String&gt;** |  |  [optional] |
 
 
 

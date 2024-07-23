@@ -2,19 +2,19 @@
 # TaskSpecRestartPolicy
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**condition** | [**inline**](#Condition) | Condition for restart. |  [optional]
-**delay** | **kotlin.Long** | Delay between restart attempts. |  [optional]
-**maxAttempts** | **kotlin.Long** | Maximum attempts to restart a given container before giving up (default value is 0, which is ignored).  |  [optional]
-**window** | **kotlin.Long** | Windows is the time window used to evaluate the restart policy (default value is 0, which is unbounded).  |  [optional]
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **condition** | [**inline**](#Condition) | Condition for restart. |  [optional] |
+| **delay** | **kotlin.Long** | Delay between restart attempts. |  [optional] |
+| **maxAttempts** | **kotlin.Long** | Maximum attempts to restart a given container before giving up (default value is 0, which is ignored).  |  [optional] |
+| **window** | **kotlin.Long** | Windows is the time window used to evaluate the restart policy (default value is 0, which is unbounded).  |  [optional] |
 
 
 <a id="Condition"></a>
 ## Enum: Condition
-Name | Value
----- | -----
-condition | none, on-failure, any
+| Name | Value |
+| ---- | ----- |
+| condition | none, on-failure, any |
 
 
 
