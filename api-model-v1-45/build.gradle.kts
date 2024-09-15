@@ -115,12 +115,12 @@ dependencies {
             implementation(it) {
                 version {
                     strictly("[3,4)")
-                    prefer("3.9.0")
+                    prefer("3.9.1")
                 }
             }
         }
     }
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.24")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.25")
 
     implementation("com.squareup.moshi:moshi:1.15.1")
     ksp("com.squareup.moshi:moshi-kotlin-codegen:1.15.1")
