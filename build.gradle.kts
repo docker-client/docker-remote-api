@@ -9,19 +9,19 @@ plugins {
   id("net.ossindex.audit") version "0.4.11"
   id("io.freefair.maven-central.validate-poms") version "8.10.2"
   id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
-  id("org.jetbrains.kotlin.jvm") version "2.0.20" apply false
-  id("com.google.devtools.ksp") version "2.0.20-1.0.25" apply false
+  id("org.jetbrains.kotlin.jvm") version "2.0.21" apply false
+  id("com.google.devtools.ksp") version "2.0.21-1.0.26" apply false
   id("org.openapi.generator") version "7.8.0" apply false
   id("org.jlleitschuh.gradle.ktlint") version "12.1.1" apply false
 }
 
 val dependencyVersions = listOf(
-  "org.jetbrains.kotlin:kotlin-reflect:2.0.20",
-  "org.jetbrains.kotlin:kotlin-script-runtime:2.0.20",
-  "org.jetbrains.kotlin:kotlin-stdlib:2.0.20",
-  "org.jetbrains.kotlin:kotlin-stdlib-common:2.0.20",
-  "org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.0.20",
-  "org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.0.20",
+  "org.jetbrains.kotlin:kotlin-reflect:2.0.21",
+  "org.jetbrains.kotlin:kotlin-script-runtime:2.0.21",
+  "org.jetbrains.kotlin:kotlin-stdlib:2.0.21",
+  "org.jetbrains.kotlin:kotlin-stdlib-common:2.0.21",
+  "org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.0.21",
+  "org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.0.21",
   "org.slf4j:slf4j-api:2.0.16",
 )
 
