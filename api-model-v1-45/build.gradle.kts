@@ -3,7 +3,7 @@ import java.util.*
 
 plugins {
     id("java")
-    id("org.jetbrains.kotlin.jvm")
+    alias(libs.plugins.kotlinJvm)
     id("com.google.devtools.ksp")
     id("maven-publish")
     id("signing")
@@ -108,23 +108,20 @@ repositories {
 
 dependencies {
     constraints {
-        listOf(
-            "com.squareup.okio:okio",
-            "com.squareup.okio:okio-jvm"
-        ).forEach {
+        listOf(libs.bundles.okio).forEach {
             implementation(it) {
                 version {
-                    strictly("[3,4)")
-                    prefer("3.9.1")
+                    strictly(libs.versions.okioVersionrange.get())
+                    prefer(libs.versions.okio.get())
                 }
             }
         }
     }
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.1.0")
+    implementation(libs.kotlinJdk8)
 
-    implementation("com.squareup.moshi:moshi:1.15.2")
-    ksp("com.squareup.moshi:moshi-kotlin-codegen:1.15.2")
-    compileOnly("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation(libs.moshi)
+    ksp("com.squareup.moshi:moshi-kotlin-codegen:${libs.versions.moshi.get()}")
+    compileOnly(libs.okhttp)
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.4")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.11.4")
