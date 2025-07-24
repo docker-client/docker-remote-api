@@ -123,11 +123,11 @@ dependencies {
     ksp("com.squareup.moshi:moshi-kotlin-codegen:${libs.versions.moshi.get()}")
     compileOnly(libs.okhttp)
 
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.13.3")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.13.3")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.13.4")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.13.4")
     testRuntimeOnly("cglib:cglib-nodep:3.3.0")
-    testImplementation("org.junit.platform:junit-platform-launcher:1.13.3")
-    testImplementation("org.junit.platform:junit-platform-commons:1.13.3")
+    testImplementation("org.junit.platform:junit-platform-launcher:1.13.4")
+    testImplementation("org.junit.platform:junit-platform-commons:1.13.4")
 //    testImplementation("io.kotlintest:kotlintest-runner-junit5:3.4.2")
 }
 
