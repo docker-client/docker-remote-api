@@ -34,12 +34,12 @@ data class HostConfigAllOfLogConfig(
     /**
      *
      *
-     * Values: JsonMinusFile,Syslog,Journald,Gelf,Fluentd,Awslogs,Splunk,Etwlogs,None
+     * Values: JsonFile,Syslog,Journald,Gelf,Fluentd,Awslogs,Splunk,Etwlogs,None
      */
     @JsonClass(generateAdapter = false)
     enum class Type(val value: kotlin.String) {
         @Json(name = "json-file")
-        JsonMinusFile("json-file"),
+        JsonFile("json-file"),
 
         @Json(name = "syslog")
         Syslog("syslog"),

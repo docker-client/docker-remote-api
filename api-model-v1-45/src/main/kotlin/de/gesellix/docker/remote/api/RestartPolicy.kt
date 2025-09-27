@@ -36,7 +36,7 @@ data class RestartPolicy(
     /**
      * - Empty string means not to restart - `no` Do not automatically restart - `always` Always restart - `unless-stopped` Restart always except when the user has manually stopped the container - `on-failure` Restart only when the container exit code is non-zero
      *
-     * Values: EMPTY,No,Always,UnlessMinusStopped,OnMinusFailure
+     * Values: EMPTY,No,Always,UnlessStopped,OnFailure
      */
     @JsonClass(generateAdapter = false)
     enum class Name(val value: kotlin.String) {
@@ -50,9 +50,9 @@ data class RestartPolicy(
         Always("always"),
 
         @Json(name = "unless-stopped")
-        UnlessMinusStopped("unless-stopped"),
+        UnlessStopped("unless-stopped"),
 
         @Json(name = "on-failure")
-        OnMinusFailure("on-failure"),
+        OnFailure("on-failure"),
     }
 }

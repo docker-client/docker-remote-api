@@ -40,20 +40,20 @@ data class ClusterVolumePublishStatusInner(
     /**
      * The published state of the volume. * `pending-publish` The volume should be published to this node, but the call to the controller plugin to do so has not yet been successfully completed. * `published` The volume is published successfully to the node. * `pending-node-unpublish` The volume should be unpublished from the node, and the manager is awaiting confirmation from the worker that it has done so. * `pending-controller-unpublish` The volume is successfully unpublished from the node, but has not yet been successfully unpublished on the controller.
      *
-     * Values: PendingMinusPublish,Published,PendingMinusNodeMinusUnpublish,PendingMinusControllerMinusUnpublish
+     * Values: PendingPublish,Published,PendingNodeUnpublish,PendingControllerUnpublish
      */
     @JsonClass(generateAdapter = false)
     enum class State(val value: kotlin.String) {
         @Json(name = "pending-publish")
-        PendingMinusPublish("pending-publish"),
+        PendingPublish("pending-publish"),
 
         @Json(name = "published")
         Published("published"),
 
         @Json(name = "pending-node-unpublish")
-        PendingMinusNodeMinusUnpublish("pending-node-unpublish"),
+        PendingNodeUnpublish("pending-node-unpublish"),
 
         @Json(name = "pending-controller-unpublish")
-        PendingMinusControllerMinusUnpublish("pending-controller-unpublish"),
+        PendingControllerUnpublish("pending-controller-unpublish"),
     }
 }
