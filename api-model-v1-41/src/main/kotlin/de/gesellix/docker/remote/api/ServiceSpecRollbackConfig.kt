@@ -66,14 +66,14 @@ data class ServiceSpecRollbackConfig(
     /**
      * The order of operations when rolling back a task. Either the old task is shut down before the new task is started, or the new task is started before the old task is shut down.
      *
-     * Values: StopMinusFirst,StartMinusFirst
+     * Values: StopFirst,StartFirst
      */
     @JsonClass(generateAdapter = false)
     enum class Order(val value: kotlin.String) {
         @Json(name = "stop-first")
-        StopMinusFirst("stop-first"),
+        StopFirst("stop-first"),
 
         @Json(name = "start-first")
-        StartMinusFirst("start-first"),
+        StartFirst("start-first"),
     }
 }
