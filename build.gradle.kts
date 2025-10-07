@@ -10,7 +10,7 @@ plugins {
     id("io.freefair.maven-central.validate-poms") version "9.0.0"
     id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
     alias(libs.plugins.kotlinJvm) apply false
-    id("com.google.devtools.ksp") version "2.2.20-2.0.3" apply false
+    id("com.google.devtools.ksp") version "2.2.20-2.0.4" apply false
     id("org.openapi.generator") version "7.16.0" apply false
     id("org.jlleitschuh.gradle.ktlint") version "12.3.0" apply false
 }
