@@ -37,7 +37,7 @@ data class HistoryResponseItem(
     @Json(name = "CreatedBy")
     var createdBy: kotlin.String,
     @Json(name = "Tags")
-    var tags: kotlin.collections.MutableList<kotlin.String>,
+    var tags: kotlin.collections.MutableList<kotlin.String>?,
     @Json(name = "Size")
     var propertySize: kotlin.Long,
     @Json(name = "Comment")
