@@ -21,19 +21,19 @@ import com.squareup.moshi.JsonClass
 /**
  * Kind of change  Can be one of:  - `0`: Modified (\"C\") - `1`: Added (\"A\") - `2`: Deleted (\"D\")
  *
- * Values: _0,_1,_2
+ * Values: T0,T1,T2
  */
 
 @JsonClass(generateAdapter = false)
 enum class ChangeType(val value: kotlin.Int) {
     @Json(name = "0")
-    _0(0),
+    T0(0),
 
     @Json(name = "1")
-    _1(1),
+    T1(1),
 
     @Json(name = "2")
-    _2(2),
+    T2(2),
     ;
 
     /**

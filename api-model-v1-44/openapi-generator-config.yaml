@@ -1,4 +1,4 @@
-inputSpec: https://docs.docker.com/engine/api/v1.44/
+inputSpec: https://docs.docker.com/reference/api/engine/version/v1.44/
 additionalProperties:
   hideGenerationTimestamp: true
 generatorName: kotlin

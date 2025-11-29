@@ -89,7 +89,7 @@ data class ContainerConfig(
     var healthcheck: HealthConfig? = null,
     // Command is already escaped (Windows only)
     @Json(name = "ArgsEscaped")
-    var argsEscaped: kotlin.Boolean? = false,
+    var argsEscaped: kotlin.Boolean? = null,
     // The name (or reference) of the image to use when creating the container, or which was used when the container was created.
     @Json(name = "Image")
     var image: kotlin.String? = null,
@@ -116,7 +116,7 @@ data class ContainerConfig(
     var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
     // Signal to stop a container as a string or unsigned integer.
     @Json(name = "StopSignal")
-    var stopSignal: kotlin.String? = null,
+    var stopSignal: kotlin.String? = "SIGTERM",
     // Timeout to stop a container in seconds.
     @Json(name = "StopTimeout")
     var stopTimeout: kotlin.Int? = null,
