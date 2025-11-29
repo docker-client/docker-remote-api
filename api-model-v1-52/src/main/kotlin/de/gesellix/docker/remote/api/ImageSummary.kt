@@ -23,13 +23,13 @@ import com.squareup.moshi.JsonClass
  *
  * @param id ID is the content-addressable ID of an image.  This identifier is a content-addressable digest calculated from the image's configuration (which includes the digests of layers used by the image).  Note that this digest differs from the `RepoDigests` below, which holds digests of image manifests that reference the image.
  * @param parentId ID of the parent image.  Depending on how the image was created, this field may be empty and is only set for images that were built/created locally. This field is empty if the image was pulled from an image registry.
- * @param repoTags List of image names/tags in the local image cache that reference this image.  Multiple image tags can refer to the same image, and this list may be empty if no tags reference the image, in which case the image is \"untagged\", in which case it can still be referenced by its ID.
- * @param repoDigests List of content-addressable digests of locally available image manifests that the image is referenced from. Multiple manifests can refer to the same image.  These digests are usually only available if the image was either pulled from a registry, or if the image was pushed to a registry, which is when the manifest is generated and its digest calculated.
  * @param created Date and time at which the image was created as a Unix timestamp (number of seconds since EPOCH).
  * @param propertySize Total size of the image including all layers it is composed of.
  * @param sharedSize Total size of image layers that are shared between this image and other images.  This size is not calculated by default. `-1` indicates that the value has not been set / calculated.
- * @param labels User-defined key/value metadata.
  * @param containers Number of containers using this image. Includes both stopped and running containers.  `-1` indicates that the value has not been set / calculated.
+ * @param repoTags List of image names/tags in the local image cache that reference this image.  Multiple image tags can refer to the same image, and this list may be empty if no tags reference the image, in which case the image is \"untagged\", in which case it can still be referenced by its ID.
+ * @param repoDigests List of content-addressable digests of locally available image manifests that the image is referenced from. Multiple manifests can refer to the same image.  These digests are usually only available if the image was either pulled from a registry, or if the image was pushed to a registry, which is when the manifest is generated and its digest calculated.
+ * @param labels User-defined key/value metadata.
  * @param manifests Manifests is a list of manifests available in this image. It provides a more detailed view of the platform-specific image manifests or other image-attached data like build attestations.  WARNING: This is experimental and may change at any time without any backward compatibility.
  * @param descriptor
  */
@@ -41,12 +41,6 @@ data class ImageSummary(
     // ID of the parent image.  Depending on how the image was created, this field may be empty and is only set for images that were built/created locally. This field is empty if the image was pulled from an image registry.
     @Json(name = "ParentId")
     var parentId: kotlin.String,
-    // List of image names/tags in the local image cache that reference this image.  Multiple image tags can refer to the same image, and this list may be empty if no tags reference the image, in which case the image is \"untagged\", in which case it can still be referenced by its ID.
-    @Json(name = "RepoTags")
-    var repoTags: kotlin.collections.MutableList<kotlin.String>,
-    // List of content-addressable digests of locally available image manifests that the image is referenced from. Multiple manifests can refer to the same image.  These digests are usually only available if the image was either pulled from a registry, or if the image was pushed to a registry, which is when the manifest is generated and its digest calculated.
-    @Json(name = "RepoDigests")
-    var repoDigests: kotlin.collections.MutableList<kotlin.String>,
     // Date and time at which the image was created as a Unix timestamp (number of seconds since EPOCH).
     @Json(name = "Created")
     var created: kotlin.Int,
@@ -56,12 +50,18 @@ data class ImageSummary(
     // Total size of image layers that are shared between this image and other images.  This size is not calculated by default. `-1` indicates that the value has not been set / calculated.
     @Json(name = "SharedSize")
     var sharedSize: kotlin.Long,
-    // User-defined key/value metadata.
-    @Json(name = "Labels")
-    var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>,
     // Number of containers using this image. Includes both stopped and running containers.  `-1` indicates that the value has not been set / calculated.
     @Json(name = "Containers")
     var containers: kotlin.Int,
+    // List of image names/tags in the local image cache that reference this image.  Multiple image tags can refer to the same image, and this list may be empty if no tags reference the image, in which case the image is \"untagged\", in which case it can still be referenced by its ID.
+    @Json(name = "RepoTags")
+    var repoTags: kotlin.collections.MutableList<kotlin.String>? = null,
+    // List of content-addressable digests of locally available image manifests that the image is referenced from. Multiple manifests can refer to the same image.  These digests are usually only available if the image was either pulled from a registry, or if the image was pushed to a registry, which is when the manifest is generated and its digest calculated.
+    @Json(name = "RepoDigests")
+    var repoDigests: kotlin.collections.MutableList<kotlin.String>? = null,
+    // User-defined key/value metadata.
+    @Json(name = "Labels")
+    var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
     // Manifests is a list of manifests available in this image. It provides a more detailed view of the platform-specific image manifests or other image-attached data like build attestations.  WARNING: This is experimental and may change at any time without any backward compatibility.
     @Json(name = "Manifests")
     var manifests: kotlin.collections.MutableList<ImageManifestSummary>? = null,

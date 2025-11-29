@@ -24,11 +24,11 @@ import com.squareup.moshi.JsonClass
  * @param name Name of the volume.
  * @param driver Name of the volume driver used by the volume.
  * @param mountpoint Mount path of the volume on the host.
- * @param labels User-defined key/value metadata.
- * @param scope The level at which the volume exists. Either `global` for cluster-wide, or `local` for machine level.
  * @param options The driver specific options used when creating the volume.
  * @param createdAt Date/Time the volume was created.
  * @param status Low-level details about the volume, provided by the volume driver. Details are returned as a map with key/value pairs: `{\"key\":\"value\",\"key2\":\"value2\"}`.  The `Status` field is optional, and is omitted if the volume driver does not support this feature.
+ * @param labels User-defined key/value metadata.
+ * @param scope The level at which the volume exists. Either `global` for cluster-wide, or `local` for machine level.
  * @param clusterVolume
  * @param usageData
  */
@@ -43,21 +43,21 @@ data class Volume(
     // Mount path of the volume on the host.
     @Json(name = "Mountpoint")
     var mountpoint: kotlin.String,
-    // User-defined key/value metadata.
-    @Json(name = "Labels")
-    var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>,
-    // The level at which the volume exists. Either `global` for cluster-wide, or `local` for machine level.
-    @Json(name = "Scope")
-    var scope: Volume.Scope = Scope.Local,
     // The driver specific options used when creating the volume.
     @Json(name = "Options")
-    var options: kotlin.collections.MutableMap<kotlin.String, kotlin.String>,
+    var options: kotlin.collections.MutableMap<kotlin.String, kotlin.String>?,
     // Date/Time the volume was created.
     @Json(name = "CreatedAt")
     var createdAt: kotlin.String? = null,
     // Low-level details about the volume, provided by the volume driver. Details are returned as a map with key/value pairs: `{\"key\":\"value\",\"key2\":\"value2\"}`.  The `Status` field is optional, and is omitted if the volume driver does not support this feature.
     @Json(name = "Status")
     var status: kotlin.collections.MutableMap<kotlin.String, kotlin.Any>? = null,
+    // User-defined key/value metadata.
+    @Json(name = "Labels")
+    var labels: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
+    // The level at which the volume exists. Either `global` for cluster-wide, or `local` for machine level.
+    @Json(name = "Scope")
+    var scope: Volume.Scope? = Scope.Local,
     @Json(name = "ClusterVolume")
     var clusterVolume: ClusterVolume? = null,
     @Json(name = "UsageData")
