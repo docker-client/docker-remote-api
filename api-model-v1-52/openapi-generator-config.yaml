@@ -1,0 +1,19 @@
+inputSpec: https://docs.docker.com/reference/api/engine/version/v1.52/
+additionalProperties:
+  hideGenerationTimestamp: true
+generatorName: kotlin
+packageName: de.gesellix.docker.remote.api
+#invokerPackage: de.gesellix.docker.remote.invoker
+apiPackage: de.gesellix.docker.remote.client.api
+modelPackage: de.gesellix.docker.remote.api
+enumPropertyNaming: PascalCase
+nameMappings:
+  is_official: official
+  is_automated: automated
+groupId: de.gesellix
+artifactId: docker-remote-api-model
+artifactVersion: 1.52
+outputDir: api-model-v1-52
+dateLibrary: java8
+moshiCodeGen: true
+modelMutable: true
