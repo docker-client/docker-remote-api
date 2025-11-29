@@ -31,5 +31,5 @@ data class GraphDriverData(
     var name: kotlin.String,
     // Low-level storage metadata, provided as key/value pairs.  This information is driver-specific, and depends on the storage-driver in use, and should be used for informational purposes only.
     @Json(name = "Data")
-    var `data`: kotlin.collections.MutableMap<kotlin.String, kotlin.String>,
+    var `data`: kotlin.collections.MutableMap<kotlin.String, kotlin.String>? = null,
 )

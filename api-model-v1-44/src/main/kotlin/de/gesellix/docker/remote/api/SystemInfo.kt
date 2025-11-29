@@ -170,7 +170,7 @@ data class SystemInfo(
     var cgroupDriver: SystemInfo.CgroupDriver? = CgroupDriver.Cgroupfs,
     // The version of the cgroup.
     @Json(name = "CgroupVersion")
-    var cgroupVersion: SystemInfo.CgroupVersion? = CgroupVersion._1,
+    var cgroupVersion: SystemInfo.CgroupVersion? = CgroupVersion.V1,
     // Number of event listeners subscribed.
     @Json(name = "NEventsListener")
     var neventsListener: kotlin.Int? = null,
@@ -283,15 +283,15 @@ data class SystemInfo(
     /**
      * The version of the cgroup.
      *
-     * Values: _1,_2
+     * Values: V1,V2
      */
     @JsonClass(generateAdapter = false)
     enum class CgroupVersion(val value: kotlin.String) {
         @Json(name = "1")
-        _1("1"),
+        V1("1"),
 
         @Json(name = "2")
-        _2("2"),
+        V2("2"),
     }
 
     /**
