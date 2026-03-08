@@ -39,7 +39,9 @@ data class RestartPolicy(
      * Values: EMPTY,No,Always,UnlessStopped,OnFailure
      */
     @JsonClass(generateAdapter = false)
-    enum class Name(val value: kotlin.String) {
+    enum class Name(
+        val value: kotlin.String,
+    ) {
         @Json(name = "")
         EMPTY(""),
 

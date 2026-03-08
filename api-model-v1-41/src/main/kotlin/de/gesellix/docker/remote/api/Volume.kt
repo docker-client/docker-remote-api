@@ -69,7 +69,9 @@ data class Volume(
      * Values: Local,Global
      */
     @JsonClass(generateAdapter = false)
-    enum class Scope(val value: kotlin.String) {
+    enum class Scope(
+        val value: kotlin.String,
+    ) {
         @Json(name = "local")
         Local("local"),
 

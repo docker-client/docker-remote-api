@@ -95,7 +95,9 @@ data class ContainerSummary(
      * Values: Created,Running,Paused,Restarting,Exited,Removing,Dead
      */
     @JsonClass(generateAdapter = false)
-    enum class State(val value: kotlin.String) {
+    enum class State(
+        val value: kotlin.String,
+    ) {
         @Json(name = "created")
         Created("created"),
 

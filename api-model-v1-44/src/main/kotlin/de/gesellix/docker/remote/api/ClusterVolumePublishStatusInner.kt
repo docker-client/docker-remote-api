@@ -43,7 +43,9 @@ data class ClusterVolumePublishStatusInner(
      * Values: PendingPublish,Published,PendingNodeUnpublish,PendingControllerUnpublish
      */
     @JsonClass(generateAdapter = false)
-    enum class State(val value: kotlin.String) {
+    enum class State(
+        val value: kotlin.String,
+    ) {
         @Json(name = "pending-publish")
         PendingPublish("pending-publish"),
 

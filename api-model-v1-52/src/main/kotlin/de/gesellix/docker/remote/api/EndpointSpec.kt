@@ -39,7 +39,9 @@ data class EndpointSpec(
      * Values: Vip,Dnsrr
      */
     @JsonClass(generateAdapter = false)
-    enum class Mode(val value: kotlin.String) {
+    enum class Mode(
+        val value: kotlin.String,
+    ) {
         @Json(name = "vip")
         Vip("vip"),
 

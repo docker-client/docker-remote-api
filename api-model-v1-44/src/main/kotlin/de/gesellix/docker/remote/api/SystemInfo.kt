@@ -269,7 +269,9 @@ data class SystemInfo(
      * Values: Cgroupfs,Systemd,None
      */
     @JsonClass(generateAdapter = false)
-    enum class CgroupDriver(val value: kotlin.String) {
+    enum class CgroupDriver(
+        val value: kotlin.String,
+    ) {
         @Json(name = "cgroupfs")
         Cgroupfs("cgroupfs"),
 
@@ -286,7 +288,9 @@ data class SystemInfo(
      * Values: V1,V2
      */
     @JsonClass(generateAdapter = false)
-    enum class CgroupVersion(val value: kotlin.String) {
+    enum class CgroupVersion(
+        val value: kotlin.String,
+    ) {
         @Json(name = "1")
         V1("1"),
 
@@ -300,7 +304,9 @@ data class SystemInfo(
      * Values: Default,Hyperv,Process,EMPTY
      */
     @JsonClass(generateAdapter = false)
-    enum class Isolation(val value: kotlin.String) {
+    enum class Isolation(
+        val value: kotlin.String,
+    ) {
         @Json(name = "default")
         Default("default"),
 

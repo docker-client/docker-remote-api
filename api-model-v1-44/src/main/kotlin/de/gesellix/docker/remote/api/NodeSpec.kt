@@ -47,7 +47,9 @@ data class NodeSpec(
      * Values: Worker,Manager
      */
     @JsonClass(generateAdapter = false)
-    enum class Role(val value: kotlin.String) {
+    enum class Role(
+        val value: kotlin.String,
+    ) {
         @Json(name = "worker")
         Worker("worker"),
 
@@ -61,7 +63,9 @@ data class NodeSpec(
      * Values: Active,Pause,Drain
      */
     @JsonClass(generateAdapter = false)
-    enum class Availability(val value: kotlin.String) {
+    enum class Availability(
+        val value: kotlin.String,
+    ) {
         @Json(name = "active")
         Active("active"),
 

@@ -25,7 +25,9 @@ import com.squareup.moshi.JsonClass
  */
 
 @JsonClass(generateAdapter = false)
-enum class ChangeType(val value: kotlin.Int) {
+enum class ChangeType(
+    val value: kotlin.Int,
+) {
     @Json(name = "0")
     T0(0),
 

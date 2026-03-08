@@ -55,7 +55,9 @@ data class ServiceSpecUpdateConfig(
      * Values: Continue,Pause,Rollback
      */
     @JsonClass(generateAdapter = false)
-    enum class FailureAction(val value: kotlin.String) {
+    enum class FailureAction(
+        val value: kotlin.String,
+    ) {
         @Json(name = "continue")
         Continue("continue"),
 
@@ -72,7 +74,9 @@ data class ServiceSpecUpdateConfig(
      * Values: StopFirst,StartFirst
      */
     @JsonClass(generateAdapter = false)
-    enum class Order(val value: kotlin.String) {
+    enum class Order(
+        val value: kotlin.String,
+    ) {
         @Json(name = "stop-first")
         StopFirst("stop-first"),
 

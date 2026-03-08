@@ -55,7 +55,9 @@ data class ImageManifestSummary(
      * Values: Image,Attestation,Unknown
      */
     @JsonClass(generateAdapter = false)
-    enum class Kind(val value: kotlin.String) {
+    enum class Kind(
+        val value: kotlin.String,
+    ) {
         @Json(name = "image")
         Image("image"),
 

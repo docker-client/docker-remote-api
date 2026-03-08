@@ -25,7 +25,9 @@ import com.squareup.moshi.JsonClass
  */
 
 @JsonClass(generateAdapter = false)
-enum class LocalNodeState(val value: kotlin.String) {
+enum class LocalNodeState(
+    val value: kotlin.String,
+) {
     @Json(name = "")
     EMPTY(""),
 
