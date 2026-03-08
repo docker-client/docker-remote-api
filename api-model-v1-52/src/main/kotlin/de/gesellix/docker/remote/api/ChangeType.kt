@@ -57,7 +57,7 @@ enum class ChangeType(val value: kotlin.Int) {
         fun decode(data: kotlin.Any?): ChangeType? =
             data?.let {
                 val normalizedData = "$it".lowercase()
-                values().firstOrNull { value ->
+                entries.firstOrNull { value ->
                     it == value || normalizedData == "$value".lowercase()
                 }
             }
