@@ -51,7 +51,9 @@ data class MountBindOptions(
      * Values: Private,Rprivate,Shared,Rshared,Slave,Rslave
      */
     @JsonClass(generateAdapter = false)
-    enum class Propagation(val value: kotlin.String) {
+    enum class Propagation(
+        val value: kotlin.String,
+    ) {
         @Json(name = "private")
         Private("private"),
 

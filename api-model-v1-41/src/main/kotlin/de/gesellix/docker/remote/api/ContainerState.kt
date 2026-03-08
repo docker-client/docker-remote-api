@@ -76,7 +76,9 @@ data class ContainerState(
      * Values: Created,Running,Paused,Restarting,Removing,Exited,Dead
      */
     @JsonClass(generateAdapter = false)
-    enum class Status(val value: kotlin.String) {
+    enum class Status(
+        val value: kotlin.String,
+    ) {
         @Json(name = "created")
         Created("created"),
 

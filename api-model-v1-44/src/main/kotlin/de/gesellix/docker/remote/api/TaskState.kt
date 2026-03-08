@@ -25,7 +25,9 @@ import com.squareup.moshi.JsonClass
  */
 
 @JsonClass(generateAdapter = false)
-enum class TaskState(val value: kotlin.String) {
+enum class TaskState(
+    val value: kotlin.String,
+) {
     @Json(name = "new")
     New("new"),
 

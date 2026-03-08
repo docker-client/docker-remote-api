@@ -49,7 +49,9 @@ data class EndpointPortConfig(
      * Values: Tcp,Udp,Sctp
      */
     @JsonClass(generateAdapter = false)
-    enum class Protocol(val value: kotlin.String) {
+    enum class Protocol(
+        val value: kotlin.String,
+    ) {
         @Json(name = "tcp")
         Tcp("tcp"),
 
@@ -66,7 +68,9 @@ data class EndpointPortConfig(
      * Values: Ingress,Host
      */
     @JsonClass(generateAdapter = false)
-    enum class PublishMode(val value: kotlin.String) {
+    enum class PublishMode(
+        val value: kotlin.String,
+    ) {
         @Json(name = "ingress")
         Ingress("ingress"),
 

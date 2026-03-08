@@ -57,7 +57,9 @@ data class ClusterVolumeSpecAccessMode(
      * Values: Single,Multi
      */
     @JsonClass(generateAdapter = false)
-    enum class Scope(val value: kotlin.String) {
+    enum class Scope(
+        val value: kotlin.String,
+    ) {
         @Json(name = "single")
         Single("single"),
 
@@ -71,7 +73,9 @@ data class ClusterVolumeSpecAccessMode(
      * Values: None,Readonly,Onewriter,All
      */
     @JsonClass(generateAdapter = false)
-    enum class Sharing(val value: kotlin.String) {
+    enum class Sharing(
+        val value: kotlin.String,
+    ) {
         @Json(name = "none")
         None("none"),
 
@@ -91,7 +95,9 @@ data class ClusterVolumeSpecAccessMode(
      * Values: Active,Pause,Drain
      */
     @JsonClass(generateAdapter = false)
-    enum class Availability(val value: kotlin.String) {
+    enum class Availability(
+        val value: kotlin.String,
+    ) {
         @Json(name = "active")
         Active("active"),
 

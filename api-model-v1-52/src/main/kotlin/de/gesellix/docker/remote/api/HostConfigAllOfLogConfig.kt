@@ -39,7 +39,9 @@ data class HostConfigAllOfLogConfig(
      * Values: Local,JsonFile,Syslog,Journald,Gelf,Fluentd,Awslogs,Splunk,Etwlogs,None
      */
     @JsonClass(generateAdapter = false)
-    enum class Type(val value: kotlin.String) {
+    enum class Type(
+        val value: kotlin.String,
+    ) {
         @Json(name = "local")
         Local("local"),
 

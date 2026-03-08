@@ -43,7 +43,9 @@ data class Health(
      * Values: None,Starting,Healthy,Unhealthy
      */
     @JsonClass(generateAdapter = false)
-    enum class Status(val value: kotlin.String) {
+    enum class Status(
+        val value: kotlin.String,
+    ) {
         @Json(name = "none")
         None("none"),
 

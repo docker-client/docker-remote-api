@@ -38,7 +38,9 @@ data class TaskSpecContainerSpecPrivilegesSeccomp(
      * Values: Default,Unconfined,Custom
      */
     @JsonClass(generateAdapter = false)
-    enum class Mode(val value: kotlin.String) {
+    enum class Mode(
+        val value: kotlin.String,
+    ) {
         @Json(name = "default")
         Default("default"),
 

@@ -25,7 +25,9 @@ import com.squareup.moshi.JsonClass
  */
 
 @JsonClass(generateAdapter = false)
-enum class Reachability(val value: kotlin.String) {
+enum class Reachability(
+    val value: kotlin.String,
+) {
     @Json(name = "unknown")
     Unknown("unknown"),
 
