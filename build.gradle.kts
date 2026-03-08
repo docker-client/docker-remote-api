@@ -32,13 +32,15 @@ val dependencyGroupVersions = mapOf<String, String>(
 
 subprojects {
     configurations.all {
-        resolutionStrategy {
-            failOnVersionConflict()
-            force(dependencyVersions)
-            eachDependency {
-                val forcedVersion = dependencyGroupVersions[requested.group]
-                if (forcedVersion != null) {
-                    useVersion(forcedVersion)
+        if (!name.startsWith("ktlint")) {
+            resolutionStrategy {
+                failOnVersionConflict()
+                force(dependencyVersions)
+                eachDependency {
+                    val forcedVersion = dependencyGroupVersions[requested.group]
+                    if (forcedVersion != null) {
+                        useVersion(forcedVersion)
+                    }
                 }
             }
         }
