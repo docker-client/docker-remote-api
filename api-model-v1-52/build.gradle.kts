@@ -133,11 +133,7 @@ dependencies {
 
 java {
     toolchain {
-        // The org.openapi.generator requires JDK 11 to generate the sources.
-        // Generated code still works with Java 8.
-        // See below where we use Java 8 to perform checks
-        // See https://github.com/OpenAPITools/openapi-generator/pull/15553 for details.
-        languageVersion.set(JavaLanguageVersion.of(11))
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
 
@@ -147,14 +143,6 @@ tasks {
     }
     withType<Test> {
         useJUnitPlatform()
-
-        java {
-            toolchain {
-                // See above: the org.openapi.generator requires JDK 11 to generate the sources.
-                // We're trying to ensure that the generated code still works with Java 8.
-                languageVersion.set(JavaLanguageVersion.of(8))
-            }
-        }
     }
 }
 
