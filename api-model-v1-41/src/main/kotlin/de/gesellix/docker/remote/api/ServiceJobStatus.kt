@@ -8,15 +8,24 @@
 
 @file:Suppress(
     "ArrayInDataClass",
+    "DuplicatedCode",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
+    "RemoveRedundantCallsOfConversionMethods",
+    "REDUNDANT_CALL_OF_CONVERSION_METHOD",
+    "RedundantUnitReturnType",
+    "RemoveEmptyClassBody",
+    "UnnecessaryVariable",
     "UnusedImport",
+    "UnnecessaryVariable",
+    "unused",
 )
 
 package de.gesellix.docker.remote.api
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import de.gesellix.docker.remote.api.ObjectVersion
 
 /**
  * The status of the service when it is in one of ReplicatedJob or GlobalJob modes. Absent on Replicated and Global mode services. The JobIteration is an ObjectVersion, but unlike the Service's version, does not need to be sent with an update request.

@@ -8,15 +8,24 @@
 
 @file:Suppress(
     "ArrayInDataClass",
+    "DuplicatedCode",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
+    "RemoveRedundantCallsOfConversionMethods",
+    "REDUNDANT_CALL_OF_CONVERSION_METHOD",
+    "RedundantUnitReturnType",
+    "RemoveEmptyClassBody",
+    "UnnecessaryVariable",
     "UnusedImport",
+    "UnnecessaryVariable",
+    "unused",
 )
 
 package de.gesellix.docker.remote.api
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import de.gesellix.docker.remote.api.PluginPrivilege
 
 /**
  * Plugin spec for the service.  *(Experimental release only.)*  <p><br /></p>  > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are > mutually exclusive. PluginSpec is only used when the Runtime field > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime > field is set to `attachment`.

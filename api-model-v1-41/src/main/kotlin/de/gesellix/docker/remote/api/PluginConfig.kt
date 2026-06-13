@@ -8,15 +8,31 @@
 
 @file:Suppress(
     "ArrayInDataClass",
+    "DuplicatedCode",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
+    "RemoveRedundantCallsOfConversionMethods",
+    "REDUNDANT_CALL_OF_CONVERSION_METHOD",
+    "RedundantUnitReturnType",
+    "RemoveEmptyClassBody",
+    "UnnecessaryVariable",
     "UnusedImport",
+    "UnnecessaryVariable",
+    "unused",
 )
 
 package de.gesellix.docker.remote.api
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import de.gesellix.docker.remote.api.PluginConfigArgs
+import de.gesellix.docker.remote.api.PluginConfigInterface
+import de.gesellix.docker.remote.api.PluginConfigLinux
+import de.gesellix.docker.remote.api.PluginConfigNetwork
+import de.gesellix.docker.remote.api.PluginConfigRootfs
+import de.gesellix.docker.remote.api.PluginConfigUser
+import de.gesellix.docker.remote.api.PluginEnv
+import de.gesellix.docker.remote.api.PluginMount
 
 /**
  * The config of a plugin.

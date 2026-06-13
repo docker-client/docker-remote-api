@@ -8,15 +8,30 @@
 
 @file:Suppress(
     "ArrayInDataClass",
+    "DuplicatedCode",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
+    "RemoveRedundantCallsOfConversionMethods",
+    "REDUNDANT_CALL_OF_CONVERSION_METHOD",
+    "RedundantUnitReturnType",
+    "RemoveEmptyClassBody",
+    "UnnecessaryVariable",
     "UnusedImport",
+    "UnnecessaryVariable",
+    "unused",
 )
 
 package de.gesellix.docker.remote.api
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import de.gesellix.docker.remote.api.HealthConfig
+import de.gesellix.docker.remote.api.Mount
+import de.gesellix.docker.remote.api.ResourcesUlimitsInner
+import de.gesellix.docker.remote.api.TaskSpecContainerSpecConfigsInner
+import de.gesellix.docker.remote.api.TaskSpecContainerSpecDNSConfig
+import de.gesellix.docker.remote.api.TaskSpecContainerSpecPrivileges
+import de.gesellix.docker.remote.api.TaskSpecContainerSpecSecretsInner
 
 /**
  * Container spec for the service.  <p><br /></p>  > **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are > mutually exclusive. PluginSpec is only used when the Runtime field > is set to `plugin`. NetworkAttachmentSpec is used when the Runtime > field is set to `attachment`.

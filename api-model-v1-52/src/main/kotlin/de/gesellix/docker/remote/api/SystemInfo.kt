@@ -8,15 +8,33 @@
 
 @file:Suppress(
     "ArrayInDataClass",
+    "DuplicatedCode",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
+    "RemoveRedundantCallsOfConversionMethods",
+    "REDUNDANT_CALL_OF_CONVERSION_METHOD",
+    "RedundantUnitReturnType",
+    "RemoveEmptyClassBody",
+    "UnnecessaryVariable",
     "UnusedImport",
+    "UnnecessaryVariable",
+    "unused",
 )
 
 package de.gesellix.docker.remote.api
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import de.gesellix.docker.remote.api.Commit
+import de.gesellix.docker.remote.api.ContainerdInfo
+import de.gesellix.docker.remote.api.DeviceInfo
+import de.gesellix.docker.remote.api.FirewallInfo
+import de.gesellix.docker.remote.api.GenericResourcesInner
+import de.gesellix.docker.remote.api.PluginsInfo
+import de.gesellix.docker.remote.api.RegistryServiceConfig
+import de.gesellix.docker.remote.api.Runtime
+import de.gesellix.docker.remote.api.SwarmInfo
+import de.gesellix.docker.remote.api.SystemInfoDefaultAddressPoolsInner
 
 /**
  *

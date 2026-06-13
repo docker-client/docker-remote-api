@@ -9,7 +9,7 @@
 | **hairpinMode** | **kotlin.Boolean** | Indicates if hairpin NAT should be enabled on the virtual interface.  |  [optional] |
 | **linkLocalIPv6Address** | **kotlin.String** | IPv6 unicast address using the link-local prefix. |  [optional] |
 | **linkLocalIPv6PrefixLen** | **kotlin.Int** | Prefix length of the IPv6 unicast address. |  [optional] |
-| **ports** | **kotlin.collections.MutableMap&lt;kotlin.String, kotlin.collections.MutableList&lt;PortBinding&gt;&gt;** | PortMap describes the mapping of container ports to host ports, using the container&#39;s port-number and protocol as key in the format &#x60;&lt;port&gt;/&lt;protocol&gt;&#x60;, for example, &#x60;80/udp&#x60;.  If a container&#39;s port is mapped for multiple protocols, separate entries are added to the mapping table.  |  [optional] |
+| **ports** | **kotlin.collections.MutableMap&lt;kotlin.String, kotlin.collections.MutableList&lt;PortBinding&gt;?&gt;** | PortMap describes the mapping of container ports to host ports, using the container&#39;s port-number and protocol as key in the format &#x60;&lt;port&gt;/&lt;protocol&gt;&#x60;, for example, &#x60;80/udp&#x60;.  If a container&#39;s port is mapped for multiple protocols, separate entries are added to the mapping table.  |  [optional] |
 | **sandboxKey** | **kotlin.String** | SandboxKey identifies the sandbox |  [optional] |
 | **secondaryIPAddresses** | [**kotlin.collections.MutableList&lt;Address&gt;**](Address.md) |  |  [optional] |
 | **secondaryIPv6Addresses** | [**kotlin.collections.MutableList&lt;Address&gt;**](Address.md) |  |  [optional] |

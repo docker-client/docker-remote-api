@@ -8,15 +8,26 @@
 
 @file:Suppress(
     "ArrayInDataClass",
+    "DuplicatedCode",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
+    "RemoveRedundantCallsOfConversionMethods",
+    "REDUNDANT_CALL_OF_CONVERSION_METHOD",
+    "RedundantUnitReturnType",
+    "RemoveEmptyClassBody",
+    "UnnecessaryVariable",
     "UnusedImport",
+    "UnnecessaryVariable",
+    "unused",
 )
 
 package de.gesellix.docker.remote.api
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import de.gesellix.docker.remote.api.Address
+import de.gesellix.docker.remote.api.EndpointSettings
+import de.gesellix.docker.remote.api.PortBinding
 
 /**
  * NetworkSettings exposes the network settings in the API
@@ -59,7 +70,7 @@ data class NetworkSettings(
     var linkLocalIPv6PrefixLen: kotlin.Int? = null,
     // PortMap describes the mapping of container ports to host ports, using the container's port-number and protocol as key in the format `<port>/<protocol>`, for example, `80/udp`.  If a container's port is mapped for multiple protocols, separate entries are added to the mapping table.
     @Json(name = "Ports")
-    var ports: kotlin.collections.MutableMap<kotlin.String, kotlin.collections.MutableList<PortBinding>>? = null,
+    var ports: kotlin.collections.MutableMap<kotlin.String, kotlin.collections.MutableList<PortBinding>?>? = null,
     // SandboxKey identifies the sandbox
     @Json(name = "SandboxKey")
     var sandboxKey: kotlin.String? = null,

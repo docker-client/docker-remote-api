@@ -8,15 +8,31 @@
 
 @file:Suppress(
     "ArrayInDataClass",
+    "DuplicatedCode",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
+    "RemoveRedundantCallsOfConversionMethods",
+    "REDUNDANT_CALL_OF_CONVERSION_METHOD",
+    "RedundantUnitReturnType",
+    "RemoveEmptyClassBody",
+    "UnnecessaryVariable",
     "UnusedImport",
+    "UnnecessaryVariable",
+    "unused",
 )
 
 package de.gesellix.docker.remote.api
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import de.gesellix.docker.remote.api.NetworkAttachmentConfig
+import de.gesellix.docker.remote.api.TaskSpecContainerSpec
+import de.gesellix.docker.remote.api.TaskSpecLogDriver
+import de.gesellix.docker.remote.api.TaskSpecNetworkAttachmentSpec
+import de.gesellix.docker.remote.api.TaskSpecPlacement
+import de.gesellix.docker.remote.api.TaskSpecPluginSpec
+import de.gesellix.docker.remote.api.TaskSpecResources
+import de.gesellix.docker.remote.api.TaskSpecRestartPolicy
 
 /**
  * User modifiable task configuration.
