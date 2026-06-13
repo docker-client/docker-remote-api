@@ -8,15 +8,32 @@
 
 @file:Suppress(
     "ArrayInDataClass",
+    "DuplicatedCode",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
+    "RemoveRedundantCallsOfConversionMethods",
+    "REDUNDANT_CALL_OF_CONVERSION_METHOD",
+    "RedundantUnitReturnType",
+    "RemoveEmptyClassBody",
+    "UnnecessaryVariable",
     "UnusedImport",
+    "UnnecessaryVariable",
+    "unused",
 )
 
 package de.gesellix.docker.remote.api
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import de.gesellix.docker.remote.api.DeviceMapping
+import de.gesellix.docker.remote.api.DeviceRequest
+import de.gesellix.docker.remote.api.HostConfigAllOfLogConfig
+import de.gesellix.docker.remote.api.Mount
+import de.gesellix.docker.remote.api.PortBinding
+import de.gesellix.docker.remote.api.ResourcesBlkioWeightDeviceInner
+import de.gesellix.docker.remote.api.ResourcesUlimitsInner
+import de.gesellix.docker.remote.api.RestartPolicy
+import de.gesellix.docker.remote.api.ThrottleDevice
 
 /**
  * Container configuration that depends on the host we are running on
@@ -200,7 +217,7 @@ data class HostConfig(
     var networkMode: kotlin.String? = null,
     // PortMap describes the mapping of container ports to host ports, using the container's port-number and protocol as key in the format `<port>/<protocol>`, for example, `80/udp`.  If a container's port is mapped for multiple protocols, separate entries are added to the mapping table.
     @Json(name = "PortBindings")
-    var portBindings: kotlin.collections.MutableMap<kotlin.String, kotlin.collections.MutableList<PortBinding>>? = null,
+    var portBindings: kotlin.collections.MutableMap<kotlin.String, kotlin.collections.MutableList<PortBinding>?>? = null,
     @Json(name = "RestartPolicy")
     var restartPolicy: RestartPolicy? = null,
     // Automatically remove the container when the container's process exits. This has no effect if `RestartPolicy` is set.

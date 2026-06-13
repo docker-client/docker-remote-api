@@ -8,9 +8,17 @@
 
 @file:Suppress(
     "ArrayInDataClass",
+    "DuplicatedCode",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
+    "RemoveRedundantCallsOfConversionMethods",
+    "REDUNDANT_CALL_OF_CONVERSION_METHOD",
+    "RedundantUnitReturnType",
+    "RemoveEmptyClassBody",
+    "UnnecessaryVariable",
     "UnusedImport",
+    "UnnecessaryVariable",
+    "unused",
 )
 
 package de.gesellix.docker.remote.api
@@ -40,7 +48,7 @@ data class ContainerMemoryStats(
     var maxUsage: kotlin.Int? = null,
     // All the stats exported via memory.stat. when using cgroups v2.  This field is Linux-specific and omitted for Windows containers.
     @Json(name = "stats")
-    var stats: kotlin.collections.MutableMap<kotlin.String, kotlin.Int>? = null,
+    var stats: kotlin.collections.MutableMap<kotlin.String, kotlin.Int?>? = null,
     // Number of times memory usage hits limits.  This field is Linux-specific and only supported on cgroups v1. It is omitted when using cgroups v2 and for Windows containers.
     @Json(name = "failcnt")
     var failcnt: kotlin.Int? = null,

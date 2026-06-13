@@ -8,15 +8,25 @@
 
 @file:Suppress(
     "ArrayInDataClass",
+    "DuplicatedCode",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
+    "RemoveRedundantCallsOfConversionMethods",
+    "REDUNDANT_CALL_OF_CONVERSION_METHOD",
+    "RedundantUnitReturnType",
+    "RemoveEmptyClassBody",
+    "UnnecessaryVariable",
     "UnusedImport",
+    "UnnecessaryVariable",
+    "unused",
 )
 
 package de.gesellix.docker.remote.api
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import de.gesellix.docker.remote.api.OCIDescriptor
+import de.gesellix.docker.remote.api.OCIPlatform
 
 /**
  * Describes the result obtained from contacting the registry to retrieve image metadata.
@@ -30,5 +40,5 @@ data class DistributionInspect(
     var descriptor: OCIDescriptor,
     // An array containing all platforms supported by the image.
     @Json(name = "Platforms")
-    var platforms: kotlin.collections.MutableList<OCIPlatform>,
+    var platforms: kotlin.collections.MutableList<OCIPlatform?>,
 )

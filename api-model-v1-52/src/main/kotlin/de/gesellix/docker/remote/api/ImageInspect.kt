@@ -8,15 +8,29 @@
 
 @file:Suppress(
     "ArrayInDataClass",
+    "DuplicatedCode",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
+    "RemoveRedundantCallsOfConversionMethods",
+    "REDUNDANT_CALL_OF_CONVERSION_METHOD",
+    "RedundantUnitReturnType",
+    "RemoveEmptyClassBody",
+    "UnnecessaryVariable",
     "UnusedImport",
+    "UnnecessaryVariable",
+    "unused",
 )
 
 package de.gesellix.docker.remote.api
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import de.gesellix.docker.remote.api.DriverData
+import de.gesellix.docker.remote.api.ImageConfig
+import de.gesellix.docker.remote.api.ImageInspectMetadata
+import de.gesellix.docker.remote.api.ImageInspectRootFS
+import de.gesellix.docker.remote.api.ImageManifestSummary
+import de.gesellix.docker.remote.api.OCIDescriptor
 
 /**
  * Information about an image in the local image cache.

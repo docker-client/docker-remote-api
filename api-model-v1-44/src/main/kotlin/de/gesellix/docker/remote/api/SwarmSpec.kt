@@ -8,15 +8,29 @@
 
 @file:Suppress(
     "ArrayInDataClass",
+    "DuplicatedCode",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
+    "RemoveRedundantCallsOfConversionMethods",
+    "REDUNDANT_CALL_OF_CONVERSION_METHOD",
+    "RedundantUnitReturnType",
+    "RemoveEmptyClassBody",
+    "UnnecessaryVariable",
     "UnusedImport",
+    "UnnecessaryVariable",
+    "unused",
 )
 
 package de.gesellix.docker.remote.api
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import de.gesellix.docker.remote.api.SwarmSpecCAConfig
+import de.gesellix.docker.remote.api.SwarmSpecDispatcher
+import de.gesellix.docker.remote.api.SwarmSpecEncryptionConfig
+import de.gesellix.docker.remote.api.SwarmSpecOrchestration
+import de.gesellix.docker.remote.api.SwarmSpecRaft
+import de.gesellix.docker.remote.api.SwarmSpecTaskDefaults
 
 /**
  * User modifiable swarm configuration.

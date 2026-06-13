@@ -8,15 +8,24 @@
 
 @file:Suppress(
     "ArrayInDataClass",
+    "DuplicatedCode",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
+    "RemoveRedundantCallsOfConversionMethods",
+    "REDUNDANT_CALL_OF_CONVERSION_METHOD",
+    "RedundantUnitReturnType",
+    "RemoveEmptyClassBody",
+    "UnnecessaryVariable",
     "UnusedImport",
+    "UnnecessaryVariable",
+    "unused",
 )
 
 package de.gesellix.docker.remote.api
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import de.gesellix.docker.remote.api.ContainerBlkioStatEntry
 
 /**
  * BlkioStats stores all IO service stats for data read and write.  This type is Linux-specific and holds many fields that are specific to cgroups v1. On a cgroup v2 host, all fields other than `io_service_bytes_recursive` are omitted or `null`.  This type is only populated on Linux and omitted for Windows containers.
@@ -33,26 +42,26 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class ContainerBlkioStats(
     @Json(name = "io_service_bytes_recursive")
-    var ioServiceBytesRecursive: kotlin.collections.MutableList<ContainerBlkioStatEntry>? = null,
+    var ioServiceBytesRecursive: kotlin.collections.MutableList<ContainerBlkioStatEntry?>? = null,
     // This field is only available when using Linux containers with cgroups v1. It is omitted or `null` when using cgroups v2.
     @Json(name = "io_serviced_recursive")
-    var ioServicedRecursive: kotlin.collections.MutableList<ContainerBlkioStatEntry>? = null,
+    var ioServicedRecursive: kotlin.collections.MutableList<ContainerBlkioStatEntry?>? = null,
     // This field is only available when using Linux containers with cgroups v1. It is omitted or `null` when using cgroups v2.
     @Json(name = "io_queue_recursive")
-    var ioQueueRecursive: kotlin.collections.MutableList<ContainerBlkioStatEntry>? = null,
+    var ioQueueRecursive: kotlin.collections.MutableList<ContainerBlkioStatEntry?>? = null,
     // This field is only available when using Linux containers with cgroups v1. It is omitted or `null` when using cgroups v2.
     @Json(name = "io_service_time_recursive")
-    var ioServiceTimeRecursive: kotlin.collections.MutableList<ContainerBlkioStatEntry>? = null,
+    var ioServiceTimeRecursive: kotlin.collections.MutableList<ContainerBlkioStatEntry?>? = null,
     // This field is only available when using Linux containers with cgroups v1. It is omitted or `null` when using cgroups v2.
     @Json(name = "io_wait_time_recursive")
-    var ioWaitTimeRecursive: kotlin.collections.MutableList<ContainerBlkioStatEntry>? = null,
+    var ioWaitTimeRecursive: kotlin.collections.MutableList<ContainerBlkioStatEntry?>? = null,
     // This field is only available when using Linux containers with cgroups v1. It is omitted or `null` when using cgroups v2.
     @Json(name = "io_merged_recursive")
-    var ioMergedRecursive: kotlin.collections.MutableList<ContainerBlkioStatEntry>? = null,
+    var ioMergedRecursive: kotlin.collections.MutableList<ContainerBlkioStatEntry?>? = null,
     // This field is only available when using Linux containers with cgroups v1. It is omitted or `null` when using cgroups v2.
     @Json(name = "io_time_recursive")
-    var ioTimeRecursive: kotlin.collections.MutableList<ContainerBlkioStatEntry>? = null,
+    var ioTimeRecursive: kotlin.collections.MutableList<ContainerBlkioStatEntry?>? = null,
     // This field is only available when using Linux containers with cgroups v1. It is omitted or `null` when using cgroups v2.
     @Json(name = "sectors_recursive")
-    var sectorsRecursive: kotlin.collections.MutableList<ContainerBlkioStatEntry>? = null,
+    var sectorsRecursive: kotlin.collections.MutableList<ContainerBlkioStatEntry?>? = null,
 )
