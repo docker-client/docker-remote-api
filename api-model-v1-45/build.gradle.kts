@@ -7,7 +7,7 @@ plugins {
     id("com.google.devtools.ksp")
     id("maven-publish")
     id("signing")
-    id("com.github.ben-manes.versions")
+    id("io.github.ben-manes.versions")
     id("org.sonatype.gradle.plugins.scan")
     id("io.freefair.maven-central.validate-poms")
     id("org.openapi.generator")
